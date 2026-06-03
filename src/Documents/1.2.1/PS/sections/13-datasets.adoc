@@ -26,9 +26,10 @@ Datasets must not cross the 180° meridian; this includes both the *Data Coverag
 
 
 == Display Scale Range
+
 A scale range of a dataset is used to indicate a range of scales between which a producer considers the data is intended for use. The smallest scale is defined by the *minimum display scale* and the largest scale by the *maximum display scale*. These scales must be set at one of the scales specified elsewhere in this product specification.
 
-When the system’s viewing scale is smaller than the value indicated by *minimum display scale*, features within the *Data Coverage* feature are not displayed.
+When the system's viewing scale is smaller than the value indicated by *minimum display scale*, features within the *Data Coverage* feature are not displayed.
 
 == Geometry
 
@@ -39,8 +40,8 @@ S-411 Ice Information features are encoded as vector entities which conform to S
 Level 3a is described by the following constraints:
 
 * Each curve must reference a start and end point (they may be the same).
-* Curves must not self intersect. See S-100 Figure 7-5.
+* Curves must not self intersect. See <<S_100,Figure=7-5>>.
 * Areas are represented by a closed loop of curves beginning and ending at a common point.
-* In the case of areas with holes, all internal boundaries must be completely contained within the external boundary and the internal boundaries must not intersect each other or the external boundary. Internal boundaries may touch other internal boundaries or the external boundary tangentially (that is at one point) as shown in S-100 Figure 7-6.
-* The outer boundary of a surface must be in a clockwise direction (surface to the right of the curve) and the curve orientation positive. The inner boundary of a surface must be in a counter-clockwise direction (surface to the right of the curve) and the curve orientation negative. See S-100 Figure 7-7.
+* In the case of areas with holes, all internal boundaries must be completely contained within the external boundary and the internal boundaries must not intersect each other or the external boundary. Internal boundaries may touch other internal boundaries or the external boundary tangentially (that is at one point) as shown in <<S_100,Figure=7-6>>.
+* The outer boundary of a surface must be in a clockwise direction (surface to the right of the curve) and the curve orientation positive. The inner boundary of a surface must be in a counter-clockwise direction (surface to the right of the curve) and the curve orientation negative. See <<S_100,Figure=7-7>>.
 

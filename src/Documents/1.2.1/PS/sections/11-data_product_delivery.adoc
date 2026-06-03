@@ -7,9 +7,11 @@
 At the moment there is only one type of dataset supported. This is GML encoded ice feature collections according to S-100 Part 10b.
 
 === Introduction
+
 Ice Information Product will be delivered as an S-100 Exchange Set, containing datasets, metadata, etc. It is also possible that several datasets are available for an area. The decision which one to use, once installed in the system database is the responsibility of the navigator on the vessel.
 
 === Exchange Set
+
 The exchange set for the Ice Information Product has following structure (from S-100 Part 17):
 
 [[fig-exchange-set-structure]]
@@ -21,6 +23,7 @@ An Ice Information exchange set must conform to the structure laid out in S-100 
 === Exchange Catalogue
 
 ==== Exchange Catalogue Naming
+
 Name of Exchange Catalogue is `CATALOG.XML` as per S-100 Part 17
 
 _The clauses in italic below come from S-102 PS. JCOMM ETSI to confirm what has to be retained/deleted/adapted_
@@ -51,10 +54,12 @@ The encoding encapsulates exchange set elements as follows:
 
 [[subsec-dataset-size]]
 ==== Dataset size
+
 No requirements for maximum dataset size are specified.
 
 [[subsec-dataset-file-naming]]
 ==== Dataset file naming
+
 Dataset naming must follow a standard pattern to give implementers greater predictability of incoming datasets (see <<iho-s100,part=17,clause=4.3>>). S-411 dataset naming conventions must follow these rules and no further restrictions are made in this product specification.
 
 *411YYYYØØØØØØØØØØØØ.GML*::
@@ -64,6 +69,7 @@ YYYY::: the fourth to seventh characters identify the producer code according to
 GML::: denotes a GML file (according to <<iho-s100,part=10b>>).
 
 === Exchange Set
+
 The structure of an S-411 Exchange Set must be according to the structure described below, which is based on <<iho-s100,part=17,clause=4.2>>.
 
 . An S-411 Exchange Set must contain an Exchange Set Catalogue, CATALOG.XML, its digital signature CATALOG.SIGN, and may contain any number of S-411 conformant dataset files and Catalogue files.
@@ -77,20 +83,25 @@ The structure of an S-411 Exchange Set must be according to the structure descri
 . The required Exchange Set Catalogue XML document instance must be named CATALOG.XML and placed in the S100_ROOT folder, together with its digital signature (CATALOG.SIGN) file. All other digital signatures are included within their corresponding resource metadata records in the CATALOG.XML.
 
 === Support Files
+
 No support files are included in any of the S-411 features currently. If they are supported in the future then their specification and delivery will be added to this section.
 
 === Exchange Catalogue
+
 The Exchange Catalogue acts as the table of contents for the Exchange Set. The Catalogue file of the Exchange Set must be named CATALOG.XML. No other file in the Exchange Set may be named CATALOG.XML. The contents of the Exchange Catalogue are described in <<sec-metadata>>.
 
 === Data integrity and encryption
+
 <<iho-s100,part=15>> defines the algorithms for compression, encrypting and digitally signing datasets based on the S-100 Data Model. Use of encryption is optional. Digital Signatures are mandatory for all datasets.
 
 ==== Use of compression
+
 The data producer decides if compression will be used on the S-411 product files (GML). It is expected that a hydrographic office will make a policy decision and that all the S-411 datasets from the producer will be either compressed or uncompressed.
 
 It is recommended to compress all the dataset files. The ZIP compression method defined in <<iho-s100,part=15,clause=5.2>> should be used where applicable.
 
 ==== Use of digital signatures
+
 Digital signatures must be used on all files included in a S-411 compliant Exchange Set to meet the requirements of IMO resolution MSC.428(98) to reduce cyber security risks among users, especially when used in navigations systems at sea. The recommended signature method is defined in <<iho-s100,part=15>>.
 
 The digital signature information is encoded in the corresponding discovery block in the exchange catalogue for each file included in the Exchange Set as defined in <<iho-s100,part=17>>.

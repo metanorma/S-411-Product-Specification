@@ -19,7 +19,8 @@ Below are three examples of the encoding of various ice features using different
 primitives, the encoding of other ice objects can be done in a similar way. Encoding is defined by the S-411 GML Schema.
 
 ==== Polygon Feature
-[source,xml]
+
+[source%unnumbered,xml]
 ----
         <SeaIce gml:id="ID1">
             <snowDepth>10</snowDepth>
@@ -42,7 +43,8 @@ primitives, the encoding of other ice objects can be done in a similar way. Enco
 ----
 
 ==== LineString Feature
-[source,xml]
+
+[source%unnumbered,xml]
 ----
         <IcebergLimit gml:id="ID8">
             <geometry>
@@ -60,7 +62,8 @@ primitives, the encoding of other ice objects can be done in a similar way. Enco
 ----
 
 ==== Point Feature
-[source,xml]
+
+[source%unnumbered,xml]
 ----
         <IceThickness gml:id="ID5">
             <iceAverageThickness>10</iceAverageThickness>

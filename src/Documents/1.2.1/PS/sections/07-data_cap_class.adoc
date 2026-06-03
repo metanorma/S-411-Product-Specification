@@ -1,3 +1,4 @@
 
 == Data Capture and Classification
+
 The data will be captured normally from satellite data. The extraction and classification will be done by ice analysts. In some areas of the world (e.g. the Baltic Sea) in addition also some direct shore and ship based observations and textual ice reports from ice authorities will be used. Further information can be found in the WMO publication 574 in Appendix A.

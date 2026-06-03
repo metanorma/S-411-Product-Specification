@@ -3,6 +3,7 @@
 == Metadata
 
 === Introduction
+
 There are two kinds of metadata to prepare:
 
 * ISO 19139 Metadata +
@@ -16,41 +17,20 @@ The S100 metadata are for describing the structure of Exchange Catalogue
 For the description of ice data following metadata are necessary:
 
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|MD_Metadata
-|root element
-|gmd
-
-|fileIdentifier
-|Id for dataset
-|gmd
-
-|language
-|Product language
-|gmd
-
-|characterSet
-|Used characterset
-|gmd
-
-|contact
-|Contact data
-|gmd
-
-|dateStamp
-|date of publishing
-|gmd
-
-|identificationInfo
-|Specific info about product
-|gmd
-
+| MD_Metadata        | root element                | gmd
+| fileIdentifier     | Id for dataset              | gmd
+| language           | Product language            | gmd
+| characterSet       | Used characterset           | gmd
+| contact            | Contact data                | gmd
+| dateStamp          | date of publishing          | gmd
+| identificationInfo | Specific info about product | gmd
 |===
 
-[source,xml]
+[source%unnumbered,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <gmd:MD_Metadata    xmlns:gmd="http://www.isotc211.org/2005/gmd"
@@ -67,36 +47,25 @@ For the description of ice data following metadata are necessary:
 
 ===== fileIdentifier
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|fileIdentifier
-|Id for dataset
-|gmd
-
-|CharacterString
-|String contained id value
-|gmd
-
+| fileIdentifier  | Id for dataset            | gmd
+| CharacterString | String contained id value | gmd
 |===
 
 ===== language
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|language
-|Language of dataset
-|gmd
-
-|LanguageCode
-|Code for language
-|gmd
-
+| language     | Language of dataset | gmd
+| LanguageCode | Code for language   | gmd
 |===
-[source,xml]
+
+[source%unnumbered,xml]
 ----
 <gmd:language>
     <gmd:LanguageCode
@@ -108,18 +77,12 @@ For the description of ice data following metadata are necessary:
 
 ===== characterSet
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|characterSet
-|characterSet of dataset
-|gmd
-
-|MD_CharacterSetCode
-|Code for characterSet
-|gmd
-
+| characterSet        | characterSet of dataset | gmd
+| MD_CharacterSetCode | Code for characterSet   | gmd
 |===
 
 LanguageCode element contains two attributes:
@@ -128,7 +91,7 @@ LanguageCode element contains two attributes:
 
 * codeListValue value from the list defining the used language
 
-[source,xml]
+[source%unnumbered,xml]
 ----
 <gmd:characterSet>
     <gmd:MD_CharacterSetCode
@@ -140,118 +103,36 @@ LanguageCode element contains two attributes:
 
 ===== contact
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|contact
-|Contact for questions to dataset
-|gmd
-
-|CI_ResponsibleParty
-|ISO Element for contact data
-|gmd
-
-|individualName
-|Name of responsible person
-|gmd
-
-|CharacterString
-|individualName value (text)
-|gco
-
-|organisationName
-|Name of responsible organisation
-|gmd
-
-|CharacterString
-|organisationName value (text)
-|gco
-
-|contactInfo
-|Contact information
-|gmd
-
-|CI_Contact
-|ISO Element for contact information
-|gmd
-
-|phone
-|phone
-|gmd
-
-|CI_Telephone
-|
-|gmd
-
-|voice
-|
-|gmd
-
-|CharacterString
-|Voice telephone value (text)
-|gco
-
-|facsimile
-|
-|gmd
-
-|CharacterString
-|Fax number value (text)
-|gco
-
-|address
-|
-|gmd
-
-|deliveryPoint
-|
-|gmd
-
-|CharacterString
-|Postal Address (street, house number)
-|gco
-
-|city
-|
-|gmd
-
-|CharacterString
-|City name value (text)
-|gco
-
-|administrativeArea
-|
-|gmd
-
-|CharacterString
-|Administrative Area name value (text)
-|gco
-
-|postalCode
-|
-|gmd
-
-|CharacterString
-|
-|gco
-
-|electronicMailAddress
-|
-|gmd
-
-|CharacterString
-|Email value (text)
-|gco
-
-|role
-|
-|gmd
-
-|CI_RoleCode
-|
-|gmd
-
+| contact               | Contact for questions to dataset      | gmd
+| CI_ResponsibleParty   | ISO Element for contact data          | gmd
+| individualName        | Name of responsible person            | gmd
+| CharacterString       | individualName value (text)           | gco
+| organisationName      | Name of responsible organisation      | gmd
+| CharacterString       | organisationName value (text)         | gco
+| contactInfo           | Contact information                   | gmd
+| CI_Contact            | ISO Element for contact information   | gmd
+| phone                 | phone                                 | gmd
+| CI_Telephone          |                                       | gmd
+| voice                 |                                       | gmd
+| CharacterString       | Voice telephone value (text)          | gco
+| facsimile             |                                       | gmd
+| CharacterString       | Fax number value (text)               | gco
+| address               |                                       | gmd
+| deliveryPoint         |                                       | gmd
+| CharacterString       | Postal Address (street, house number) | gco
+| city                  |                                       | gmd
+| CharacterString       | City name value (text)                | gco
+| administrativeArea    |                                       | gmd
+| CharacterString       | Administrative Area name value (text) | gco
+| postalCode            |                                       | gmd
+| CharacterString       |                                       | gco
+| electronicMailAddress |                                       | gmd
+| CharacterString       | Email value (text)                    | gco
+| CI_RoleCode           |                                       | gmd
 |===
 
 CI_RoleCode element contains two attributes:
@@ -260,7 +141,7 @@ CI_RoleCode element contains two attributes:
 
 * codeListValue: value from the list defining the used roles
 
-[source,xml]
+[source%unnumbered,xml]
 ----
 <gmd:contact>
     <gmd:CI_ResponsibleParty>
@@ -310,186 +191,70 @@ CI_RoleCode element contains two attributes:
 
 ===== dateStamp
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|dataStamp
-|Date Stamp
-|gmd
-
-|Date
-|Formatted String (yyyy-MM-dd)
-|gco
-
+| dataStamp | Date Stamp                    | gmd
+| Date      | Formatted String (yyyy-MM-dd) | gco
 |===
 
-The dateStamp should be used for the publication date (just day using gco:date or including the time using gco:datetime). The date and time where the ice chart is considered valid should be given in identificationinfo (see 10.1.1.6). Classic operational ice charts should have a time stamp within the temporal extent given in identificationinfo, a dateStamp preceding the temporal extent denotes a prognosis chart, a dateStamp that is more recent then the temporal extent denotes an historic reanalysis or a climatological chart.
+The dateStamp should be used for the publication date (just day using gco:date or including the time using gco:datetime). The date and time where the ice chart is considered valid should be given in identificationinfo (see <<sec-identification-info>>). Classic operational ice charts should have a time stamp within the temporal extent given in identificationinfo, a dateStamp preceding the temporal extent denotes a prognosis chart, a dateStamp that is more recent then the temporal extent denotes an historic reanalysis or a climatological chart.
 
-[source,xml]
+[source%unnumbered,xml]
 ----
 <gmd:dateStamp>
   <gco:Date>2013-02-25</gco:Date>
 </gmd:dateStamp>
 ----
 
+[[sec-identification-info]]
 ===== identificationInfo
 
-[cols="a,a,a",options="header"]
+[cols="a,a,a",options="header,unnumbered"]
 |===
-|Element Name |Description |Namespace
+| Element Name | Description | Namespace
 
-|identificationInfo
-|
-|gmd
-
-|MD_DataIdentification
-|
-|
-
-|citation
-|
-|
-
-|CI_Citation
-|
-|
-
-|title
-|
-|
-
-|CharacterString
-|
-|gco
-
-|date
-|
-|
-
-|CI_Date
-|
-|
-
-|date
-|
-|gco
-
-|dateType
-|
-|
-
-|CI_DateTypeCode
-|
-|
-
-|abstract
-|
-|
-
-|CharacterString
-|
-|gco
-
-|language
-|
-|
-
-|LanguageCode
-|
-|
-
-|characterSet
-|
-|
-
-|MD_CharacterSetCode
-|
-|
-
-|topicCategory
-|
-|
-
-|MD_TopicCategoryCode
-|
-|
-
-|extent
-|
-|
-
-|EX_Extent
-|
-|
-
-|geographicElement
-|
-|
-
-|EX_GeographicBoundingBox
-|
-|
-
-|westBoundLongitude
-|
-|
-
-|Decimal
-|
-|gco
-
-|eastBoundLongitude
-|
-|
-
-|Decimal
-|
-|gco
-
-|southBoundLatitude
-|
-|
-
-|Decimal
-|
-|gco
-
-|northBoundLatitude
-|
-|gmd
-
-|Decimal
-|
-|gco
-
-|temporalElement
-|
-|gmd
-
-|EX_TemporalExtent
-|
-|gmd
-
-|extent
-|
-|gmd
-
-|TimePeriod
-|
-|gml
-
-|beginPosition
-|
-|gml
-
-|endPosition
-|
-|gml
-
+| identificationInfo       | | gmd
+| MD_DataIdentification    | |
+| citation                 | |
+| CI_Citation              | |
+| title                    | |
+| CharacterString          | | gco
+| date                     | |
+| CI_Date                  | |
+| date                     | | gco
+| dateType                 | |
+| CI_DateTypeCode          | |
+| abstract                 | |
+| CharacterString          | | gco
+| language                 | |
+| LanguageCode             | |
+| characterSet             | |
+| MD_CharacterSetCode      | |
+| topicCategory            | |
+| MD_TopicCategoryCode     | |
+| extent                   | |
+| EX_Extent                | |
+| geographicElement        | |
+| EX_GeographicBoundingBox | |
+| westBoundLongitude       | |
+| Decimal                  | | gco
+| eastBoundLongitude       | |
+| Decimal                  | | gco
+| southBoundLatitude       | |
+| Decimal                  | | gco
+| northBoundLatitude       | | gmd
+| Decimal                  | | gco
+| temporalElement          | | gmd
+| EX_TemporalExtent        | | gmd
+| extent                   | | gmd
+| TimePeriod               | | gml
+| beginPosition            | | gml
+| endPosition              | | gml
 |===
 
-[source,xml]
+[source%unnumbered,xml]
 ----
 <gmd:identificationInfo>
   <gmd:MD_DataIdentification>
@@ -569,6 +334,7 @@ Metadata used for the discovery, identification, and use of S-411 datasets in S-
 
 [[subsec-exchange-set-metadata]]
 === Exchange Set metadata
+
 For information exchange, there are several categories of metadata required: metadata about the overall Exchange Catalogue, metadata about each of the datasets contained in the Catalogue.
 
 The discovery metadata classes have numerous attributes which enable important information about the datasets to be examined without the need to process the data (e.g., decryption, decompression, loading). Other Catalogues can be included in the Exchange Set in support of the datasets such as Feature and Portrayal.
@@ -590,234 +356,239 @@ Each Exchange Set has a single S100_ExchangeCatalogue which contains meta inform
 S-411 uses S100_ExchangeCatalogue without modification. 
 
 ==== S100_ExchangeCatalogueIdentifier
+
 S-411 uses S100_ExchangeCatalogueIdentifier without modification.
 
 ==== S100_CataloguePointOfContact
+
 S-411 uses S100_CataloguePointOfContact without modification.
 
 === S100_DatasetDiscoveryMetadata
+
 Dataset discovery metadata in S-411 restricts certain attributes and roles as described in <<tab-s100-datasetDiscoveryMetadata-params>>. Optional S-100 attributes which are mandatory in S-411 are indicated in the Remarks column.
 
 [[tab-s100-datasetDiscoveryMetadata-params]]
 .S100_DatasetDiscoveryMetadata parameters
 [cols="a,a,a,^a,a,a",options="header"]
 |===
-|Role name |Name |Description |Mult |Type |Remarks
+| Role name | Name | Description | Mult | Type | Remarks
 
-|Class
-|S100_DatasetDiscoveryMetadata
-|Metadata about the individual datasets in the Exchange Catalogue
+| Class
+| S100_DatasetDiscoveryMetadata
+| Metadata about the individual datasets in the Exchange Catalogue
 |-
 |-
 |*The optional S-100 attributes _updateNumber_, _updateApplicationDate_, _referenceID_, and _temporalExtent_ are not used in S-411.* +
 *References to support file discovery metadata are not permitted because S-411 does not use support files.*
 
-|Attribute
-|fileName
-|Dataset file name
-|1
-|URI
-|See <<iho-s100,part=1,clause=4.6>> +
+| Attribute
+| fileName
+| Dataset file name
+| 1
+| URI
+| See <<iho-s100,part=1,clause=4.6>> +
 *Format: file:/S-411/DATASET_FILES/<dsname>* +
 *Dataset file name <dsname> must be according to format defined in <<subsec-dataset-file-naming>>.*
 
-|Attribute
-|datasetID
-|Dataset ID expressed as a Maritime Resource Name
-|0..1
-|URN
-|The URN must be an MRN. +
+| Attribute
+| datasetID
+| Dataset ID expressed as a Maritime Resource Name
+| 0..1
+| URN
+| The URN must be an MRN. +
 *See <<iho-s100,part=3,clause=10>>*
 
-|Attribute
-|editionNumber
-|The edition number of the dataset
+| Attribute
+| editionNumber
+| The edition number of the dataset
 |*1*
 //Superfluous for product without updates and reissues; S-411 will always replace the full product file; change to 0 as possible accourding to S100 (RohdeBSH 07. June 2024)
-|Integer
-|When a data set is initially created, the Edition number 1 is assigned to it. The Edition number is increased by 1 at each new Edition. Edition number remains the same for a re-issue. +
+| Integer
+| When a data set is initially created, the Edition number 1 is assigned to it. The Edition number is increased by 1 at each new Edition. Edition number remains the same for a re-issue. +
 *Mandatory in S-411*
 
-|Attribute
-|issueDate
-|Date on which the data was made available by the Data Producer
-|1
-|Date
+| Attribute
+| issueDate
+| Date on which the data was made available by the Data Producer
+| 1
+| Date
 |-
 
-|Attribute
-|issueTime
-|Time of day at which the data was made available by the Data Producer
-|0..1
-|Time
-|The S-100 datatype Time +
+| Attribute
+| issueTime
+| Time of day at which the data was made available by the Data Producer
+| 0..1
+| Time
+| The S-100 datatype Time +
 *May be required if multiple instances of a product are issued on the same day.*
 
-|Attribute
-|boundingBox
-|The extent of the dataset limits
+| Attribute
+| boundingBox
+| The extent of the dataset limits
 |*1*
-|EX_GeographicBoundingBox
+| EX_GeographicBoundingBox
 |*Mandatory in S-411* +
 *Defined as a rectangle coincident with the outermost cell boundaries of the dataset.*
 
-|Attribute
-|productSpecification
-|The Product Specification used to create this dataset
-|1
-|S100_ProductSpecification
+| Attribute
+| productSpecification
+| The Product Specification used to create this dataset
+| 1
+| S100_ProductSpecification
 |*<<tab-s100-productSpecification-params>>*
 
-|Attribute
-|producingAgency
-|Agency responsible for producing the data
-|1
-|CI_Responsibility>CI_Organisation
-|See <<iho-s100,part=17,table=17-3>>
+| Attribute
+| producingAgency
+| Agency responsible for producing the data
+| 1
+| CI_Responsibility>CI_Organisation
+| See <<iho-s100,part=17,table=17-3>>
 
-|Attribute
-|producerCode
-|The official IHO Producer Code from S-62
-|1
-|CharacterString
+| Attribute
+| producerCode
+| The official IHO Producer Code from S-62
+| 1
+| CharacterString
 |*Mandatory in S-411*
 
-|Attribute
-|encodingFormat
-|The encoding format of the dataset
-|1
-|S100_EncodingFormat
+| Attribute
+| encodingFormat
+| The encoding format of the dataset
+| 1
+| S100_EncodingFormat
 |*The only allowed value is GML* +
 *<<tab-s100-encodingFormat-params>>*
 
-|Attribute
-|dataCoverage
-|Provides information about data coverages within the dataset
+| Attribute
+| dataCoverage
+| Provides information about data coverages within the dataset
 |*1*..*
-|S100_DataCoverage
+| S100_DataCoverage
 |*Mandatory in S-411* +
 *<<tab-s100-dataCoverage-params>>*
 
-|Attribute
-|comment
-|Any additional information
-|0..1
-|CharacterString
+| Attribute
+| comment
+| Any additional information
+| 0..1
+| CharacterString
 |-
 
-|Attribute
-|defaultLocale
-|Default language and character set used in the dataset
-|0..1
-|PT_Locale
-|In absence of defaultLocale, the language is English, and the character set is UTF-8.
+| Attribute
+| defaultLocale
+| Default language and character set used in the dataset
+| 0..1
+| PT_Locale
+| In absence of defaultLocale, the language is English, and the character set is UTF-8.
 
-|Attribute
-|otherLocale
-|Other languages and character sets used in the dataset
-|0..*
-|PT_Locale
+| Attribute
+| otherLocale
+| Other languages and character sets used in the dataset
+| 0..*
+| PT_Locale
 |
 
-|Attribute
-|metadataPointOfContact
-|Point of contact for metadata
-|0..1
-|CI_Responsibility>CI_Individual +
+| Attribute
+| metadataPointOfContact
+| Point of contact for metadata
+| 0..1
+| CI_Responsibility>CI_Individual +
 or +
 CI_Responsibility>CI_Organisation
-|Only if metadataPointOfContact differs from producingAgency
+| Only if metadataPointOfContact differs from producingAgency
 
-|Attribute
-|metadataDateStamp
-|Date stamp for metadata
-|0..1
-|Date
-|May or may not be the issue date
+| Attribute
+| metadataDateStamp
+| Date stamp for metadata
+| 0..1
+| Date
+| May or may not be the issue date
 
 
-|Attribute
-|replacedData
-|Indicates if a cancelled dataset is replaced by another data file(s)
-|0..1
-|Boolean
-|See note following <<iho-s100,part=17,table=S100_DatasetDiscoveryMetadata>> +
+| Attribute
+| replacedData
+| Indicates if a cancelled dataset is replaced by another data file(s)
+| 0..1
+| Boolean
+| See note following <<iho-s100,part=17,table=S100_DatasetDiscoveryMetadata>> +
 *Mandatory when purpose = cancellation*
 
-|Attribute
-|dataReplacement
-|Dataset name
-|0..*
-|CharacterString
-|A dataset may be replaced by 1 or more datasets. +
+| Attribute
+| dataReplacement
+| Dataset name
+| 0..*
+| CharacterString
+| A dataset may be replaced by 1 or more datasets. +
 *Dataset name must be according to format defined in <<subsec-dataset-file-naming>>.* +
 *For example, _411DE00KD54.GML_* +
 See note following <<iho-s100,part=17,table=S100_DatasetDiscoveryMetadata>> +
 *Mandatory when replacedData = true*
 
-|Attribute
-|navigationPurpose
-|Classification of intended navigation purpose (for Catalogue indexing purposes)
+| Attribute
+| navigationPurpose
+| Classification of intended navigation purpose (for Catalogue indexing purposes)
 |*1*..3
-|S100_NavigationPurpose
-|If Product Specification is intended for creation of navigational products, this attribute should be mandatory. +
+| S100_NavigationPurpose
+| If Product Specification is intended for creation of navigational products, this attribute should be mandatory. +
 *Mandatory in S-411*
 
 
 |===
 
 ==== S100_NavigationPurpose
+
 S-411 uses S100_NavigationPurpose without modification.
 
 ==== S100_DataCoverage
+
 S-411 uses S100_DataCoverage without modification, but with additional remarks and changes to the multiplicity.
 
 [[tab-s100-dataCoverage-params]]
 .S100_DataCoverage parameters
 [cols="a,a,a,^a,a,a",options="header"]
 |===
-|Role name |Name |Description |Mult |Type |Remarks
+| Role name | Name | Description | Mult | Type | Remarks
 
-|Class
-|S100_DataCoverage
-|A spatial extent where data is provided along with the display scale information for the provided data
+| Class
+| S100_DataCoverage
+| A spatial extent where data is provided along with the display scale information for the provided data
 |-
 |-
-|This field is used by user systems as part of the data loading and unloading algorithms, and it is strongly encouraged that Product Specifications mandate the use of one or more of the displayScale provided as part of S100_DataCoverage.
+| This field is used by user systems as part of the data loading and unloading algorithms, and it is strongly encouraged that Product Specifications mandate the use of one or more of the displayScale provided as part of S100_DataCoverage.
 
-|Attribute
-|boundingPolygon
-|A polygon which defines the actual data limit
-|1
-|EX_BoundingPolygon
+| Attribute
+| boundingPolygon
+| A polygon which defines the actual data limit
+| 1
+| EX_BoundingPolygon
 |<<note-s100datacoverage-boundingPolygon>>
 
-|Attribute
-|temporalExtent
-|Specification of the temporal extent of the coverage
+| Attribute
+| temporalExtent
+| Specification of the temporal extent of the coverage
 |*0*
-|S100_TemporalExtent
+| S100_TemporalExtent
 |*The _temporalExtent_ is not used in S-411.*
 
-|Attribute
-|optimumDisplayScale
-|The scale at which the data is optimally displayed
-|1
-|Integer
-|Example: A scale of 1:25000 is encoded as 25000
+| Attribute
+| optimumDisplayScale
+| The scale at which the data is optimally displayed
+| 1
+| Integer
+| Example: A scale of 1:25000 is encoded as 25000
 
-|Attribute
-|maximumDisplayScale
-|The maximum scale at which the data is displayed
-|0..1
-|Integer
+| Attribute
+| maximumDisplayScale
+| The maximum scale at which the data is displayed
+| 0..1
+| Integer
 |
 
-|Attribute
-|minimumDisplayScale
-|The minimum scale at which the data is displayed
-|0..1
-|Integer
+| Attribute
+| minimumDisplayScale
+| The minimum scale at which the data is displayed
+| 0..1
+| Integer
 |
 
 |===
@@ -828,135 +599,143 @@ _boundingPolygon_ is restricted to a single GML Polygon with one exterior and 0 
 ====
 
 ==== S100_Purpose
+
 S-411 uses S100_Purpose without modification, but with a restriction on the allowed values.
 
 [[tab-s100-purpose]]
 .S100_Purpose
 [cols="a,a,a,^a,a,options="header"]
 |===
-|Role name |Name |Description |Code |Remarks
+| Role name | Name | Description | Code | Remarks
 
-|Enumeration
-|S100_Purpose
-|The purpose of the dataset
+| Enumeration
+| S100_Purpose
+| The purpose of the dataset
 |-
 |*The S-100 values _update_, _reissue_, and _delta_ are not used in S-411.*
 
-|Value
-|newDataset
-|Brand new dataset
-|1
-|No data has previously been produced for this area.
+| Value
+| newDataset
+| Brand new dataset
+| 1
+| No data has previously been produced for this area.
 
-|Value
-|newEdition
-|New edition of the dataset or Catalogue
-|2
-|Includes new information which has not been previously distributed by updates.
+| Value
+| newEdition
+| New edition of the dataset or Catalogue
+| 2
+| Includes new information which has not been previously distributed by updates.
 
-|Value
-|cancellation
-|Dataset or Catalogue that has been cancelled
-|5
-|Indicates the dataset or Catalogue should no longer be used and can be deleted.
+| Value
+| cancellation
+| Dataset or Catalogue that has been cancelled
+| 5
+| Indicates the dataset or Catalogue should no longer be used and can be deleted.
 |===
 
 ==== S100_EncodingFormat
+
 S-411 uses S100_EncodingFormat with a restriction on the allowed values to permit only the S-100 GML format for S-411 datasets.
 
 [[tab-s100-encodingFormat-params]]
 .S100_EncodingFormat parameters
 [cols="a,a,a,^a,a",options="header"]
 |===
-|Role name |Name |Description |Code |Remarks
+| Role name | Name | Description | Code | Remarks
 
-|Enumeration
-|S100_EncodingFormat
-|The encoding format
+| Enumeration
+| S100_EncodingFormat
+| The encoding format
 |-
 |*The only value allowed in S-411 is "`GML`".*
 
-|Value
-|GML
-|The GML data format as defined in <<iho-s100,part=10b>>
-|3
+| Value
+| GML
+| The GML data format as defined in <<iho-s100,part=10b>>
+| 3
 |-
 |===
 
 ==== S100_ProductSpecification
+
 S-411 uses S100_ProductSpecification without modification, but with additional remarks and changes to the multiplicity.
 
 [[tab-s100-productSpecification-params]]
 .S100_ProductSpecification parameters
 [cols="a,a,a,^a,a,a",options="header"]
 |===
-|Role name |Name |Description |Mult |Type |Remarks
+| Role name | Name | Description | Mult | Type | Remarks
 
-|Class
-|S100_ProductSpecification
-|The Product Specification contains the information needed to build the specified product.
+| Class
+| S100_ProductSpecification
+| The Product Specification contains the information needed to build the specified product.
 |-
 |-
 |-
 
-|Attribute
-|name
-|The name of the Product Specification used to create the datasets
+| Attribute
+| name
+| The name of the Product Specification used to create the datasets
 |*1*
-|CharacterString
-|The name in the GI Registry should be used for this field. +
+| CharacterString
+| The name in the GI Registry should be used for this field. +
 *For S-411, this name is "Ice Information" (as of 25 June 2024).*
 
-|Attribute
-|version
-|The version number of the Product Specification
+| Attribute
+| version
+| The version number of the Product Specification
 |*1*
-|CharacterString
-|TR 2/2007 specifies versioning of Product Specifications +
+| CharacterString
+| TR 2/2007 specifies versioning of Product Specifications +
 *Example: 1.2.1 for S-411 Edition 1.2.1*
 
-|Attribute
-|date
-|The version date of the Product Specification
+| Attribute
+| date
+| The version date of the Product Specification
 |*1*
-|Date
+| Date
 |-
 
-|Attribute
-|productIdentifier
-|Machine readable unique identifier of a product type
-|1
-|CharacterString +
+| Attribute
+| productIdentifier
+| Machine readable unique identifier of a product type
+| 1
+| CharacterString +
 (Restricted to Product ID values from the IHO Product Specification Register in the IHO Geospatial Information (GI) Registry)
 |*For S-411, this identifier is "S-411" (without quotes).*
 
-|Attribute
-|number
-|The number used to lookup the product in the Product Specification Register of the IHO GI registry
-|1
-|Integer
-|For IHO Product Specifications, these numbers should be taken from the IHO Product Specification Register in the IHO GI Registry. +
+| Attribute
+| number
+| The number used to lookup the product in the Product Specification Register of the IHO GI registry
+| 1
+| Integer
+| For IHO Product Specifications, these numbers should be taken from the IHO Product Specification Register in the IHO GI Registry. +
 *The corresponding Idx-number of the IHO Registry for S-411 is numbered _xxx_.*
 
 |===
 
 
 ==== S100_ProtectionScheme
+
 S-411 uses S100_ProtectionScheme without modification.
 
 === S100_CatalogueDiscoveryMetadata
+
 S-411 uses S100_CatalogueDiscoveryMetadata without modification.
 
 ==== S100_CatalogueScope
+
 S-411 uses S100_CatalogueScope without modification.
 
 [[sec-pt-locale]]
 ==== PT_Locale
+
 S-411 uses PT_Locale without modification.
 The class PT_Locale is defined in <<iso-19115-1>>. LanguageCode, CountryCode, and MD_CharacterSetCode are ISO codelists which are defined in a codelists file which is part of the S-100 Edition 5.2.0 schema distribution.
 
 [[sec-certs-digsign]]
 === Certificates and Digital Signatures
+
 The classes S100_SE_CertificateContainerType (<<iho-s100,part=15,clause=8.11.1>>), S100_SE_DigitalSignatureReference (<<iho-s100,part=15,clause=8.11.7>>), and S100_SE_DigitalSignature are defined in <<iho-s100,part=15>> and implemented in the S-100 generic schemas.
 
 In accordance with <<iho-s100,part=15>>, only the ECDSA algorithm is allowed from the S100_SE_DigitalSignatureReference enumeration.

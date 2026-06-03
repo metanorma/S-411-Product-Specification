@@ -29,7 +29,9 @@ h|EPSG Code h|Coordinate Reference System
 
 
 === Vertical Coordinate Reference System
+
 In this product there are no direct vertical coordinates which require the use of a vertical coordinate reference system.
 
 === Temporal reference system
+
 The temporal reference system is the Gregorian calendar for date and UTC for time. Time is measured by reference to Calendar dates and Clock time in accordance with <<iso-8601,clause=5.4.4>>. A date-time variable will have the following 16-character format: _yyyymmddThhmmssZ_.

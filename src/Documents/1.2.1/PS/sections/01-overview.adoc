@@ -1,18 +1,22 @@
 
 [[sec-overview]]
 == Overview
+
 === Introduction
-S-411 is the Ice Information Product Specification, produced by the World Meteorological Organization (WMO)/Intergovernmental Oceanographic Commission Technical Commission for Oceanography and Marine Meteorology (JCOMM) Expert Team on Sea Ice (ETSI). +
+
+S-411 is the Ice Information Product Specification, produced by the World Meteorological Organization (WMO)/Intergovernmental Oceanographic Commission Technical Commission for Oceanography and Marine Meteorology (JCOMM) Expert Team on Sea Ice (ETSI).
+
 This document has been produced in response to a requirement to produce a data product that can be used as an Information Overlay within an Electronic Chart Display and Information Systems (ECDIS). It is based on the IHO S-100 framework specification, the ISO 19100 series of standards and Geography Markup Language (GML). It is a vector product specification that is intended for encoding the extent and nature of Sea Ice for navigational purpose in ice covered regions.
 
 === Scope
-This document describes an S-100 compliant Product Specification for Ice Information, which will form an overlay layer for an S-100 based marine navigation system. It specifies the content, structure, and metadata needed for creating a fully compliant S-411 product and for its portrayal within an S-100 system. +
+
+This document describes an S-100 compliant Product Specification for Ice Information, which will form an overlay layer for an S-100 based marine navigation system. It specifies the content, structure, and metadata needed for creating a fully compliant S-411 product and for its portrayal within an S-100 system.
+
 This Product Specification includes the content model, the encoding, the Feature Catalogue, Portrayal Catalogue, and metadata.
 
 [bibliography]
 === References
-[bibliography]
-=== References
+
 * [[[iho-s100,IHO S-100 5.2.0]]]
 
 * [[[iho-s44,IHO S-44]]]
@@ -33,26 +37,43 @@ This Product Specification includes the content model, the encoding, the Feature
 
 * [[[iso-19115-3,ISO/TS 19115-3:2016]]]
 
-
+[bibliography]
 ==== Normative
-GML OpenGIS®:: _Geography Markup Language (GML) Encoding Standard_ (Version 3.2.1)
-S-97:: _IHO Guidelines for Creating S-100 Product Specifications_, Edition 1.1.0, June 2020.
-S-100:: _IHO Universal Hydrographic Data Model_, Edition 5.2.0, June 2024
-WMO-No. 574:: _Sea-ice Information and Services_, 2024 edition
 
+* [[[GML_OpenGIS_3_2_1,GML OpenGIS(R)]]] _Geography Markup Language (GML) Encoding Standard_ (Version 3.2.1)
+
+* [[[S_97,S-97]]] _IHO Guidelines for Creating S-100 Product Specifications_, Edition 1.1.0, June 2020.
+
+* [[[S_100,S-100]]] _IHO Universal Hydrographic Data Model_, Edition 5.2.0, June 2024
+
+* [[[WMO_574_2024,WMO-No. 574]]] _Sea-ice Information and Services_, 2024 edition
+
+[bibliography]
 ==== Informative
-ISO 19101:: _Geographic Information – Reference Model_, 2003
-ISO 19103:: _Geographic Information – Conceptual Schema Language_, 2005
-ISO 19103-2:: _Geographic Information – Conceptual Schema Language – Part 2_, 2005
-ISO 19109:: _Geographic Information – Rules for Application Schema_, 2005
-ISO 19110:: _Geographic Information – Methodology for Feature Cataloguing_, 2005
-ISO 19111:: _Geographic Information – Spatial Referencing by Coordinates_, 2007
-ISO 19115-1:: _Geographic information - Metadata - Part 1: Fundamentals_ - 2014/Amd 1: 2018
-ISO 19115-3:: _Geographic information - Metadata - Part 3: XML Schema implementation for fundamental concepts_ - 2016
-ISO 19117:: _Geographic Information – Portrayal_, 2012
-ISO 19131:: _Geographic Information – Data Product Specifications_, 2008
-ISO 19139-1:: _Geographic information - XML schema implementation - Part 1: Encoding rules_ - 2019
-MANICE:: _Manual of Standard Procedures for Observing and Reporting Ice Conditions_, Meteorological Service of Canada, 2005
+
+* [[[ISO_19101_2003,ISO 19101:2003]]] _Geographic Information – Reference Model_, 2003
+
+* [[[ISO_19103_2005,ISO 19103:2005]]] _Geographic Information – Conceptual Schema Language_, 2005
+
+* [[[ISO_19103_2_2005,ISO 19103-2:2005]]] _Geographic Information – Conceptual Schema Language – Part 2_, 2005
+
+* [[[ISO_19109_2005,ISO 19109:2005]]] _Geographic Information – Rules for Application Schema_, 2005
+
+* [[[ISO_19110_2005,ISO 19110:2005]]] _Geographic Information – Methodology for Feature Cataloguing_, 2005
+
+* [[[ISO_19111_2007,ISO 19111:2007]]] _Geographic Information – Spatial Referencing by Coordinates_, 2007
+
+* [[[ISO_19115_1_2014,ISO 19115-1:2014/Amd 1:2018]]] _Geographic information - Metadata - Part 1: Fundamentals_ - 2014/Amd 1: 2018
+
+* [[[ISO_19115_3_2016,ISO 19115-3:2016]]] _Geographic information - Metadata - Part 3: XML Schema implementation for fundamental concepts_ - 2016
+
+* [[[ISO_19117_2012,ISO 19117:2012]]] _Geographic Information – Portrayal_, 2012
+
+* [[[ISO_19131_2008,ISO 19131:2008]]] _Geographic Information – Data Product Specifications_, 2008
+
+* [[[ISO_19139_1_2019,ISO 19139-1:2019]]] _Geographic information - XML schema implementation - Part 1: Encoding rules_ - 2019
+
+* [[[MANICE_2005,MANICE]]] _Manual of Standard Procedures for Observing and Reporting Ice Conditions_, Meteorological Service of Canada, 2005
 
 === Terms, definitions and abbreviations
 
@@ -64,124 +85,124 @@ Within this document:
 * "`Should`" indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.
 * "`May`" means "`allowed to`" or "`could possibly`" and is not mandatory.
 
-
+[heading="terms and definitions"]
 ==== Terms and definitions
 
-*Application Schema*
+===== Application Schema
 
 Conceptual schema for data required by one or more applications.
 
-*Attribute*
+===== Attribute
 
-(1) Named property of an entity.
+. Named property of an entity.
++
+--
+NOTE: Describes a geometrical, thematic, or other characteristic of an entity.
+--
 
-NOTE:: Describes a geometrical, thematic, or other characteristic of an entity.
+. Feature within a classifier that describes a range of values that instances of the classifier may hold.
++
+--
+NOTE: An attribute is semantically equivalent to a composition association; however, the intent and usage is normally different.
 
-(2) Feature within a classifier that describes a range of values that instances of the classifier may hold.
+NOTE: "Feature" used in this definition is the UML meaning of the term.
+--
 
-NOTE:: An attribute is semantically equivalent to a composition association; however, the intent and usage is normally different.
-
-NOTE:: “Feature” used in this definition is the UML meaning of the term.
-
-*Boundary*
+===== Boundary
 
 Set that represents the limit of an entity.
 
-NOTE:: Boundary is most commonly used in the context of geometry, where the set is a collection of points or a collection of objects that represent those points.
+NOTE: Boundary is most commonly used in the context of geometry, where the set is a collection of points or a collection of objects that represent those points.
 
-*Coordinate*
+===== Coordinate
 
-One of a sequence of _n_ numbers designating the position of a *point* in N-dimensional space.
+One of a sequence of stem:[n] numbers designating the position of a {{Point}} in N-dimensional space.
 
-NOTE:: In a *coordinate reference system*, the coordinate numbers are qualified by units.
+NOTE: In a {{Coordinate Reference System}}, the coordinate numbers are qualified by units.
 
-*Coordinate Reference System*
+===== Coordinate Reference System
 
-*Coordinate* system which is related to an object by a datum.
+{{Coordinate}} system which is related to an object by a {{Datum}}.
 
-*Curve*
+===== Curve
 
 1-dimensional geometric primitive, representing the continuous image of a line.
 
-NOTE:: The boundary of a curve is the set of points at either end of the curve. If the curve is a cycle, the two ends are identical, and the curve (if topologically closed) is considered to not have a boundary. The first point is called the start point, and the last is the end point. Connectivity of the curve is guaranteed by the "continuous image of a line" clause. A topological theorem states that a continuous image of a connected set is connected.
+NOTE: The boundary of a curve is the set of points at either end of the curve. If the curve is a cycle, the two ends are identical, and the curve (if topologically closed) is considered to not have a boundary. The first point is called the start point, and the last is the end point. Connectivity of the curve is guaranteed by the "continuous image of a line" clause. A topological theorem states that a continuous image of a connected set is connected.
 
-*Data Quality*
+===== Data Quality
 
 A set of elements describing aspects of quality, including a measure of quality, an evaluation procedure, a quality result, and a scope.
 
-*Data Type*
+===== Data Type
 
 Specification of a value domain with operations allowed on values in this domain.
 
-NOTE:: Data types include primitive predefined types and user-definable types.
+NOTE: Data types include primitive predefined types and user-definable types.
 
-NOTE:: A data type is identified by a term, for example Integer.
+NOTE: A data type is identified by a term, for example Integer.
 
-*Dataset*
+===== Dataset
 
 An identifiable collection of data.
 
-NOTE:: A dataset may be a smaller grouping of data which, though limited by some constraint such as spatial extent or feature type, is located physically within a larger dataset. Theoretically, a dataset may be as small as a single feature contained within a larger dataset. A hardcopy map or chart may be considered a dataset.
+NOTE: A dataset may be a smaller grouping of data which, though limited by some constraint such as spatial extent or feature type, is located physically within a larger dataset. Theoretically, a dataset may be as small as a single feature contained within a larger dataset. A hardcopy map or chart may be considered a dataset.
 
-*Datum*
+===== Datum
 
-Parameter or set of parameters that define the position of the origin, the scale, and the orientation of a *coordinate* system.
+Parameter or set of parameters that define the position of the origin, the scale, and the orientation of a {{Coordinate}} system.
 
-*ECDIS*
+===== ECDIS
 
 A navigation information system which with adequate back-up arrangements can be accepted as complying with the up-to-date chart required by regulations V/19 and V/27 of the 1974 SOLAS Convention, as amended, by displaying selected information from a System Electronic Navigational Chart (System Database) with positional information from navigation sensors to assist the Mariner in route planning and route monitoring, and if required display additional navigation-related information.
 
-*Enumeration*
+===== Enumeration
 
 A fixed list of valid identifiers of named literal values. Attributes of an enumerated type may only take values from this list.
 
-*Feature*
+===== Feature
 
 Abstraction of real-world phenomena.
 
-NOTE:: A feature may occur as a type or an instance. Feature type or feature instance should be used when only one is meant.
+NOTE: A feature may occur as a type or an instance. Feature type or feature instance should be used when only one is meant.
 
-*Feature*
+===== Feature Attribute
 
-Abstraction of real world phenomena.
+Characteristic of a {{Feature}}.
 
-NOTE:: A feature may occur as a type or an instance. Feature type or feature instance should be used when only one is meant.
+NOTE: A feature attribute type has a name, a data type, and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.
 
-*Feature Attribute*
+===== Feature Catalogue
 
-Characteristic of a *feature*.
+A catalogue containing definitions and descriptions of the {{Feature}} types, {{Feature Attribute,Feature attributes}} occurring in one or more sets of geographic data.
 
-NOTE:: A feature attribute type has a name, a data type, and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.
-
-*Feature Catalogue*
-
-A catalogue containing definitions and descriptions of the *feature* types, *feature attributes* occurring in one or more sets of geographic data.
-
-*Geometric Primitive*
+===== Geometric Primitive
 
 Geometric object representing a single, connected, homogeneous element of geometry.
 
-NOTE:: Geometric primitives are non-decomposed objects that present information about geometric configuration. They include points, curves and surfaces.
+NOTE: Geometric primitives are non-decomposed objects that present information about geometric configuration. They include points, curves and surfaces.
 
-*Multiplicity*
+===== Multiplicity
 
 Specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship.
 
-EXAMPLES: 1..* (one to many); 1 (exactly one); 0..1 (zero or one)
+[example]
+1..* (one to many); 1 (exactly one); 0..1 (zero or one)
 
-*Point*
+===== Point
 
 0-dimensional geometric primitive, representing a position.
 
-NOTE:: The boundary of a point is the empty set.
+NOTE: The boundary of a point is the empty set.
 
-*Portrayal Catalogue*
+===== Portrayal Catalogue
 
 Collection of defined portrayals for a feature catalogue.
 
-NOTE:: Content of a portrayal catalogue includes portrayal functions, symbols, and portrayal context.
+NOTE: Content of a portrayal catalogue includes portrayal functions, symbols, and portrayal context.
 
 ==== Abbreviations
+
 This Product Specification adopts the following convention for presentation purposes:
 
 BSH:: Bundesamt für Seeschifffahrt und Hydrographie (Germany)
@@ -244,12 +265,15 @@ Email: mailto:publications@wmo.int[] +
 === WMO Product Specification Maintenance
 
 ==== Introduction
+
 Changes to S-411 will be released by the WMO as a New Edition, revision, or clarification.
 
 ==== New Edition
+
 _New Editions_ of S-411 introduce significant changes. _New Editions_ enable new concepts, such as the ability to support new functions or applications, or the introduction of new constructs or data types. _New Editions_ are likely to have a significant impact on either existing users or future users of S-122. All cumulative _revisions_ and _clarifications_ must be included with the release of approved New Editions.
 
 ==== Revision
+
 _Revisions_ are defined as substantive semantic changes to S-411. Typically, _revisions_ will change S-411 to correct factual errors; introduce necessary changes that have become evident as a result of practical experience or changing circumstances. A _revision_ must not be classified as a clarification. Revisions could have an impact on either existing users or future users of S-411. All cumulative _clarifications_ must be included with the release of approved _revisions_.
 
 Changes in a revision are minor and ensure backward compatibility with the previous versions within the same Edition. Newer revisions, for example, introduce new features and attributes. Within the same Edition, a dataset of one version could always be processed with a later version of the Feature and Portrayal Catalogues.
@@ -257,12 +281,14 @@ Changes in a revision are minor and ensure backward compatibility with the previ
 In most cases a new feature or portrayal catalogue will result in a _revision_ of S-411.
 
 ==== Clarification
+
 _Clarifications_ are non-substantive changes to S-122. Typically, _clarifications_: remove ambiguity; correct grammatical and spelling errors; amend or update cross references; insert improved graphics in spelling, punctuation and grammar. A _clarification_ must not cause any substantive semantic change to S-411.
 
 Changes in a _clarification_ are minor and ensure backward compatibility with the previous versions within the same Edition. Within the same Edition, a dataset of one clarification version could always be processed with a later version of the Feature and Portrayal Catalogues, and a Portrayal Catalogue can always rely on earlier versions of the Feature Catalogue.
 
 
 ==== Version Numbers
+
 The associated version control numbering to identify changes (n) to S-411 must be as follows:
 
 New Editions denoted as **n**.0.0
