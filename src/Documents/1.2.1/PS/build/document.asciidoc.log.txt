@@ -1,0 +1,2110 @@
+= Ice Information Product Specification
+:series: S
+:docnumber: 411
+:doctype: standard
+:edition: 1.2.1
+:language: en
+:published-date: 2025-03-01-31
+:copyright-year: 2025
+:committee: WMO- JCOMM
+:workgroup: ETSI
+:toclevels: 3
+:mn-document-class: iho
+:mn-output-extensions: html,doc,pdf
+:local-cache-only:
+:imagesdir: images
+:status: draft-development
+
+
+[.preface]
+== Document History
+
+Changes to this Specification are coordinated by WMO/IOC Joint Technical Commission for Oceanography and Marine Meteorology (JCOMM). New editions will be made available via the IHO web site.
+
+[cols="a,a,a,a",options="headers,unnumbered"]
+|===
+| Version Number | Date | Approved By | Purpose
+
+| 1.0.0 | 2 February 2014 | Alexander Benke  | Initial edition of S-411
+| 1.1.0 | 15 June 2014    | Jürgen Holfort   | Clarifications based on ETSI Meeting 2014 and new color for 10/10.
+| 1.2.0 | 01 January 2025 | IIC technologies | Initial version created
+| 1.2.1 | 13 March 2025   | IIC Technologies | Updated following reviews with WMO
+|===
+
+
+[[sec-overview]]
+== Overview
+
+=== Introduction
+
+S-411 is the Ice Information Product Specification, produced by the World Meteorological Organization (WMO)/Intergovernmental Oceanographic Commission Technical Commission for Oceanography and Marine Meteorology (JCOMM) Expert Team on Sea Ice (ETSI).
+
+This document has been produced in response to a requirement to produce a data product that can be used as an Information Overlay within an Electronic Chart Display and Information Systems (ECDIS). It is based on the IHO S-100 framework specification, the ISO 19100 series of standards and Geography Markup Language (GML). It is a vector product specification that is intended for encoding the extent and nature of Sea Ice for navigational purpose in ice covered regions.
+
+=== Scope
+
+This document describes an S-100 compliant Product Specification for Ice Information, which will form an overlay layer for an S-100 based marine navigation system. It specifies the content, structure, and metadata needed for creating a fully compliant S-411 product and for its portrayal within an S-100 system.
+
+This Product Specification includes the content model, the encoding, the Feature Catalogue, Portrayal Catalogue, and metadata.
+
+[bibliography]
+=== References
+
+* [[[iho-s100,IHO S-100 5.2.0]]]
+
+* [[[iho-s44,IHO S-44]]]
+
+* [[[iho-s4,IHO S-4]]]
+
+* [[[iho-s32,IHO S-32]]]
+
+* [[[iso-8601,ISO 8601:2004]]]
+
+* [[[iso-19103,ISO 19103:2015]]]
+
+* [[[iso-19111,ISO 19111:2007]]]
+
+* [[[iso-19115-1,ISO 19115-1:2014/Amd 1:2018]]]
+
+* [[[iso-19115-2,ISO 19115-2:2009]]]
+
+* [[[iso-19115-3,ISO/TS 19115-3:2016]]]
+
+[bibliography]
+==== Normative
+
+* [[[GML_OpenGIS_3_2_1,GML OpenGIS(R)]]] _Geography Markup Language (GML) Encoding Standard_ (Version 3.2.1)
+
+* [[[S_97,S-97]]] _IHO Guidelines for Creating S-100 Product Specifications_, Edition 1.1.0, June 2020.
+
+* [[[S_100,S-100]]] _IHO Universal Hydrographic Data Model_, Edition 5.2.0, June 2024
+
+* [[[WMO_574_2024,WMO-No. 574]]] _Sea-ice Information and Services_, 2024 edition
+
+[bibliography]
+==== Informative
+
+* [[[ISO_19101_2003,ISO 19101:2003]]] _Geographic Information – Reference Model_, 2003
+
+* [[[ISO_19103_2005,ISO 19103:2005]]] _Geographic Information – Conceptual Schema Language_, 2005
+
+* [[[ISO_19103_2_2005,ISO 19103-2:2005]]] _Geographic Information – Conceptual Schema Language – Part 2_, 2005
+
+* [[[ISO_19109_2005,ISO 19109:2005]]] _Geographic Information – Rules for Application Schema_, 2005
+
+* [[[ISO_19110_2005,ISO 19110:2005]]] _Geographic Information – Methodology for Feature Cataloguing_, 2005
+
+* [[[ISO_19111_2007,ISO 19111:2007]]] _Geographic Information – Spatial Referencing by Coordinates_, 2007
+
+* [[[ISO_19115_1_2014,ISO 19115-1:2014/Amd 1:2018]]] _Geographic information - Metadata - Part 1: Fundamentals_ - 2014/Amd 1: 2018
+
+* [[[ISO_19115_3_2016,ISO 19115-3:2016]]] _Geographic information - Metadata - Part 3: XML Schema implementation for fundamental concepts_ - 2016
+
+* [[[ISO_19117_2012,ISO 19117:2012]]] _Geographic Information – Portrayal_, 2012
+
+* [[[ISO_19131_2008,ISO 19131:2008]]] _Geographic Information – Data Product Specifications_, 2008
+
+* [[[ISO_19139_1_2019,ISO 19139-1:2019]]] _Geographic information - XML schema implementation - Part 1: Encoding rules_ - 2019
+
+* [[[MANICE_2005,MANICE]]] _Manual of Standard Procedures for Observing and Reporting Ice Conditions_, Meteorological Service of Canada, 2005
+
+=== Terms, definitions and abbreviations
+
+==== Use of language
+
+Within this document:
+
+* "pass:c,q,a,m,p[`Must`]" indicates a mandatory requirement.
+* "pass:c,q,a,m,p[`Should`]" indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.
+* "pass:c,q,a,m,p[`May`]" means "pass:c,q,a,m,p[`allowed to`]" or "pass:c,q,a,m,p[`could possibly`]" and is not mandatory.
+
+[heading="terms and definitions"]
+==== Terms and definitions
+
+===== Application Schema
+
+Conceptual schema for data required by one or more applications.
+
+===== Attribute
+
+. Named property of an entity.
++
+--
+NOTE: Describes a geometrical, thematic, or other characteristic of an entity.
+--
+
+. Feature within a classifier that describes a range of values that instances of the classifier may hold.
++
+--
+NOTE: An attribute is semantically equivalent to a composition association; however, the intent and usage is normally different.
+
+NOTE: "Feature" used in this definition is the UML meaning of the term.
+--
+
+===== Boundary
+
+Set that represents the limit of an entity.
+
+NOTE: Boundary is most commonly used in the context of geometry, where the set is a collection of points or a collection of objects that represent those points.
+
+===== Coordinate
+
+One of a sequence of stem:[n] numbers designating the position of a {{Point}} in N-dimensional space.
+
+NOTE: In a {{Coordinate Reference System}}, the coordinate numbers are qualified by units.
+
+===== Coordinate Reference System
+
+{{Coordinate}} system which is related to an object by a {{Datum}}.
+
+===== Curve
+
+1-dimensional geometric primitive, representing the continuous image of a line.
+
+NOTE: The boundary of a curve is the set of points at either end of the curve. If the curve is a cycle, the two ends are identical, and the curve (if topologically closed) is considered to not have a boundary. The first point is called the start point, and the last is the end point. Connectivity of the curve is guaranteed by the "continuous image of a line" clause. A topological theorem states that a continuous image of a connected set is connected.
+
+===== Data Quality
+
+A set of elements describing aspects of quality, including a measure of quality, an evaluation procedure, a quality result, and a scope.
+
+===== Data Type
+
+Specification of a value domain with operations allowed on values in this domain.
+
+NOTE: Data types include primitive predefined types and user-definable types.
+
+NOTE: A data type is identified by a term, for example Integer.
+
+===== Dataset
+
+An identifiable collection of data.
+
+NOTE: A dataset may be a smaller grouping of data which, though limited by some constraint such as spatial extent or feature type, is located physically within a larger dataset. Theoretically, a dataset may be as small as a single feature contained within a larger dataset. A hardcopy map or chart may be considered a dataset.
+
+===== Datum
+
+Parameter or set of parameters that define the position of the origin, the scale, and the orientation of a {{Coordinate}} system.
+
+===== ECDIS
+
+A navigation information system which with adequate back-up arrangements can be accepted as complying with the up-to-date chart required by regulations V/19 and V/27 of the 1974 SOLAS Convention, as amended, by displaying selected information from a System Electronic Navigational Chart (System Database) with positional information from navigation sensors to assist the Mariner in route planning and route monitoring, and if required display additional navigation-related information.
+
+===== Enumeration
+
+A fixed list of valid identifiers of named literal values. Attributes of an enumerated type may only take values from this list.
+
+===== Feature
+
+Abstraction of real-world phenomena.
+
+NOTE: A feature may occur as a type or an instance. Feature type or feature instance should be used when only one is meant.
+
+===== Feature Attribute
+
+Characteristic of a {{Feature}}.
+
+NOTE: A feature attribute type has a name, a data type, and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.
+
+===== Feature Catalogue
+
+A catalogue containing definitions and descriptions of the {{Feature}} types, {{Feature Attribute,Feature attributes}} occurring in one or more sets of geographic data.
+
+===== Geometric Primitive
+
+Geometric object representing a single, connected, homogeneous element of geometry.
+
+NOTE: Geometric primitives are non-decomposed objects that present information about geometric configuration. They include points, curves and surfaces.
+
+===== Multiplicity
+
+Specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship.
+
+[example]
+1..* (one to many); 1 (exactly one); 0..1 (zero or one)
+
+===== Point
+
+0-dimensional geometric primitive, representing a position.
+
+NOTE: The boundary of a point is the empty set.
+
+===== Portrayal Catalogue
+
+Collection of defined portrayals for a feature catalogue.
+
+NOTE: Content of a portrayal catalogue includes portrayal functions, symbols, and portrayal context.
+
+==== Abbreviations
+
+This Product Specification adopts the following convention for presentation purposes:
+
+BSH:: Bundesamt für Seeschifffahrt und Hydrographie (Germany)
+CRS::  Coordinate Reference System
+ECDIS:: Electronic Chart Display and Information System
+ENC:: Electronic Navigational Chart
+EPSG:: European Petroleum Survey Group
+ETSI:: Expert Team on Sea Ice
+GML:: Geography Markup Language
+IHO:: International Hydrographic Organization
+ISO:: International Organization for Standardization
+JCOMM:: Joint Technical Commission for Oceanography and Marine Meteorology
+UTF-8:: Unicode Transformation Format-8
+WMO:: World Meteorological Organization
+XML:: eXtensible Markup Language
+
+=== General data product description
+
+*Title*:: Ice Information Product Specification.
+
+*Abstract*:: Ice Information for ship navigation
+
+*Acronym*:: S-411
+
+*Content*:: Ice features as vector data
+
+*Spatial Extent*::
+
+*Description*: Areas specific to navigation in ice covered regions. +
+*East Bounding Longitude*: 180° +
+*West Bounding Longitude*: -180° +
+*North Bounding Latitude*: 90° +
+*South Bounding Latitude*: -90°
+
+*Purpose*:: Navigation in ice covered regions
+
+=== Product Specification metadata
+
+*Title*:: Ice Information Product Specification
+*S-100 Version*:: 5.2.0
+*S-411 Version*:: 1.2.1
+*Date*:: 13 March 2025
+*Language*:: English (optional additional)
+*Classification*:: Unclassified
+*Contact*::
+*Identifier*:: JCOMM S-411
+*Maintenance*:: Changes to this product specification are coordinated by JCOMM ETSI. +
+--
+World Meteorological Organization (WMO) +
+7 bis, avenue de la Paix +
+P.O. Box 2300 +
+CH-1211 Geneva 2, Switzerland +
+Telephone: +41 (0) 22 730 84 03 +
+Email: mailto:++publications@wmo.int++[] +
+--
+*URL*:: link:++http://www.wmo.int/++[www.wmo.int]
+*Identifier*:: S-411
+*Maintenance*:: Changes to the Product Specification S-411 are coordinated by the JCOMM, and must be made available via the IHO web site.
+
+=== WMO Product Specification Maintenance
+
+==== Introduction
+
+Changes to S-411 will be released by the WMO as a New Edition, revision, or clarification.
+
+==== New Edition
+
+_New Editions_ of S-411 introduce significant changes. _New Editions_ enable new concepts, such as the ability to support new functions or applications, or the introduction of new constructs or data types. _New Editions_ are likely to have a significant impact on either existing users or future users of S-122. All cumulative _revisions_ and _clarifications_ must be included with the release of approved New Editions.
+
+==== Revision
+
+_Revisions_ are defined as substantive semantic changes to S-411. Typically, _revisions_ will change S-411 to correct factual errors; introduce necessary changes that have become evident as a result of practical experience or changing circumstances. A _revision_ must not be classified as a clarification. Revisions could have an impact on either existing users or future users of S-411. All cumulative _clarifications_ must be included with the release of approved _revisions_.
+
+Changes in a revision are minor and ensure backward compatibility with the previous versions within the same Edition. Newer revisions, for example, introduce new features and attributes. Within the same Edition, a dataset of one version could always be processed with a later version of the Feature and Portrayal Catalogues.
+
+In most cases a new feature or portrayal catalogue will result in a _revision_ of S-411.
+
+==== Clarification
+
+_Clarifications_ are non-substantive changes to S-122. Typically, _clarifications_: remove ambiguity; correct grammatical and spelling errors; amend or update cross references; insert improved graphics in spelling, punctuation and grammar. A _clarification_ must not cause any substantive semantic change to S-411.
+
+Changes in a _clarification_ are minor and ensure backward compatibility with the previous versions within the same Edition. Within the same Edition, a dataset of one clarification version could always be processed with a later version of the Feature and Portrayal Catalogues, and a Portrayal Catalogue can always rely on earlier versions of the Feature Catalogue.
+
+
+==== Version Numbers
+
+The associated version control numbering to identify changes (n) to S-411 must be as follows:
+
+New Editions denoted as **n**.0.0
+
+Revisions denoted as n.**n**.0
+
+Clarifications denoted as n.n.**n**
+
+[[sec-specification-scope]]
+== Specification Scope
+
+This product specification defines only one general scope which applies to all its sections.
+
+*Scope Identification*:: JCOMM S-411 dataset
+*Hierarchical Lelvel*:: MD_ScopeCode -005
+*Hierarchical Level Name*:: Dataset
+
+*Extent*
+
+EX_GeographicExtent - Global coverage of maritime areas.
+
+EX_TemporalExtent - Not defined for this product specification.
+
+EX_VerticalExtent  -Not defined for this product specification.
+
+
+[[sec-data-product-identification]]
+== Data Product Identification
+
+A dataset that conforms to this Product Specification may be identified by its discovery metadata as
+defined in clause 12.
+
+*Title*:: Ice Information
+
+*Abstract*:: S-411 datasets must be produced in accordance with the rules defined in the S-411 Product Specification. The S-411 Product Specification contains all the information necessary to enable producers to produce a consistent Ice Information dataset; and manufacturers to use that data efficiently within navigation
+systems.
+
+*Topic Category*:: Transportation, climatology, meteorology, atmosphere
+
+*Geographic Description*:: Ice covered regions
+
+*Spatial Resolution*:: Each Data Coverage feature of an Ice Information dataset must indicate a value for an optimum viewing scale. Recommended values for scales can be found in the S-101 ENC Product Specification. Producers should note that at the smaller scales, geographic details will have no perceptible visual separation on a graphic display, and are therefore encouraged to determine display scales taking into account the content and intended navigation purpose of the dataset.
+
+*Purpose*:: Navigation in ice covered regions
+
+*Language*:: English (Mandatory), other (Optional)
+
+*Classification*:: Data may be classified as one of the following:
+
+. Unclassified;
+. Restricted;
+. Confidential;
+. Secret;
+. Top Secret;
+. Sensitive but Unclassified;
+. For official Use Only;
+. Protected;
+. Limited Distribution.
+
+*Spatial Representation Type*:: Vector
+
+*Point of Contact*:: Producing Agency
+
+*Use Limitation*:: Not for sole use in navigation; must be used with an ENC.
+
+
+[[sec-data-content-and-structure]]
+== Data Content and Structure
+
+=== Introduction
+
+The S-411 product is based on the S-100 General Feature Model (GFM), and is a feature-based vector product. Figure 4.1 shows how the S-411 application schema is realised from the S-100 GFM. All S-411 feature classes are derived from the abstract class FeatureType defined in the S-411 application schema, which realize the GFM meta-classes S100_GF_FeatureType.
+
+The application schema of Ice Information product contains 28 feature types with their attributes, enumerations etc. It is based on the ice objects catalogue (Version 5.3) and can also be found in the ICE domain of the IHO Registry. Because of this it is not possible to describe the full schema in suitable form in this specification. More information can be found as XML Schema File in Annex B – Data Product format (encoding).
+
+=== Application Schema
+
+S-411 conforms to the General Feature Model (GFM) from S-100 Part 3. The GFM is the conceptual model and the
+implementation is defined in the Feature Catalogue which is included as a separate Annex (Annex C) and provides a full specification of all types including feature types, their attributes, allowed and values. The S-411 Product Specification only contains specific examples.
+
+The following conventions are used in the UML diagrams depicting the application schema:
+
+* Standard UML conventions for classes, associations, inheritance, roles, and multiplicities apply. These conventions are described in Part 1 of S-100.
+
+* Italic font for a class name indicates an abstract class.
+
+* Feature classes are depicted with green background; the dark shade for abstract feature classes and the light shade for ordinary (non-abstract) feature classes.
+
+* Complex attributes are depicted with a pink background.
+
+* Enumeration lists and codelists are depicted with a tan background. The numeric code corresponding to each listed value is shown to its right following an '=' sign.
+
+
+==== Domain model
+
+The S-411 domain model has one base class ('root class') from which all the domain-specific geographic features type classes are derived. The base class is shown in the figure below. The base class for geographic features is FeatureType which has a set of attributes which are therefore inherited by all domain-specific features. The approximate area features in S-411 are also derived from the geographic feature root class. Base classes are abstract classes and do not have direct instances in S-411 data – instead, S-411 feature type data objects are instantiations of all non-abstract classes.
+
+S-411 meta-features are also derived from the base class – S-411 incorporates meta-feature definitions originally prepared for S-101 in the interests of harmonization and interoperability with other S-100-based data products, especially S-101 ENCs.
+
+
+==== S-411 Features
+
+===== Meta Features
+
+S-411 provides a single meta-feature, *DataCoverage*. *DataCoverage* is for describing areas in the dataset that are populated with data. The dataset may include multiple *DataCoverage* features to describe different contiguous (i.e. non-overlapping) areas.
+
+
+[[fig-the-data-coverage]]
+.*Data Coverage*
+image::../../model/HTML/EARoot/EA8.png[DataCoverage]
+
+===== Geographic Features
+
+Geographic (geo) feature types form the principal content of the S-411 product and are fully defined by their associated attributes.
+
+The following figure shows all the major ice features and a simplified view of their attributes in the S-411 Application Schema. The abstract Ice class is introduced to simplify the UML model of the features.
+
+[[fig-all-ice-features]]
+.*All Ice Features*
+image::../images/figure-all-ice-features.png[Diagram showing all ice features]
+
+The ice features contains a number of attributes defined as enumerations. The following diagram shows the main ice (surface) feature classes complete with the details of these enumerations and their values.
+
+[[fig-all-ice-features-wenums]]
+.*Detailed Ice Features*
+image::../../model/HTML/EARoot/EA4.png[Diagram showing all ice features]
+
+
+All Limit and Line curve features and their attributes are shown in the following diagram
+
+[[fig-all-curve-features]]
+.*All Curve Features*
+image::../images/figure-all-curve-features.png[Diagram showing all ice features]
+
+There are a number of point features shown in the following diagrams
+
+[[fig-point-features1]]
+.*Point Features*
+image::../images/PointFeatures1.png[Point Features]
+
+[[fig-point-features2]]
+.*Point Features*
+image::../images/PointFeatures2.png[Point Features]
+
+[[fig-point-features3]]
+.*Point Features*
+image::../images/PointFeatures3.png[Point Features]
+
+[[fig-point-features4]]
+.*Point Features*
+image::../images/PointFeatures4.png[Point Features]
+
+
+Full details of all geographic feature types can be found in Annex A – Data Classification and Encoding Guide, clause 2.1 and Sections 4-22.
+
+==== Attributes
+
+S-411 defines attributes as either simple or complex in line with the S-100 GFM.
+
+===== Simple attributes
+
+S-411 uses 3 types of simple attributes; these types are listed in Annex A – Data Classification and Encoding Guide, clause 2.4.2. Descriptions of the simple attributes included in S-411 can be found in Annex A, Sections 27, 28 and 30.
+
+===== Complex attributes
+
+Complex attributes are aggregations of other attributes that are either simple or complex. The aggregation is defined by means of attribute bindings. Examples of modelling complex attributes can be found in S-100 Part 2a, Appendix 2a-A. Descriptions of the complex attributes included in S-411 can be found in Annex A – Data Classification and Encoding Guide
+
+=== Feature Catalogue
+
+==== Introduction
+
+The S-411 Feature Catalogue describes the feature types, attributes and attribute values which may be used in an S-411 product.
+
+The S-411 Feature Catalogue is available as an XML document which conforms to the S-100 XML Feature Catalogue Schema and can be downloaded from the IHO website (link:++https://registry.iho.int/++[]). S-411 Annex A – Data Classification and Encoding Guide, constitutes a human readable interpretation of the Feature Catalogue along with information on how features should be encoded.
+
+The feature Catalogue for Ice Information contains only geographic and meta features. The ice features which can be used in ECDIS are defined within the ICE domain of the IHO Registry.
+
+==== Feature types
+
+Feature types contain descriptive attributes that characterize real-world entities. The word 'feature' may be used in one of two senses – feature type and feature instance. A feature type is a class and is defined in a Feature Catalogue. A feature instance is a single occurrence of the feature type and represented as an object in a dataset. A feature instance is located by a relationship to one or more spatial instances. A feature instance may exist without referencing a spatial instance.
+
+==== Geographic
+
+Geographic (geo) feature types carry the descriptive characteristics of a real-world entity (a location or place on the surface of the Earth). In the context of Ice Information products, this comprises most of the features (with the exception of DataCoverage) and represents those features with a real-world existence.
+
+==== Meta
+
+Only one metadata feature is defined, DataCoverage. This defines the area of coverage bounded by the dataset, and any features within it. DataCoverage contains a mandatory optimumDisplayScale attribute and two optional maximum, and minimum display scale attributes.
+
+[[fig-data-coverage]]
+.*Data Coverage*
+image::../../model/HTML/EARoot/EA8.png[DataCoverage]
+
+==== Attributes
+
+S-411 defines attributes as either simple or complex in line with the S-100 GFM.
+
+===== Simple attributes
+
+S-411 uses three types of simple attributes; they are listed in the following Table:
+
+[cols="a,a",options="headers,unnumbered"]
+|===
+| Type | Definition
+
+| Integer     | An integer number.
+| Real        | A floating point number.
+| Enumeration | One or more of a list of predefined values.
+
+|===
+
+==== Application Schema implementation
+
+===== Implementation description
+
+===== Ice DataSets
+
+Ice Data Sets contains an unlimited number of Ice Features, for example (SeaIce, LakeIce, Iceberg, etc.).
+
+==== Feature Types Summary
+
+.Summary of Types in the WMO Ice Domain Register
+[cols="1,1,5",options="headers"]
+|===
+| Index | Alias | Name
+
+| Feature   | SEAICE | Sea Ice
+| Feature   | LACICE | Lake Ice
+| Feature   | BRGARE | Iceberg Area
+| Feature   | ICELNE | Ice Edge
+| Feature   | BRGLNE | Iceberg Limit
+| Feature   | OPNLNE | Limit of Open Water
+| Feature   | LKILNE | Limit of All Known Ice
+| Feature   | I_RIDG | Line of Ice Ridge
+| Feature   | I_LEAD | Line of Ice Lead
+| Feature   | I_FRAL | Line of Ice Fracture
+| Feature   | I_CRAC | Line of Ice Crack
+| Feature   | ICECOM | Ice Compacting
+| Feature   | ICELEA | Ice Lead
+| Feature   | ICEBRG | Iceberg
+| Feature   | FLOBRG | Floeberg
+| Feature   | ICETHK | Ice Thickness
+| Feature   | ICESHR | Ice Shear
+| Feature   | ICEDIV | Ice Divergence
+| Feature   | ICERDG | Ice Ridge/Hummock
+| Feature   | ICEKEL | Ice Keel/Bummock
+| Feature   | ICEDFT | Ice Drift
+| Feature   | ICEFRA | Ice Fracture
+| Feature   | ICERFT | Ice Rafting
+| Feature   | JMDBRR | Jammed Brash Barrier
+| Feature   | STGMLT | Stage of Melt
+| Feature   | SNWCVR | Snow Cover
+| Feature   | STRPTC | Strips and Patches
+| Feature   | I_GRHM | Grounded Hummock
+| Attribute | ICEACT | Total Concentration
+| Attribute | ICEAPC | Partial Concentration
+| Attribute | ICESOD | Ice Stage of Development
+| Attribute | ICELSO | Lake Ice Stage of Development
+| Attribute | ICEFLZ | Floe Sizes
+| Attribute | ICEMLT | Melt Stage
+| Attribute | ICESPC | Concentration of Strips and Patches
+| Attribute | ICEBNM | Number of Icebergs in Area
+| Attribute | ICELVL | Level Ice
+| Attribute | ICECST | Compacting Strength
+| Attribute | ICEFTY | Ice Fracture Type
+| Attribute | ICELST | Ice Lead Status
+| Attribute | ICELFQ | Frequency of Leads or Fractures
+| Attribute | ICELOR | Orientation of Leads or Fractures
+| Attribute | ICELWD | Ice Lead (or Fracture or Crack) Width
+| Attribute | ICELOC | Ice Location Information
+| Attribute | ICEBSZ | Iceberg Size
+| Attribute | ICEDDR | Ice Drift Direction
+| Attribute | ICEDSP | Ice Drift Speed
+| Attribute | ICETCK | Ice Average Thickness
+| Attribute | ICEMAX | Maximum Ice Thickness
+| Attribute | ICEMIN | Minimum Ice Thickness
+| Attribute | ICETTY | Ice Thickness Type
+| Attribute | ICESCT | Snow Depth
+| Attribute | ICESCN | Snow Cover Concentration
+| Attribute | ICEDOS | Direction Of Sastrugi
+| Attribute | ICERCN | Ice Ridge Concentration
+| Attribute | ICERDV | Ice Ridge Classification
+| Attribute | ICERMH | Ice Ridge Mean Height
+| Attribute | ICERFQ | Ice Ridge Frequency
+| Attribute | ICERXH | Ice Ridge Maximum Height
+| Attribute | ICEKCN | Ice Keel Concentration
+| Attribute | ICEKFQ | Ice Keel Frequency
+| Attribute | ICEKMD | Ice Keel Mean Depth
+| Attribute | ICEKXD | Ice Keel Maximum Depth
+| Attribute | ICEFCN | Ice Rafting Concentration
+| Attribute | IA_SFA | Ice Stage of Development and Floe Size for the 1st p.c.
+| Attribute | IA_SFB | Ice Stage of Development and Floe Size for the 2nd p.c.
+| Attribute | IA_SFC | Ice Stage of Development and Floe Size for the 3rd p.c.
+| Attribute | IA_FFA | Ice Breccia for the 1st partial concentration
+| Attribute | ICEFCN | Ice Breccia for the 2nd partial concentration
+| Attribute | IA_FFC | Ice Breccia for the 3rd partial concentration
+| Attribute | IA_SNG | Snow concentration
+| Attribute | IA_MLT | Stage of melting
+| Attribute | IA_PLG | Contamination
+| Attribute | IA_HLG | Hills concentration
+| Attribute | IA_DUG | Fractures concentration
+| Attribute | IA_BCN | Icebergs concentration
+| Attribute | IA_BFM | Prevailing iceberg form
+| Attribute | IA_BUH | Max. height of the above-water part (iceberg / grounded hummock)
+| Attribute | IA_OBN | Number of ice objects
+| Attribute | IA_DXW | Max. width of ice lead (or fracture or crack)
+| Attribute | IA_DMW | Min. width of ice lead (or fracture or crack)
+| Attribute | ICEBRS | Brash Ice
+|===
+
+
+[[sec-coordinate-reference-systems-crs]]
+== Coordinate Reference Systems (CRS)
+
+=== Introduction
+
+For exchange of ice data WGS84 (EPSG:4326) must be used
+
+[[horizontal-crs]]
+=== Horizontal Coordinate Reference System
+
+[[tab-411-coordinate-reference-systems-epsg-codes]]
+.S-411 Coordinate Reference Systems (EPSG Codes)
+[cols="2"]
+|===
+h|EPSG Code h|Coordinate Reference System
+|4326 |WGS84
+2+|The full reference to EPSG can be found at link:++https://epsg.org/++[\https://epsg.org].
+|===
+
+
+*Horizontal Coordinate Reference System*:: EPSG: 4326
+*Projection*:: NONE (_although use of projected coordinates in datasets for future editions will be considered_)
+*Temporal reference system*:: Gregorian Calendar
+*Coordinate Reference System registry*:: link:++https://epsg.org/++[EPSG Geodetic Parameter Dataset]
+*Date type (according to <<iso-19115-1>>)*:: 002 - publication
+*Responsible party*:: Technical Commission for Oceanography and Marine Meteorology (JCOMM)
+*URL*:: link:++https://wmo.int//++[]
+
+
+=== Vertical Coordinate Reference System
+
+In this product there are no direct vertical coordinates which require the use of a vertical coordinate reference system.
+
+=== Temporal reference system
+
+The temporal reference system is the Gregorian calendar for date and UTC for time. Time is measured by reference to Calendar dates and Clock time in accordance with <<iso-8601,clause=5.4.4>>. A date-time variable will have the following 16-character format: _yyyymmddThhmmssZ_.
+
+
+[[sec-data-quality]]
+== Data Quality
+
+As ice charts are done for different purposes (from weekly overview to tactical charts and further to model forecasts) data quality can differ.
+
+Differences can also be found between ice charts of the same region and same nominal date resulting from different issuing agencies or also from different forecasts models.
+
+Further information can be found in the WMO publication 574.
+
+A fuller review of data quality requirements for S-411 may be carried out in the future. The headings within this section reflect those within other IHO product specifications and, following such a review, will either be populated or deleted as appropriate.
+
+=== Completeness
+
+==== Commission
+
+==== Omission
+
+=== Logical consistency
+
+==== Conceptual consistency
+
+Conceptual Consistency is applicable for S-411 and follows the guidelines from <<iho-s100,part=1>>.
+
+Data Producers must verify that the dataset conforms to the S-100 General Feature Model.
+
+If the dataset conforms to the S-100 General Feature Model, the dataset PASSES this test.
+
+==== Domain consistency
+
+Domain consistency is applicable for S-411 and follows the guidelines from <<iho-s100,part=5>>.
+
+Data Producers must verify that the dataset conforms to the S-411 Feature Catalogue and to <<annex-data-classification-and-encoding-guide>>.
+
+If the dataset conforms to the S-411 Feature Catalogue and to <<annex-data-classification-and-encoding-guide>>, the dataset PASSES this test.
+
+==== Format consistency
+
+Format Consistency is applicable for S-411 and follows the guidelines from <<iho-s100,part=10c>>.
+
+Data Producers must verify that the dataset conforms to <<sec-data-product-format-encoding>> of this Product Specification.
+
+If the dataset conforms to <<sec-data-product-format-encoding>>, the dataset PASSES this test.
+
+=== Positional accuracy
+
+=== Temporal accuracy
+
+=== Thematic accuracy
+
+==== Thematic classification correctness
+
+==== Non-quantitative attribute accuracy
+
+==== Quantitative attribute accuracy
+
+
+
+
+== Data Capture and Classification
+
+The data will be captured normally from satellite data. The extraction and classification will be done by ice analysts. In some areas of the world (e.g. the Baltic Sea) in addition also some direct shore and ship based observations and textual ice reports from ice authorities will be used. Further information can be found in the WMO publication 574 in Appendix A.
+
+
+== Data Maintenance
+
+=== Maintenance and Update Frequency
+
+Ice information datasets should be maintained if a new dataset of region and provider is available. There is no updating mechanism used, with datasets being re-issued as appropriate. future editions may use the updating mechanism for GML datasets contained in <<iho-s100,part=10b>>
+
+
+[[sec-portrayal]]
+== Portrayal
+
+=== Rules
+
+pass:c,q,a,m,p[`main.xsl`] includes all the rules for single feature types. It manages the selection of the right rule, depending on current feature type in pass:c,q,a,m,p[`dataset and parameters in `]iceDisplayParameters.xml`.
+
+pass:c,q,a,m,p[`iceDisplayParameters.xml`] contains parameters important for display of ice features:
+
+* String pass:c,q,a,m,p[`iceclass`]
+
+* Boolean pass:c,q,a,m,p[`encoverlay`]
+
+* String pass:c,q,a,m,p[`Display Mode`]
+
+Depending on the pass:c,q,a,m,p[`iceclass`] parameter the right pass:c,q,a,m,p[`seaice`] or pass:c,q,a,m,p[`lacice`] rule can be selected. The default is pass:c,q,a,m,p[`*_class_III.xsl`]
+
+The pass:c,q,a,m,p[`encoverlay`] parameter helps to calculate the priority for display of single ice feature types. If pass:c,q,a,m,p[`encoverlay`] is true, the priority will be calculated, depending on priority of land area feature in ENC. The area objects of ice features should be displayed under the land area polygons, because they are usually drawn over the land.
+
+=== Symbols
+
+==== Polygon Features
+
+===== IceNavigationalDisplayMode (Traffic Light Principle, depends on Ice Class)
+
+[cols="2,1,1,1,1,1,1,1",options="header,unnumbered"]
+|===
+| Object Class  | Acronym | | | | | |
+
+h| Sea Ice      | seaice  | | | | | |
+h| Lake Ice     | lacice  | | | | | |
+h| Iceberg Area | icebrg  | | | | | |
+|===
+
+===== IceScientificIceactDisplayMode
+
+[cols="1,4,3,3",options="header,unnumbered"]
+|===
+| iceact | Description | rgb | colour
+
+| 1  | Ice Free                | 000 100 255 |
+| 2  | Open Water (<1/10 ice)  | 150 200 255 |
+| 3  | Bergy Water             | 150 200 255 |
+| 10 | 1/10 ice                | 140 255 160 |
+| 12 | 1/10 to 2/10 ice        | 140 255 160 |
+| 13 | 1/10 to 3/10 ice        | 140 255 160 |
+| 20 | 2/10 ice                | 140 255 160 |
+| 23 | 2/10 to 3/10 ice        | 140 255 160 |
+| 24 | 2/10 to 4/10 ice        | 140 255 160 |
+| 30 | 3/10 ice                | 140 255 160 |
+| 34 | 3/10 to 4/10 ice        | 140 255 160 |
+| 35 | 3/10 to 5/10 ice        | 255 255 000 |
+| 40 | 4/10 ice                | 255 255 000 |
+| 45 | 4/10 to 5/10 ice        | 255 255 000 |
+| 46 | 4/10 to 6/10 ice        | 255 255 000 |
+| 50 | 5/10 ice                | 255 255 000 |
+| 56 | 5/10 to 6/10 ice        | 255 255 000 |
+| 57 | 5/10 to 7/10 ice        | 255 255 000 |
+| 60 | 6/10 ice                | 255 255 000 |
+| 67 | 6/10 to 7/10 ice        | 255 255 000 |
+| 68 | 6/10 to 8/10 ice        | 255 125 007 |
+| 70 | 7/10 ice                | 255 125 007 |
+| 78 | 7/10 to 8/10 ice        | 255 125 007 |
+| 79 | 7/10 to 9/10 ice        | 255 125 007 |
+| 80 | 8/10 ice                | 255 125 007 |
+| 81 | 8/10 to 10/10 ice       | 255 000 000 |
+| 89 | 8/10 to 9/10 ice        | 255 125 007 |
+| 90 | 9/10 ice                | 255 255 000 |
+| 91 | 9/10 to 10 or 9+/10 ice | 255 255 000 |
+| 92 | 10/10 ice               | 145 000 000 |
+| 99 | Undertermined/Unknown   | SymbolFill  |
+|===
+
+===== IceNavigationalDisplayMode
+
+[cols="1,4,3,3",options="header,unnumbered"]
+|===
+| icesod | Description | rgb | Colour
+
+| 1  | Ice Free                                   | 150 200 255 |
+| 70 | Brash Ice                                  | 150 200 255 |
+| 80 | No Stage Development                       | 150 200 255 |
+| 81 | New Ice (<10 cm)                           | 240 210 250 |
+| 82 | Nilas Ice Rind (<10 cm)                    | 255 100 255 |
+| 83 | Young Ice (10 to <30 cm)                   | 170 040 240 |
+| 84 | Grey Ice (10 to <15 cm)                    | 135 060 215 |
+| 85 | Grey - White Ice (15 to <30 cm)            | 220 080 235 |
+| 86 | First Year Ice (30 to 200 cm)              | 255 255 000 |
+| 87 | Thin First Year Ice (30 to <70 cm)         | 175 250 000 |
+| 88 | Thin First Year Ice Stage 1 (30 to <50 cm) | 215 250 130 |
+| 89 | Thin First Year Ice Stage 2 (50 to <70 cm) | 175 250 000 |
+| 91 | Medium First Year Ice (70 to 120 cm)       | 000 120 000 |
+| 93 | Thick First Year Ice (>120 cm)             | 000 120 000 |
+| 94 | Residual Ice                               | 000 120 000 |
+| 95 | Old Ice                                    | 180 100 050 |
+| 96 | Second Year Ice                            | 255 120 010 |
+| 97 | Multi-Year Ice                             | 200 000 000 |
+| 98 | Glacier Ice (Icebergs)                     | Symbolfill  |
+| 99 | Undertermined/Unknown                      | SymbolFill  |
+|===
+
+==== Line Features
+
+[cols="2,2,1",options="header,unnumbered"]
+|===
+| Feature Class | Acronym | Symbol
+
+// | Ice Edge
+// | icelne
+// a|
+// [%unnumbered]
+// image::../../PC/Pixmaps/icelne.png[]
+
+| Iceberg Limit | brglne
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/brglne.png[]
+
+// | Limit of Open Water
+// | opnlne
+// a|
+// [%unnumbered]
+// image::../../PC/Pixmaps/opnlne.png[]
+//
+// | Limit of All Known ice
+// | lkilne
+// a|
+// [%unnumbered]
+// image::../../PC/Pixmaps/lkilne.png[]
+
+| Line of Ice Ridge | i_ridg
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/i_ridg.png[]
+
+| Line of Ice Lead | i_lead
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/i_lead.png[]
+
+| Line of Ice Fracture | i_fral
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/i_fral.png[]
+
+| Line of Ice Crack | i_crac
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/i_crac.png[]
+
+|===
+
+==== Point Features
+
+[cols="2,2,1",options="header,unnumbered"]
+|===
+| Feature Class | Acronym | Symbol
+
+| Ice Compacting | icecom
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icecom.png[]
+
+| Ice Lead | icelea
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icelea.png[]
+
+| Ice Shear | iceshr
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/iceshr.png[]
+
+| Ice Divergence | icediv
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icediv.png[]
+
+| Ice Ridge / Hummock | icerdg
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icerdg.png[]
+
+| Ice Keel / Bummock | icekel
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icekel.png[]
+
+| Ice Fracture | flobrg
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/flobrg.png[]
+
+| Ice Rafting | icerft
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icerft.png[]
+
+| Jammed Brash Barrier | jmdbrr
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/jmdbrr.png[]
+
+| Stage of Mell | stgmlt
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/stgmlt.png[]
+
+| Snow Cover | snwcvr
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/snwcvr.png[]
+
+| Strips and patches | strptc
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/strptc.png[]
+
+| Grounded Hummock | i_grhm
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/i_grhm.png[]
+
+| Iceberg | icebrg |
+
+| | icebrg 01 (Growler)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_growler.png[]
+
+| | icebrg 02 (Bergy Bit)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_bergy_bit.png[]
+
+| | icebrg 03 (Small Iceberg)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_small.png[]
+
+| | icebrg 04 (Medium Iceberg)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_medium.png[]
+
+| | icebrg 05 (Large Iceberg)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_large.png[]
+
+| | icebrg 06 (Very Large Iceberg)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_very_large.png[]
+
+| | icebrg 07 (Ice Island Fragment)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_ice_island_fragment.png[]
+
+| | icebrg 08 (Ice Island)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_ice_island.png[]
+
+| | icebrg 09 (Radar Target)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_radar_target.png[]
+
+| | icebrg 99 (Unknown)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icebrg_unknown.png[]
+
+| Ice Drift | icedft |
+
+| | icedft 01 (No Ice Motion)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_no_ice_motion.png[]
+
+| | icedft 02 (NE)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_NE.png[]
+
+| | icedft 03 (E)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_E.png[]
+
+| | icedft 04 (SE)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_SE.png[]
+
+| | icedft 05 (S)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_S.png[]
+
+| | icedft 06 (SW)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_NW.png[]
+
+| | icedft 07 (W)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_W.png[]
+
+| | icedft 08 (NW)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_NW.png[]
+
+| | icedft 09 (N)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_N.png[]
+
+| | icedft 10 (Variable)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_variable.png[]
+
+| | icedft 99 (Unknown)
+a|
+[%unnumbered]
+image::../../PC/Pixmaps/icedft_unknown.png[]
+|===
+
+==== Draw order
+The highest number will be drawn on the top.
+
+[cols="3",options="header,unnumbered"]
+|===
+| No | Name | Acronym
+
+| 1  | Sea Ice                | seacie
+| 1  | Lake Ice               | lacice
+| 2  | Iceberg Area           | seacie
+| 1  | Sea Ice                | icebrg
+| 3  | Ice Edge               | icelne
+| 4  | Iceberg Limit          | brglne
+| 5  | Limit of Open Water    | opnlne
+| 6  | Limit of All Known Ice | lkilne
+| 7  | Line of Ice Ridge      | i_ridg
+| 8  | Line of Ice Lead       | i_lead
+| 9  | Line of Ice Fracture   | i_fral
+| 10 | Line of Ice Crack      | i_crac
+| 11 | Ice Compacting         | icecom
+| 12 | Ice Lead               | icelea
+| 13 | Iceberg                | icebrg
+| 14 | Floeberg               | flobrg
+| 15 | Ice Thickness          | icethk
+| 16 | Ice Shea               | iceshr
+| 17 | Ice Divergence         | icediv
+| 18 | Ice Ridge / Hummock    | icerdg
+| 19 | Ice Keel / Bummock     | icekel
+| 20 | Ice Drift              | icedft
+| 21 | Ice Fracture           | icefra
+| 22 | Ice Rafting            | icerft
+| 23 | Jammed Brash Barrier   | jmdbrr
+| 24 | Stage of Melt          | stgmlt
+| 25 | Snow Cover             | snwcvr
+| 26 | Strips and Patches     | strptc
+| 27 | Grounded Hummock       | i_grhm
+|===
+
+
+[[sec-data-product-format-encoding]]
+== Data Product Format (encoding)
+
+=== Introduction
+
+This clause describes encoding rules for S-100 base ice datasets. For the encoding of ice datasets GML 3.2.1 is used as per <<iho-s100,part=10b>>.
+
+=== Encoding Rules
+
+==== Longitude / Latitude
+
+* Longitude and latitude must be encoded in decimal degrees, e.g.: 12.567 56.765
+* Number of decimals is not specified.
+
+=== Encoding Examples
+
+Below are three examples of the encoding of various ice features using different geometric
+primitives, the encoding of other ice objects can be done in a similar way. Encoding is defined by the S-411 GML Schema.
+
+==== Polygon Feature
+
+[source%unnumbered,xml]
+----
+        <SeaIce gml:id="ID1">
+            <snowDepth>10</snowDepth>
+            <geometry>
+                <S100:surfaceProperty>
+                    <S100:Surface gml:id="SID1">
+                        <gml:patches>
+                            <gml:PolygonPatch>
+                                <gml:exterior>
+                                    <gml:LinearRing>
+                                        <gml:posList>-40.13354268036668 69.92359353498672 -39.69638964635833 69.92155176448463 -39.723154117828216 69.82433805372922 -40.148411831183296 69.82638929895934 -40.13354268036668 69.92359353498672</gml:posList>
+                                    </gml:LinearRing>
+                                </gml:exterior>
+                            </gml:PolygonPatch>
+                        </gml:patches>
+                    </S100:Surface>
+                </S100:surfaceProperty>
+            </geometry>
+        </SeaIce>
+----
+
+==== LineString Feature
+
+[source%unnumbered,xml]
+----
+        <IcebergLimit gml:id="ID8">
+            <geometry>
+                <S100:curveProperty>
+                    <S100:Curve gml:id="CID8">
+                        <gml:segments>
+                            <gml:LineStringSegment>
+                                <gml:posList>-40.118673529550065 69.50813272244953 -39.19381234875688 69.50813272244953</gml:posList>
+                            </gml:LineStringSegment>
+                        </gml:segments>
+                    </S100:Curve>
+                </S100:curveProperty>
+            </geometry>
+        </IcebergLimit>
+----
+
+==== Point Feature
+
+[source%unnumbered,xml]
+----
+        <IceThickness gml:id="ID5">
+            <iceAverageThickness>10</iceAverageThickness>
+            <geometry>
+                <S100:pointProperty>
+                    <S100:Point gml:id="PID5">
+                        <gml:pos>-39.84661453570196 69.7617050074188</gml:pos>
+                    </S100:Point>
+                </S100:pointProperty>
+            </geometry>
+        </IceThickness>
+----
+
+
+[[sec-data-product-delivery]]
+== Data Product Delivery
+
+=== Format Specification
+
+At the moment there is only one type of dataset supported. This is GML encoded ice feature collections according to S-100 Part 10b.
+
+=== Introduction
+
+Ice Information Product will be delivered as an S-100 Exchange Set, containing datasets, metadata, etc. It is also possible that several datasets are available for an area. The decision which one to use, once installed in the system database is the responsibility of the navigator on the vessel.
+
+=== Exchange Set
+
+The exchange set for the Ice Information Product has following structure (from S-100 Part 17):
+
+[[fig-exchange-set-structure]]
+.*: Exchange set Structure*
+image::../images/figure-exchange-set-structure.png[UML diagram depicting the S-411 Exchange Set Structure]
+
+An Ice Information exchange set must conform to the structure laid out in S-100 Part 17 and may comprise datasets and S-411 catalogue files.
+
+=== Exchange Catalogue
+
+==== Exchange Catalogue Naming
+
+Name of Exchange Catalogue is pass:c,q,a,m,p[`CATALOG.XML`] as per S-100 Part 17
+
+_The clauses in italic below come from S-102 PS. JCOMM ETSI to confirm what has to be retained/deleted/adapted_
+
+Each dataset must be contained in a physically separate, uniquely identified file on the transfer medium.
+
+Each exchange set has a single exchange catalogue which contains the discovery metadata for each dataset.
+
+An exchange set is encapsulated into a form suitable for transmission by a mapping called an encoding. An encoding translates each of the elements of the exchange set into a logical form suitable for writing to media and for transmission online. An encoding may also define other elements in addition to the exchange set contents (This is media identification, data extents etc. ...) and may define commercial constructs such as encryption and compression methods.
+
+If the data is transformed in S-411 it must not be changed.
+
+This Product Specification defines the encoding which must be used as a default for transmission of data between parties.
+
+The encoding encapsulates exchange set elements as follows:
+
+*Mandatory Elements*
+
+* S-411 datasets -- GML encoding
+* Exchange Catalogue -- the XML encoded representation of exchange set catalogue features [discovery metadata].
+
+*Optional Elements*
+
+* S-411 Feature Catalogue -- If it is necessary to deliver the latest Feature Catalogue to the end user it may be done using the S-411 exchange set mechanism for datasets
+* S-411 Portrayal Catalogue -- If it is necessary to deliver the latest Portrayal Catalogue to the end user it may be done using the S-411 exchange set mechanism for datasets.
+
+=== Datasets
+
+[[subsec-dataset-size]]
+==== Dataset size
+
+No requirements for maximum dataset size are specified.
+
+[[subsec-dataset-file-naming]]
+==== Dataset file naming
+
+Dataset naming must follow a standard pattern to give implementers greater predictability of incoming datasets (see <<iho-s100,part=17,clause=4.3>>). S-411 dataset naming conventions must follow these rules and no further restrictions are made in this product specification.
+
+*411YYYYØØØØØØØØØØØØ.GML*::
+411::: the first 3 characters identify the dataset as an S-411 dataset (mandatory).
+YYYY::: the fourth to seventh characters identify the producer code according to the Producer Code Register.
+ØØØØ::: the eighth to the maximum nineteenth characters are optional and may be used in any way by the producer to provide the unique file name. The following characters are allowed in the dataset name: A to Z, 0 to 9 and the special character _ (underscore).
+GML::: denotes a GML file (according to <<iho-s100,part=10b>>).
+
+=== Exchange Set
+
+The structure of an S-411 Exchange Set must be according to the structure described below, which is based on <<iho-s100,part=17,clause=4.2>>.
+
+. An S-411 Exchange Set must contain an Exchange Set Catalogue, CATALOG.XML, its digital signature CATALOG.SIGN, and may contain any number of S-411 conformant dataset files and Catalogue files.
+
+. All content must be placed inside a top root folder named S100_ROOT. This is the only top level root folder in an Exchange Set containing only S-100 products.
+
+. The S100_ROOT folder must contain a subfolder named S-411. This subfolder holds content specific to the S-411 Product Specification.
+
+. The S-411 subfolder must contain subfolders for the component dataset files (DATASET_FILES) and Catalogues (CATALOGUES) as required.
+
+. The required Exchange Set Catalogue XML document instance must be named CATALOG.XML and placed in the S100_ROOT folder, together with its digital signature (CATALOG.SIGN) file. All other digital signatures are included within their corresponding resource metadata records in the CATALOG.XML.
+
+=== Support Files
+
+No support files are included in any of the S-411 features currently. If they are supported in the future then their specification and delivery will be added to this section.
+
+=== Exchange Catalogue
+
+The Exchange Catalogue acts as the table of contents for the Exchange Set. The Catalogue file of the Exchange Set must be named CATALOG.XML. No other file in the Exchange Set may be named CATALOG.XML. The contents of the Exchange Catalogue are described in <<sec-metadata>>.
+
+=== Data integrity and encryption
+
+<<iho-s100,part=15>> defines the algorithms for compression, encrypting and digitally signing datasets based on the S-100 Data Model. Use of encryption is optional. Digital Signatures are mandatory for all datasets.
+
+==== Use of compression
+
+The data producer decides if compression will be used on the S-411 product files (GML). It is expected that a hydrographic office will make a policy decision and that all the S-411 datasets from the producer will be either compressed or uncompressed.
+
+It is recommended to compress all the dataset files. The ZIP compression method defined in <<iho-s100,part=15,clause=5.2>> should be used where applicable.
+
+==== Use of digital signatures
+
+Digital signatures must be used on all files included in a S-411 compliant Exchange Set to meet the requirements of IMO resolution MSC.428(98) to reduce cyber security risks among users, especially when used in navigations systems at sea. The recommended signature method is defined in <<iho-s100,part=15>>.
+
+The digital signature information is encoded in the corresponding discovery block in the exchange catalogue for each file included in the Exchange Set as defined in <<iho-s100,part=17>>.
+
+
+[[sec-metadata]]
+== Metadata
+
+=== Introduction
+
+There are two kinds of metadata to prepare:
+
+* ISO 19139 Metadata +
+This kind of metadata implementation can be read by broad range of software.
+
+* S100 Metadata +
+The S100 metadata are for describing the structure of Exchange Catalogue
+
+==== ISO 19139 Metadata
+
+For the description of ice data following metadata are necessary:
+
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| MD_Metadata        | root element                | gmd
+| fileIdentifier     | Id for dataset              | gmd
+| language           | Product language            | gmd
+| characterSet       | Used characterset           | gmd
+| contact            | Contact data                | gmd
+| dateStamp          | date of publishing          | gmd
+| identificationInfo | Specific info about product | gmd
+|===
+
+[source%unnumbered,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                    xmlns:gco="http://www.isotc211.org/2005/gco"
+                    xmlns:gml="http://www.opengis.net/gml/3.2">
+        <gmd:fileIdentifier> ... </gmd:fileIdentifier>
+        <gmd:language> ... </gmd:language>
+        <gmd:characterSet> ... </gmd:characterSet>
+        <gmd:contact> ... </gmd:contact>
+        <gmd:dateStamp> ... </gmd:dateStamp>
+        <gmd:identificationInfo> ... </gmd:identificationInfo>
+</gmd:MD_Metadata>
+----
+
+===== fileIdentifier
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| fileIdentifier  | Id for dataset            | gmd
+| CharacterString | String contained id value | gmd
+|===
+
+===== language
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| language     | Language of dataset | gmd
+| LanguageCode | Code for language   | gmd
+|===
+
+[source%unnumbered,xml]
+----
+<gmd:language>
+    <gmd:LanguageCode
+        codeList="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#LanguageCode"
+        codeListValue="eng">English
+    </gmd:LanguageCode>
+</gmd:language>
+----
+
+===== characterSet
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| characterSet        | characterSet of dataset | gmd
+| MD_CharacterSetCode | Code for characterSet   | gmd
+|===
+
+LanguageCode element contains two attributes:
+
+* codeList Link to the list containing the codes for languages
+
+* codeListValue value from the list defining the used language
+
+[source%unnumbered,xml]
+----
+<gmd:characterSet>
+    <gmd:MD_CharacterSetCode
+        codeList="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+        codeListValue="utf8">UTF 8
+    </gmd:MD_CharacterSetCode>
+</gmd:characterSet>
+----
+
+===== contact
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| contact               | Contact for questions to dataset      | gmd
+| CI_ResponsibleParty   | ISO Element for contact data          | gmd
+| individualName        | Name of responsible person            | gmd
+| CharacterString       | individualName value (text)           | gco
+| organisationName      | Name of responsible organisation      | gmd
+| CharacterString       | organisationName value (text)         | gco
+| contactInfo           | Contact information                   | gmd
+| CI_Contact            | ISO Element for contact information   | gmd
+| phone                 | phone                                 | gmd
+| CI_Telephone          |                                       | gmd
+| voice                 |                                       | gmd
+| CharacterString       | Voice telephone value (text)          | gco
+| facsimile             |                                       | gmd
+| CharacterString       | Fax number value (text)               | gco
+| address               |                                       | gmd
+| deliveryPoint         |                                       | gmd
+| CharacterString       | Postal Address (street, house number) | gco
+| city                  |                                       | gmd
+| CharacterString       | City name value (text)                | gco
+| administrativeArea    |                                       | gmd
+| CharacterString       | Administrative Area name value (text) | gco
+| postalCode            |                                       | gmd
+| CharacterString       |                                       | gco
+| electronicMailAddress |                                       | gmd
+| CharacterString       | Email value (text)                    | gco
+| CI_RoleCode           |                                       | gmd
+|===
+
+CI_RoleCode element contains two attributes:
+
+* codeList: link to the list containing the codes for roles
+
+* codeListValue: value from the list defining the used roles
+
+[source%unnumbered,xml]
+----
+<gmd:contact>
+    <gmd:CI_ResponsibleParty>
+        <gmd:individualName>
+            <gco:CharacterString>Jürgen Holfort</gco:CharacterString>
+        </gmd:individualName>
+        <gmd:organisationName>
+            <gco:CharacterString>FMHA Germany (BSH)</gco:CharacterString>
+        </gmd:organisationName>
+        <gmd:contactInfo>
+            <gmd:CI_Contact>
+                <gmd:phone>
+                    <gmd:CI_Telephone>
+                        <gmd:voice>
+                            <gco:CharacterString>+49 (0) 381 4563-782</gco:CharacterString>
+                        </gmd:voice>
+                        <gmd:facsimile>
+                            <gco:CharacterString>+49 (0) 381 4563-949</gco:CharacterString>
+                        </gmd:facsimile>
+                    </gmd:CI_Telephone>
+                </gmd:phone>
+                <gmd:address>
+                    <gmd:CI_Address>
+                        <gmd:deliveryPoint>
+                            <gco:CharacterString>Neptunallee 5</gco:CharacterString>
+                        </gmd:deliveryPoint>
+                        <gmd:administrativeArea>
+                            <gco:CharacterString>Rostock</gco:CharacterString>
+                        </gmd:administrativeArea>
+                        <gmd:postalCode>
+                            <gco:CharacterString>18057</gco:CharacterString>
+                        </gmd:postalCode>
+                        <gmd:electronicMailAddress>
+                            <gco:CharacterString>ice@bsh.de</gco:CharacterString>
+                        </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                </gmd:address>
+            </gmd:CI_Contact>
+        </gmd:contactInfo>
+        <gmd:role>
+            <gmd:CI_RoleCode
+                codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+            </gmd:role>
+    </gmd:CI_ResponsibleParty>
+</gmd:contact>
+----
+
+===== dateStamp
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| dataStamp | Date Stamp                    | gmd
+| Date      | Formatted String (yyyy-MM-dd) | gco
+|===
+
+The dateStamp should be used for the publication date (just day using gco:date or including the time using gco:datetime). The date and time where the ice chart is considered valid should be given in identificationinfo (see <<sec-identification-info>>). Classic operational ice charts should have a time stamp within the temporal extent given in identificationinfo, a dateStamp preceding the temporal extent denotes a prognosis chart, a dateStamp that is more recent then the temporal extent denotes an historic reanalysis or a climatological chart.
+
+[source%unnumbered,xml]
+----
+<gmd:dateStamp>
+  <gco:Date>2013-02-25</gco:Date>
+</gmd:dateStamp>
+----
+
+[[sec-identification-info]]
+===== identificationInfo
+
+[cols="a,a,a",options="header,unnumbered"]
+|===
+| Element Name | Description | Namespace
+
+| identificationInfo       | | gmd
+| MD_DataIdentification    | |
+| citation                 | |
+| CI_Citation              | |
+| title                    | |
+| CharacterString          | | gco
+| date                     | |
+| CI_Date                  | |
+| date                     | | gco
+| dateType                 | |
+| CI_DateTypeCode          | |
+| abstract                 | |
+| CharacterString          | | gco
+| language                 | |
+| LanguageCode             | |
+| characterSet             | |
+| MD_CharacterSetCode      | |
+| topicCategory            | |
+| MD_TopicCategoryCode     | |
+| extent                   | |
+| EX_Extent                | |
+| geographicElement        | |
+| EX_GeographicBoundingBox | |
+| westBoundLongitude       | |
+| Decimal                  | | gco
+| eastBoundLongitude       | |
+| Decimal                  | | gco
+| southBoundLatitude       | |
+| Decimal                  | | gco
+| northBoundLatitude       | | gmd
+| Decimal                  | | gco
+| temporalElement          | | gmd
+| EX_TemporalExtent        | | gmd
+| extent                   | | gmd
+| TimePeriod               | | gml
+| beginPosition            | | gml
+| endPosition              | | gml
+|===
+
+[source%unnumbered,xml]
+----
+<gmd:identificationInfo>
+  <gmd:MD_DataIdentification>
+    <gmd:citation>
+      <gmd:CI_Citation>
+        <gmd:title>
+          <gco:CharacterString>IceArea25022013.shp</gco:CharacterString>
+        </gmd:title>
+        <gmd:date>
+          <gmd:CI_Date>
+            <gmd:date>
+              <gco:Date>2013-02-25</gco:Date>
+            </gmd:date>
+          <gmd:dateType>
+            <gmd:CI_DateTypeCode
+codeList="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+          </gmd:dateType>
+        </gmd:CI_Date>
+      </gmd:date>
+    </gmd:CI_Citation>
+  </gmd:citation>
+  <gmd:abstract>
+    <gco:CharacterString>Ice Chart for Baltic sea</gco:CharacterString>
+  </gmd:abstract>
+  <gmd:language>
+    <gmd:LanguageCode
+codeList="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#LanguageCode" codeListValue="eng">English</gmd:LanguageCode>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode
+codeList="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+codeListValue="utf8">UTF 8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:topicCategory>
+    <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
+  </gmd:topicCategory>
+  <gmd:extent>
+    <gmd:EX_Extent>
+      <gmd:geographicElement>
+        <gmd:EX_GeographicBoundingBox>
+          <gmd:westBoundLongitude>
+            <gco:Decimal>8.963</gco:Decimal>
+          </gmd:westBoundLongitude>
+        <gmd:eastBoundLongitude>
+          <gco:Decimal>30.353</gco:Decimal>
+        </gmd:eastBoundLongitude>
+        <gmd:southBoundLatitude>
+          <gco:Decimal>53.613</gco:Decimal>
+        </gmd:southBoundLatitude>
+        <gmd:northBoundLatitude>
+          <gco:Decimal>65.0</gco:Decimal>
+        </gmd:northBoundLatitude>
+      </gmd:EX_GeographicBoundingBox>
+    </gmd:geographicElement>
+    <gmd:temporalElement>
+          <gmd:EX_TemporalExtent>
+            <gmd:extent>
+              <gml:TimePeriod gml:id="ek1-20130225-16">
+                <gml:beginPosition>2013-02-25</gml:beginPosition>
+                <gml:endPosition>2013-02-27</gml:endPosition>
+              </gml:TimePeriod>
+            </gmd:extent>
+          </gmd:EX_TemporalExtent>
+        </gmd:temporalElement>
+      </gmd:EX_Extent>
+    </gmd:extent>
+  </gmd:MD_DataIdentification>
+</gmd:identificationInfo>
+
+----
+
+=== Language
+
+The language used in metadata must be English. Other languages are optional and only as addition to the English version.
+
+Metadata used for the discovery, identification, and use of S-411 datasets in S-100-based navigation systems (specifically, an S-100 capable ECDIS) is encoded in the exchange catalogue. This metadata conforms to <<iho-s100,part=17>>, with any product-specific restrictions noted in this section.
+
+[[subsec-exchange-set-metadata]]
+=== Exchange Set metadata
+
+For information exchange, there are several categories of metadata required: metadata about the overall Exchange Catalogue, metadata about each of the datasets contained in the Catalogue.
+
+The discovery metadata classes have numerous attributes which enable important information about the datasets to be examined without the need to process the data (e.g., decryption, decompression, loading). Other Catalogues can be included in the Exchange Set in support of the datasets such as Feature and Portrayal.
+
+The following clauses define the mandatory and optional metadata needed for S-411. In some cases, the metadata may be repeated in a national language. If this is the case it is noted in the Remarks column.
+
+The XML schemas for S-411 exchange catalogues will be available from the IHO Geospatial Information (GI) Registry and/or the S-100 GitHub site (link:++https://github.com/IHO-S100WG++[]).
+
+The S-411 exchange catalogue uses the S-100 exchange catalogue schemas which are available from the S-100 schema server at link:++https://schemas.s100dev.net++[] (downloadable archives are also available on the site for offline use). Implementation of the S-411-specific constraints described in following clauses below is left to developer decision as it can be done in various ways depending on implementation frameworks and the requirements of production or application software.
+
+[%landscape]
+<<<
+
+[[subsec-s100_exchangecatalogue]]
+=== S100_ExchangeCatalogue
+
+Each Exchange Set has a single S100_ExchangeCatalogue which contains meta information for the data in the Exchange Set.
+
+S-411 uses S100_ExchangeCatalogue without modification.
+
+==== S100_ExchangeCatalogueIdentifier
+
+S-411 uses S100_ExchangeCatalogueIdentifier without modification.
+
+==== S100_CataloguePointOfContact
+
+S-411 uses S100_CataloguePointOfContact without modification.
+
+=== S100_DatasetDiscoveryMetadata
+
+Dataset discovery metadata in S-411 restricts certain attributes and roles as described in <<tab-s100-datasetDiscoveryMetadata-params>>. Optional S-100 attributes which are mandatory in S-411 are indicated in the Remarks column.
+
+[[tab-s100-datasetDiscoveryMetadata-params]]
+.S100_DatasetDiscoveryMetadata parameters
+[cols="a,a,a,^a,a,a",options="header"]
+|===
+| Role name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_DatasetDiscoveryMetadata
+| Metadata about the individual datasets in the Exchange Catalogue
+|-
+|-
+|*The optional S-100 attributes _updateNumber_, _updateApplicationDate_, _referenceID_, and _temporalExtent_ are not used in S-411.* +
+*References to support file discovery metadata are not permitted because S-411 does not use support files.*
+
+| Attribute
+| fileName
+| Dataset file name
+| 1
+| URI
+| See <<iho-s100,part=1,clause=4.6>> +
+*Format: file:/S-411/DATASET_FILES/<dsname>* +
+*Dataset file name <dsname> must be according to format defined in <<subsec-dataset-file-naming>>.*
+
+| Attribute
+| datasetID
+| Dataset ID expressed as a Maritime Resource Name
+| 0..1
+| URN
+| The URN must be an MRN. +
+*See <<iho-s100,part=3,clause=10>>*
+
+| Attribute
+| editionNumber
+| The edition number of the dataset
+|*1*
+//Superfluous for product without updates and reissues; S-411 will always replace the full product file; change to 0 as possible accourding to S100 (RohdeBSH 07. June 2024)
+| Integer
+| When a data set is initially created, the Edition number 1 is assigned to it. The Edition number is increased by 1 at each new Edition. Edition number remains the same for a re-issue. +
+*Mandatory in S-411*
+
+| Attribute
+| issueDate
+| Date on which the data was made available by the Data Producer
+| 1
+| Date
+|-
+
+| Attribute
+| issueTime
+| Time of day at which the data was made available by the Data Producer
+| 0..1
+| Time
+| The S-100 datatype Time +
+*May be required if multiple instances of a product are issued on the same day.*
+
+| Attribute
+| boundingBox
+| The extent of the dataset limits
+|*1*
+| EX_GeographicBoundingBox
+|*Mandatory in S-411* +
+*Defined as a rectangle coincident with the outermost cell boundaries of the dataset.*
+
+| Attribute
+| productSpecification
+| The Product Specification used to create this dataset
+| 1
+| S100_ProductSpecification
+|*<<tab-s100-productSpecification-params>>*
+
+| Attribute
+| producingAgency
+| Agency responsible for producing the data
+| 1
+| CI_Responsibility>CI_Organisation
+| See <<iho-s100,part=17,table=17-3>>
+
+| Attribute
+| producerCode
+| The official IHO Producer Code from S-62
+| 1
+| CharacterString
+|*Mandatory in S-411*
+
+| Attribute
+| encodingFormat
+| The encoding format of the dataset
+| 1
+| S100_EncodingFormat
+|*The only allowed value is GML* +
+*<<tab-s100-encodingFormat-params>>*
+
+| Attribute
+| dataCoverage
+| Provides information about data coverages within the dataset
+|*1*..*
+| S100_DataCoverage
+|*Mandatory in S-411* +
+*<<tab-s100-dataCoverage-params>>*
+
+| Attribute
+| comment
+| Any additional information
+| 0..1
+| CharacterString
+|-
+
+| Attribute
+| defaultLocale
+| Default language and character set used in the dataset
+| 0..1
+| PT_Locale
+| In absence of defaultLocale, the language is English, and the character set is UTF-8.
+
+| Attribute
+| otherLocale
+| Other languages and character sets used in the dataset
+| 0..*
+| PT_Locale
+|
+
+| Attribute
+| metadataPointOfContact
+| Point of contact for metadata
+| 0..1
+| CI_Responsibility>CI_Individual +
+or +
+CI_Responsibility>CI_Organisation
+| Only if metadataPointOfContact differs from producingAgency
+
+| Attribute
+| metadataDateStamp
+| Date stamp for metadata
+| 0..1
+| Date
+| May or may not be the issue date
+
+
+| Attribute
+| replacedData
+| Indicates if a cancelled dataset is replaced by another data file(s)
+| 0..1
+| Boolean
+| See note following <<iho-s100,part=17,table=S100_DatasetDiscoveryMetadata>> +
+*Mandatory when purpose = cancellation*
+
+| Attribute
+| dataReplacement
+| Dataset name
+| 0..*
+| CharacterString
+| A dataset may be replaced by 1 or more datasets. +
+*Dataset name must be according to format defined in <<subsec-dataset-file-naming>>.* +
+*For example, _411DE00KD54.GML_* +
+See note following <<iho-s100,part=17,table=S100_DatasetDiscoveryMetadata>> +
+*Mandatory when replacedData = true*
+
+| Attribute
+| navigationPurpose
+| Classification of intended navigation purpose (for Catalogue indexing purposes)
+|*1*..3
+| S100_NavigationPurpose
+| If Product Specification is intended for creation of navigational products, this attribute should be mandatory. +
+*Mandatory in S-411*
+
+
+|===
+
+==== S100_NavigationPurpose
+
+S-411 uses S100_NavigationPurpose without modification.
+
+==== S100_DataCoverage
+
+S-411 uses S100_DataCoverage without modification, but with additional remarks and changes to the multiplicity.
+
+[[tab-s100-dataCoverage-params]]
+.S100_DataCoverage parameters
+[cols="a,a,a,^a,a,a",options="header"]
+|===
+| Role name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_DataCoverage
+| A spatial extent where data is provided along with the display scale information for the provided data
+|-
+|-
+| This field is used by user systems as part of the data loading and unloading algorithms, and it is strongly encouraged that Product Specifications mandate the use of one or more of the displayScale provided as part of S100_DataCoverage.
+
+| Attribute
+| boundingPolygon
+| A polygon which defines the actual data limit
+| 1
+| EX_BoundingPolygon
+|<<note-s100datacoverage-boundingPolygon>>
+
+| Attribute
+| temporalExtent
+| Specification of the temporal extent of the coverage
+|*0*
+| S100_TemporalExtent
+|*The _temporalExtent_ is not used in S-411.*
+
+| Attribute
+| optimumDisplayScale
+| The scale at which the data is optimally displayed
+| 1
+| Integer
+| Example: A scale of 1:25000 is encoded as 25000
+
+| Attribute
+| maximumDisplayScale
+| The maximum scale at which the data is displayed
+| 0..1
+| Integer
+|
+
+| Attribute
+| minimumDisplayScale
+| The minimum scale at which the data is displayed
+| 0..1
+| Integer
+|
+
+|===
+[[note-s100datacoverage-boundingPolygon]]
+[NOTE]
+====
+_boundingPolygon_ is restricted to a single GML Polygon with one exterior and 0 or more interiors expressed as Linear Rings using SRS EPSG:4326. The exterior and optional interiors shall be composed of a closed sequence of >=4 coordinate positions expressed individually or as a list (posList). The GML polygon shall have a valid GML identifier.
+====
+
+==== S100_Purpose
+
+S-411 uses S100_Purpose without modification, but with a restriction on the allowed values.
+
+[[tab-s100-purpose]]
+.S100_Purpose
+[cols="a,a,a,^a,a,options="header"]
+|===
+| Role name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_Purpose
+| The purpose of the dataset
+|-
+|*The S-100 values _update_, _reissue_, and _delta_ are not used in S-411.*
+
+| Value
+| newDataset
+| Brand new dataset
+| 1
+| No data has previously been produced for this area.
+
+| Value
+| newEdition
+| New edition of the dataset or Catalogue
+| 2
+| Includes new information which has not been previously distributed by updates.
+
+| Value
+| cancellation
+| Dataset or Catalogue that has been cancelled
+| 5
+| Indicates the dataset or Catalogue should no longer be used and can be deleted.
+|===
+
+==== S100_EncodingFormat
+
+S-411 uses S100_EncodingFormat with a restriction on the allowed values to permit only the S-100 GML format for S-411 datasets.
+
+[[tab-s100-encodingFormat-params]]
+.S100_EncodingFormat parameters
+[cols="a,a,a,^a,a",options="header"]
+|===
+| Role name | Name | Description | Code | Remarks
+
+| Enumeration
+| S100_EncodingFormat
+| The encoding format
+|-
+|*The only value allowed in S-411 is "pass:c,q,a,m,p[`GML`]".*
+
+| Value
+| GML
+| The GML data format as defined in <<iho-s100,part=10b>>
+| 3
+|-
+|===
+
+==== S100_ProductSpecification
+
+S-411 uses S100_ProductSpecification without modification, but with additional remarks and changes to the multiplicity.
+
+[[tab-s100-productSpecification-params]]
+.S100_ProductSpecification parameters
+[cols="a,a,a,^a,a,a",options="header"]
+|===
+| Role name | Name | Description | Mult | Type | Remarks
+
+| Class
+| S100_ProductSpecification
+| The Product Specification contains the information needed to build the specified product.
+|-
+|-
+|-
+
+| Attribute
+| name
+| The name of the Product Specification used to create the datasets
+|*1*
+| CharacterString
+| The name in the GI Registry should be used for this field. +
+*For S-411, this name is "Ice Information" (as of 25 June 2024).*
+
+| Attribute
+| version
+| The version number of the Product Specification
+|*1*
+| CharacterString
+| TR 2/2007 specifies versioning of Product Specifications +
+*Example: 1.2.1 for S-411 Edition 1.2.1*
+
+| Attribute
+| date
+| The version date of the Product Specification
+|*1*
+| Date
+|-
+
+| Attribute
+| productIdentifier
+| Machine readable unique identifier of a product type
+| 1
+| CharacterString +
+(Restricted to Product ID values from the IHO Product Specification Register in the IHO Geospatial Information (GI) Registry)
+|*For S-411, this identifier is "S-411" (without quotes).*
+
+| Attribute
+| number
+| The number used to lookup the product in the Product Specification Register of the IHO GI registry
+| 1
+| Integer
+| For IHO Product Specifications, these numbers should be taken from the IHO Product Specification Register in the IHO GI Registry. +
+*The corresponding Idx-number of the IHO Registry for S-411 is numbered _xxx_.*
+
+|===
+
+
+==== S100_ProtectionScheme
+
+S-411 uses S100_ProtectionScheme without modification.
+
+=== S100_CatalogueDiscoveryMetadata
+
+S-411 uses S100_CatalogueDiscoveryMetadata without modification.
+
+==== S100_CatalogueScope
+
+S-411 uses S100_CatalogueScope without modification.
+
+[[sec-pt-locale]]
+==== PT_Locale
+
+S-411 uses PT_Locale without modification.
+The class PT_Locale is defined in <<iso-19115-1>>. LanguageCode, CountryCode, and MD_CharacterSetCode are ISO codelists which are defined in a codelists file which is part of the S-100 Edition 5.2.0 schema distribution.
+
+[[sec-certs-digsign]]
+=== Certificates and Digital Signatures
+
+The classes S100_SE_CertificateContainerType (<<iho-s100,part=15,clause=8.11.1>>), S100_SE_DigitalSignatureReference (<<iho-s100,part=15,clause=8.11.7>>), and S100_SE_DigitalSignature are defined in <<iho-s100,part=15>> and implemented in the S-100 generic schemas.
+
+In accordance with <<iho-s100,part=15>>, only the ECDSA algorithm is allowed from the S100_SE_DigitalSignatureReference enumeration.
+
+S-411 uses S100_SE_DigitalSignature without modification. As stated in <<iho-s100,part=15,clause=15-8.11.3>>:
+
+"The class S100_SE_DigitalSignature is realized as one of either S100_SE_SignatureOnData (a digital signature of a particular identified resource) or an additional digital signature defined using the class S100_SE_AdditionalSignature, each of which is either a S100_SE_SignatureOnData or S100_SE_SignatureOnSignature element as described in <<iho-s100,part=15,clause=8.8>>. <<iho-s100,part=17>> metadata thus allows for multiple digital signatures, a single mandatory S100_SE_SignatureOnData and any number of additional signatures, either of the data or other signatures."
+
+
+[[sec-datasets]]
+== Dataset Encoding
+
+=== Introduction
+
+A dataset is a grouping of features, attributes, geometry and metadata which comprises a specific coverage.
+
+=== Dataset Rules
+
+In order to facilitate the efficient processing of S-411 data the geographic coverage of a given *maximum display* scale may be split into multiple datasets.
+
+The discovery metadata of a dataset must list all the *Data Coverage* features contained within that dataset and their assigned scale attributions.
+
+Datasets must not cross the 180° meridian; this includes both the *Data Coverage* features and the bounding box for the dataset.
+
+=== Data Coverage rules
+
+* All base datasets (new dataset, new edition) must contain at least one *Data Coverage* feature.
+* The data boundary of the base dataset is defined by the extent of the *Data Coverage* features and must be contained within the bounding box.
+* The *Data Coverage* features within a dataset must not overlap, however *Data Coverage* features from different datasets may overlap if they have differing *maximum display scales*.
+* Datasets may overlap, however there must be no overlapping *Data Coverage* features of the same *maximum display scale*, except at the agreed adjoining national data limits, where, if it is difficult to achieve a perfect join, a 5 metre overlapping buffer zone may be used; and for this situation, there must be no gaps in data.
+* When a dataset has multiple *Data Coverage* features, then the *minimum display scale* must be the same for all *Data Coverage* features within the dataset. The *maximum display scale* for multiple *Data Coverage* features within a dataset may be different.
+* When a dataset has multiple *Data Coverage features* then the *maximum display scale* of the dataset must be equal to the largest *maximum display scale* of the *Data Coverage* features.
+* The *maximum display scale* is considered to be the equivalent of the compilation scale of the data.
+
+
+== Display Scale Range
+
+A scale range of a dataset is used to indicate a range of scales between which a producer considers the data is intended for use. The smallest scale is defined by the *minimum display scale* and the largest scale by the *maximum display scale*. These scales must be set at one of the scales specified elsewhere in this product specification.
+
+When the system's viewing scale is smaller than the value indicated by *minimum display scale*, features within the *Data Coverage* feature are not displayed.
+
+== Geometry
+
+=== S-411 Geometry
+
+S-411 Ice Information features are encoded as vector entities which conform to S-100 geometry configuration level 3a (S-100 clause 7-4.3).
+
+Level 3a is described by the following constraints:
+
+* Each curve must reference a start and end point (they may be the same).
+* Curves must not self intersect. See <<S_100,Figure=7-5>>.
+* Areas are represented by a closed loop of curves beginning and ending at a common point.
+* In the case of areas with holes, all internal boundaries must be completely contained within the external boundary and the internal boundaries must not intersect each other or the external boundary. Internal boundaries may touch other internal boundaries or the external boundary tangentially (that is at one point) as shown in <<S_100,Figure=7-6>>.
+* The outer boundary of a surface must be in a clockwise direction (surface to the right of the curve) and the curve orientation positive. The inner boundary of a surface must be in a counter-clockwise direction (surface to the right of the curve) and the curve orientation negative. See <<S_100,Figure=7-7>>.
+
+
+[[annex-list-annexes]]
+== List of annexes
+
+These Annexes are separate files and can be found either in the S-411 Product Specification distribution package or at the locations indicated.
+
+Annex A:: Data Classification and Encoding Guide. Separate document. IHO Geospatial Information Registry, link:++https://registry.iho.int++[]
+
+Annex B:: Encoding Format. GML schema, Schematron rule files, and schema documentation. S-100 schema server, link:++https://schemas.s100dev.net++[] #*TBC*#
+
+Annex C:: Feature catalogue. XML file. IHO Geospatial Information Registry, link:++https://registry.iho.int++[]
+
+Annex D:: Validation Checks. Separate document. IHO Geospatial Information Registry,
+link:++https://registry.iho.int++[] #*TBC*#
+
+Annex E:: Portrayal Catalogue. Zip archive of portrayal catalogue. IHO Geospatial Information Registry, link:++https://registry.iho.int++[]

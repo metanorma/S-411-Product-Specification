@@ -1,0 +1,2742 @@
+= Ice Information Data Classification and Encoding Guide
+:series: S
+:docnumber: 411
+:doctype: standard
+:edition: 1.2.0
+:language: en
+:published-date: 2025-01-01-31
+:copyright-year: 2025
+:committee: WMO- JCOMM
+:workgroup: ETSI
+:toclevels: 3
+:mn-document-class: iho
+:mn-output-extensions: html,doc,pdf
+:local-cache-only:
+:imagesdir: images
+:status: draft-development
+
+
+
+[.preface]
+== Document History
+
+Changes to this Specification are coordinated by WMO/IOC Joint Technical Commission for Oceanography and Marine Meteorology (JCOMM). New editions will be made available via the IHO web site.
+
+[cols="a,a,a,a",options="headers,unnumbered"]
+|===
+| Version Number | Date | Approved By | Purpose
+
+| 1.2.0
+| xx January 2025
+| WMO
+| Draft 1. Version number in line with the PS
+|===
+
+
+[[sec-overview]]
+== Overview
+
+=== Preface
+
+The "Data Classification and Encoding Guide” has been developed to provide consistent, standardized instructions for encoding S-411 data.
+
+The purpose of the Data Classification and Encoding Guide is to facilitate S-411 encoding to meet JCOMM - ETSI standards for the proper display of Ice Information in an ECDIS. The document describes how to encode ice information considered relevant to be displayed on an ECDIS. The content of an Ice Information product is at the discretion of the producing authority provided that the conventions described within this document are followed. A "producing authority” is a Hydrographic Office (HO) or an organization authorized by a government, HO or other relevant government institution to produce Ice Information product.
+
+The entire S-411 Standard, including the S-411 ENC Product Specification, is available at the following
+web site, link:++https://iho.int/++[].
+
+=== S-101 Annex A - Data Classification and Encoding Guide - Metadata
+
+NOTE:: This information uniquely identifies this Annex to the Product Specification and provides
+information about its creation and maintenance.
+
+*Title*:: The World Meteorological Organization Ice Information Product Specification, Annex A – Data Classification and Encoding Guide
+
+*Version*:: 1.2.0
+
+*Date*:: xx 2025
+
+*Language*:: English
+
+*Classification*:: Unclassified
+
+*Contact*:: World Meteorological Organization +
+7 bis, avenue de la Paix +
+P.O. Box 2300 +
+CH-1211 Geneva 2, Switzerland +
+Telephone: +41 (0) 22 730 84 03 +
+Email: publications@wmo.int
+
+*URL*:: link:++https://mwo.int/++[]
+
+*Identifier*:: S-411 Annex A
+
+*Maintenance*:: Changes to S-411 Annex A; Data Classification and Encoding Guide are coordinated by the JCOMM - ETSI Project Team, and must be made available via the IHO web site.
+
+=== Terms, definitions and abbreviations
+
+==== Terms and definitions
+
+See S-411 Product Specification Main document, clause 1.3.2.
+
+==== Abbreviations
+
+For a list of abbreviations, see the Ice Information Product Specification, Clause 1.3.3.
+
+=== Use of language
+
+Within this document:
+
+* "pass:c,q,a,m,p[`Must`]" indicates a mandatory requirement.
+* "pass:c,q,a,m,p[`Should`]" indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.
+* "pass:c,q,a,m,p[`May`]" means "pass:c,q,a,m,p[`allowed to`]" or "pass:c,q,a,m,p[`could possibly`]" and is not mandatory.
+
+=== Maintenance
+
+Changes to the Data Classification and Encoding Guide must occur in accordance with the S-411 Ice Information Product Specification clause 1.6.
+
+
+[[sec-general]]
+== General
+
+=== Introduction
+
+This S-411 Data Classification and Encoding Guide (DCEG) contains rules and guidance for converting data describing the real world into data products that conform to the S-411 specification.
+
+The S-411 specification contains an application schema (UML model) describing the conceptual domain model in terms of classes and a Feature Catalogue (see S-411 Annex B) that specifies the data model, i.e., specifies the data model types corresponding to the various classes in the application schema.
+
+To simplify the DCEG text, the various data model types will be provided without the suffixes “class”, “type” or “instance”; e.g. the term “feature” should be understood as “feature class” or “feature type” or “feature instance” as best fits the immediate context in which it is used (and where there might be confusion, it is written out in full as feature class/type/instance).The model defines real world entities as a combination of descriptive and spatial characteristics (S-411 Product Specification clause 6).
+
+This clause of the DCEG contains general information needed to understand the encoding rules and describes fundamental common rules and constraints. It also describes datasets and metadata. The data model object types used within S-411 and their encoding rules and guidelines are defined in detail in subsequent clauses of this document.
+
+Within this document the features and attributes appear in *bold text* or _italic text_, to distinguish them from surrounding words.
+
+=== Descriptive characteristics
+
+==== Feature
+
+A feature contains descriptive attributes that characterize real world entities.
+
+The word 'feature' as used in the ISO 191xx series and in S-100 based product specifications has two distinct but related senses – 'feature type' and 'feature instance'. A feature instance is a single occurrence of the feature and is represented as an object in a dataset.
+
+The location of a feature instance on the Earth's surface is indicated by a relationship to one or more spatial primitive instances.
+
+S-411 only makes use of the *Geographic (Geo) feature type* which carries the descriptive characteristics of a real-world entity.
+
+==== Geographic feature class
+
+*Geographic (Geo) feature types* carry the descriptive characteristics of a real world entity which is provided by a spatial primitive instance.
+
+==== Meta feature class
+
+*Meta feature type* contains information about other features.
+
+==== Charted background feature
+
+The data product would mostly be visualized as an overlay of an ENC or other GIS applications. Consequently, all necessary descriptive and spatial characteristics to provide a charted background should be provided by the
+underlying application.
+
+=== Spatial characteristics
+
+==== Spatial primitives
+
+The allowable geometric primitive for each feature type is defined in the Feature Catalogue. Allowable geometric primitives are point, curve and surface. Each spatial value must be referenced by at least one feature instance.
+
+Within this document, allowable primitives are included in the description of each feature type. For easy reference, Table 2-1 below summarises the allowable geometric primitives for each feature. In the Table, abbreviations are as follows: point (P), curve (C) and surface (S).
+
+
+[[tab-features-spatial-primitives]]
+.Features and their spatial primitives
+[cols="5,1,1,1",options="headers,unnumbered"]
+|===
+| Feature | P | C | S
+
+4+| [.underline]#*Geographic Features*#
+
+| Floeberg                    | P |   |
+| Grounded Hummock            | P |   |
+| Ice Compacting              | P |   |
+| Ice Divergence              | P |   |
+| Ice Drift                   | P |   |
+| Ice Edge                    |   | C |
+| Ice Fracture                |   | C |
+| Ice Keel/Bummock            | P |   |
+| Ice Lead                    |   | C |
+| Ice Rafting                 | P |   |
+| Ice Ridge/Hummock           | P |   |
+| Ice Shear                   | P |   |
+| Ice Thickness               | P |   |
+| Iceberg                     | P |   |
+| Iceberg Area                |   |   | S
+| Iceberg Limit               |   | C |
+| Jammed Brash Barrier        | P |   |
+| Lake Ice                    |   |   | S
+| Limit of All Known Ice      |   | C |
+| Limit of Open Water         |   | C |
+| Line of Ice Crack           |   | C |
+| Line of Ice Fracture        |   | C |
+| Line of Ice Lead            |   | C |
+| Line of Ice Ridge           |   | C |
+| Sea Ice                     |   |   | S
+| Seperate Giant Floe *(TBC)* | P |   |
+| Snow Cover                  | P |   |
+| Stage of Melt               | P |   |
+| Strips and Patches          | P |   |
+|===
+
+
+
+[[sec-metafeatures]]
+== Meta Features
+
+=== Introduction
+
+[[sec-geofeatures]]
+== Geo Features
+
+[[sec-SeaIce]]
+=== Sea Ice
+
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Sea Ice is an area at sea that is covered, in whole or in part, with ice.
+a| [underline]#**S-411 Geo Feature:**# Sea Ice
+a| [underline]#**Primitives**: surface#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Total Concentration
+| (ICEACT)
+|
+| EN
+| 0,1
+| Partial Concentration
+| (ICEAPC)
+|
+| EN
+| 0,3
+| Ice Stage of Development
+| (ICESOD)
+|
+| EN
+| 0,5
+| Floe Sizes
+| (ICEFLZ)
+|
+| EN
+| 0,3
+| Concentration of Strips and Patches
+| (ICESPC)
+|
+| EN
+| 0,1
+| Level Ice
+| (ICELVL)
+|
+| EN
+| 0,1
+| Compacting Strength
+| (ICECST)
+|
+| EN
+| 0,1
+| Ice Fracture Type
+| (ICEFTY)
+|
+| EN
+| 0,1
+| Ice Drift Speed
+| (ICEDSP)
+|
+| RE
+| 0,1
+| Ice Drift Direction
+| (ICEDDR)
+|
+| EN
+| 0,1
+| Ice Ridge Concentration
+| (ICERCN)
+|
+| EN
+| 0,3
+| Ice Ridge Frequency
+| (ICERFQ)
+|
+| IN
+| 0,1
+| Ice Ridge Mean Height
+| (ICERMH)
+|
+| IN
+| 0,1
+| Ice Ridge Maximum Height
+| (ICERXH)
+|
+| IN
+| 0,1
+| Ice Ridge Classification
+| (ICERDV)
+|
+| EN
+| 0,1
+| Ice Keel Concentration
+| (ICEKCN)
+|
+| EN
+| 0,1
+| Ice Average Thickness
+| (ICETCK)
+|
+| IN
+| 0,1
+| Maximum Ice Thickness
+| (ICEMAX)
+|
+| IN
+| 0,1
+| Mimimum Ice Thickness
+| (ICEMIN)
+|
+| IN
+| 0,1
+| Ice Thickness Type
+| (ICETTY)
+|
+| EN
+| 0,1
+| Melt Stage
+| (ICEMLT)
+|
+| EN
+| 0,1
+| Snow Cover Concentration
+| (ICESCN)
+|
+| EN
+| 0,1
+| Snow Depth
+| (ICESCT)
+|
+| IN
+| 0,1
+| Direction of Sastrugi
+| (ICEDOS)
+|
+| EN
+| 0,1
+| Ice Lead Status
+| (ICELST)
+|
+| EN
+| 0,1
+| Frequency of Leads or Fractures
+| (ICELFQ)
+|
+| IN
+| 0,1
+| Orientation of Leads or Fractures
+| (ICELOR)
+|
+| EN
+| 0,1
+| Ice Lead (or Fracture or Crack) Width
+| (ICELWD)
+|
+| IN
+| 0,1
+| Combination Ice Stage of Development and Floe Size for the 1st partial concentration
+| ()
+|
+| C
+| 0,3
+| Combination Ice Stage of Development and Floe Size for the 2nd partial concentration
+| ()
+|
+| C
+| 0,3
+| Combination Ice Stage of Development and Floe Size for the 3rd partial concentration
+| ()
+|
+| C
+| 0,3
+| Ice Breccia for the first partial concentration
+| ()
+|
+| C
+| 0,3
+| Ice Breccia for the second partial concentration
+| ()
+|
+| C
+| 0,3
+| Ice Breccia for the third partial concentration
+| ()
+|
+| C
+| 0,3
+| Snow cover
+| (IA_SNG)
+|
+| EN
+| 0,1
+| Stage of Melting
+| (IA_MLT)
+|
+| EN
+| 0,1
+| Contamination
+| (IA_PLG)
+|
+| EN
+| 0,1
+| Hills Concentration
+| (IA_HLG)
+|
+| EN
+| 0,1
+| Fractures Concentration
+| (IA_DUG)
+|
+| EN
+| 0,1
+|===
+
+If it is required to encode the possible existence of sea ice in a sea water area, it must be done using the feature *Sea Ice*.
+
+*Sea Ice* must not overlap *Lake Ice* feature.
+
+
+[[sec-LakeIce]]
+=== Lake Ice
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Lake Ice is an area on a lake that is covered, in whole or in part, with ice.
+a| [underline]#**S-411 Geo Feature:**# Lake Ice
+a| [underline]#**Primitives**: surface#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Total Concentration
+| (ICEACT)
+|
+| EN
+| 0,1
+| Partial Concentration
+| (ICEAPC)
+|
+| EN
+| 0,3
+| Lake Ice Stage of Development
+| (ICELSO)
+|
+| EN
+| 0,5
+| Floe Sizes
+| (ICEFLZ)
+|
+| EN
+| 0,3
+| Concentration of Strips and Patches
+| (ICESPC)
+|
+| EN
+| 0,1
+| Level Ice
+| (ICELVL)
+|
+| EN
+| 0,1
+| Compacting Strength
+| (ICECST)
+|
+| EN
+| 0,1
+| Ice Fracture Type
+| (ICEFTY)
+|
+| EN
+| 0,1
+| Ice Drift Speed
+| (ICEDSP)
+|
+| RE
+| 0,1
+| Ice Drift Direction
+| (ICEDDR)
+|
+| EN
+| 0,1
+| Ice Ridge Concentration
+| (ICERCN)
+|
+| EN
+| 0,3
+| Ice Ridge Frequency
+| (ICERFQ)
+|
+| IN
+| 0,1
+| Ice Ridge Mean Height
+| (ICERMH)
+|
+| IN
+| 0,1
+| Ice Ridge Maximum Height
+| (ICERXH)
+|
+| IN
+| 0,1
+| Ice Ridge Classification
+| (ICERDV)
+|
+| EN
+| 0,1
+| Ice Keel Concentration
+| (ICEKCN)
+|
+| EN
+| 0,1
+| Ice Average Thickness
+| (ICETCK)
+|
+| IN
+| 0,1
+| Maximum Ice Thickness
+| (ICEMAX)
+|
+| IN
+| 0,1
+| Mimimum Ice Thickness
+| (ICEMIN)
+|
+| IN
+| 0,1
+| Ice Thickness Type
+| (ICETTY)
+|
+| EN
+| 0,1
+| Melt Stage
+| (ICEMLT)
+|
+| EN
+| 0,1
+| Snow Cover Concentration
+| (ICESCN)
+|
+| EN
+| 0,1
+| Snow Depth
+| (ICESCT)
+|
+| IN
+| 0,1
+| Direction of Sastrugi
+| (ICEDOS)
+|
+| EN
+| 0,1
+| Ice Lead Status
+| (ICELST)
+|
+| EN
+| 0,1
+| Frequency of Leads or Fractures
+| (ICELFQ)
+|
+| IN
+| 0,1
+| Orientation of Leads or Fractures
+| (ICELOR)
+|
+| EN
+| 0,1
+| Ice Lead (or Fracture or Crack) Width
+| (ICELWD)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-IcebergArea]]
+=== Iceberg Area
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# An Iceberg Area is an area at sea in which icebergs, bergy bits, or growlers are present.
+a| [underline]#**S-411 Geo Feature:**# Iceberg Area
+a| [underline]#**Primitives**: surface#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Number of Icebergs in Area
+| (ICEBNM)
+|
+| IN
+| 0,1
+| Iceberg Size
+| (ICEBSZ)
+|
+| EN
+| 0,1
+| Iceberg Concentration
+| (IA_BCN)
+|
+| EN
+| 0,1
+| Prevailing Iceberg Form
+| (IA_BFM)
+|
+| EN
+| 0,1
+| Maximum Height of Above Water Part (iceberg/grounded hummock)
+| (IA_BUH)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-IceEdge]]
+=== Ice Edge
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :#  The demarcation at any given time between the open sea and sea ice of any kind and in any concentration, whether fast or drifting.
+a| [underline]#**S-411 Geo Feature:**# Ice Edge
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-IcebergLimit]]
+=== Iceberg Limit
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Limit of all known Icebergs.
+a| [underline]#**S-411 Geo Feature:**# Iceberg Limit
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-LimitOfOpenWater]]
+=== Limit of Open Water
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# The demarcation at any given time between sea ice and freely navigable water, in which sea ice is present in concentrations less than 1/10.
+a| [underline]#**S-411 Geo Feature:**# Limit of Open Water
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-LimitOfAllKnownIce]]
+=== Limit of All Known Ice
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# The limit of all known ice, including both sea ice of any kind and icebergs.
+a| [underline]#**S-411 Geo Feature:**# Limit of All Known Ice
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-LineOfIceRidge]]
+=== Line of Ice Ridge
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Line of Ice Ridge is a line or wall of broken ice forced up by pressure processes.
+a| [underline]#**S-411 Geo Feature:**# Line of Ice Ridge
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Ridge Classification
+| (ICERDV)
+|
+| EN
+| 0,1
+| Ice Ridge Mean Height
+| (ICERMH)
+|
+| IN
+| 0,1
+| Ice Ridge Maximum Height
+| (ICERXH)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-LineOfIceLead]]
+=== Line of Ice Lead
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Line of Ice Lead identifies any passage-way(s) through ice which is (are) navigable by surface vessels.
+a| [underline]#**S-411 Geo Feature:**# Line of Ice Lead
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Stage of Development
+| (ICESOD)
+|
+| EN
+| 0,5
+| Number of Ice Objects
+| (IA_OBN)
+|
+| IN
+| 0,1
+| Average Width of Ice Lead (or Fracture or Crack)
+| (ICEDVW)
+|
+| IN
+| 0,1
+| Minimum Width of Ice Lead (or Fracture or Crack)
+| (IA_DMW)
+|
+| IN
+| 0,1
+| Maximum Width of Ice Lead (or Fracture or Crack)
+| (IA_DXW)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-LineOfIceFracture]]
+=== Line of Ice Fracture
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Any break or rupture through the ice cover, or through the single floe, resulting from deformation processes. Length may vary from a few meters to a few kilometers.
+a| [underline]#**S-411 Geo Feature:**# Line of Ice Fracture
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Stage of Development
+| (ICESOD)
+|
+| EN
+| 0,5
+| Number of Ice Objects
+| (IA_OBN)
+|
+| IN
+| 0,1
+| Average Width of Ice Lead (or Fracture or Crack)
+| (ICEDVW)
+|
+| IN
+| 0,1
+| Minimum Width of Ice Lead (or Fracture or Crack)
+| (IA_DMW)
+|
+| IN
+| 0,1
+| Maximum Width of Ice Lead (or Fracture or Crack)
+| (IA_DXW)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-LineOfIceCrack]]
+=== Line of Ice Crack
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Line of Ice Crack identifies any ice breakup, but no passage-way(s) for surface vessels.
+a| [underline]#**S-411 Geo Feature:**# Line of Ice Crack
+a| [underline]#**Primitives**: curve#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Stage of Development
+| (ICESOD)
+|
+| EN
+| 0,5
+| Number of Ice Objects
+| (IA_OBN)
+|
+| IN
+| 0,1
+| Average Width of Ice Lead (or Fracture or Crack)
+| (ICEDVW)
+|
+| IN
+| 0,1
+| Minimum Width of Ice Lead (or Fracture or Crack)
+| (IA_DMW)
+|
+| IN
+| 0,1
+| Maximum Width of Ice Lead (or Fracture or Crack)
+| (IA_DXW)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-IceCompacting]]
+=== Ice Compacting
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Pieces of ice are said to be compacting when they are subjected to a converging motion, which increases ice concentration and/or produces stresses which may result in ice deformation.
+a| [underline]#**S-411 Geo Feature:**# Ice Compacting
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Compacting Strength
+| (ICECST)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-IceLead]]
+=== Ice Lead
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Ice Lead identifies any fracture(s) or passage-way(s) through ice which is (are) navigable by surface vessels.
+a| [underline]#**S-411 Geo Feature:**# Ice Lead
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Location Information
+| (ICELOC)
+|
+| EN
+| 0,1
+| Ice Lead Status
+| (ICELST)
+|
+| EN
+| 0,1
+| Ice Lead (or Fracture or Crack) Width
+| (ICELWD)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-Iceberg]]
+=== Iceberg
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# An Iceberg is a massive piece of ice, greatly varying in shape and showing more than 5 meters above the sea surface which has broken away from a glacier, and which may be afloat or grounded. This Object Class also includes smaller forms of glacial ice, known as "Bergy Bits" and "Growlers", which are defined by their size Attribute. ICEBRG can indicate the location of a single iceberg or, if the attribute IA_OBN is specified and is greater than 1, multiple icebergs in the vicinity of a point.
+a| [underline]#**S-411 Geo Feature:**# Iceberg
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Iceberg Size
+| (ICEBSZ)
+|
+| EN
+| 0,1
+| Ice Drift Speed
+| (ICEDSP)
+|
+| RE
+| 0,1
+| Ice Drift Direction
+| (ICEDDR)
+|
+| EN
+| 0,1
+| Number of Ice Objects
+| (IA_OBN)
+|
+| IN
+| 0,1
+| Prevailing Iceberg Form
+| (IA_BFM)
+|
+| EN
+| 0,1
+| Maximum Height of Above Water Part (iceberg/grounded hummock)
+| (IA_BUH)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-Floeberg]]
+=== Floeberg
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# A Floeberg is a massive piece of sea ice composed of a hummock or a group of hummocks, frozen together and separated from any ice surroundings. They typically protrude up to 5 meters above the sea surface.
+a| [underline]#**S-411 Geo Feature:**# Floeberg
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+
+| Ice Drift Speed     | (ICEDSP) | | RE | 0,1
+| Ice Drift Direction | (ICEDDR) | | EN | 0,1
+|===
+
+
+[[sec-IceThickness]]
+=== Ice Thickness
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Ice Thickness provides a measure or estimate of ice thickness.
+a| [underline]#**S-411 Geo Feature:**# Ice Thickness
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Average Thickness
+| (ICETCK)
+|
+| IN
+| 0,1
+| Maximum Ice Thickness
+| (ICEMAX)
+|
+| IN
+| 0,1
+| Mimimum Ice Thickness
+| (ICEMIN)
+|
+| IN
+| 0,1
+| Ice Thickness Type
+| (ICETTY)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-IceShear]]
+=== Ice Shear
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# An area of drift ice is subject to shear when the ice motion varies significantly in the direction normal to the motion, subjecting the ice to rotational forces.
+a| [underline]#**S-411 Geo Feature:**# Ice Shear
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-IceDivergence]]
+=== Ice Divergence
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Ice fields or floes in an area are subject to diverging or dispersive motion, thus reducing ice concentration and/or relieving stresses in the ice.
+a| [underline]#**S-411 Geo Feature:**# Ice Divergence
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-IceRidgeHummock]]
+=== Ice Ridge/Hummock
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# An Ice Ridge is a line or wall of broken ice forced up by pressure. A Hummock is a hillock of broken ice which has been forced upward by pressure.
+a| [underline]#**S-411 Geo Feature:**# Ice Ridge/Hummock
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Ridge Concentration
+| (ICERCN)
+|
+| EN
+| 0,1
+| Ice Ridge Frequency
+| (ICERFQ)
+|
+| IN
+| 0,3
+| Ice Ridge Mean Height
+| (ICERMH)
+|
+| IN
+| 0,1
+| Ice Ridge Maximum Height
+| (ICERXH)
+|
+| IN
+| 0,1
+| Ice Ridge Classification
+| (ICERDV)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-IceKeelBummock]]
+=== Ice Keel/Bummock
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# From a submariner's point of view, a Keel is a downward projecting ridge on the underside of the ice canopy - the counterpart of a Ridge. A Bummock is the counterpart of a hummock on the underside of the ice canopy.
+a| [underline]#**S-411 Geo Feature:**# Ice Keel/Bummock
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Keel Concentration
+| (ICEKCN)
+|
+| EN
+| 0,1
+| Ice Keel Frequency
+| (ICEKFQ)
+|
+| IN
+| 0,1
+| Ice Keel Mean Depth
+| (ICEKMD)
+|
+| IN
+| 0,1
+| Ice Keel Maximum Depth
+| (ICEKXD)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-IceDrift]]
+=== Ice Drift
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Motion of an ice field or floe as a result of forces such as wind and currents.
+a| [underline]#**S-411 Geo Feature:**# Ice Drift
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+
+| Ice Drift Speed
+| (ICEDSP)
+|
+| RE
+| 0,1
+| Ice Drift Direction
+| (ICEDDR)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-IceFracture]]
+=== Ice Fracture
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Any break or rupture through the ice pack, or a single floe, resulting from deformation processes. Length may vary from a few metres to many kilometres.
+a| [underline]#**S-411 Geo Feature:**# Ice Fracture
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Fracture Type
+| (ICEFTY)
+|
+| EN
+| 0,1
+| Ice Location Information
+| (ICELOC)
+|
+| EN
+| 0,1
+| Number of Ice Objects
+| (IA_OBN)
+|
+| IN
+| 0,1
+| Ice Stage of Development
+| (ICESOD)
+|
+| EN
+| 0,1
+| Average Width of Ice Lead (or Fracture or Crack)
+| (ICEDVW)
+|
+| IN
+| 0,5
+| Minimum Width of Ice Lead (or Fracture or Crack)
+| (IA_DMW)
+|
+| IN
+| 0,1
+| Maximum Width of Ice Lead (or Fracture or Crack)
+| (IA_DXW)
+|
+| IN
+| 0,1
+|===
+
+
+[[sec-IceRafting]]
+=== Ice Rafting
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Pressure processes whereby one piece of ice overrides another.
+a| [underline]#**S-411 Geo Feature:**# Ice Rafting
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Ice Rafting Concentration
+| (ICEFCN)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-JammedBrashBarrier]]
+=== Jammed Brash Barrier
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# A strip or narrow belt of new, young or brash ice (usually 100-500 metres wide) formed at the edge of either drift or fast ice.
+a| [underline]#**S-411 Geo Feature:**# Jammed Brash Barrier
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+|===
+
+
+[[sec-StageOfMelt]]
+=== Stage of Melt
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# A description of the stage of melt of the ice; i.e. whether it has formed puddles on the surface and whether these have frozen.
+a| [underline]#**S-411 Geo Feature:**# Stage of Melt
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Melt Stage
+| (ICEMLT)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-SnowCover]]
+=== Snow Cover
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# A description of the amount of snow covering the ice.
+a| [underline]#**S-411 Geo Feature:**# Snow Cover
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Snow Cover Concentration
+| (ICESCN)
+|
+| EN
+| 0,1
+| Snow Depth
+| (ICESCT)
+|
+| IN
+| 0,1
+| Direction of Sastrugi
+| (ICEDOS)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-StripsAndPatches]]
+=== Strips and Patches
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# A strip is a long narrow area of floating ice, about 1 kilometre or less in width, usually composed of small fragments detached from the main mass of ice, and run together under the influence of wind, swell or current. If the area of ice becomes more rounded in shape, it is referred to as a patch.
+a| [underline]#**S-411 Geo Feature:**# Strips and Patches
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+
+| Concentration of Strips and Patches
+| (ICESPC)
+|
+| EN
+| 0,1
+|===
+
+
+[[sec-GroundedHummock]]
+=== Grounded Hummock
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Grounded Hummock identifies a hummock formation which is stranded.
+a| [underline]#**S-411 Geo Feature:**# Grounded Hummock
+a| [underline]#**Primitives**: point#
+|===
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
+|===
+|  S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+| Maximum Height of Above Water Part (iceberg/grounded hummock)
+| (IA_BUH)
+|
+| IN
+|  0,1
+|===
+
+
+== Attributes and Enumerates Descriptions
+
+[[sec-brashIce]]
+=== Brash Ice
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEBRS specifies the concentrations of very thick brash ("AV"), thick brash ("AK"), medium brash ("AM") and thin brash ice ("AT").
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :0/10 – 1/10
+
+. 10 +
+[underline]#**IHO Definition**# :1/10
+
+. 12 +
+[underline]#**IHO Definition**# :1/10 – 2/10
+
+. 20 +
+[underline]#**IHO Definition**# :2/10
+
+. 23 +
+[underline]#**IHO Definition**# :2/10 – 3/10
+
+. 30 +
+[underline]#**IHO Definition**# :3/10
+
+. 34 +
+[underline]#**IHO Definition**# :3/10 – 4/10
+
+. 40 +
+[underline]#**IHO Definition**# :4/10
+
+. 45 +
+[underline]#**IHO Definition**# :4/10 – 5/10
+
+. 50 +
+[underline]#**IHO Definition**# :5/10
+
+. 56 +
+[underline]#**IHO Definition**# :5/10 – 6/10
+
+. 60 +
+[underline]#**IHO Definition**# :6/10
+
+. 67 +
+[underline]#**IHO Definition**# :6/10 – 7/10
+
+. 70 +
+[underline]#**IHO Definition**# :7/10
+
+. 78 +
+[underline]#**IHO Definition**# :7/10 – 8/10
+
+. 80 +
+[underline]#**IHO Definition**# :8/10
+
+. 89 +
+[underline]#**IHO Definition**# :8/10 – 9/10
+
+. 90 +
+[underline]#**IHO Definition**# :9/10
+
+. 91 +
+[underline]#**IHO Definition**# :9/10 – 10/10
+
+. 92 +
+[underline]#**IHO Definition**# :10/10
+
+. 98 +
+[underline]#**IHO Definition**# :No Brash ice
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-compactingStrength]]
+=== Compacting Strength
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICECST is an indication of strength of the compacting of the ice.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Little compacting
+
+. 10 +
+[underline]#**IHO Definition**# :Slight compacting
+
+. 12 +
+[underline]#**IHO Definition**# :Slight to moderate compacting
+
+. 20 +
+[underline]#**IHO Definition**# :Moderate compacting
+
+. 23 +
+[underline]#**IHO Definition**# :Moderate to strong compacting
+
+. 30 +
+[underline]#**IHO Definition**# :Strong compacting
+
+. 98 +
+[underline]#**IHO Definition**# :Ice divergence
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-contamination]]
+=== Contamination
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_PLG describes the degree of contamination (aerial coverage) in thirds based on the Russian national 3-point scale.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :No or insignificant Contamination
+
+. 10 +
+[underline]#**IHO Definition**# :<1/3 of area
+
+. 12 +
+[underline]#**IHO Definition**# :<2/3 of area
+
+. 20 +
+[underline]#**IHO Definition**# :1/3 – 2/3 of area
+
+. 23 +
+[underline]#**IHO Definition**# :>1/3 area
+
+. 30 +
+[underline]#**IHO Definition**# :>2/3 area
+
+. 98 +
+[underline]#**IHO Definition**# :No Contamination
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-directionofSastrugi]]
+=== Direction of Sastrugi
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEDOS indicates the bearing of a sastrugi.  Sastrugi are sharp, irregular ridges formed on a snow surface by wind erosion and deposition. On mobile floating ice the ridges are parallel to the direction of the wind at the time they were formed.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :No Sastrugi
+
+. 02 +
+[underline]#**IHO Definition**# :NE
+
+. 03 +
+[underline]#**IHO Definition**# :E
+
+. 04 +
+[underline]#**IHO Definition**# :SE
+
+. 05 +
+[underline]#**IHO Definition**# :S
+
+. 06 +
+[underline]#**IHO Definition**# :SW
+
+. 07 +
+[underline]#**IHO Definition**# :W
+
+. 08 +
+[underline]#**IHO Definition**# :NW
+
+. 09 +
+[underline]#**IHO Definition**# :N
+
+. 10 +
+[underline]#**IHO Definition**# :Variable
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-floeSizes]]
+=== Floe Sizes
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Pancake Ice (30 cm to 3m across)
+
+. 02 +
+[underline]#**IHO Definition**# :Shuga/Small Ice Cake; Brash Ice (<2m across)
+
+. 03 +
+[underline]#**IHO Definition**# :Ice Cake (<20m across)
+
+. 04 +
+[underline]#**IHO Definition**# :Small Floe (20 to <100m across)
+
+. 05 +
+[underline]#**IHO Definition**# :Medium Floe (100 to 500m)
+
+. 06 +
+[underline]#**IHO Definition**# :Big Floe (500 to <2000m across)
+
+. 07 +
+[underline]#**IHO Definition**# :Vast Floe (2000 to10000m across)
+
+. 08 +
+[underline]#**IHO Definition**# :Giant Floe (>10000m across)
+
+. 09 +
+[underline]#**IHO Definition**# :Fast Ice
+
+. 10 +
+[underline]#**IHO Definition**# :Growlers, Floebergs or Floebits
+
+. 11 +
+[underline]#**IHO Definition**# :Icebergs
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-floeSizeFF]]
+=== Floe Size FF
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Size of ice floes (ff) for ia_sfa, ia_sfb, ia_sfc, ia_ffa, ia_ffb, ia_ffc complex attributes
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Pancake Ice (30 cm – 3 m)
+
+. 02 +
+[underline]#**IHO Definition**# :Shuga/Small Ice Cake; Brash Ice (<2 m)
+
+. 03 +
+[underline]#**IHO Definition**# :Ice Cake (<20 m)
+
+. 04 +
+[underline]#**IHO Definition**# :Small Floe (20 – 100 m)
+
+. 05 +
+[underline]#**IHO Definition**# :Medium Floe (100-500 m)
+
+. 06 +
+[underline]#**IHO Definition**# :Big Floe (500 – 2000 m)
+
+. 07 +
+[underline]#**IHO Definition**# :Vast Floe (2 – 10 km)
+
+. 08 +
+[underline]#**IHO Definition**# :Giant Floe (>10 km)
+
+. 09 +
+[underline]#**IHO Definition**# :Fast Ice
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-fracturesConcentration]]
+=== Fractures Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_DUG describes the degree of disunity in an ice area.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 10 +
+[underline]#**IHO Definition**# :Frequency of Cracks and Leads seldom in 10 km on Route
+
+. 20 +
+[underline]#**IHO Definition**# :Frequency of Cracks and Leads in 5 – 10 km on Route
+
+. 30 +
+[underline]#**IHO Definition**# :Frequency of Cracks and Leads in 3 – 5 km on Route
+
+. 40 +
+[underline]#**IHO Definition**# :Frequency of Cracks and Leads in 2 – 3 km on Route
+
+. 50 +
+[underline]#**IHO Definition**# :Frequency of Cracks and Leads often in 2 km on Route
+
+. 60 +
+[underline]#**IHO Definition**# :Small and Medium Floes – 1/10-3/10; Big Floes – 7/10-10/10 Conc.
+
+. 70 +
+[underline]#**IHO Definition**# :Small and Medium Floes – 4/10-6/10; Big Floes – 4/10-6/10 Conc.
+
+. 80 +
+[underline]#**IHO Definition**# :Small and Medium Floes – 7/10-10/10; Big Floes – 1/10-3/10 Conc.
+
+. 90 +
+[underline]#**IHO Definition**# :Small and Medium Floes Only
+
+. 92 +
+[underline]#**IHO Definition**# :Small Floes Only
+
+. 98 +
+[underline]#**IHO Definition**# :No Fractures
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-frequencyofLeadsorFractures]]
+=== Frequency of Leads or Fractures
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERFQ indicates the frequency of leads or fractures in number per nautical mile.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-hillsConcentration]]
+=== Hills Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_HLG describes the degree of hilling in an ice area (usually multi-year ice).
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Few hills
+
+. 10 +
+[underline]#**IHO Definition**# :Slight concentration of hills
+
+. 12 +
+[underline]#**IHO Definition**# :Slight to moderate concentration of hills
+
+. 20 +
+[underline]#**IHO Definition**# :Moderate concentration of hills
+
+. 23 +
+[underline]#**IHO Definition**# :Moderate to heavy concentration of hills
+
+. 30 +
+[underline]#**IHO Definition**# :Heavy concentration of hills
+
+. 98 +
+[underline]#**IHO Definition**# :No hills
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceAverageThickness2]]
+=== Ice Average Thickness
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Ice Average Thickness defines the average thickness of the ice.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+//include::../attributes/icebergConcentration.adoc[]
+
+[[sec-icebergSize]]
+=== Iceberg Size
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# The "Iceberg Size" categorizes the size of an iceberg.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Growler (<1m asl)
+
+. 02 +
+[underline]#**IHO Definition**# :Bergy Bit (1-<5m asl; 5-<15m length)
+
+. 03 +
+[underline]#**IHO Definition**# :Small Iceberg (5-15m asl; 15-60m length)
+
+. 04 +
+[underline]#**IHO Definition**# :Medium Iceberg (16-45m asl; 61-120m length)
+
+. 05 +
+[underline]#**IHO Definition**# :Large Iceberg (46-75m asl; 121-200m length)
+
+. 06 +
+[underline]#**IHO Definition**# :Very Large Iceberg (>75m asl; >200m length)
+
+. 07 +
+[underline]#**IHO Definition**# :Ice Island Fragment
+
+. 08 +
+[underline]#**IHO Definition**# :Ice Island (in the Northern Hemisphere) or Very Large Tabular Berg (in the Southern Ocean)
+
+. 09 +
+[underline]#**IHO Definition**# :Radar Target
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceDriftDirection]]
+=== Ice Drift Direction
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEDDR indicates the direction in which an ice mass is drifting.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :No Ice Motion
+
+. 02 +
+[underline]#**IHO Definition**# :Ice Drift to NE
+
+. 03 +
+[underline]#**IHO Definition**# :Ice Drift to E
+
+. 04 +
+[underline]#**IHO Definition**# :Ice Drift to SE
+
+. 05 +
+[underline]#**IHO Definition**# :Ice Drift to S
+
+. 06 +
+[underline]#**IHO Definition**# :Ice Drift to SW
+
+. 07 +
+[underline]#**IHO Definition**# :Ice Drift to W
+
+. 08 +
+[underline]#**IHO Definition**# :Ice Drift to NW
+
+. 09 +
+[underline]#**IHO Definition**# :Ice Drift to N
+
+. 10 +
+[underline]#**IHO Definition**# :Variable
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceDriftSpeed]]
+=== Ice Drift Speed
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEDSP describes the speed in knots at which an ice mass is traveling.
+
+[underline]#** Attribute Type :**# real
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceFractureType]]
+=== Ice Fracture Type
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEFTY indicates the type of fracture, based upon width.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Crack (0 to 1m wide)
+
+. 02 +
+[underline]#**IHO Definition**# :Very Small Fracture (>1m to 50m wide)
+
+. 03 +
+[underline]#**IHO Definition**# :Small Fracture (>50m to 200m wide)
+
+. 04 +
+[underline]#**IHO Definition**# :Medium Fracture (>200m to 500m wide)
+
+. 05 +
+[underline]#**IHO Definition**# :Large Fracture (>500m wide)
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceKeelConcentration]]
+=== Ice Keel Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEKCN describes the concentration of ice keels beneath an ice area.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :0/10 – 1/10
+
+. 10 +
+[underline]#**IHO Definition**# :1/10
+
+. 12 +
+[underline]#**IHO Definition**# :1/10 – 2/10
+
+. 20 +
+[underline]#**IHO Definition**# :2/10
+
+. 23 +
+[underline]#**IHO Definition**# :2/10 – 3/10
+
+. 30 +
+[underline]#**IHO Definition**# :3/10
+
+. 34 +
+[underline]#**IHO Definition**# :3/10 – 4/10
+
+. 40 +
+[underline]#**IHO Definition**# :4/10
+
+. 45 +
+[underline]#**IHO Definition**# :4/10 – 5/10
+
+. 50 +
+[underline]#**IHO Definition**# :5/10
+
+. 56 +
+[underline]#**IHO Definition**# :5/10 – 6/10
+
+. 60 +
+[underline]#**IHO Definition**# :6/10
+
+. 67 +
+[underline]#**IHO Definition**# :6/10 – 7/10
+
+. 70 +
+[underline]#**IHO Definition**# :7/10
+
+. 78 +
+[underline]#**IHO Definition**# :7/10 – 8/10
+
+. 80 +
+[underline]#**IHO Definition**# :8/10
+
+. 89 +
+[underline]#**IHO Definition**# :8/10 – 9/10
+
+. 90 +
+[underline]#**IHO Definition**# :9/10
+
+. 91 +
+[underline]#**IHO Definition**# :9/10 – 10/10
+
+. 92 +
+[underline]#**IHO Definition**# :10/10
+
+. 98 +
+[underline]#**IHO Definition**# :No Keels
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceKeelFrequency]]
+=== Ice Keel Frequency
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERFQ indicates the frequency of ice keels in number per nautical mile
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceKeelMaximumDepth]]
+=== Ice Keel Maximum Depth
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERMT indicates the maximum depth of ice keels in decimetres.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceKeelMeanDepth]]
+=== Ice Keel Mean Depth
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Indicates the mean depth of ice keels in decimetres.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceLeadStatus]]
+=== Ice Lead Status
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# The Ice Lead Status indicates the surface nature of the lead.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Open Lead
+
+. 02 +
+[underline]#**IHO Definition**# :Frozen Lead
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceLeadWidth]]
+=== Ice Lead (or Fracture or Crack) Width
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICELWD indicates the width of a lead or fracture or crack in metres.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceLocationInformation]]
+=== Ice Location Information
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICELOC indicates whether the break is at a specific location, or whether there is a presence in the area.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Specific Location
+
+. 02 +
+[underline]#**IHO Definition**# :Presence in Area
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceRaftingConcentration]]
+=== Ice Rafting Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEFCN describes the concentration of ice rafting in an ice area.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :0/10 – 1/10
+
+. 10 +
+[underline]#**IHO Definition**# :1/10
+
+. 12 +
+[underline]#**IHO Definition**# :1/10 – 2/10
+
+. 20 +
+[underline]#**IHO Definition**# :2/10
+
+. 23 +
+[underline]#**IHO Definition**# :2/10 – 3/10
+
+. 30 +
+[underline]#**IHO Definition**# :3/10
+
+. 34 +
+[underline]#**IHO Definition**# :3/10 – 4/10
+
+. 40 +
+[underline]#**IHO Definition**# :4/10
+
+. 45 +
+[underline]#**IHO Definition**# :4/10 – 5/10
+
+. 50 +
+[underline]#**IHO Definition**# :5/10
+
+. 56 +
+[underline]#**IHO Definition**# :5/10 – 6/10
+
+. 60 +
+[underline]#**IHO Definition**# :6/10
+
+. 67 +
+[underline]#**IHO Definition**# :6/10 – 7/10
+
+. 70 +
+[underline]#**IHO Definition**# :7/10
+
+. 78 +
+[underline]#**IHO Definition**# :7/10 – 8/10
+
+. 80 +
+[underline]#**IHO Definition**# :8/10
+
+. 89 +
+[underline]#**IHO Definition**# :8/10 – 9/10
+
+. 90 +
+[underline]#**IHO Definition**# :9/10
+
+. 91 +
+[underline]#**IHO Definition**# :9/10 – 10/10
+
+. 92 +
+[underline]#**IHO Definition**# :10/10
+
+. 98 +
+[underline]#**IHO Definition**# :No Rafting
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceRidgeClassification]]
+=== Ice Ridge Classification
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERDV describes the predominant type of ice ridge(s) present.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :New Ridge
+
+. 02 +
+[underline]#**IHO Definition**# :Weathered Ridge
+
+. 03 +
+[underline]#**IHO Definition**# :Very Weathered Ridge
+
+. 04 +
+[underline]#**IHO Definition**# :Aged Ridge
+
+. 05 +
+[underline]#**IHO Definition**# :Consolidated Ridge
+
+. 06 +
+[underline]#**IHO Definition**# :Ridge
+
+. 07 +
+[underline]#**IHO Definition**# :Ridged Ice Zone
+
+. 08 +
+[underline]#**IHO Definition**# :Ridge Barrier
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceRidgeConcentration]]
+=== Ice Ridge Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERCN describes the concentration of hummocked ice in an ice area.  Up to three values may be given in the list to correspond to the partial concentrations in ICEAPC.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :0/10 – 1/10
+
+. 10 +
+[underline]#**IHO Definition**# :1/10
+
+. 12 +
+[underline]#**IHO Definition**# :1/10 – 2/10
+
+. 20 +
+[underline]#**IHO Definition**# :2/10
+
+. 23 +
+[underline]#**IHO Definition**# :2/10 – 3/10
+
+. 30 +
+[underline]#**IHO Definition**# :3/10
+
+. 34 +
+[underline]#**IHO Definition**# :3/10 – 4/10
+
+. 40 +
+[underline]#**IHO Definition**# :4/10
+
+. 45 +
+[underline]#**IHO Definition**# :4/10 – 5/10
+
+. 50 +
+[underline]#**IHO Definition**# :5/10
+
+. 56 +
+[underline]#**IHO Definition**# :5/10 – 6/10
+
+. 60 +
+[underline]#**IHO Definition**# :6/10
+
+. 67 +
+[underline]#**IHO Definition**# :6/10 – 7/10
+
+. 70 +
+[underline]#**IHO Definition**# :7/10
+
+. 78 +
+[underline]#**IHO Definition**# :7/10 – 8/10
+
+. 80 +
+[underline]#**IHO Definition**# :8/10
+
+. 89 +
+[underline]#**IHO Definition**# :8/10 – 9/10
+
+. 90 +
+[underline]#**IHO Definition**# :9/10
+
+. 91 +
+[underline]#**IHO Definition**# :9/10 – 10/10
+
+. 92 +
+[underline]#**IHO Definition**# :10/10
+
+. 98 +
+[underline]#**IHO Definition**# :No Ridging
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceRidgeFrequency]]
+=== Ice Ridge Frequency
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERFQ indicates the frequency of ice ridges in number per nautical mile
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceRidgeMaximumHeight]]
+=== Ice Ridge Maximum Height
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICERMT indicates the maximum height of ice ridge(s) in decimetres.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+//include::../attributes/iceRidgeMeanHeight.adoc[]
+
+[[sec-iceStageofDevelopment]]
+=== Ice Stage of Development
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Ice Stage of Development describes the ages and thicknesses of the ice ('So, Sa, Sb, Sc and Sd').
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Ice Free
+
+. 70 +
+[underline]#**IHO Definition**# :Brash Ice
+
+. 80 +
+[underline]#**IHO Definition**# :No stage of development
+
+. 81 +
+[underline]#**IHO Definition**# :New Ice (<10 cm)
+
+. 82 +
+[underline]#**IHO Definition**# :Nilas Ice Rind (<10 cm)
+
+. 83 +
+[underline]#**IHO Definition**# :Young Ice (10 to <30 cm)
+
+. 84 +
+[underline]#**IHO Definition**# :Grey Ice (10 to <15 cm)
+
+. 85 +
+[underline]#**IHO Definition**# :Grey – White Ice (15 to <30 cm)
+
+. 86 +
+[underline]#**IHO Definition**# :First Year Ice (30 to 200 cm)
+
+. 87 +
+[underline]#**IHO Definition**# :Thin First Year Ice (30 to <70 cm)
+
+. 88 +
+[underline]#**IHO Definition**# :Thin First Year Ice Stage 1 (30 to <50 cm)
+
+. 89 +
+[underline]#**IHO Definition**# :Thin First Year Ice Stage 2 (50 to <70 cm)
+
+. 90 +
+[underline]#**IHO Definition**# :Code not currently assigned
+
+. 91 +
+[underline]#**IHO Definition**# :Medium First Year Ice (70 to 120 cm)
+
+. 92 +
+[underline]#**IHO Definition**# :Code not currently assigned
+
+. 93 +
+[underline]#**IHO Definition**# :Thick First Year Ice (>120 cm)
+
+. 94 +
+[underline]#**IHO Definition**# :Residual Ice
+
+. 95 +
+[underline]#**IHO Definition**# :Old Ice
+
+. 96 +
+[underline]#**IHO Definition**# :Second Year Ice
+
+. 97 +
+[underline]#**IHO Definition**# :Multi-Year Ice
+
+. 98 +
+[underline]#**IHO Definition**# :Glacier Ice (Icebergs)
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-iceThicknessType]]
+=== Ice Thickness Type
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICETTY indicated whether the thickness of the ice was measured or estimated.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Measured
+
+. 02 +
+[underline]#**IHO Definition**# :Estimated
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-lakeIceStageofDevelopment]]
+=== Lake Ice Stage of Development
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# Lake Ice Stages of Development describe the ages and thicknesses of lake ice. ('So, Sa, Sb, Sc and Sd')
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :New Lake Ice (<5cms)
+
+. 02 +
+[underline]#**IHO Definition**# :Thin Lake Ice (5-<15cms)
+
+. 03 +
+[underline]#**IHO Definition**# :Medium Lake Ice (15-<30cms)
+
+. 04 +
+[underline]#**IHO Definition**# :Thick Lake Ice (30-70cms)
+
+. 05 +
+[underline]#**IHO Definition**# :Very Thick Lake Ice (>70cms)
+
+. 70 +
+[underline]#**IHO Definition**# :Brash Ice
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-levelIce]]
+=== Level Ice
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICELVL is an indication as to whether or not the ice has been affected by deformation
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Level(undeformed)
+
+. 02 +
+[underline]#**IHO Definition**# :Deformed
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-maximumHeightofAboveWaterPart]]
+=== Maximum Height of Above Water Part (iceberg/grounded hummock)
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_BUF specifies the maximum height of an iceberg above the waterline in meters.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-maximumIceThickness]]
+=== Maximum Ice Thickness
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEMAX specifies the maximum thickness of the ice.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-maximumWidthofIceLead]]
+=== Maximum Width of Ice Lead (or Fracture or Crack)
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_DXW defines the maximum width of the lead or fracture or crack.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-minimumWidthofIceLead]]
+=== Minimum Width of Ice Lead (or Fracture or Crack)
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_DMW defines the minimum width of the lead or fracture or crack.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-numberofIcebergsinArea]]
+=== Number of Icebergs in Area
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEBNM indicates the number of Icebergs within a specified area.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-numberofIceObjects]]
+=== Number of Ice Objects
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_OBN defines the number of ice objects (cracks, leads, fractures, icebergs).
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-partialConcentration]]
+=== Partial Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEAPC specifies the partial concentrations of ice in an area. ('Ca, Cband Cc').
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Ice Free
+
+. 02 +
+[underline]#**IHO Definition**# :Open Water ( < 1/10 ice)
+
+. 03 +
+[underline]#**IHO Definition**# :Bergy Water
+
+. 10 +
+[underline]#**IHO Definition**# :1/10 ice
+
+. 12 +
+[underline]#**IHO Definition**# :1/10 to 2/10 ice
+
+. 13 +
+[underline]#**IHO Definition**# :1/10 to 3/10 ice
+
+. 20 +
+[underline]#**IHO Definition**# :2/10 ice
+
+. 23 +
+[underline]#**IHO Definition**# :2/10 to 3/10 ice
+
+. 24 +
+[underline]#**IHO Definition**# :2/10 to 4/10 ice
+
+. 30 +
+[underline]#**IHO Definition**# :3/10 ice
+
+. 34 +
+[underline]#**IHO Definition**# :3/10 to 4/10 ice
+
+. 35 +
+[underline]#**IHO Definition**# :3/10 to 5/10 ice
+
+. 40 +
+[underline]#**IHO Definition**# :4/10 ice
+
+. 45 +
+[underline]#**IHO Definition**# :
+
+. 46 +
+[underline]#**IHO Definition**# :4/10 to 6/10 ice
+
+. 50 +
+[underline]#**IHO Definition**# :5/10 ice
+
+. 56 +
+[underline]#**IHO Definition**# :5/10 to 6/10 ice
+
+. 57 +
+[underline]#**IHO Definition**# :5/10 to 7/10 ice
+
+. 60 +
+[underline]#**IHO Definition**# :6/10 ice
+
+. 67 +
+[underline]#**IHO Definition**# :6/10 to 7/10 ice
+
+. 68 +
+[underline]#**IHO Definition**# :6/10 to 8/10 ice
+
+. 70 +
+[underline]#**IHO Definition**# :7/10 ice
+
+. 78 +
+[underline]#**IHO Definition**# :7/10 to 8/10 ice
+
+. 79 +
+[underline]#**IHO Definition**# :7/10 to 9/10 ice
+
+. 80 +
+[underline]#**IHO Definition**# :8/10 ice
+
+. 81 +
+[underline]#**IHO Definition**# :8/10 to 10/10 ice
+
+. 89 +
+[underline]#**IHO Definition**# :8/10 to 9/10 ice
+
+. 90 +
+[underline]#**IHO Definition**# :9/10 ice
+
+. 91 +
+[underline]#**IHO Definition**# :9/10 to 10/10 ice
+
+. 92 +
+[underline]#**IHO Definition**# :10/10 ice
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-prevailingIcebergForm]]
+=== Prevailing Iceberg Form
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# IA_BFM specifies the prevailing form of icebergs in an area.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Domed
+
+. 02 +
+[underline]#**IHO Definition**# :Tabular
+
+. 03 +
+[underline]#**IHO Definition**# :Sloping
+
+. 04 +
+[underline]#**IHO Definition**# :Pinnacled
+
+. 05 +
+[underline]#**IHO Definition**# :Dry-dock
+
+. 06 +
+[underline]#**IHO Definition**# :Glacier (irregular)
+
+. 07 +
+[underline]#**IHO Definition**# :Blocky
+
+. 08 +
+[underline]#**IHO Definition**# :Weathered
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-snowCoverConcentration]]
+=== Snow Cover Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICESCN indicates the concentration (aerial coverage) of snow in tenths.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :1/10
+
+. 02 +
+[underline]#**IHO Definition**# :2/10
+
+. 03 +
+[underline]#**IHO Definition**# :3/10
+
+. 04 +
+[underline]#**IHO Definition**# :4/10
+
+. 05 +
+[underline]#**IHO Definition**# :5/10
+
+. 06 +
+[underline]#**IHO Definition**# :6/10
+
+. 07 +
+[underline]#**IHO Definition**# :7/10
+
+. 08 +
+[underline]#**IHO Definition**# :8/10
+
+. 09 +
+[underline]#**IHO Definition**# :9/10
+
+. 10 +
+[underline]#**IHO Definition**# :10/10
+
+. 11 +
+[underline]#**IHO Definition**# :<1/10
+
+. 12 +
+[underline]#**IHO Definition**# :No Snow Cover
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-snowDepth2]]
+
+=== Snow Depth
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICESCT specifies the depth of snow cover on the ice.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
+|===
+
+[[sec-totalConcentration]]
+=== Total Concentration
+
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# ICEACT specifies the total concentration of ice in an area.  It represents the ratio expressed in tenths describing the total area of the water surface covered by ice as a fraction of the whole area.
+
+[underline]#**Attribute Type:**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Ice Free
+
+. 02 +
+[underline]#**IHO Definition**# :Open Water ( < 1/10 ice)
+
+. 03 +
+[underline]#**IHO Definition**# :Bergy Water
+
+. 10 +
+[underline]#**IHO Definition**# :1/10 ice
+
+. 12 +
+[underline]#**IHO Definition**# :1/10 to 2/10 ice
+
+. 13 +
+[underline]#**IHO Definition**# :1/10 to 3/10 ice
+
+. 20 +
+[underline]#**IHO Definition**# :2/10 ice
+
+. 23 +
+[underline]#**IHO Definition**# :2/10 to 3/10 ice
+
+. 24 +
+[underline]#**IHO Definition**# :2/10 to 4/10 ice
+
+. 30 +
+[underline]#**IHO Definition**# :3/10 ice
+
+. 34 +
+[underline]#**IHO Definition**# :3/10 to 4/10 ice
+
+. 35 +
+[underline]#**IHO Definition**# :3/10 to 5/10 ice
+
+. 40 +
+[underline]#**IHO Definition**# :4/10 ice
+
+. 45 +
+[underline]#**IHO Definition**# :
+
+. 46 +
+[underline]#**IHO Definition**# :4/10 to 6/10 ice
+
+. 50 +
+[underline]#**IHO Definition**# :5/10 ice
+
+. 56 +
+[underline]#**IHO Definition**# :5/10 to 6/10 ice
+
+. 57 +
+[underline]#**IHO Definition**# :5/10 to 7/10 ice
+
+. 60 +
+[underline]#**IHO Definition**# :6/10 ice
+
+. 67 +
+[underline]#**IHO Definition**# :6/10 to 7/10 ice
+
+. 68 +
+[underline]#**IHO Definition**# :6/10 to 8/10 ice
+
+. 70 +
+[underline]#**IHO Definition**# :7/10 ice
+
+. 78 +
+[underline]#**IHO Definition**# :7/10 to 8/10 ice
+
+. 79 +
+[underline]#**IHO Definition**# :7/10 to 9/10 ice
+
+. 80 +
+[underline]#**IHO Definition**# :8/10 ice
+
+. 81 +
+[underline]#**IHO Definition**# :8/10 to 10/10 ice
+
+. 89 +
+[underline]#**IHO Definition**# :8/10 to 9/10 ice
+
+. 90 +
+[underline]#**IHO Definition**# :9/10 ice
+
+. 91 +
+[underline]#**IHO Definition**# :9/10 to 10/10 ice
+
+. 92 +
+[underline]#**IHO Definition**# :10/10 ice
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
+|===
