@@ -1,19 +1,26 @@
 [[sec-iceFractureType]]
 === Ice Fracture Type
-[cols="a",options="headers"]
+
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# ICEFTY indicates the type of fracture, based upon width. + 
-[underline]#** Attribute Type :**# enumeration + 
-1) 01 + 
-[underline]#**IHO Definition**# :Crack (0 to 1m wide) + 
-2) 02 + 
-[underline]#**IHO Definition**# :Very Small Fracture (>1m to 50m wide) + 
-3) 03 + 
-[underline]#**IHO Definition**# :Small Fracture (>50m to 200m wide) + 
-4) 04 + 
-[underline]#**IHO Definition**# :Medium Fracture (>200m to 500m wide) + 
-5) 05 + 
-[underline]#**IHO Definition**# :Large Fracture (>500m wide) + 
- 
-[underline]#** Remarks :**#  + 
+a| [underline]#**IHO Definition** :# ICEFTY indicates the type of fracture, based upon width.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Crack (0 to 1m wide)
+
+. 02 +
+[underline]#**IHO Definition**# :Very Small Fracture (>1m to 50m wide)
+
+. 03 +
+[underline]#**IHO Definition**# :Small Fracture (>50m to 200m wide)
+
+. 04 +
+[underline]#**IHO Definition**# :Medium Fracture (>200m to 500m wide)
+
+. 05 +
+[underline]#**IHO Definition**# :Large Fracture (>500m wide)
+
+[underline]#** Remarks :**#
 |===

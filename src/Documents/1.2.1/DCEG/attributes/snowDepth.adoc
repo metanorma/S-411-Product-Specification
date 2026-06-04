@@ -1,10 +1,12 @@
 [[sec-snowDepth2]]
 
 === Snow Depth
-[cols="a",options="headers"]
+
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# ICESCT specifies the depth of snow cover on the ice. + 
-[underline]#** Attribute Type :**# integer + 
- 
-[underline]#** Remarks :**#  + 
+a| [underline]#**IHO Definition** :# ICESCT specifies the depth of snow cover on the ice.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
 |===

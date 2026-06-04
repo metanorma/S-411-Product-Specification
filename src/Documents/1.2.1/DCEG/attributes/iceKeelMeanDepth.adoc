@@ -1,9 +1,11 @@
 [[sec-iceKeelMeanDepth]]
 === Ice Keel Mean Depth
-[cols="a",options="headers"]
+
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# Indicates the mean depth of ice keels in decimetres. + 
-[underline]#** Attribute Type :**# integer + 
- 
-[underline]#** Remarks :**#  + 
+a| [underline]#**IHO Definition** :# Indicates the mean depth of ice keels in decimetres.
+
+[underline]#** Attribute Type :**# integer
+
+[underline]#** Remarks :**#
 |===

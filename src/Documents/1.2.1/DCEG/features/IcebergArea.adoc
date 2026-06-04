@@ -1,39 +1,40 @@
 [[sec-IcebergArea]]
 === Iceberg Area
 
-[cols="a",options="headers"]
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# An Iceberg Area is an area at sea in which icebergs, bergy bits, or growlers are present.
-a|[underline]#**S-411 Geo Feature:**# Iceberg Area
-a|[underline]#**Primitives**: surface#
+a| [underline]#**IHO Definition** :# An Iceberg Area is an area at sea in which icebergs, bergy bits, or growlers are present.
+a| [underline]#**S-411 Geo Feature:**# Iceberg Area
+a| [underline]#**Primitives**: surface#
 |===
-[cols="a,a,a,a,a",options="headers"]
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
 |===
-a|**S-411Attribute** |**Acronym** |**Allowable Encoding Value** |**Type** | **Multiplicity**
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
 | Number of Icebergs in Area
 | (ICEBNM)
 |
-|IN
-|0,1
+| IN
+| 0,1
 | Iceberg Size
 | (ICEBSZ)
 |
-|EN
-|0,1
+| EN
+| 0,1
 | Iceberg Concentration
 | (IA_BCN)
 |
-|EN
-|0,1
+| EN
+| 0,1
 | Prevailing Iceberg Form
 | (IA_BFM)
 |
-|EN
-|0,1
+| EN
+| 0,1
 | Maximum Height of Above Water Part (iceberg/grounded hummock)
 | (IA_BUH)
 |
-|IN
-|0,1
+| IN
+| 0,1
 |===
 

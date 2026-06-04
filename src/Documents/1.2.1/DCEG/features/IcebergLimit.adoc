@@ -1,14 +1,15 @@
 [[sec-IcebergLimit]]
 === Iceberg Limit
 
-[cols="a",options="headers"]
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# Limit of all known Icebergs.
-a|[underline]#**S-411 Geo Feature:**# Iceberg Limit
-a|[underline]#**Primitives**: curve#
+a| [underline]#**IHO Definition** :# Limit of all known Icebergs.
+a| [underline]#**S-411 Geo Feature:**# Iceberg Limit
+a| [underline]#**Primitives**: curve#
 |===
-[cols="a,a,a,a,a",options="headers"]
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
 |===
-a|**S-411Attribute** |**Acronym** |**Allowable Encoding Value** |**Type** | **Multiplicity**
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
 |===
 

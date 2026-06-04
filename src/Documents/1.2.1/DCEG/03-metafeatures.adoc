@@ -1,4 +1,0 @@
-[[sec-metafeatures]]
-== Meta Features
-
-=== Introduction

@@ -1,14 +1,15 @@
 [[sec-IceEdge]]
 === Ice Edge
 
-[cols="a",options="headers"]
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :#  The demarcation at any given time between the open sea and sea ice of any kind and in any concentration, whether fast or drifting.
-a|[underline]#**S-411 Geo Feature:**# Ice Edge
-a|[underline]#**Primitives**: curve#
+a| [underline]#**IHO Definition** :#  The demarcation at any given time between the open sea and sea ice of any kind and in any concentration, whether fast or drifting.
+a| [underline]#**S-411 Geo Feature:**# Ice Edge
+a| [underline]#**Primitives**: curve#
 |===
-[cols="a,a,a,a,a",options="headers"]
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
 |===
-a|**S-411Attribute** |**Acronym** |**Allowable Encoding Value** |**Type** | **Multiplicity**
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
 |===
 

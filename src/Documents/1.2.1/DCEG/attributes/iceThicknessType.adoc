@@ -1,15 +1,20 @@
 [[sec-iceThicknessType]]
 === Ice Thickness Type
-[cols="a",options="headers"]
+
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# ICETTY indicated whether the thickness of the ice was measured or estimated.  + 
-[underline]#** Attribute Type :**# enumeration + 
-1) 01 + 
-[underline]#**IHO Definition**# :Measured + 
-2) 02 + 
-[underline]#**IHO Definition**# :Estimated + 
-99) 99 + 
-[underline]#**IHO Definition**# :Undetermined/Unknown + 
- 
-[underline]#** Remarks :**#  + 
+a| [underline]#**IHO Definition** :# ICETTY indicated whether the thickness of the ice was measured or estimated.
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Measured
+
+. 02 +
+[underline]#**IHO Definition**# :Estimated
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
 |===

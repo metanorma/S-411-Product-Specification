@@ -1,15 +1,20 @@
 [[sec-levelIce]]
 === Level Ice
-[cols="a",options="headers"]
+
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# ICELVL is an indication as to whether or not the ice has been affected by deformation + 
-[underline]#** Attribute Type :**# enumeration + 
-1) 01 + 
-[underline]#**IHO Definition**# :Level(undeformed) + 
-2) 02 + 
-[underline]#**IHO Definition**# :Deformed + 
-99) 99 + 
-[underline]#**IHO Definition**# :Undetermined/Unknown + 
- 
-[underline]#** Remarks :**#  + 
+a| [underline]#**IHO Definition** :# ICELVL is an indication as to whether or not the ice has been affected by deformation
+
+[underline]#** Attribute Type :**# enumeration
+
+. 01 +
+[underline]#**IHO Definition**# :Level(undeformed)
+
+. 02 +
+[underline]#**IHO Definition**# :Deformed
+
+. 99 +
+[underline]#**IHO Definition**# :Undetermined/Unknown
+
+[underline]#** Remarks :**#
 |===

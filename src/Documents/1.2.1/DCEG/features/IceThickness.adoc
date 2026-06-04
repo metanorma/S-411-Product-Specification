@@ -1,34 +1,35 @@
 [[sec-IceThickness]]
 === Ice Thickness
 
-[cols="a",options="headers"]
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# Ice Thickness provides a measure or estimate of ice thickness.
-a|[underline]#**S-411 Geo Feature:**# Ice Thickness
-a|[underline]#**Primitives**: point#
+a| [underline]#**IHO Definition** :# Ice Thickness provides a measure or estimate of ice thickness.
+a| [underline]#**S-411 Geo Feature:**# Ice Thickness
+a| [underline]#**Primitives**: point#
 |===
-[cols="a,a,a,a,a",options="headers"]
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
 |===
-a|**S-411Attribute** |**Acronym** |**Allowable Encoding Value** |**Type** | **Multiplicity**
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
 | Ice Average Thickness
 | (ICETCK)
 |
-|IN
-|0,1
+| IN
+| 0,1
 | Maximum Ice Thickness
 | (ICEMAX)
 |
-|IN
-|0,1
+| IN
+| 0,1
 | Mimimum Ice Thickness
 | (ICEMIN)
 |
-|IN
-|0,1
+| IN
+| 0,1
 | Ice Thickness Type
 | (ICETTY)
 |
-|EN
-|0,1
+| EN
+| 0,1
 |===
 

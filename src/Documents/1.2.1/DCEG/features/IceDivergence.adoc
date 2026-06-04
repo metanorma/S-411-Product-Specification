@@ -1,14 +1,15 @@
 [[sec-IceDivergence]]
 === Ice Divergence
 
-[cols="a",options="headers"]
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# Ice fields or floes in an area are subject to diverging or dispersive motion, thus reducing ice concentration and/or relieving stresses in the ice.
-a|[underline]#**S-411 Geo Feature:**# Ice Divergence
-a|[underline]#**Primitives**: point#
+a| [underline]#**IHO Definition** :# Ice fields or floes in an area are subject to diverging or dispersive motion, thus reducing ice concentration and/or relieving stresses in the ice.
+a| [underline]#**S-411 Geo Feature:**# Ice Divergence
+a| [underline]#**Primitives**: point#
 |===
-[cols="a,a,a,a,a",options="headers"]
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
 |===
-a|**S-411Attribute** |**Acronym** |**Allowable Encoding Value** |**Type** | **Multiplicity**
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
 |===
 

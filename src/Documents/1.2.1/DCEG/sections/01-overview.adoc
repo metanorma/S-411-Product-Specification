@@ -1,0 +1,62 @@
+
+[[sec-overview]]
+== Overview
+
+=== Preface
+
+The "Data Classification and Encoding Guide” has been developed to provide consistent, standardized instructions for encoding S-411 data.
+
+The purpose of the Data Classification and Encoding Guide is to facilitate S-411 encoding to meet JCOMM - ETSI standards for the proper display of Ice Information in an ECDIS. The document describes how to encode ice information considered relevant to be displayed on an ECDIS. The content of an Ice Information product is at the discretion of the producing authority provided that the conventions described within this document are followed. A "producing authority” is a Hydrographic Office (HO) or an organization authorized by a government, HO or other relevant government institution to produce Ice Information product.
+
+The entire S-411 Standard, including the S-411 ENC Product Specification, is available at the following
+web site, https://iho.int/.
+
+=== S-101 Annex A - Data Classification and Encoding Guide - Metadata
+
+NOTE:: This information uniquely identifies this Annex to the Product Specification and provides
+information about its creation and maintenance.
+
+*Title*:: The World Meteorological Organization Ice Information Product Specification, Annex A – Data Classification and Encoding Guide
+
+*Version*:: 1.2.0
+
+*Date*:: xx 2025
+
+*Language*:: English
+
+*Classification*:: Unclassified
+
+*Contact*:: World Meteorological Organization +
+7 bis, avenue de la Paix +
+P.O. Box 2300 +
+CH-1211 Geneva 2, Switzerland +
+Telephone: +41 (0) 22 730 84 03 +
+Email: publications@wmo.int
+
+*URL*:: https://mwo.int/
+
+*Identifier*:: S-411 Annex A
+
+*Maintenance*:: Changes to S-411 Annex A; Data Classification and Encoding Guide are coordinated by the JCOMM - ETSI Project Team, and must be made available via the IHO web site.
+
+=== Terms, definitions and abbreviations
+
+==== Terms and definitions
+
+See S-411 Product Specification Main document, clause 1.3.2.
+
+==== Abbreviations
+
+For a list of abbreviations, see the Ice Information Product Specification, Clause 1.3.3.
+
+=== Use of language
+
+Within this document:
+
+* "`Must`" indicates a mandatory requirement.
+* "`Should`" indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.
+* "`May`" means "`allowed to`" or "`could possibly`" and is not mandatory.
+
+=== Maintenance
+
+Changes to the Data Classification and Encoding Guide must occur in accordance with the S-411 Ice Information Product Specification clause 1.6.

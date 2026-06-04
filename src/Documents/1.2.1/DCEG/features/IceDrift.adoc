@@ -1,24 +1,26 @@
 [[sec-IceDrift]]
 === Ice Drift
 
-[cols="a",options="headers"]
+[cols="a",options="headers,unnumbered"]
 |===
-a|[underline]#**IHO Definition** :# Motion of an ice field or floe as a result of forces such as wind and currents.
-a|[underline]#**S-411 Geo Feature:**# Ice Drift
-a|[underline]#**Primitives**: point#
+a| [underline]#**IHO Definition** :# Motion of an ice field or floe as a result of forces such as wind and currents.
+a| [underline]#**S-411 Geo Feature:**# Ice Drift
+a| [underline]#**Primitives**: point#
 |===
-[cols="a,a,a,a,a",options="headers"]
+
+[cols="a,a,a,a,a",options="headers,unnumbered"]
 |===
-a|**S-411Attribute** |**Acronym** |**Allowable Encoding Value** |**Type** | **Multiplicity**
+| S-411Attribute | Acronym | Allowable Encoding Value | Type | Multiplicity
+
 | Ice Drift Speed
 | (ICEDSP)
 |
-|RE
-|0,1
+| RE
+| 0,1
 | Ice Drift Direction
 | (ICEDDR)
 |
-|EN
-|0,1
+| EN
+| 0,1
 |===
 
