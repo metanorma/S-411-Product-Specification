@@ -31,7 +31,7 @@ jobs:
 
       - name: Render HTML with metanorma-document
         run: |
-          unset BUNDLE_GEMFILE
+          unset BUNDLE_GEMFILE RUBYOPT
           bundle install
           for doc in src/Documents/1.2.1/PS src/Documents/1.2.1/DCEG; do
             bundle exec metanorma-document to-html "_site/documents/$doc/document.presentation.xml" \
