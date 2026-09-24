@@ -32,7 +32,7 @@ jobs:
       - name: Render HTML with metanorma-document
         run: |
           unset BUNDLE_GEMFILE RUBYOPT
-          apt-get update -qq && apt-get install -y --no-install-recommends gcc
+          apt-get update -qq && apt-get install -y --no-install-recommends build-essential
           bundle install
           for doc in src/Documents/1.2.1/PS src/Documents/1.2.1/DCEG; do
             bundle exec metanorma-document to-html "_site/documents/$doc/document.presentation.xml" \
