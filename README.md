@@ -1,41 +1,38 @@
 # WMO S-411 Dynamic Ice Information Product Specification
 
-//image:https://github.com/metanorma/S-411-Product-Specification/actions/workflows/generate.yml/badge.svg["Build Status", link="https://github.com/metanorma/S-411-Product-Specification/actions/workflows/generate.yml"]
-
-This document is available in its rendered forms here:
-
-* https://iho-ohi.github.io/S-411-Product-Specification/[IHO S-411 (HTML)]
-
-Metanorma: https://github.com/iho-ohi/S-411-Product-Specification-Development/blob/main/Documents/PS/document.html[Product Specification]
-
-## Purpose
+[![Build Status](https://github.com/metanorma/S-411-Product-Specification/actions/workflows/generate.yml/badge.svg)](https://github.com/metanorma/S-411-Product-Specification/actions/workflows/generate.yml)
 
 This is the WMO repository for developing the next edition of
 the S-411 Dynamic Ice Information Products.
 
 WARNING: The contents of this repository are in draft form and are not necessarily in force yet.
 Please refer to the final version published on the official
-https://registry.iho.int[GI Registry] website.
+[GI Registry](https://registry.iho.int) website.
 
 
 ## General
 
-This repository contains the source files of S-411 standards, including:
+This repository contains the source files of S-411, including:
 
-* S-411 1.0.0
-* S-411 x.x.x
+* S-411 1.2.1 Ice Information Product Specification (`PS/`)
+* S-411 1.2.0 Ice Information Data Classification and Encoding Guide (`DCEG/`)
 
 These documents are encoded in the
-https://www.metanorma.org/author/topics/document-format/[Metanorma AsciiDoc format].
+[Metanorma AsciiDoc format](https://www.metanorma.org/author/topics/document-format/).
 
 
 ## Structure
 
-`sources/`::
-source of the S-411 documents and models
-
-`site/`::
-(automatically generated, in the `gh-pages` branch) published document.
+* `src/Documents/1.2.1/` — source of the S-411 documents and models:
+  * `PS/` — Ice Information Product Specification
+  * `DCEG/` — Ice Information Data Classification and Encoding Guide
+  * `FC/` — S-411 Feature Catalogue
+  * `PC/` — S-411 Portrayal Catalogue
+  * `GML/` — S-411 GML schema
+  * `model/` — S-411 UML model
+  * `samples/` — sample S-411 datasets
+* `original/S-411_annexes/` — original S-411 annexes (schemas, portrayal, examples, test data)
+* `Python/` — tools for SIGRID-3 to S-411 conversion
 
 
 ## Usage
@@ -43,13 +40,13 @@ source of the S-411 documents and models
 This repository uses `metanorma` to run these processes.
 
 Please refer to
-https://www.metanorma.org/author/iho/authoring-guide/[Metanorma-IHO documentation]
+[Metanorma-IHO documentation](https://www.metanorma.org/author/iho/authoring-guide/)
 for authoring guidance.
 
 
 ## Installing build tools
 
-See the https://www.metanorma.org/install/[Metanorma install] page.
+See the [Metanorma install](https://www.metanorma.org/install/) page.
 
 
 ## Building the document
@@ -59,19 +56,13 @@ locally-installed compilation tools, there is nothing further to set.
 
 If you use a locally installed Metanorma, run:
 
-[source,sh]
-----
+```sh
 metanorma site generate
-----
+```
 
 If you wish to avoid using local dependencies, use the docker
 version by:
 
-[source,sh]
-----
+```sh
 docker run -v "$(pwd)":/metanorma -w /metanorma -it metanorma/mn metanorma site generate
-----
-
-## License
-
-See link:LICENSE.adoc[LICENSE].
+```
