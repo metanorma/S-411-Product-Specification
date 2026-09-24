@@ -27,10 +27,20 @@ jobs:
           submodules: true
 
       - name: Metanorma generate site
-        uses: actions-mn/build-and-publish@v2
+        run: metanorma site generate --agree-to-terms
+
+      - name: Render HTML with metanorma-document
+        run: |
+          bundle install
+          for doc in src/Documents/1.2.1/PS src/Documents/1.2.1/DCEG; do
+            bundle exec metanorma-document to-html "_site/documents/$doc/document.presentation.xml" \
+              --flavor iho -o "_site/documents/$doc/document.mnd.html"
+          done
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          agree-to-terms: true
+          path: _site
 
   deploy:
     if: ${{ github.ref_name == github.event.repository.default_branch }}
