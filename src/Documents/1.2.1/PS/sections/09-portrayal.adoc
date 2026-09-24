@@ -4,7 +4,7 @@
 
 === Rules
 
-`main.xsl` includes all the rules for single feature types. It manages the selection of the right rule, depending on current feature type in `dataset and parameters in `iceDisplayParameters.xml`.
+`main.xsl` includes all the rules for single feature types. It manages the selection of the right rule, depending on current feature type in `dataset` and parameters in `iceDisplayParameters.xml`.
 
 `iceDisplayParameters.xml` contains parameters important for display of ice features:
 
