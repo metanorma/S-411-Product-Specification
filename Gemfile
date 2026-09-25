@@ -18,5 +18,7 @@ gem "metanorma-generic", github: "metanorma/metanorma-generic", branch: "feat/mo
 gem "metanorma-iho", github: "metanorma/metanorma-iho", branch: "feat/move-iho-document"
 gem "metanorma-iso", github: "metanorma/metanorma-iso", branch: "feat/model-validation-migration"
 gem "metanorma-mirror", "~> 1.0"
-gem "lutaml-model", github: "lutaml/lutaml-model", branch: "fix/767-json-register-kwarg"
+gem "lutaml-model", "~> 0.8.60"
+gem "leptris", "~> 1.9.239"
+gem "moxml", "~> 0.5.80"
 gem "pubid", ">= 2.0.0.pre.alpha.9"
