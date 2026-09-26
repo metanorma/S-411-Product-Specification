@@ -1,0 +1,14 @@
+_site/
+releases/
+_data/
+.cache/
+vendor/
+.bundle/
+relaton/
+*.err.html
+*.asciidoc.log.txt
+*.presentation.xml
+src/Documents/**/document.rxl
+src/Documents/**/document.html
+src/Documents/**/document.xml
+src/Documents/**/document.xml.abort

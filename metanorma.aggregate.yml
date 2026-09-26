@@ -1,0 +1,14 @@
+source: local
+local_path: releases
+output_dir: _site/docs
+file_routing: flat
+cache_dir: .cache/aggregate
+data_dir: _data
+include_drafts: true
+channels:
+  - public
+display_categories:
+  - name: Standards & Specifications
+    slug: standards
+    doctypes:
+      - standard

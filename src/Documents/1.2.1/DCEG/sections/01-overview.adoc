@@ -11,7 +11,7 @@ The purpose of the Data Classification and Encoding Guide is to facilitate S-411
 The entire S-411 Standard, including the S-411 ENC Product Specification, is available at the following
 web site, https://iho.int/.
 
-=== S-101 Annex A - Data Classification and Encoding Guide - Metadata
+=== S-411 Annex A - Data Classification and Encoding Guide - Metadata
 
 NOTE:: This information uniquely identifies this Annex to the Product Specification and provides
 information about its creation and maintenance.
