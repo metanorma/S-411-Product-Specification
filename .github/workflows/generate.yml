@@ -39,6 +39,15 @@ jobs:
               --flavor iho -o "_site/documents/$doc/document.mnd.html"
           done
 
+      - name: Package document registry
+        run: bundle exec metanorma-release package --output-dir _site/documents --dest releases
+
+      - name: Aggregate document registry
+        run: bundle exec metanorma-release aggregate --source local:releases --output-dir _site/docs --data-dir _data --include-drafts
+
+      - name: Render registry index
+        run: bundle exec metanorma-release render-index --data _data/documents.json --out _site/index.html --flavor iho --manifest metanorma.yml
+
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

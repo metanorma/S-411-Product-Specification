@@ -53,8 +53,8 @@ GIT
 
 GIT
   remote: https://github.com/metanorma/metanorma-iho.git
-  revision: 68be197eac92dd61a14278a8a0d56efbb3b0253e
-  branch: feat/move-iho-document
+  revision: 1cfa5a7b6b880e8459ae8b0e690e345a50247f9e
+  branch: add/registry-theme
   specs:
     metanorma-iho (1.3.11)
       metanorma-generic (~> 3.5.0)
@@ -72,6 +72,16 @@ GIT
       sts (>= 0.5.6)
       tokenizer (~> 0.3.0)
       uniword (~> 1.0)
+
+GIT
+  remote: https://github.com/metanorma/metanorma-release.git
+  revision: 27ba49bf0d3a73643c89e4a4ccc2d6f573ade13d
+  branch: fix/local-aggregate
+  specs:
+    metanorma-release (0.2.25)
+      metanorma-document
+      relaton-bib (~> 2.1)
+      thor (~> 1.0)
 
 GIT
   remote: https://github.com/metanorma/metanorma-standoc.git
@@ -829,6 +839,7 @@ DEPENDENCIES
   metanorma-iho!
   metanorma-iso!
   metanorma-mirror (~> 1.0)
+  metanorma-release!
   metanorma-standoc!
   moxml (~> 0.5.80)
   pubid (>= 2.0.0.pre.alpha.9)
@@ -948,6 +959,7 @@ CHECKSUMS
   metanorma-plugin-glossarist (0.3.10) sha256=d879d28c73953887c2d43b3c2416ed2e62fe6f883a8cb9f9e6e6c1cd1da894fd
   metanorma-plugin-lutaml (0.7.53) sha256=967153590ebb20f9560bbfd87d0c6af63424acc950a9169716dc1d360d62d458
   metanorma-plugin-plantuml (1.0.16) sha256=0152005ce066a1f91db71465ca905dc1399f01d946574c76c95ba83e19fd8d75
+  metanorma-release (0.2.25)
   metanorma-standoc (3.5.0)
   metanorma-taste (1.1.2) sha256=dc520440018880a219bd6ff090eb095255db96768cca532f9bdad2dc00908448
   metanorma-utils (2.0.7) sha256=35075056c30a803ea428bb2649c8418598ade7e70c393a8ac9b83fc944ffd878
