@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/metanorma/metanorma-document.git
-  revision: 48bc41012dc9d28fd30804768d09eca35394b3d8
+  revision: 3ea7e4a0ce27e8d56091e873dbff4c5fed378241
   branch: fix/nested-block-inline-dispatch
   specs:
     metanorma-document (0.5.1)
@@ -147,7 +147,7 @@ GEM
     brotli (0.8.0)
     builder (3.3.0)
     camertron-eprun (1.1.1)
-    canon (0.3.73)
+    canon (0.3.74)
       diff-lcs
       json
       leptris (~> 1.9.242)
@@ -866,7 +866,7 @@ CHECKSUMS
   brotli (0.8.0) sha256=0c5a42046b3b603fb109656881147fd76064c034b7d19c1b4fcc32a093a4d55d
   builder (3.3.0) sha256=497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f
   camertron-eprun (1.1.1) sha256=9a8e337916445e62648f6a4f35d229302fc44c50549cc881bff1e296ccf9ce4b
-  canon (0.3.73) sha256=fd8e74642b09c1765e73612a78eba219a8da586e374e3e4a2cab2a53a73c7377
+  canon (0.3.74) sha256=98c930f1233eee29889eb82e2c5a818bf00b50a5a99983cea5a63588b9067dec
   cldr-plurals-runtime-rb (1.1.0) sha256=2353875af89be9fac049c60891e973825b24a979eeef7274093c9ff5fd56dfa9
   cliver (0.3.2) sha256=8775445218c612bb57f50c392c4906a1ab5cca067eab093bde3cc77d6426ce24
   cnccs (0.1.6) sha256=01f47296fb351db9f7b66c330eede6336c5a0a895316ff2153b64c24d2e91344
