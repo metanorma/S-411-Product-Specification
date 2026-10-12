@@ -26,6 +26,6 @@ gem "lutaml-model", "~> 0.8.63"
 gem "leptris", "~> 1.9.239"
 gem "moxml", "~> 0.5.80"
 gem "pubid", ">= 2.0.0.pre.alpha.9"
-gem "metanorma-standoc", github: "metanorma/metanorma-standoc", branch: "main"
-gem "isodoc", github: "metanorma/isodoc", branch: "main"
+# isodoc-i18n resolves from main; metanorma-standoc and isodoc are
+# declared once above (duplicates would shadow, first declaration wins)
 gem "isodoc-i18n", github: "metanorma/isodoc-i18n", branch: "main"
