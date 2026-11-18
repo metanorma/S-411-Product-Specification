@@ -1,0 +1,53 @@
+= Ice Information Product Specification
+:series: S
+:docnumber: 411
+:doctype: standard
+:edition: 1.2.1
+:language: en
+:publisher: World Meteorological Organization
+:publisher_abbr: WMO
+:publisher_logo: wmo-logo.svg
+:boilerplate-authority: wmo-boilerplate.adoc
+:published-date: 2025-03-01-31
+:copyright-year: 2025
+:committee: WMO- JCOMM
+:workgroup: ETSI
+:toclevels: 3
+:mn-document-class: iho
+:mn-output-extensions: html
+:local-cache-only:
+:imagesdir: images
+:status: draft-development
+
+// Demonstration variant of the S-411 product specification with the
+// cover identity of a non-IHO publisher (WMO): publisher-driven
+// strapline, publisher logo, and publisher boilerplate statements.
+include::sections/00-document-history.adoc[]
+
+include::sections/01-overview.adoc[]
+
+include::sections/02-spec_scope.adoc[]
+
+include::sections/03-data_product_id.adoc[]
+
+include::sections/04-data_content_struct.adoc[]
+
+include::sections/05-coord_ref_system.adoc[]
+
+include::sections/06-data_quality.adoc[]
+
+include::sections/07-data_cap_class.adoc[]
+
+include::sections/08-data_maintenance.adoc[]
+
+include::sections/09-portrayal.adoc[]
+
+include::sections/10-data_product_format.adoc[]
+
+include::sections/11-data_product_delivery.adoc[]
+
+include::sections/12-metadata.adoc[]
+
+include::sections/13-datasets.adoc[]
+
+include::sections/14-list_of_annexes.adoc[]

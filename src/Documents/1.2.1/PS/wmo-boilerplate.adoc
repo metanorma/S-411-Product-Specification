@@ -1,0 +1,17 @@
+== copyright-statement
+[align="center"]
+© Copyright World Meteorological Organization {{ docyear }}
+
+== license-statement
+=== {blank}
+This publication may be reproduced in whole or in part in any form for educational or non-profit purposes without special permission from the copyright holder, provided acknowledgment of the source is made.
+
+== feedback-statement
+Published by the +
+World Meteorological Organization +
+7 bis, avenue de la Paix +
+CH-1211 Geneva 2, Switzerland +
+Tel: +41 (0) 22 730 83 14 +
+Fax: +41 (0) 22 730 80 98 +
+link:mailto:library@wmo.int[library@wmo.int] +
+link:https://www.wmo.int[www.wmo.int] +
