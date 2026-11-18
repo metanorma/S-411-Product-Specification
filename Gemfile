@@ -13,18 +13,18 @@ source "https://rubygems.org"
 #   + FmtDefinition <semx> capture (metanorma-standoc#1261).
 # - metanorma-document@fix/nested-block-inline-dispatch: nested block
 #   containers, FmtDefinitionSemx rendering, li termnote (#75).
-gem "metanorma-document", github: "metanorma/metanorma-document", branch: "fix/nested-block-inline-dispatch"
+gem "metanorma-document", github: "metanorma/metanorma-document", branch: "fix/map-all-content-main"
 gem "metanorma-core", github: "metanorma/metanorma-core", branch: "main"
 gem "metanorma-standoc", github: "metanorma/metanorma-standoc", branch: "fix/boilerplate-paragraphs-quote"
 gem "isodoc", github: "metanorma/isodoc", branch: "main"
 gem "metanorma-generic", github: "metanorma/metanorma-generic", branch: "feat/move-generic-document"
-gem "metanorma-iho", github: "metanorma/metanorma-iho", branch: "add/registry-theme"
-gem "metanorma-iso", github: "metanorma/metanorma-iso", branch: "feat/model-validation-migration"
-gem "metanorma-release", github: "metanorma/metanorma-release", branch: "fix/local-aggregate"
+gem "metanorma-iho", github: "metanorma/metanorma-iho", branch: "feat/publisher-cover-identity"
+gem "metanorma-iso", github: "metanorma/metanorma-iso", branch: "main"
+gem "metanorma-release", github: "metanorma/metanorma-release", branch: "fix/gemspec-eval-logger"
 gem "metanorma-mirror", "~> 1.0"
 gem "lutaml-model", "~> 0.8.63"
 gem "leptris", "~> 1.9.239"
-gem "moxml", "~> 0.5.80"
+gem "moxml", "~> 0.6.0"
 gem "pubid", ">= 2.0.0.pre.alpha.9"
 # isodoc-i18n resolves from main; metanorma-standoc and isodoc are
 # declared once above (duplicates would shadow, first declaration wins)
