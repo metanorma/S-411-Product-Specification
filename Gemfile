@@ -1,31 +1,34 @@
 source "https://rubygems.org"
 
-# metanorma-document HTML output for the published documents
-# (document.mnd.html). Rendered by the generate workflow alongside the
-# native metanorma HTML.
-#
-# Branch pins while the flavor model migration lands upstream:
-# - metanorma-iho@feat/move-iho-document: the moved IhoDocument model +
-#   Core::Flavors registration (68be197); unreleased.
-# - metanorma-generic@feat/move-generic-document: the migrated generic
-#   (3.5.1) the iho branch requires.
-# - metanorma-standoc@fix/boilerplate-paragraphs-quote: standoc 3.5 line
-#   + FmtDefinition <semx> capture (metanorma-standoc#1261).
-# - metanorma-document@fix/nested-block-inline-dispatch: nested block
-#   containers, FmtDefinitionSemx rendering, li termnote (#75).
-gem "metanorma-document", github: "metanorma/metanorma-document", branch: "fix/map-all-content-main"
+# Aligned with the S-102 Product Specification repository layout: the
+# core toolchain loads from git main, with versioned pins only where a
+# dependency carries no stable contract yet.
+gem "metanorma-cli", github: "metanorma/metanorma-cli", branch: "main"
+gem "metanorma", github: "metanorma/metanorma", branch: "main"
+gem "metanorma-iho", github: "metanorma/metanorma-iho", branch: "main"
+# The documents carry the WMO publisher identity (mn-document-class:
+# wmo); the wmo taste renders them. Branch pin while the taste PR is
+# upstream; flip to main on merge.
+gem "metanorma-taste", github: "metanorma/metanorma-taste",
+    branch: "feat/wmo-pdf-stylesheet"
+
+# Document registry lane (document.mnd.html + releases packaging in
+# the generate workflow)
+gem "metanorma-document", github: "metanorma/metanorma-document", branch: "main"
 gem "metanorma-core", github: "metanorma/metanorma-core", branch: "main"
-gem "metanorma-standoc", github: "metanorma/metanorma-standoc", branch: "fix/boilerplate-paragraphs-quote"
-gem "isodoc", github: "metanorma/isodoc", branch: "main"
-gem "metanorma-generic", github: "metanorma/metanorma-generic", branch: "feat/move-generic-document"
-gem "metanorma-iho", github: "metanorma/metanorma-iho", branch: "feat/publisher-cover-identity"
-gem "metanorma-iso", github: "metanorma/metanorma-iso", branch: "main"
-gem "metanorma-release", github: "metanorma/metanorma-release", branch: "fix/gemspec-eval-logger"
+gem "metanorma-release", github: "metanorma/metanorma-release", branch: "main"
+
 gem "metanorma-mirror", "~> 1.0"
 gem "lutaml-model", "~> 0.8.63"
 gem "leptris", "~> 1.9.239"
 gem "moxml", "~> 0.6.0"
 gem "pubid", ">= 2.0.0.pre.alpha.9"
 # isodoc-i18n resolves from main; metanorma-standoc and isodoc are
-# declared once above (duplicates would shadow, first declaration wins)
+# pulled in transitively and declared here when a branch pin is
+# needed (duplicates would shadow, first declaration wins)
 gem "isodoc-i18n", github: "metanorma/isodoc-i18n", branch: "main"
+
+# Gems published to rubygems ship precompiled static CSS, so
+# sassc-embedded is only needed when loading isodoc from git (main)
+# as done above.
+gem "sassc-embedded"

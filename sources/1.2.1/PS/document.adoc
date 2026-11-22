@@ -4,24 +4,17 @@
 :doctype: standard
 :edition: 1.2.1
 :language: en
-:publisher: World Meteorological Organization
-:publisher_abbr: WMO
-:publisher_logo: wmo-logo.svg
-:boilerplate-authority: wmo-boilerplate.adoc
-:published-date: 2025-03-01-31
+:published-date: 2025-03-31
 :copyright-year: 2025
-:committee: WMO- JCOMM
-:workgroup: ETSI
+:committee: WMO-SERCOM
+:workgroup: ET-MSSS
 :toclevels: 3
-:mn-document-class: iho
-:mn-output-extensions: html
+:mn-document-class: wmo
+:mn-output-extensions: xml,html,doc,pdf,rxl
 :local-cache-only:
 :imagesdir: images
 :status: draft-development
 
-// Demonstration variant of the S-411 product specification with the
-// cover identity of a non-IHO publisher (WMO): publisher-driven
-// strapline, publisher logo, and publisher boilerplate statements.
 include::sections/00-document-history.adoc[]
 
 include::sections/01-overview.adoc[]

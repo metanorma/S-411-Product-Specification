@@ -12,7 +12,7 @@ pull:
 local:
 	DT=`date`
 	echo $(DT) " is the date"
-	cd src/Documents/1.2.1/PS && metanorma compile document.adoc -o local
+	cd sources/1.2.1/PS && metanorma compile document.adoc -o local
 	git commit -a -m "Build $(DT)"
 	git push
 
@@ -23,6 +23,6 @@ tst:
 dcegdoc:
 	DT=`date`
 	echo $(DT) " is the date"
-	cd src/Documents/1.2.1/DCEG && metanorma compile document.adoc -o build
+	cd sources/1.2.1/DCEG && metanorma compile document.adoc -o build
 	git commit -a -m "DCEG Build $(DT)"
 	git push
