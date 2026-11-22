@@ -23,7 +23,7 @@ These documents are encoded in the
 
 ## Structure
 
-* `src/Documents/1.2.1/` — source of the S-411 documents and models:
+* `sources/1.2.1/` — source of the S-411 documents and models:
   * `PS/` — Ice Information Product Specification
   * `DCEG/` — Ice Information Data Classification and Encoding Guide
   * `FC/` — S-411 Feature Catalogue

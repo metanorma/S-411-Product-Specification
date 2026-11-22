@@ -8,7 +8,10 @@ relaton/
 *.err.html
 *.asciidoc.log.txt
 *.presentation.xml
-src/Documents/**/document.rxl
-src/Documents/**/document.html
-src/Documents/**/document.xml
-src/Documents/**/document.xml.abort
+sources/**/document.rxl
+sources/**/document.html
+sources/**/document.xml
+sources/**/document.xml.abort
+.claude/
+branding/
+sources/**/document.pdf
