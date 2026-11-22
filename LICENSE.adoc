@@ -1,0 +1,3 @@
+= License
+
+Copyright World Meteorological Organization (WMO). All rights reserved.
