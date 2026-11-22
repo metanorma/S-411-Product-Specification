@@ -7,10 +7,8 @@ gem "metanorma-cli", github: "metanorma/metanorma-cli", branch: "main"
 gem "metanorma", github: "metanorma/metanorma", branch: "main"
 gem "metanorma-iho", github: "metanorma/metanorma-iho", branch: "main"
 # The documents carry the WMO publisher identity (mn-document-class:
-# wmo); the wmo taste renders them. Branch pin while the taste PR is
-# upstream; flip to main on merge.
-gem "metanorma-taste", github: "metanorma/metanorma-taste",
-    branch: "feat/wmo-pdf-stylesheet"
+# wmo); the wmo taste renders them (taste PR #280 merged).
+gem "metanorma-taste", github: "metanorma/metanorma-taste", branch: "main"
 
 # Document registry lane (document.mnd.html + releases packaging in
 # the generate workflow)
