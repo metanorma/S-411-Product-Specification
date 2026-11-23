@@ -8,6 +8,7 @@
 {%assign g_vals = "01:Little compacting | 10:Slight compacting | 12:Slight to moderate compacting | 20:Moderate compacting | 23:Moderate to strong compacting | 30:Strong compacting | 98:Ice divergence | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "compactingStrength"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -22,4 +23,5 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 {%endfor%}|===
 {%endif%}
 {%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: compactingStrength not found in the EA model{%endif%}
 ----

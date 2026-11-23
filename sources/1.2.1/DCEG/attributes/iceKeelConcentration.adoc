@@ -8,6 +8,7 @@
 {%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Keels | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceKeelConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -22,4 +23,5 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 {%endfor%}|===
 {%endif%}
 {%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceKeelConcentration not found in the EA model{%endif%}
 ----

@@ -3,10 +3,12 @@
 
 [lutaml_ea_uml,../model/S-411_v001.qea]
 ----
-{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_type = "integer"%}
 {%assign g_def = "IA_DXW defines the maximum width of the lead or fracture or crack."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===
 ----
