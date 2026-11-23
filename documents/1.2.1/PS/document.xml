@@ -216,7 +216,7 @@
 </table>
 </clause></preface><sections>
 
-<clause id="_a8f8e9a3-96bb-c849-5cdd-542b7cd96186" anchor="sec-overview" obligation="normative">
+<clause id="_92117439-dc59-988c-6261-aa63000780e7" anchor="sec-overview" obligation="normative">
 <title id="_6a13218d-655a-ce5a-a75b-2a8f4a2affc3">Overview</title>
 <clause id="_015e5e9b-8b11-b168-4f19-98aebdee8e02" obligation="normative">
 <title id="_658f0ada-6f4d-8746-0aa0-b689939c79f7">Introduction</title>
@@ -232,10 +232,10 @@
 <p id="_8c72ae15-1c8d-5fef-1ec8-52c77cda4573">This Product Specification includes the content model, the encoding, the Feature Catalogue, Portrayal Catalogue, and metadata.</p>
 </clause>
 
-<clause id="_a6d041ec-bee1-5e7b-a85a-3de1a7b76c86" obligation="informative">
+<clause id="_4743fee6-8c5d-21dd-d04a-811abbedde69" obligation="informative">
 <title id="_5a43affb-48f0-faf0-57e7-cea4ff18232a">References</title>
-<references unnumbered="true" normative="true"><bibitem id="_0017283c-c3a0-6994-afbc-70b9f044ad89" type="standard" schema-version="v1.5.6" anchor="iho-s100">
-  <fetched>2026-11-22</fetched>
+<references unnumbered="true" normative="true"><bibitem id="_6883ed35-30f4-4615-bff8-b3ec223ced4f" type="standard" schema-version="v1.5.6" anchor="iho-s100">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" type="main">IHO Universal Hydrographic Data Model</title>
 
@@ -314,8 +314,8 @@
   <validity>
     <validityBegins>2024-06-07T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="_e5de123b-1e2a-72f7-053b-bf713c8771f4" type="standard" schema-version="v1.5.6" anchor="iho-s44">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_af630e7b-06e0-f15f-6e76-543e74cd20d6" type="standard" schema-version="v1.5.6" anchor="iho-s44">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" type="main">IHO Standards for Hydrographic Surveys</title>
 
@@ -405,8 +405,8 @@
   <validity>
     <validityBegins>2024-10-01T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="_18696112-9957-d8d6-f9a5-0899e6496653" type="standard" schema-version="v1.5.6" anchor="iho-s4">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_42d0bbc2-14ed-779f-911e-5225b81977f9" type="standard" schema-version="v1.5.6" anchor="iho-s4">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" type="main">Regulations for International (INT) Charts and Chart Specifications of the IHO</title>
 
@@ -563,8 +563,8 @@
   <validity>
     <validityBegins>2026-03-01T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="_650a86c5-f7f2-cfe3-64ca-5ca6a2491ff3" type="standard" schema-version="v1.5.6" anchor="iho-s32">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_629fc6d1-5daf-3a4b-2195-9ccb4a91f671" type="standard" schema-version="v1.5.6" anchor="iho-s32">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" type="main">Hydrographic Dictionary — Glossary of ECDIS Related Terms</title>
 
@@ -653,8 +653,8 @@
   <validity>
     <validityBegins>1994-01-01T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="_1796b540-de1d-a78b-3747-207d52cc56c0" type="standard" schema-version="v1.5.6" anchor="iso-8601">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_b255b700-7af4-a62a-794d-079a48b66a7b" type="standard" schema-version="v1.5.6" anchor="iso-8601">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Data elements and interchange formats</title>
 
@@ -768,8 +768,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_bb4dabf1-8ca0-3382-dd57-2a7bb57bd91e" type="standard" schema-version="v1.5.6" anchor="iso-19103">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_685c078c-e72d-7d41-8a88-34a414de403f" type="standard" schema-version="v1.5.6" anchor="iso-19103">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -867,8 +867,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_56c4dd5c-9c95-1ae6-9a0e-8aa993cf6f5a" type="standard" schema-version="v1.5.6" anchor="iso-19111">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_d923f2e8-34bf-ca01-1803-df19d12383ab" type="standard" schema-version="v1.5.6" anchor="iso-19111">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -974,8 +974,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_5e8dc01b-14a3-0c66-106c-8d6dec1b7365" type="standard" schema-version="v1.5.6" anchor="iso-19115-1">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_f764ff88-1cf9-6b46-b4f5-30a3396e0cea" type="standard" schema-version="v1.5.6" anchor="iso-19115-1">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1076,8 +1076,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_28827247-a83e-b41f-f32a-59fe2364b640" type="standard" schema-version="v1.5.6" anchor="iso-19115-2">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_286241e0-137f-3c49-8ff5-31d2fdc1d7e2" type="standard" schema-version="v1.5.6" anchor="iso-19115-2">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1172,8 +1172,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_93b9f593-6054-5506-5ff0-d48a3466c984" type="standard" schema-version="v1.5.6" anchor="iso-19115-3">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_fb1b7b0f-5370-7bc8-189c-b3b93e2eca0c" type="standard" schema-version="v1.5.6" anchor="iso-19115-3">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1286,7 +1286,7 @@
 <bibitem anchor="WMO_574_2024" id="_87e0275a-9476-f0c7-4447-d7e8e5db1746"><formattedref format="application/x-isodoc+xml"><em>Sea-ice Information and Services</em>, 2024 edition</formattedref><docidentifier>WMO-No. 574</docidentifier><docnumber>574</docnumber><language>en</language><script>Latn</script></bibitem>
 </references>
 
-<references id="_72ba7f11-b49f-22ed-b9b3-aee0efcd9fd5" normative="true" obligation="informative">
+<references id="_eb2f3a48-98c6-783e-deaa-ff98190a3605" normative="true" obligation="informative">
 <title id="_44dcf3cd-1e4f-f8f8-ddd0-f00992a65fb4">Informative</title><bibitem anchor="ISO_19101_2003" id="_c99d90a4-80a0-5cee-6307-edba1e3e587e" type="standard">
 <title format="text/plain">Geographic Information – Reference Model, 2003</title>
 <docidentifier type="ISO">ISO 19101:2003</docidentifier><docnumber>19101</docnumber><date type="published"><on>2003</on></date><contributor><role type="publisher"/><organization>
@@ -1299,8 +1299,8 @@
 <title format="text/plain">Geographic Information – Conceptual Schema Language – Part 2, 2005</title>
 <docidentifier type="ISO">ISO 19103-2:2005</docidentifier><docnumber>19103-2</docnumber><date type="published"><on>2005</on></date><contributor><role type="publisher"/><organization>
 <name>ISO</name>
-</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="_8cccdcdc-4f08-cc0e-4bad-e5b83db23c07" type="standard" schema-version="v1.5.6" anchor="ISO_19109_2005">
-  <fetched>2026-11-22</fetched>
+</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="_2937e9d2-170d-5558-6306-d23d35b76d10" type="standard" schema-version="v1.5.6" anchor="ISO_19109_2005">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1388,8 +1388,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_fbc7785b-561d-2ab3-75ac-6822cecb2146" type="standard" schema-version="v1.5.6" anchor="ISO_19110_2005">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_a2652d8a-ffe9-dbd7-0928-3d049bccdb21" type="standard" schema-version="v1.5.6" anchor="ISO_19110_2005">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1488,8 +1488,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_6b7af6c0-1afe-22d7-198e-bd36656d383c" type="standard" schema-version="v1.5.6" anchor="ISO_19111_2007">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_cc9ffe79-a4c3-8799-cd51-e486754bbd6f" type="standard" schema-version="v1.5.6" anchor="ISO_19111_2007">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1595,8 +1595,8 @@
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_2dc5a929-fe21-7072-8d85-f525e501c4c1" type="standard" schema-version="v1.5.6" anchor="ISO_19115_1_2014">
-  <fetched>2026-11-22</fetched>
+</bibitem><bibitem id="_bc400650-3111-ee95-55d6-19b561080800" type="standard" schema-version="v1.5.6" anchor="ISO_19115_1_2014">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1701,8 +1701,8 @@
 <title format="text/plain">Geographic information — Metadata — Part 3: XML Schema implementation for fundamental concepts — 2016</title>
 <docidentifier type="ISO">ISO 19115-3:2016</docidentifier><docnumber>19115-3</docnumber><date type="published"><on>2016</on></date><contributor><role type="publisher"/><organization>
 <name>ISO</name>
-</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="_1564e182-7b23-9d6b-4fc2-eec8797c6420" type="standard" schema-version="v1.5.6" anchor="ISO_19117_2012">
-  <fetched>2026-11-22</fetched>
+</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="_020a475f-2104-a42b-60fc-f2b4f545a24c" type="standard" schema-version="v1.5.6" anchor="ISO_19117_2012">
+  <fetched>2026-11-23</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 

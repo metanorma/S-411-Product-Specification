@@ -2143,1178 +2143,782 @@
 </clause>
 </clause>
 
-<clause id="_8819bbba-46e2-77d8-dbad-ea169e7477b3" obligation="normative">
+<clause id="_61d022e2-9b75-fb7a-7f4c-d0f6876be851" obligation="normative">
 <title id="_e97be66d-ad03-8715-04a5-be0353094ce2">Attributes and Enumerates Descriptions</title>
-<clause id="_d19ef576-3e26-8dc4-c76b-ae91dde8959d" anchor="sec-brashIce" obligation="normative">
+<clause id="_bd9e209f-cefe-39bc-792c-7f718b823245" anchor="sec-brashIce" obligation="normative">
 <title id="_6d8dfe40-1b45-81de-0adb-47c01a128c5e">Brash Ice</title>
-<table id="_95174050-9005-4690-a02e-3a95899f4afd" unnumbered="true"><tbody><tr id="_593c075d-c8f4-de96-8526-cd5acb652036"><td id="_f3d1eec9-0fe8-336c-db82-d5b7bd82a03b" valign="top" align="left"><p id="_dfa14eeb-02de-8ef1-ad1e-b72a3d4b6672"><underline><strong>IHO Definition</strong> :</underline> ICEBRS specifies the concentrations of very thick brash (“AV”), thick brash (“AK”), medium brash (“AM”) and thin brash ice (“AT”).</p>
+<sourcecode id="_42faff55-dae7-efef-2479-091a7bab465f"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEBRS specifies the concentrations of very thick brash (&amp;quot;AV&amp;quot;), thick brash (&amp;quot;AK&amp;quot;), medium brash (&amp;quot;AM&amp;quot;) and thin brash ice (&amp;quot;AT&amp;quot;)."%}
+{%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Brash ice | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "brashIce"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_eaced236-fc7b-9123-3188-08194e790031"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_3b2478c8-5e81-17d8-3f7b-a05e8fd20617" type="arabic"><li><p id="_2789fda2-0a64-547c-50ce-960e7e63787c">01<br/> <underline><strong>IHO Definition</strong></underline> :0/10 – 1/10</p>
-</li>
-<li><p id="_7034f3a1-57b4-d391-6ba5-3af6b471baab">10<br/> <underline><strong>IHO Definition</strong></underline> :1/10</p>
-</li>
-<li><p id="_b7c352ae-9fa4-b781-3df4-c7c32c425c25">12<br/> <underline><strong>IHO Definition</strong></underline> :1/10 – 2/10</p>
-</li>
-<li><p id="_80673900-87bd-470f-dfef-06e945f6c31c">20<br/> <underline><strong>IHO Definition</strong></underline> :2/10</p>
-</li>
-<li><p id="_e57011d1-16ce-dff2-a8ef-d94e864b2b10">23<br/> <underline><strong>IHO Definition</strong></underline> :2/10 – 3/10</p>
-</li>
-<li><p id="_2347f4c1-3100-bdf2-bf4a-12deee321249">30<br/> <underline><strong>IHO Definition</strong></underline> :3/10</p>
-</li>
-<li><p id="_cc1cb317-6a49-ea21-a28a-d41360196df9">34<br/> <underline><strong>IHO Definition</strong></underline> :3/10 – 4/10</p>
-</li>
-<li><p id="_9aeb0011-6127-a2d6-a2e7-6749fa06a311">40<br/> <underline><strong>IHO Definition</strong></underline> :4/10</p>
-</li>
-<li><p id="_602b70dd-29a5-7618-82fe-dbbdb407a143">45<br/> <underline><strong>IHO Definition</strong></underline> :4/10 – 5/10</p>
-</li>
-<li><p id="_61dc8020-4ac1-3cfc-ffbb-bcda34e38b6b">50<br/> <underline><strong>IHO Definition</strong></underline> :5/10</p>
-</li>
-<li><p id="_385fe3c7-efed-346d-9538-71c75b81697b">56<br/> <underline><strong>IHO Definition</strong></underline> :5/10 – 6/10</p>
-</li>
-<li><p id="_4018ab1c-d9f4-1279-f5ec-237dcb4cad42">60<br/> <underline><strong>IHO Definition</strong></underline> :6/10</p>
-</li>
-<li><p id="_044f72cf-74d2-b896-8d56-a0fba8f66d65">67<br/> <underline><strong>IHO Definition</strong></underline> :6/10 – 7/10</p>
-</li>
-<li><p id="_93cf91d8-ad96-b931-8634-6c0a0c445412">70<br/> <underline><strong>IHO Definition</strong></underline> :7/10</p>
-</li>
-<li><p id="_52e6e9e5-8b9e-35f6-ed01-933a7d796f6c">78<br/> <underline><strong>IHO Definition</strong></underline> :7/10 – 8/10</p>
-</li>
-<li><p id="_5819e3ea-fc75-9535-ccbc-22f69b97f60d">80<br/> <underline><strong>IHO Definition</strong></underline> :8/10</p>
-</li>
-<li><p id="_09346a1e-1e9b-f52e-d57b-a378fca2f681">89<br/> <underline><strong>IHO Definition</strong></underline> :8/10 – 9/10</p>
-</li>
-<li><p id="_6125324a-ed07-bf0a-480b-b2d0a7965acc">90<br/> <underline><strong>IHO Definition</strong></underline> :9/10</p>
-</li>
-<li><p id="_bdfc3876-8c83-9e93-c758-6c8ec7d282bf">91<br/> <underline><strong>IHO Definition</strong></underline> :9/10 – 10/10</p>
-</li>
-<li><p id="_383af619-a347-7702-51f8-b235acce1bc9">92<br/> <underline><strong>IHO Definition</strong></underline> :10/10</p>
-</li>
-<li><p id="_db4bcd92-a1ad-3e54-0c41-ba58c882804b">98<br/> <underline><strong>IHO Definition</strong></underline> :No Brash ice</p>
-</li>
-<li><p id="_23c0858d-4975-db3b-7206-e942f1b8aed2">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_7436625c-bacd-be67-4627-c12f38ff78be"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_8549bf7e-1fda-e6b9-c4ec-a7e5133a948a" anchor="sec-compactingStrength" obligation="normative">
+<clause id="_7f67b195-8f53-09dd-1d92-2043e4ce4188" anchor="sec-compactingStrength" obligation="normative">
 <title id="_1d04cf2d-df14-26f6-463e-4e891bc3aadb">Compacting Strength</title>
-<table id="_3b83e7bf-aaf1-c5fc-4bf6-1d6e02fc053f" unnumbered="true"><tbody><tr id="_a8fa3135-d4f3-d224-ec7e-37a74bc6593c"><td id="_96dee1b9-751c-980b-9c24-1e46eb3e83f9" valign="top" align="left"><p id="_e67b0812-7c35-4698-65b5-38f76c27e4c0"><underline><strong>IHO Definition</strong> :</underline> ICECST is an indication of strength of the compacting of the ice.</p>
+<sourcecode id="_53d3a41a-526e-19ab-128c-06144594ed80"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICECST is an indication of strength of the compacting of the ice."%}
+{%assign g_vals = "01:Little compacting | 10:Slight compacting | 12:Slight to moderate compacting | 20:Moderate compacting | 23:Moderate to strong compacting | 30:Strong compacting | 98:Ice divergence | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "compactingStrength"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_c48ba0c2-1c9c-7db9-5f7a-91c9bf094385"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_11d2924d-d51b-1f96-2cc2-88a766b6463d" type="arabic"><li><p id="_ed73a620-bf35-f806-3e89-c2ae58a11d6b">01<br/> <underline><strong>IHO Definition</strong></underline> :Little compacting</p>
-</li>
-<li><p id="_5d6001f1-719a-6fb1-3372-a127b4219580">10<br/> <underline><strong>IHO Definition</strong></underline> :Slight compacting</p>
-</li>
-<li><p id="_74198b75-16df-c589-b9ca-0ab82928544d">12<br/> <underline><strong>IHO Definition</strong></underline> :Slight to moderate compacting</p>
-</li>
-<li><p id="_d0d6ae93-25f9-be01-347d-929de58aa372">20<br/> <underline><strong>IHO Definition</strong></underline> :Moderate compacting</p>
-</li>
-<li><p id="_5ff05147-f798-0d56-449c-fb49cd650a97">23<br/> <underline><strong>IHO Definition</strong></underline> :Moderate to strong compacting</p>
-</li>
-<li><p id="_8beed3a5-8c1c-440b-fc22-e771ae496043">30<br/> <underline><strong>IHO Definition</strong></underline> :Strong compacting</p>
-</li>
-<li><p id="_d11c4357-7956-59d2-a5e0-f5299165eb79">98<br/> <underline><strong>IHO Definition</strong></underline> :Ice divergence</p>
-</li>
-<li><p id="_9cb2bfa8-4d29-41d1-03b5-64cd8233a850">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_45a97159-d712-d273-6003-f460e847af45"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_ad58c496-147b-0114-2e2b-05912c4fcd46" anchor="sec-contamination" obligation="normative">
+<clause id="_2c4f1cd0-f440-e281-bfcc-0a6ecdd9aeb1" anchor="sec-contamination" obligation="normative">
 <title id="_9d6b5b34-33c0-d4cd-c860-cf63a1fba09f">Contamination</title>
-<table id="_4946ad9c-bd73-7d65-1356-7d9c8722410e" unnumbered="true"><tbody><tr id="_9b0f91c4-1249-14b9-5794-c87de315849c"><td id="_b302e6e9-e7f0-abb6-8136-df23a93e316b" valign="top" align="left"><p id="_293c43c1-10ad-9b41-f895-e0e9a6c9bdf8"><underline><strong>IHO Definition</strong> :</underline> IA_PLG describes the degree of contamination (aerial coverage) in thirds based on the Russian national 3-point scale.</p>
+<sourcecode id="_ffc5bfad-ed91-e7a1-9ff7-112a034b7190"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "IA_PLG describes the degree of contamination (aerial coverage) in thirds based on the Russian national 3-point scale."%}
+{%assign g_vals = "01:No or insignificant Contamination | 10:&lt;1/3 of area | 12:&lt;2/3 of area | 20:1/3 – 2/3 of area | 23:&gt;1/3 area | 30:&gt;2/3 area | 98:No Contamination | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "contamination"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_c15c95f1-e018-7c36-d63f-72d2076185c8"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_7ad57722-0176-b071-0f9a-401fa5c98b23" type="arabic"><li><p id="_abd5ed61-577b-9df4-8c46-467b6284a24d">01<br/> <underline><strong>IHO Definition</strong></underline> :No or insignificant Contamination</p>
-</li>
-<li><p id="_a5069f5a-ae1d-cad9-9ac2-3dde0c739a4d">10<br/> <underline><strong>IHO Definition</strong></underline> :&lt;1/3 of area</p>
-</li>
-<li><p id="_e8045758-bb96-352e-1bfc-e2ec96840327">12<br/> <underline><strong>IHO Definition</strong></underline> :&lt;2/3 of area</p>
-</li>
-<li><p id="_7f01e5c1-d1ba-8334-cac1-d81e5c601e80">20<br/> <underline><strong>IHO Definition</strong></underline> :1/3 – 2/3 of area</p>
-</li>
-<li><p id="_dab6e2c9-8ab5-5abb-3ce1-0059595968d0">23<br/> <underline><strong>IHO Definition</strong></underline> :&gt;1/3 area</p>
-</li>
-<li><p id="_19e98f21-c2eb-42fe-db60-dd1ca3a59141">30<br/> <underline><strong>IHO Definition</strong></underline> :&gt;2/3 area</p>
-</li>
-<li><p id="_184da37e-c00e-b094-69d5-54cd7511f65f">98<br/> <underline><strong>IHO Definition</strong></underline> :No Contamination</p>
-</li>
-<li><p id="_2cc9fdd1-22f5-1cb5-1e97-b87738a57a2f">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_1559541b-f5bc-fc15-5260-a466bc18f0e1"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_2ccb623f-4426-dbe4-c345-672ad0c95bf4" anchor="sec-directionofSastrugi" obligation="normative">
+<clause id="_85798b44-79c7-ba8d-f9c7-344d79a1b39b" anchor="sec-directionofSastrugi" obligation="normative">
 <title id="_c8e2bb0a-1faa-2a10-71a7-7e768746d7b9">Direction of Sastrugi</title>
-<table id="_056034d6-4212-234b-781c-0344ae218888" unnumbered="true"><tbody><tr id="_ce2b8ffd-767f-9420-3741-80f0ed41b85c"><td id="_d74572bd-5f2d-dc28-ef1d-324715f744bd" valign="top" align="left"><p id="_c36cbe7f-53c6-9bda-cc8a-ce5759791150"><underline><strong>IHO Definition</strong> :</underline> ICEDOS indicates the bearing of a sastrugi.  Sastrugi are sharp, irregular ridges formed on a snow surface by wind erosion and deposition. On mobile floating ice the ridges are parallel to the direction of the wind at the time they were formed.</p>
+<sourcecode id="_326d9a91-916d-2d2a-fc1a-05091983b1db"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEDOS indicates the bearing of a sastrugi.  Sastrugi are sharp, irregular ridges formed on a snow surface by wind erosion and deposition. On mobile floating ice the ridges are parallel to the direction of the wind at the time they were formed."%}
+{%assign g_vals = "01:No Sastrugi | 02:NE | 03:E | 04:SE | 05:S | 06:SW | 07:W | 08:NW | 09:N | 10:Variable | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "directionofSastrugi"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_e36f4478-a405-dcb6-20fe-644b6fe66bb2"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_d3ef1e78-2bad-cebf-17c2-5ad9fd282c7b" type="arabic"><li><p id="_36b2d5d2-0003-d768-fd46-84f7d6cf271b">01<br/> <underline><strong>IHO Definition</strong></underline> :No Sastrugi</p>
-</li>
-<li><p id="_c6288572-b8ef-d37e-f0f6-bcf442443fc4">02<br/> <underline><strong>IHO Definition</strong></underline> :NE</p>
-</li>
-<li><p id="_198bb59b-a06e-dd7b-ce1f-59d0acf273a4">03<br/> <underline><strong>IHO Definition</strong></underline> :E</p>
-</li>
-<li><p id="_4c87463a-2842-bf1c-acb1-a8ab0ea93a79">04<br/> <underline><strong>IHO Definition</strong></underline> :SE</p>
-</li>
-<li><p id="_183339ad-e06a-f215-143c-35d241b580ea">05<br/> <underline><strong>IHO Definition</strong></underline> :S</p>
-</li>
-<li><p id="_1be4f9b6-6b3b-e02b-38cb-785e6ba9b620">06<br/> <underline><strong>IHO Definition</strong></underline> :SW</p>
-</li>
-<li><p id="_83d23487-c519-ed71-364d-47fb181ad51e">07<br/> <underline><strong>IHO Definition</strong></underline> :W</p>
-</li>
-<li><p id="_a398f39b-980b-3a0b-d26c-af3d0cb19b97">08<br/> <underline><strong>IHO Definition</strong></underline> :NW</p>
-</li>
-<li><p id="_48c72253-cd31-e977-a600-1904be840b5f">09<br/> <underline><strong>IHO Definition</strong></underline> :N</p>
-</li>
-<li><p id="_3cade7f9-624e-5ccc-2d41-a8183d553eb2">10<br/> <underline><strong>IHO Definition</strong></underline> :Variable</p>
-</li>
-<li><p id="_8274937a-9ad8-877c-0327-12a65bf4bf2a">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_1dcce81d-63db-4072-7bb4-e45233323640"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_b8866313-6324-a09b-a5df-a62061f4bee6" anchor="sec-floeSizes" obligation="normative">
+<clause id="_a29d51d5-4173-e38f-e655-e89965caa94c" anchor="sec-floeSizes" obligation="normative">
 <title id="_2343727c-93e6-6e9a-98ad-acdf02eaaee3">Floe Sizes</title>
-<table id="_96bdc5e8-9350-f3e5-bcb1-629bbd2e4103" unnumbered="true"><tbody><tr id="_1ae6ec76-1e6b-dca8-3070-7235c5f1e36f"><td id="_4299ed82-a163-18a9-2eab-c13ad29f2273" valign="top" align="left"><p id="_df6cd8c0-7746-5289-5684-82a92ec085bf"><underline><strong>IHO Definition</strong> :</underline> Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively.</p>
+<sourcecode id="_00874839-b10d-e745-fc8a-77748cfdb074"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively."%}
+{%assign g_vals = "01:Pancake Ice (30 cm to 3m across) | 02:Shuga/Small Ice Cake; Brash Ice (&lt;2m across) | 03:Ice Cake (&lt;20m across) | 04:Small Floe (20 to &lt;100m across) | 05:Medium Floe (100 to 500m) | 06:Big Floe (500 to &lt;2000m across) | 07:Vast Floe (2000 to10000m across) | 08:Giant Floe (&gt;10000m across) | 09:Fast Ice | 10:Growlers, Floebergs or Floebits | 11:Icebergs | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "floeSizes"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_7d6859c4-cd4b-3abe-1937-d4d796748835"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_31a56bfb-7ba7-d8f3-24ab-69b75e94af5b" type="arabic"><li><p id="_619d7de5-077d-8c8e-b69b-128b9e0ecb1e">01<br/> <underline><strong>IHO Definition</strong></underline> :Pancake Ice (30 cm to 3m across)</p>
-</li>
-<li><p id="_092f611d-a065-f5a6-3dba-cc61eb2739f3">02<br/> <underline><strong>IHO Definition</strong></underline> :Shuga/Small Ice Cake; Brash Ice (&lt;2m across)</p>
-</li>
-<li><p id="_4ea50a9c-3161-af99-d7f8-e200bea61e1f">03<br/> <underline><strong>IHO Definition</strong></underline> :Ice Cake (&lt;20m across)</p>
-</li>
-<li><p id="_286be2a2-2e8e-9168-b80c-1d9f6ea5774c">04<br/> <underline><strong>IHO Definition</strong></underline> :Small Floe (20 to &lt;100m across)</p>
-</li>
-<li><p id="_66cacb5a-dd61-080b-2061-e80120c8fb87">05<br/> <underline><strong>IHO Definition</strong></underline> :Medium Floe (100 to 500m)</p>
-</li>
-<li><p id="_a02ddba5-2a97-09d7-13ba-41aecd510844">06<br/> <underline><strong>IHO Definition</strong></underline> :Big Floe (500 to &lt;2000m across)</p>
-</li>
-<li><p id="_2b6ced9b-8d41-7ee8-8514-35048ae8b940">07<br/> <underline><strong>IHO Definition</strong></underline> :Vast Floe (2000 to10000m across)</p>
-</li>
-<li><p id="_b8b54a86-a5c5-8d36-3245-a7731887a1fc">08<br/> <underline><strong>IHO Definition</strong></underline> :Giant Floe (&gt;10000m across)</p>
-</li>
-<li><p id="_e507b804-2c56-3f7c-a6da-d78e325311c1">09<br/> <underline><strong>IHO Definition</strong></underline> :Fast Ice</p>
-</li>
-<li><p id="_dbcddc6b-2866-f6f8-4c03-d0e5ae7ac6b0">10<br/> <underline><strong>IHO Definition</strong></underline> :Growlers, Floebergs or Floebits</p>
-</li>
-<li><p id="_03aa4a77-9eba-fd14-a010-08cdd8722b53">11<br/> <underline><strong>IHO Definition</strong></underline> :Icebergs</p>
-</li>
-<li><p id="_90f5f133-1cef-ca70-c3e4-1ae635f889ec">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_ff74f066-d092-8b89-6369-6269b4e6d775"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_5a813cf9-bd14-183a-130a-878d746f435b" anchor="sec-floeSizeFF" obligation="normative">
+<clause id="_c4220335-6a0f-7f1c-855a-27ce0b719704" anchor="sec-floeSizeFF" obligation="normative">
 <title id="_95c77b65-26e4-a4f3-ff7b-69e1d7cad0b9">Floe Size FF</title>
-<table id="_f632f80d-3546-e8b5-4c92-ae2a615414a6" unnumbered="true"><tbody><tr id="_4f54ca10-85db-95f9-71ea-d0799ed78d20"><td id="_436e4a16-f419-43b9-8f3b-60151bfb073c" valign="top" align="left"><p id="_8b4c2e6c-5555-2da3-af90-64012a737ba8"><underline><strong>IHO Definition</strong> :</underline> Size of ice floes (ff) for ia_sfa, ia_sfb, ia_sfc, ia_ffa, ia_ffb, ia_ffc complex attributes</p>
+<sourcecode id="_cdcffbd7-8ad4-c1d3-7c7e-d17b3c578a10"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "Size of ice floes (ff) for ia_sfa, ia_sfb, ia_sfc, ia_ffa, ia_ffb, ia_ffc complex attributes"%}
+{%assign g_vals = "01:Pancake Ice (30 cm – 3 m) | 02:Shuga/Small Ice Cake; Brash Ice (&lt;2 m) | 03:Ice Cake (&lt;20 m) | 04:Small Floe (20 – 100 m) | 05:Medium Floe (100-500 m) | 06:Big Floe (500 – 2000 m) | 07:Vast Floe (2 – 10 km) | 08:Giant Floe (&gt;10 km) | 09:Fast Ice" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "floeSizeFF"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_fc33f7f2-7fb1-b544-03c6-231a91a274d2"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_cf66e1cf-212a-d951-a259-8be4b2ad7bae" type="arabic"><li><p id="_d29e79da-f607-9759-14eb-5ab79e52f414">01<br/> <underline><strong>IHO Definition</strong></underline> :Pancake Ice (30 cm – 3 m)</p>
-</li>
-<li><p id="_3d1b4b71-f8f4-8718-3d0e-9dd223858ee6">02<br/> <underline><strong>IHO Definition</strong></underline> :Shuga/Small Ice Cake; Brash Ice (&lt;2 m)</p>
-</li>
-<li><p id="_6393259c-7cd6-0a0b-600f-4ca789501021">03<br/> <underline><strong>IHO Definition</strong></underline> :Ice Cake (&lt;20 m)</p>
-</li>
-<li><p id="_e860e05d-7256-6c19-3c1a-8ae0f5efefeb">04<br/> <underline><strong>IHO Definition</strong></underline> :Small Floe (20 – 100 m)</p>
-</li>
-<li><p id="_70937d85-9b4c-3750-2411-b3fc4c3d4af2">05<br/> <underline><strong>IHO Definition</strong></underline> :Medium Floe (100-500 m)</p>
-</li>
-<li><p id="_9ce88961-f44a-c96f-4a47-599a4b5aa35b">06<br/> <underline><strong>IHO Definition</strong></underline> :Big Floe (500 – 2000 m)</p>
-</li>
-<li><p id="_09afdab7-7912-baca-c19b-ae72be33e9bb">07<br/> <underline><strong>IHO Definition</strong></underline> :Vast Floe (2 – 10 km)</p>
-</li>
-<li><p id="_aa7fd3ac-182f-eb1f-7b24-3a812db1616b">08<br/> <underline><strong>IHO Definition</strong></underline> :Giant Floe (&gt;10 km)</p>
-</li>
-<li><p id="_7f64d41e-75ba-3eb0-2cac-3f2f75604510">09<br/> <underline><strong>IHO Definition</strong></underline> :Fast Ice</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_9c86f9fc-a84d-4142-2454-d68166e4f238"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_2cf59109-9133-1a9c-4916-4e6cfdea9583" anchor="sec-fracturesConcentration" obligation="normative">
+<clause id="_c89d30d6-460a-d826-a700-49eeae6473b3" anchor="sec-fracturesConcentration" obligation="normative">
 <title id="_f8d1db8e-4ecf-bca3-3d7e-3b10d6c6bc81">Fractures Concentration</title>
-<table id="_051d8824-cea4-3125-b16f-9367a72ffbd6" unnumbered="true"><tbody><tr id="_cbcf51a2-6d1f-6df9-3cba-54194ca30dc1"><td id="_e8a9464b-eb94-a667-de5f-97875b4dbc78" valign="top" align="left"><p id="_f32b4f1d-e09c-07ff-c3e6-94b75bc8f863"><underline><strong>IHO Definition</strong> :</underline> IA_DUG describes the degree of disunity in an ice area.</p>
+<sourcecode id="_0e566add-a4d0-859c-647c-9e20452de780"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "IA_DUG describes the degree of disunity in an ice area."%}
+{%assign g_vals = "10:Frequency of Cracks and Leads seldom in 10 km on Route | 20:Frequency of Cracks and Leads in 5 – 10 km on Route | 30:Frequency of Cracks and Leads in 3 – 5 km on Route | 40:Frequency of Cracks and Leads in 2 – 3 km on Route | 50:Frequency of Cracks and Leads often in 2 km on Route | 60:Small and Medium Floes – 1/10-3/10; Big Floes – 7/10-10/10 Conc. | 70:Small and Medium Floes – 4/10-6/10; Big Floes – 4/10-6/10 Conc. | 80:Small and Medium Floes – 7/10-10/10; Big Floes – 1/10-3/10 Conc. | 90:Small and Medium Floes Only | 92:Small Floes Only | 98:No Fractures | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "fracturesConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_e4e7d97d-1a6e-bf6e-5117-0bd60b93178b"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_bcfa9dd0-9897-2598-4174-5d3c632e09b1" type="arabic"><li><p id="_d4eba3a8-be27-d4a3-cbcb-b1bc46faaf6f">10<br/> <underline><strong>IHO Definition</strong></underline> :Frequency of Cracks and Leads seldom in 10 km on Route</p>
-</li>
-<li><p id="_dc5bd608-cd79-0e44-8ef3-c4961f48f22e">20<br/> <underline><strong>IHO Definition</strong></underline> :Frequency of Cracks and Leads in 5 – 10 km on Route</p>
-</li>
-<li><p id="_d426d0af-c413-3bdc-f450-16b445d41dc0">30<br/> <underline><strong>IHO Definition</strong></underline> :Frequency of Cracks and Leads in 3 – 5 km on Route</p>
-</li>
-<li><p id="_a744e7d5-3417-0ae2-ed7e-7dddda6515cc">40<br/> <underline><strong>IHO Definition</strong></underline> :Frequency of Cracks and Leads in 2 – 3 km on Route</p>
-</li>
-<li><p id="_80625de0-f346-8f95-15b7-baff9c6e70b7">50<br/> <underline><strong>IHO Definition</strong></underline> :Frequency of Cracks and Leads often in 2 km on Route</p>
-</li>
-<li><p id="_191735b0-8b34-d049-20fd-ea29f578addb">60<br/> <underline><strong>IHO Definition</strong></underline> :Small and Medium Floes – 1/10-3/10; Big Floes – 7/10-10/10 Conc.</p>
-</li>
-<li><p id="_07bd2ace-6abd-187c-e92c-0679935efafe">70<br/> <underline><strong>IHO Definition</strong></underline> :Small and Medium Floes – 4/10-6/10; Big Floes – 4/10-6/10 Conc.</p>
-</li>
-<li><p id="_9af7526b-0175-a8ed-d648-3e34f2867278">80<br/> <underline><strong>IHO Definition</strong></underline> :Small and Medium Floes – 7/10-10/10; Big Floes – 1/10-3/10 Conc.</p>
-</li>
-<li><p id="_5ec0923b-b94e-6c64-e648-f0f9ade4aa55">90<br/> <underline><strong>IHO Definition</strong></underline> :Small and Medium Floes Only</p>
-</li>
-<li><p id="_2a17b214-0893-db2a-088b-ee863e19745c">92<br/> <underline><strong>IHO Definition</strong></underline> :Small Floes Only</p>
-</li>
-<li><p id="_5a4e1c65-781a-95a6-c35d-c86ae0fa00a9">98<br/> <underline><strong>IHO Definition</strong></underline> :No Fractures</p>
-</li>
-<li><p id="_f1e79f00-b2b9-a238-37b8-d79550b86f3a">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_43957817-7bbd-4eeb-bc69-8841ba319f9b"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_d04f80c2-d299-8e91-c27e-01ec40fa860c" anchor="sec-frequencyofLeadsorFractures" obligation="normative">
+<clause id="_20b2a016-29d9-e426-48bf-bc1aba79e654" anchor="sec-frequencyofLeadsorFractures" obligation="normative">
 <title id="_a571f38d-2bbe-c3e0-b2e6-b88eb2b6afbf">Frequency of Leads or Fractures</title>
-<table id="_ccf06ea2-205b-6a9f-2410-ae785d0a9d76" unnumbered="true"><tbody><tr id="_9371ab7e-7115-c73f-e099-081676203417"><td id="_edf9daba-85f5-4666-ecf5-97f9ebefdff3" valign="top" align="left"><p id="_4f8ee587-ed9c-0e7a-2496-eb55102edaf8"><underline><strong>IHO Definition</strong> :</underline> ICERFQ indicates the frequency of leads or fractures in number per nautical mile.</p>
+<sourcecode id="_cfd093cf-11dc-5d36-8fcd-693da3cfe629"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICERFQ indicates the frequency of leads or fractures in number per nautical mile."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_79fd9fed-8b58-fe5f-aeba-d48f6dd46995"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_00e684a1-53ba-ed50-73d3-98b402b535e4"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_c84990ab-4871-e84d-0a20-2e61e1ac3170" anchor="sec-hillsConcentration" obligation="normative">
+<clause id="_d3c93d8d-9f29-416d-1bc1-3500237ccdaa" anchor="sec-hillsConcentration" obligation="normative">
 <title id="_825cbb72-3121-5ed9-db66-0bba2515baab">Hills Concentration</title>
-<table id="_93f6da9b-4933-7e0f-ca0b-806aa158697e" unnumbered="true"><tbody><tr id="_c4bacc2d-6d5e-3d08-31ef-7ccf97648826"><td id="_c767071d-9d9e-6dfe-e581-b104ccd39fe9" valign="top" align="left"><p id="_0140a35c-9117-b3c5-aa6c-5f588fa119e6"><underline><strong>IHO Definition</strong> :</underline> IA_HLG describes the degree of hilling in an ice area (usually multi-year ice).</p>
+<sourcecode id="_177195c3-a515-4f7e-ee58-32aa2a47061a"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "IA_HLG describes the degree of hilling in an ice area (usually multi-year ice)."%}
+{%assign g_vals = "01:Few hills | 10:Slight concentration of hills | 12:Slight to moderate concentration of hills | 20:Moderate concentration of hills | 23:Moderate to heavy concentration of hills | 30:Heavy concentration of hills | 98:No hills | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "hillsConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_52207ef6-28b3-fcab-2c2d-b2734884097e"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_360c8587-2449-a449-d537-576f50214126" type="arabic"><li><p id="_f87bb5de-deda-bd7f-dee6-43dbe5ec097e">01<br/> <underline><strong>IHO Definition</strong></underline> :Few hills</p>
-</li>
-<li><p id="_254f6573-1d24-3a4f-1354-33b8ed9e1131">10<br/> <underline><strong>IHO Definition</strong></underline> :Slight concentration of hills</p>
-</li>
-<li><p id="_beebe599-85e9-d5c6-75f0-5b10e3c5aa46">12<br/> <underline><strong>IHO Definition</strong></underline> :Slight to moderate concentration of hills</p>
-</li>
-<li><p id="_34d4979d-fc4e-57cf-7e05-f54710fe60a4">20<br/> <underline><strong>IHO Definition</strong></underline> :Moderate concentration of hills</p>
-</li>
-<li><p id="_7220be3d-2609-50d3-e3b1-ee2df2e6f8ff">23<br/> <underline><strong>IHO Definition</strong></underline> :Moderate to heavy concentration of hills</p>
-</li>
-<li><p id="_3bc1b641-661a-9f7f-1eaa-31af62402f36">30<br/> <underline><strong>IHO Definition</strong></underline> :Heavy concentration of hills</p>
-</li>
-<li><p id="_62a2c48c-7992-b0db-953d-3bc2e77c0f32">98<br/> <underline><strong>IHO Definition</strong></underline> :No hills</p>
-</li>
-<li><p id="_8f6db96f-c55a-b35f-e33a-bd6c5506d95f">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_06655305-6c77-4614-c174-53c55b63441e"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_0828f2f0-835b-4b49-bae5-e48ca295b908" anchor="sec-iceAverageThickness2" obligation="normative">
+<clause id="_331cfd06-944a-c8c5-f983-3f7c762f80f5" anchor="sec-iceAverageThickness2" obligation="normative">
 <title id="_90c67514-d450-1460-0b34-1d30df673283">Ice Average Thickness</title>
-<table id="_f40900cf-3995-c2d5-14f4-2db5a438ab40" unnumbered="true"><tbody><tr id="_5aeef002-c9d7-af66-53c3-84198882bb0b"><td id="_0742be4a-f699-e0f5-e76f-7cc0bcd4ad5c" valign="top" align="left"><p id="_7335e552-28c3-6466-518e-4ae4b454e0ae"><underline><strong>IHO Definition</strong> :</underline> Ice Average Thickness defines the average thickness of the ice.</p>
+<sourcecode id="_eccdcc4a-c011-cd20-1d1e-cac0e5743ec2"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "Ice Average Thickness defines the average thickness of the ice."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_255ca947-7590-6736-3a09-5655035d9574"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_868cf111-3041-8f09-c61d-b4f8806623fe"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_13b8e492-3d6b-f322-d716-1ae21ca46f0d" anchor="sec-icebergSize" obligation="normative">
+<clause id="_3e971b6d-fae6-425e-7310-8c51b939967d" anchor="sec-icebergSize" obligation="normative">
 <title id="_14e53093-85cb-6367-0629-304f5d01a829">Iceberg Size</title>
-<table id="_20033ddd-c996-80ed-5aab-df443d7205df" unnumbered="true"><tbody><tr id="_7c5510b3-a82b-8d74-c6fe-5d85dbd23caf"><td id="_8a645728-0ef6-5170-9160-d1c45eae7793" valign="top" align="left"><p id="_07a56e3c-d77c-6403-43d6-47ee7ffca0f2"><underline><strong>IHO Definition</strong> :</underline> The “Iceberg Size” categorizes the size of an iceberg.</p>
+<sourcecode id="_9d394e9b-ddef-b5d0-2eca-4521dd16f328"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "The &amp;quot;Iceberg Size&amp;quot; categorizes the size of an iceberg."%}
+{%assign g_vals = "01:Growler (&lt;1m asl) | 02:Bergy Bit (1-&lt;5m asl; 5-&lt;15m length) | 03:Small Iceberg (5-15m asl; 15-60m length) | 04:Medium Iceberg (16-45m asl; 61-120m length) | 05:Large Iceberg (46-75m asl; 121-200m length) | 06:Very Large Iceberg (&gt;75m asl; &gt;200m length) | 07:Ice Island Fragment | 08:Ice Island (in the Northern Hemisphere) or Very Large Tabular Berg (in the Southern Ocean) | 09:Radar Target | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "icebergSize"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_a903c5d4-c482-434b-a601-8bbb8424a5e1"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_29295ddb-9f9d-bbb0-42b6-069506c582aa" type="arabic"><li><p id="_e6b14a0e-7a05-0fb2-bb86-b08ac9b17720">01<br/> <underline><strong>IHO Definition</strong></underline> :Growler (&lt;1m asl)</p>
-</li>
-<li><p id="_d19faa60-13f4-3c5d-1632-a154ce9e6a70">02<br/> <underline><strong>IHO Definition</strong></underline> :Bergy Bit (1-&lt;5m asl; 5-&lt;15m length)</p>
-</li>
-<li><p id="_7b9f8850-a110-d8d4-fca8-6d9f45d3c7d5">03<br/> <underline><strong>IHO Definition</strong></underline> :Small Iceberg (5-15m asl; 15-60m length)</p>
-</li>
-<li><p id="_6fb559de-2ac0-db3c-68b6-9e540cefe1d6">04<br/> <underline><strong>IHO Definition</strong></underline> :Medium Iceberg (16-45m asl; 61-120m length)</p>
-</li>
-<li><p id="_b4804ac6-55ef-0773-1bf4-335a8e89683d">05<br/> <underline><strong>IHO Definition</strong></underline> :Large Iceberg (46-75m asl; 121-200m length)</p>
-</li>
-<li><p id="_d1ef4fe0-ffc8-c715-a1b5-c6a31ac1a233">06<br/> <underline><strong>IHO Definition</strong></underline> :Very Large Iceberg (&gt;75m asl; &gt;200m length)</p>
-</li>
-<li><p id="_74c763dd-5ec2-70e5-2af2-aa4d2bd52f8d">07<br/> <underline><strong>IHO Definition</strong></underline> :Ice Island Fragment</p>
-</li>
-<li><p id="_f18ae625-5934-a1e3-f773-d77e031acdc3">08<br/> <underline><strong>IHO Definition</strong></underline> :Ice Island (in the Northern Hemisphere) or Very Large Tabular Berg (in the Southern Ocean)</p>
-</li>
-<li><p id="_36055d9b-468f-50f0-7181-ce94e570950d">09<br/> <underline><strong>IHO Definition</strong></underline> :Radar Target</p>
-</li>
-<li><p id="_f3c03ce1-de74-1603-d42b-ba684f7fb942">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_ca48f884-935a-ef47-600b-d60cfccfb789"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_652f5888-c281-3621-ee96-9cde8c9869a1" anchor="sec-iceDriftDirection" obligation="normative">
+<clause id="_926c2e50-6f19-ffcd-74d1-7f9cfda9f95b" anchor="sec-iceDriftDirection" obligation="normative">
 <title id="_b5729a50-e472-c27e-c9ed-9f08dc6050b8">Ice Drift Direction</title>
-<table id="_e3beff49-0125-8cab-3970-60d36de86f63" unnumbered="true"><tbody><tr id="_a6317877-ffa3-ea79-5997-6f0b766edfbc"><td id="_520b3be8-22bd-0a97-8106-52e66391c02d" valign="top" align="left"><p id="_664b426b-2ac7-e6f7-c488-53e3eeddd141"><underline><strong>IHO Definition</strong> :</underline> ICEDDR indicates the direction in which an ice mass is drifting.</p>
+<sourcecode id="_7f1e9218-c4c9-1809-80a4-16601fdaa989"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEDDR indicates the direction in which an ice mass is drifting."%}
+{%assign g_vals = "01:No Ice Motion | 02:Ice Drift to NE | 03:Ice Drift to E | 04:Ice Drift to SE | 05:Ice Drift to S | 06:Ice Drift to SW | 07:Ice Drift to W | 08:Ice Drift to NW | 09:Ice Drift to N | 10:Variable | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceDriftDirection"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_13c591dc-c73f-e62d-1241-534e453175ff"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_5ab0a98c-b983-db23-8f0b-b45ef81e0de5" type="arabic"><li><p id="_aed62313-0b86-f1fa-388a-77ccd3ce3ecd">01<br/> <underline><strong>IHO Definition</strong></underline> :No Ice Motion</p>
-</li>
-<li><p id="_a84c3288-f9d1-2900-906b-15d573b61a4f">02<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to NE</p>
-</li>
-<li><p id="_64c223a6-f8fd-9e6e-a244-2c5259ee27a9">03<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to E</p>
-</li>
-<li><p id="_84bab4a7-7ccc-fd52-42ae-7c18ccbd1405">04<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to SE</p>
-</li>
-<li><p id="_4830150f-4d4c-3660-e629-c535e2df690e">05<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to S</p>
-</li>
-<li><p id="_7b768ba4-7610-1244-f2bf-bc36a0b0b9c9">06<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to SW</p>
-</li>
-<li><p id="_493be7a1-0673-d134-3b49-66f88d70f759">07<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to W</p>
-</li>
-<li><p id="_2f3a05fb-b10c-f6cd-ace2-93f31ce84cf5">08<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to NW</p>
-</li>
-<li><p id="_8fbf2c35-a149-6fde-72a7-a57d8a5cfb03">09<br/> <underline><strong>IHO Definition</strong></underline> :Ice Drift to N</p>
-</li>
-<li><p id="_9af3e03f-08aa-8f7f-e864-0d8b7dd3da42">10<br/> <underline><strong>IHO Definition</strong></underline> :Variable</p>
-</li>
-<li><p id="_4aee5803-afac-14a8-0972-9a199b5fab84">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_86517290-0650-79d6-3572-fa10f9ef3ff6"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_2ccb5794-a8da-d818-cc59-c0c47c1fa795" anchor="sec-iceDriftSpeed" obligation="normative">
+<clause id="_dab9e626-0fcb-e1ed-ac07-b5841018ea35" anchor="sec-iceDriftSpeed" obligation="normative">
 <title id="_212c65a7-331a-6377-f325-9774548dd90f">Ice Drift Speed</title>
-<table id="_a45bb6ac-71e1-64c4-c725-507f570aff80" unnumbered="true"><tbody><tr id="_7e74aba8-4251-2063-f5e8-9a60ed0ff984"><td id="_6186e819-2361-093a-ede4-6c635ba06fd6" valign="top" align="left"><p id="_8949eb50-1f78-ed16-6731-babae6e1ab93"><underline><strong>IHO Definition</strong> :</underline> ICEDSP describes the speed in knots at which an ice mass is traveling.</p>
+<sourcecode id="_5cbcdbe2-d161-2435-7f86-9cfae8454063"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICEDSP describes the speed in knots at which an ice mass is traveling."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_d81cb99e-58ef-ac44-a298-6c8c6aa9ab2f"><underline><strong> Attribute Type :</strong></underline> real</p>
-
-<p id="_276ee29e-ecb6-2983-0b8f-62059e10335f"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_74e0e59a-0953-54e8-559c-e8591504d5fc" anchor="sec-iceFractureType" obligation="normative">
+<clause id="_02c8179f-52b5-fa5d-e5ca-2d37efc601da" anchor="sec-iceFractureType" obligation="normative">
 <title id="_88ecad5f-fb2c-8412-27b1-9099f541bf74">Ice Fracture Type</title>
-<table id="_a05d2782-cb91-e441-8e7e-2f341e201003" unnumbered="true"><tbody><tr id="_a245e3a8-85ae-242a-c3fa-d2885bcc1d42"><td id="_90666aac-9e3b-93d0-d0e8-a18e43970a34" valign="top" align="left"><p id="_6e8b782d-fefc-08bb-089a-af4e77001dc8"><underline><strong>IHO Definition</strong> :</underline> ICEFTY indicates the type of fracture, based upon width.</p>
+<sourcecode id="_56e79939-df71-6d10-f2f2-e60d8abec21d"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEFTY indicates the type of fracture, based upon width."%}
+{%assign g_vals = "01:Crack (0 to 1m wide) | 02:Very Small Fracture (&gt;1m to 50m wide) | 03:Small Fracture (&gt;50m to 200m wide) | 04:Medium Fracture (&gt;200m to 500m wide) | 05:Large Fracture (&gt;500m wide)" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceFractureType"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_d4aa84c3-a31b-4b3b-01c7-1bad295f851e"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_92f685fe-0be1-a4d7-88b0-e5c46285dcff" type="arabic"><li><p id="_59cef6e8-0598-40fa-237d-121e68e6ac00">01<br/> <underline><strong>IHO Definition</strong></underline> :Crack (0 to 1m wide)</p>
-</li>
-<li><p id="_8119242a-5a1e-d091-e987-952cc6ff957b">02<br/> <underline><strong>IHO Definition</strong></underline> :Very Small Fracture (&gt;1m to 50m wide)</p>
-</li>
-<li><p id="_42fbcc14-3afe-8df9-0f94-571a44d7a7de">03<br/> <underline><strong>IHO Definition</strong></underline> :Small Fracture (&gt;50m to 200m wide)</p>
-</li>
-<li><p id="_6b2665d6-166f-6cdf-7f1d-cef10dc894b9">04<br/> <underline><strong>IHO Definition</strong></underline> :Medium Fracture (&gt;200m to 500m wide)</p>
-</li>
-<li><p id="_2f7f7ad1-b363-9a47-67dc-424adc038e6f">05<br/> <underline><strong>IHO Definition</strong></underline> :Large Fracture (&gt;500m wide)</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_0a24bfc4-0d4f-62b6-3e30-7ed49ca37ae9"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_ada02e4a-cd0a-5190-cb5f-a849cb286a3f" anchor="sec-iceKeelConcentration" obligation="normative">
+<clause id="_66a34c69-e08b-c8a2-35f9-6fb8cea3ddc5" anchor="sec-iceKeelConcentration" obligation="normative">
 <title id="_a089f90e-ace6-cbfb-15ed-72a6cdcb8ca0">Ice Keel Concentration</title>
-<table id="_57a5324a-2258-008c-330c-c89896492ea2" unnumbered="true"><tbody><tr id="_5a6efacd-3324-aba9-ed64-8c9c4deffa06"><td id="_5d6015de-7c19-a635-c8c0-364b3663c996" valign="top" align="left"><p id="_0691608d-6cec-21a6-e9d6-f0fa2dcb5d53"><underline><strong>IHO Definition</strong> :</underline> ICEKCN describes the concentration of ice keels beneath an ice area.</p>
+<sourcecode id="_ad0172c4-b1c7-b1fb-3636-2d9bf2872485"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEKCN describes the concentration of ice keels beneath an ice area."%}
+{%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Keels | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceKeelConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_64e2c3b1-9eae-bec6-a746-27179f9cdcf2"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_bc0459be-d3ba-e77b-c2e7-04426e45328a" type="arabic"><li><p id="_208d9ad3-b91d-2181-7087-f74f0ecec5f2">01<br/> <underline><strong>IHO Definition</strong></underline> :0/10 – 1/10</p>
-</li>
-<li><p id="_f0128306-e75d-f235-d2d5-9c7247f3d279">10<br/> <underline><strong>IHO Definition</strong></underline> :1/10</p>
-</li>
-<li><p id="_fe8ef91e-c42f-8aeb-7376-ec69922c4390">12<br/> <underline><strong>IHO Definition</strong></underline> :1/10 – 2/10</p>
-</li>
-<li><p id="_1ba71396-f999-c160-deef-42377df84ad1">20<br/> <underline><strong>IHO Definition</strong></underline> :2/10</p>
-</li>
-<li><p id="_49970cb5-2c83-f45d-3dd1-bf9c899ee7f7">23<br/> <underline><strong>IHO Definition</strong></underline> :2/10 – 3/10</p>
-</li>
-<li><p id="_15d60dd8-ae1e-b3ea-fe8b-e1fab0a1d6c2">30<br/> <underline><strong>IHO Definition</strong></underline> :3/10</p>
-</li>
-<li><p id="_b1d46c83-0def-d67f-e7c7-fe2646c9d621">34<br/> <underline><strong>IHO Definition</strong></underline> :3/10 – 4/10</p>
-</li>
-<li><p id="_e42c4ea8-775d-6ae2-aa14-6094d24310ef">40<br/> <underline><strong>IHO Definition</strong></underline> :4/10</p>
-</li>
-<li><p id="_e86fed30-60bf-9ca1-8ac0-edb7ae2ed032">45<br/> <underline><strong>IHO Definition</strong></underline> :4/10 – 5/10</p>
-</li>
-<li><p id="_5a8143ba-b110-3fb8-0696-6b5269ba5233">50<br/> <underline><strong>IHO Definition</strong></underline> :5/10</p>
-</li>
-<li><p id="_75d33759-bb93-4bc7-9d00-cd91d917f791">56<br/> <underline><strong>IHO Definition</strong></underline> :5/10 – 6/10</p>
-</li>
-<li><p id="_f975e1ec-f9f1-c414-e5dd-a8f178eed2f9">60<br/> <underline><strong>IHO Definition</strong></underline> :6/10</p>
-</li>
-<li><p id="_0a273525-b27f-5d66-e948-3eb0a321fd69">67<br/> <underline><strong>IHO Definition</strong></underline> :6/10 – 7/10</p>
-</li>
-<li><p id="_06ae3bd7-7c70-daa4-ed49-fab5f1a60569">70<br/> <underline><strong>IHO Definition</strong></underline> :7/10</p>
-</li>
-<li><p id="_8e49c2af-c4cb-2ba1-0abd-8abc581f4f4e">78<br/> <underline><strong>IHO Definition</strong></underline> :7/10 – 8/10</p>
-</li>
-<li><p id="_3b8dfe60-ce58-8d11-5e6f-e18f90521e12">80<br/> <underline><strong>IHO Definition</strong></underline> :8/10</p>
-</li>
-<li><p id="_3098e0f9-9eb6-02cf-cf9f-64ddce0f37fd">89<br/> <underline><strong>IHO Definition</strong></underline> :8/10 – 9/10</p>
-</li>
-<li><p id="_587234ab-fd58-3a26-bc98-878f15349174">90<br/> <underline><strong>IHO Definition</strong></underline> :9/10</p>
-</li>
-<li><p id="_db4e80be-ab52-ad9d-9306-0f50424e9081">91<br/> <underline><strong>IHO Definition</strong></underline> :9/10 – 10/10</p>
-</li>
-<li><p id="_d68e4aad-a588-67a5-833e-d6c5cd895c2f">92<br/> <underline><strong>IHO Definition</strong></underline> :10/10</p>
-</li>
-<li><p id="_530edd17-5d64-4358-e117-1a2ac1151343">98<br/> <underline><strong>IHO Definition</strong></underline> :No Keels</p>
-</li>
-<li><p id="_6d7793c0-05e7-eff2-c9d7-4421c04fea72">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_68ff451c-d173-7ad3-fbec-8173f74dca69"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_38935995-674f-3f28-53d4-0c74a56477e4" anchor="sec-iceKeelFrequency" obligation="normative">
+<clause id="_ad02552a-048f-b1e4-7c18-d0f498574ea8" anchor="sec-iceKeelFrequency" obligation="normative">
 <title id="_5752cb9a-4103-25b8-843b-9d80012db0b0">Ice Keel Frequency</title>
-<table id="_daa94336-3982-3ce0-e49b-1b9401257b71" unnumbered="true"><tbody><tr id="_cfcb3b48-8477-5a91-ef27-08edec337a95"><td id="_f2b4cc5c-cfca-8542-811c-a3588e3eed74" valign="top" align="left"><p id="_f5b3e896-5a5f-4301-d2e0-4aeef77e7667"><underline><strong>IHO Definition</strong> :</underline> ICERFQ indicates the frequency of ice keels in number per nautical mile</p>
+<sourcecode id="_1d162164-a394-f18b-c58c-f4b3c7de458d"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICERFQ indicates the frequency of ice keels in number per nautical mile"%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_77a88fb0-fd0d-74c8-22a9-a2bc89a20074"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_e75162ae-2f81-8423-e1fc-775b409e6ab2"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_02054ac6-5d7e-bcb9-a3ae-8c126a4239f5" anchor="sec-iceKeelMaximumDepth" obligation="normative">
+<clause id="_e92be403-f1fb-05a8-8a63-db5b771c1211" anchor="sec-iceKeelMaximumDepth" obligation="normative">
 <title id="_5f113876-cb97-52dc-f2fa-835f38d4c935">Ice Keel Maximum Depth</title>
-<table id="_c7e7d446-d20f-addc-9cac-cae9e42a482a" unnumbered="true"><tbody><tr id="_28736351-c17d-0605-55c0-eb9f27c3c67f"><td id="_ead50140-0ad9-8073-fcda-021812edc67d" valign="top" align="left"><p id="_2a79df9e-4eff-b23b-0288-298b6c5a110b"><underline><strong>IHO Definition</strong> :</underline> ICERMT indicates the maximum depth of ice keels in decimetres.</p>
+<sourcecode id="_66653271-b9f7-4ca8-2df2-098b4bbe4daf"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICERMT indicates the maximum depth of ice keels in decimetres."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_876b3433-cce5-bffb-2b2f-d4b3f7ad942e"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_1fa032d8-18bd-8fb2-7752-a88a53c2b36a"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_57709cb6-ca06-0bae-9279-bc5ef0cd2736" anchor="sec-iceKeelMeanDepth" obligation="normative">
+<clause id="_4ce773af-056f-7ae3-4cf7-ccd02d35f239" anchor="sec-iceKeelMeanDepth" obligation="normative">
 <title id="_f213a02f-e3df-4364-d4cb-f814e7719b7b">Ice Keel Mean Depth</title>
-<table id="_36b57e6c-69ce-0b13-e0cd-058588404959" unnumbered="true"><tbody><tr id="_ada0f55a-06fc-1aeb-0349-e2d8fd88f723"><td id="_6929fe6f-a85f-3a1c-750e-49f8f8f6a228" valign="top" align="left"><p id="_1cd8e679-d693-6c38-435f-e79bb12c49d7"><underline><strong>IHO Definition</strong> :</underline> Indicates the mean depth of ice keels in decimetres.</p>
+<sourcecode id="_5c9c4c16-5d7b-e2fd-c009-c5b749fb905e"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "Indicates the mean depth of ice keels in decimetres."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_ae67814c-2de9-1bdd-2579-cf8bd52a7b82"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_82fba0fb-703f-0857-ea51-fbc58463184f"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_ecf454ab-c776-05e4-28f6-2c021316c3a1" anchor="sec-iceLeadStatus" obligation="normative">
+<clause id="_b103f0c9-80f0-3e3c-0963-1eaa243398d9" anchor="sec-iceLeadStatus" obligation="normative">
 <title id="_f1ef7dcc-9f77-6319-a494-e0b5680e22ed">Ice Lead Status</title>
-<table id="_e968dfda-3f9d-d6af-669c-6b23cb7e8960" unnumbered="true"><tbody><tr id="_7cbcab8e-54fb-7743-140c-8802f422e7c5"><td id="_1bb0c3bd-feec-4dfe-5aec-adefc03f1110" valign="top" align="left"><p id="_7a4f4be4-a6e7-8455-feaf-3696411da2ca"><underline><strong>IHO Definition</strong> :</underline> The Ice Lead Status indicates the surface nature of the lead.</p>
+<sourcecode id="_2261fc41-f59f-3aff-6629-f2b461589880"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "The Ice Lead Status indicates the surface nature of the lead."%}
+{%assign g_vals = "01:Open Lead | 02:Frozen Lead | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceLeadStatus"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_72dee97b-fe71-7c87-7eaa-ab96db46a872"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_4ade1ace-2121-4d40-acf3-f0a8e3af1735" type="arabic"><li><p id="_911fb871-808e-03db-98cb-25e28e883c64">01<br/> <underline><strong>IHO Definition</strong></underline> :Open Lead</p>
-</li>
-<li><p id="_87606e33-1285-700c-0080-7437c0cb54f9">02<br/> <underline><strong>IHO Definition</strong></underline> :Frozen Lead</p>
-</li>
-<li><p id="_64e2285c-0eae-9ccc-2db6-965dfcfd52e6">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_c603cb6b-3a26-c210-8ded-213fd0b6e1f6"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_6cfac3ef-f410-c065-be7c-11feb33d1f5f" anchor="sec-iceLeadWidth" obligation="normative">
+<clause id="_dcb7f5bb-e252-32db-94da-e8a108ba4125" anchor="sec-iceLeadWidth" obligation="normative">
 <title id="_db87c5dd-3a3b-955b-b9ab-4c2fc7144c89">Ice Lead (or Fracture or Crack) Width</title>
-<table id="_f469302c-c4d2-d4d3-b106-55533b7145c7" unnumbered="true"><tbody><tr id="_3858f64e-23bc-e2cc-1e03-45ccd666dca7"><td id="_fd4e35ce-19a0-ae83-c6bf-525615b1d0bf" valign="top" align="left"><p id="_055d9025-6000-b26c-a98a-adeed1081b3f"><underline><strong>IHO Definition</strong> :</underline> ICELWD indicates the width of a lead or fracture or crack in metres.</p>
+<sourcecode id="_08156454-9e1b-3677-ead2-bfd308e49491"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICELWD indicates the width of a lead or fracture or crack in metres."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_041e2a33-ac0d-4225-b0c7-6fa93f7996ce"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_5ddd1900-56d4-2341-f00a-b38bd3b8d4d5"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_bbeed8d7-895b-29ee-103a-6d1ef8969359" anchor="sec-iceLocationInformation" obligation="normative">
+<clause id="_2844ced4-daaa-8979-ed01-d6af963e3f15" anchor="sec-iceLocationInformation" obligation="normative">
 <title id="_894937d8-e023-15e6-f547-5594a5e52fe8">Ice Location Information</title>
-<table id="_2f050b24-bac7-e153-6adc-78d822209fa9" unnumbered="true"><tbody><tr id="_b2714c44-940d-2832-f48a-88ab895d4656"><td id="_f2abd57d-9577-748b-13ab-a0a0a6b034ee" valign="top" align="left"><p id="_b3c821b4-0b16-fc88-0256-d7a1dd401240"><underline><strong>IHO Definition</strong> :</underline> ICELOC indicates whether the break is at a specific location, or whether there is a presence in the area.</p>
+<sourcecode id="_a966c88e-e166-7df7-3d6d-db07883fbeaf"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICELOC indicates whether the break is at a specific location, or whether there is a presence in the area."%}
+{%assign g_vals = "01:Specific Location | 02:Presence in Area" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceLocationInformation"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_999e26ef-a92c-6c43-71ed-4d6b5245e99f"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_51cbbfc2-8327-5f84-dbe4-7e1309c8a27a" type="arabic"><li><p id="_4691c593-5603-bd16-fcc9-b8a8ea0baaf0">01<br/> <underline><strong>IHO Definition</strong></underline> :Specific Location</p>
-</li>
-<li><p id="_34b824fb-2488-4ead-16b4-0545ef888a8e">02<br/> <underline><strong>IHO Definition</strong></underline> :Presence in Area</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_60b7c39d-f4ee-9fbe-b345-5a1f2edc22f2"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_2757a61e-6ac2-4051-4239-59480d4cd843" anchor="sec-iceRaftingConcentration" obligation="normative">
+<clause id="_b8403e51-ec58-b1b2-d0dc-856ca6d7007f" anchor="sec-iceRaftingConcentration" obligation="normative">
 <title id="_4b07e284-a861-89a6-17ad-385afea67f8c">Ice Rafting Concentration</title>
-<table id="_12c4d3af-229f-e029-3e46-5bf5c12e89b2" unnumbered="true"><tbody><tr id="_87e44195-35a4-ef9a-ae76-3e2c2c2e03ef"><td id="_d632d3be-c629-14e7-41ad-0c3e4d9e3a7b" valign="top" align="left"><p id="_8a70f742-2ec1-e4e1-86e1-3eed539e4e22"><underline><strong>IHO Definition</strong> :</underline> ICEFCN describes the concentration of ice rafting in an ice area.</p>
+<sourcecode id="_71517092-08fc-c0de-6047-e0ebf89ea548"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEFCN describes the concentration of ice rafting in an ice area."%}
+{%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Rafting | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceRaftingConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_a71fce4d-8426-9a40-b6ae-2f9e4be9d03a"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_d9717d6e-8b32-3c09-88ed-5e0d249c5d62" type="arabic"><li><p id="_004a5c2f-6fe5-99f2-e16e-b745347340bb">01<br/> <underline><strong>IHO Definition</strong></underline> :0/10 – 1/10</p>
-</li>
-<li><p id="_29bad507-476a-4e07-462d-4f09d7bbfe38">10<br/> <underline><strong>IHO Definition</strong></underline> :1/10</p>
-</li>
-<li><p id="_5885769d-d277-4d5c-7102-893c3eb9d36a">12<br/> <underline><strong>IHO Definition</strong></underline> :1/10 – 2/10</p>
-</li>
-<li><p id="_c4cc2807-3392-fa4a-4e71-5c7e103ae4fa">20<br/> <underline><strong>IHO Definition</strong></underline> :2/10</p>
-</li>
-<li><p id="_3a535a87-57a4-b725-18b3-a8dd90aed944">23<br/> <underline><strong>IHO Definition</strong></underline> :2/10 – 3/10</p>
-</li>
-<li><p id="_72bfc11d-c15c-b7ad-bcc0-c47a433c5bbf">30<br/> <underline><strong>IHO Definition</strong></underline> :3/10</p>
-</li>
-<li><p id="_53d2922c-97ab-7724-ad76-cad021aacbb3">34<br/> <underline><strong>IHO Definition</strong></underline> :3/10 – 4/10</p>
-</li>
-<li><p id="_eceea35d-e4e5-d93b-5718-51c38a313a92">40<br/> <underline><strong>IHO Definition</strong></underline> :4/10</p>
-</li>
-<li><p id="_d5e18eb2-cbc7-0dfc-2b62-fec931c654ca">45<br/> <underline><strong>IHO Definition</strong></underline> :4/10 – 5/10</p>
-</li>
-<li><p id="_f4dbce8b-981c-67e7-6d06-1e34a4416401">50<br/> <underline><strong>IHO Definition</strong></underline> :5/10</p>
-</li>
-<li><p id="_de363b7b-1a0d-b5c8-3cea-27bfe1d9a24c">56<br/> <underline><strong>IHO Definition</strong></underline> :5/10 – 6/10</p>
-</li>
-<li><p id="_dd3ac905-428d-7f57-b2d5-8023290472dd">60<br/> <underline><strong>IHO Definition</strong></underline> :6/10</p>
-</li>
-<li><p id="_e5b9ac55-9c5a-0cfa-86bf-1f4a51906154">67<br/> <underline><strong>IHO Definition</strong></underline> :6/10 – 7/10</p>
-</li>
-<li><p id="_3e97da61-41cc-f4fd-343b-5297cb653948">70<br/> <underline><strong>IHO Definition</strong></underline> :7/10</p>
-</li>
-<li><p id="_dd6faa17-c9d3-d925-3ee7-782b30977534">78<br/> <underline><strong>IHO Definition</strong></underline> :7/10 – 8/10</p>
-</li>
-<li><p id="_83c01010-670a-96a6-31c5-7ecea7eadf20">80<br/> <underline><strong>IHO Definition</strong></underline> :8/10</p>
-</li>
-<li><p id="_64ec296d-028e-8bc3-2285-0487b4f5b2b5">89<br/> <underline><strong>IHO Definition</strong></underline> :8/10 – 9/10</p>
-</li>
-<li><p id="_548bf7d5-0e84-ee0e-2b45-3f236606ce8c">90<br/> <underline><strong>IHO Definition</strong></underline> :9/10</p>
-</li>
-<li><p id="_e5bd7d35-51ff-62a3-aa20-ed67f4019bd1">91<br/> <underline><strong>IHO Definition</strong></underline> :9/10 – 10/10</p>
-</li>
-<li><p id="_0b151ff6-f7f8-3c69-d59f-0ec416ace0e7">92<br/> <underline><strong>IHO Definition</strong></underline> :10/10</p>
-</li>
-<li><p id="_68f5442b-f332-c392-4c1f-894ccf0b8994">98<br/> <underline><strong>IHO Definition</strong></underline> :No Rafting</p>
-</li>
-<li><p id="_9112669d-e73e-2534-179c-4fa9ded576cb">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_f8436623-fa4c-a637-cec2-d9535f351e99"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_303f76d1-f1cd-8c6a-93c1-53358bbe6c25" anchor="sec-iceRidgeClassification" obligation="normative">
+<clause id="_720f35da-9685-aa0a-25dd-4848686d6631" anchor="sec-iceRidgeClassification" obligation="normative">
 <title id="_a1ec85f6-3491-ed7c-9ded-7e26d41416c9">Ice Ridge Classification</title>
-<table id="_adb7007e-ca39-669c-9ea2-4bf4260b0486" unnumbered="true"><tbody><tr id="_fe41ce58-1bf8-8acc-c407-1418d04bdb91"><td id="_d7b32cd1-1fac-2be1-c5c8-3762e1865077" valign="top" align="left"><p id="_83a234cf-8daa-2596-d33d-78485abc9d57"><underline><strong>IHO Definition</strong> :</underline> ICERDV describes the predominant type of ice ridge(s) present.</p>
+<sourcecode id="_e058a47a-ff25-1bab-f1be-2c143d630ab6"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICERDV describes the predominant type of ice ridge(s) present."%}
+{%assign g_vals = "01:New Ridge | 02:Weathered Ridge | 03:Very Weathered Ridge | 04:Aged Ridge | 05:Consolidated Ridge | 06:Ridge | 07:Ridged Ice Zone | 08:Ridge Barrier | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceRidgeClassification"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_55a26a07-0e42-8fed-6110-f3ae119018fe"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_60c1185c-5538-2044-ca8e-975810a119f1" type="arabic"><li><p id="_aafc09be-426c-0e0b-633f-b162e107d08e">01<br/> <underline><strong>IHO Definition</strong></underline> :New Ridge</p>
-</li>
-<li><p id="_4fe2c3af-faa7-5618-3c65-ed3746d6bfe9">02<br/> <underline><strong>IHO Definition</strong></underline> :Weathered Ridge</p>
-</li>
-<li><p id="_73fc7c85-d9cb-9a90-5247-6a90704f1820">03<br/> <underline><strong>IHO Definition</strong></underline> :Very Weathered Ridge</p>
-</li>
-<li><p id="_4be2c0fe-413d-67e4-a16a-2b4cfe429f54">04<br/> <underline><strong>IHO Definition</strong></underline> :Aged Ridge</p>
-</li>
-<li><p id="_120ae7e4-10f6-20ba-603f-cb4b10632df5">05<br/> <underline><strong>IHO Definition</strong></underline> :Consolidated Ridge</p>
-</li>
-<li><p id="_c289c278-b958-2f2e-1633-b38aa3129db8">06<br/> <underline><strong>IHO Definition</strong></underline> :Ridge</p>
-</li>
-<li><p id="_c4413f07-0b95-11d8-1133-066be01af8ee">07<br/> <underline><strong>IHO Definition</strong></underline> :Ridged Ice Zone</p>
-</li>
-<li><p id="_6d7d2407-2391-5fd8-71a6-ee2f1392cbf7">08<br/> <underline><strong>IHO Definition</strong></underline> :Ridge Barrier</p>
-</li>
-<li><p id="_ea272ebc-3724-09eb-b0f7-294a6c03675c">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_93e85c81-54b8-cb49-cfc2-ac0fec392188"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_47d85a1b-a7cc-df7e-7801-b68df17e565e" anchor="sec-iceRidgeConcentration" obligation="normative">
+<clause id="_ed816b5a-8739-1f2b-3127-92b6600294a6" anchor="sec-iceRidgeConcentration" obligation="normative">
 <title id="_ea284509-803f-5b15-ef20-f9aecd7de0d9">Ice Ridge Concentration</title>
-<table id="_bf354652-2674-ee37-67cf-195637fba42e" unnumbered="true"><tbody><tr id="_8ae86fe1-963b-6351-8d0b-38621b2d30f1"><td id="_748cdfa7-4166-80a6-5c31-0c7c4af6d0d3" valign="top" align="left"><p id="_5e63b739-50ee-b0f0-6107-ce07e4e14d28"><underline><strong>IHO Definition</strong> :</underline> ICERCN describes the concentration of hummocked ice in an ice area.  Up to three values may be given in the list to correspond to the partial concentrations in ICEAPC.</p>
+<sourcecode id="_cb79f456-4908-6f98-2bff-cb3f9b101352"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICERCN describes the concentration of hummocked ice in an ice area.  Up to three values may be given in the list to correspond to the partial concentrations in ICEAPC."%}
+{%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Ridging | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceRidgeConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_d6cdf63f-9714-70f5-7132-1fad25aeb8fb"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_e3cdb5c3-2156-3493-a266-8a3b69b956ff" type="arabic"><li><p id="_997bf88a-d1df-9734-ad7d-39777f633b32">01<br/> <underline><strong>IHO Definition</strong></underline> :0/10 – 1/10</p>
-</li>
-<li><p id="_a38758d2-9c97-0d3f-f5a4-2a7045a4a304">10<br/> <underline><strong>IHO Definition</strong></underline> :1/10</p>
-</li>
-<li><p id="_d7a787e8-95ae-9a42-9426-4adc5396e8cc">12<br/> <underline><strong>IHO Definition</strong></underline> :1/10 – 2/10</p>
-</li>
-<li><p id="_248a75c7-2685-cba4-5511-0badb7ced1f3">20<br/> <underline><strong>IHO Definition</strong></underline> :2/10</p>
-</li>
-<li><p id="_dbfdbeab-9a0c-dee2-5c5d-7308db919c6f">23<br/> <underline><strong>IHO Definition</strong></underline> :2/10 – 3/10</p>
-</li>
-<li><p id="_0a42a9dd-1ba3-55de-0722-0b917f25bd6a">30<br/> <underline><strong>IHO Definition</strong></underline> :3/10</p>
-</li>
-<li><p id="_875d5575-62c1-57b9-5f85-3a3a44502533">34<br/> <underline><strong>IHO Definition</strong></underline> :3/10 – 4/10</p>
-</li>
-<li><p id="_f20633da-016d-abed-8a5e-f176d3064cea">40<br/> <underline><strong>IHO Definition</strong></underline> :4/10</p>
-</li>
-<li><p id="_60992eeb-b620-e8a1-fe73-d826e4d72de5">45<br/> <underline><strong>IHO Definition</strong></underline> :4/10 – 5/10</p>
-</li>
-<li><p id="_ee490b29-a928-5929-cf9b-2d4bc3f57eda">50<br/> <underline><strong>IHO Definition</strong></underline> :5/10</p>
-</li>
-<li><p id="_698c10be-2f1d-19d3-1eb0-0deef84cdd00">56<br/> <underline><strong>IHO Definition</strong></underline> :5/10 – 6/10</p>
-</li>
-<li><p id="_95c10392-0bab-5792-7c7c-936ce5cc9a6f">60<br/> <underline><strong>IHO Definition</strong></underline> :6/10</p>
-</li>
-<li><p id="_8f6c522d-166d-5d94-768d-47406548ce74">67<br/> <underline><strong>IHO Definition</strong></underline> :6/10 – 7/10</p>
-</li>
-<li><p id="_a28b5efe-0658-405c-300e-e564c98c38e0">70<br/> <underline><strong>IHO Definition</strong></underline> :7/10</p>
-</li>
-<li><p id="_267795ee-bdc7-176e-f308-abafd2d44cc9">78<br/> <underline><strong>IHO Definition</strong></underline> :7/10 – 8/10</p>
-</li>
-<li><p id="_c08dd14a-1e47-3c4a-a5ff-223cec637d20">80<br/> <underline><strong>IHO Definition</strong></underline> :8/10</p>
-</li>
-<li><p id="_1b6b6203-839c-bd4a-afd5-4145aabd10f8">89<br/> <underline><strong>IHO Definition</strong></underline> :8/10 – 9/10</p>
-</li>
-<li><p id="_ec44c0a2-152c-a82a-cb30-5efaf4ef20a8">90<br/> <underline><strong>IHO Definition</strong></underline> :9/10</p>
-</li>
-<li><p id="_1258316f-c1e0-9847-0c51-d0331fd1aa6a">91<br/> <underline><strong>IHO Definition</strong></underline> :9/10 – 10/10</p>
-</li>
-<li><p id="_37705589-b0ce-bea7-1156-6d1c4012e751">92<br/> <underline><strong>IHO Definition</strong></underline> :10/10</p>
-</li>
-<li><p id="_6a068763-f6de-75df-5ced-64fd7d9749c1">98<br/> <underline><strong>IHO Definition</strong></underline> :No Ridging</p>
-</li>
-<li><p id="_f26bf351-54a3-46dc-f6d8-5212ba3ec745">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_3825e7db-3f64-2cb8-05e8-4e7f9a15996a"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_8375afbd-6807-c3ab-7982-0edcfceca049" anchor="sec-iceRidgeFrequency" obligation="normative">
+<clause id="_c33fc629-e6e0-aab8-21a3-129b92aa1332" anchor="sec-iceRidgeFrequency" obligation="normative">
 <title id="_e915675b-1531-26d5-be51-f5e4864d8653">Ice Ridge Frequency</title>
-<table id="_82dfa872-77be-3dc4-397d-5275c41164fd" unnumbered="true"><tbody><tr id="_539f8add-49f1-e3d5-6b30-e7df87f7ea73"><td id="_b203d7b0-3686-e623-5096-f9a7e24eae8d" valign="top" align="left"><p id="_a489e4c1-ea8a-dc73-5995-d014dfcaeb6a"><underline><strong>IHO Definition</strong> :</underline> ICERFQ indicates the frequency of ice ridges in number per nautical mile</p>
+<sourcecode id="_18d636f4-e4dd-df92-e4c5-4bcb823b044f"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICERFQ indicates the frequency of ice ridges in number per nautical mile"%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_1ea0dca0-f8e5-e7f3-c67b-affc8a0071b4"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_aebd2a37-4bfe-1df2-b4b5-d0cae2bc6aa7"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_c4f7cb7f-d773-1787-40d5-e814f9952ae5" anchor="sec-iceRidgeMaximumHeight" obligation="normative">
+<clause id="_02a4f9a4-66e6-e1c6-892b-837bec00c94e" anchor="sec-iceRidgeMaximumHeight" obligation="normative">
 <title id="_d54cad4d-d22f-eb4d-8552-5f8ca8780bfe">Ice Ridge Maximum Height</title>
-<table id="_7883540d-58ae-37fd-ff35-4d87ff1eaff2" unnumbered="true"><tbody><tr id="_89ef5244-628b-5304-99c0-92eb9908e2ca"><td id="_a8fa596b-d2cc-8d1a-e8e1-0f42a3a315ad" valign="top" align="left"><p id="_3fe1fd99-2626-5939-1950-136dbc436583"><underline><strong>IHO Definition</strong> :</underline> ICERMT indicates the maximum height of ice ridge(s) in decimetres.</p>
+<sourcecode id="_b2e89b9f-770d-7cd0-8391-8de45518ad7c"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICERMT indicates the maximum height of ice ridge(s) in decimetres."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_db380301-9fd7-e299-85e6-1817c13bc2f6"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_9d8ec45a-0936-a581-340e-26c292a5388c"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_d94cef26-dfe4-9f73-6649-a17b8ad90798" anchor="sec-iceStageofDevelopment" obligation="normative">
+<clause id="_687ffd75-abf9-fe47-991d-7c23a02b7ece" anchor="sec-iceStageofDevelopment" obligation="normative">
 <title id="_28a02485-ea83-1e15-bc14-30763f7fa0fa">Ice Stage of Development</title>
-<table id="_b17089e6-fe2b-02fb-a0b2-95d2456a2d7f" unnumbered="true"><tbody><tr id="_76118d75-1db0-36cf-7bce-9c776dbc2be9"><td id="_8b2cf957-b460-183e-dce4-ed370312aeb9" valign="top" align="left"><p id="_f949f6ee-c24d-cdca-eb45-0559a7b66c3d"><underline><strong>IHO Definition</strong> :</underline> Ice Stage of Development describes the ages and thicknesses of the ice (’So, Sa, Sb, Sc and Sd’).</p>
+<sourcecode id="_4378b65c-ce74-4ca9-7793-400f8c7d1d31"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "Ice Stage of Development describes the ages and thicknesses of the ice ('So, Sa, Sb, Sc and Sd')."%}
+{%assign g_vals = "01:Ice Free | 70:Brash Ice | 80:No stage of development | 81:New Ice (&lt;10 cm) | 82:Nilas Ice Rind (&lt;10 cm) | 83:Young Ice (10 to &lt;30 cm) | 84:Grey Ice (10 to &lt;15 cm) | 85:Grey – White Ice (15 to &lt;30 cm) | 86:First Year Ice (30 to 200 cm) | 87:Thin First Year Ice (30 to &lt;70 cm) | 88:Thin First Year Ice Stage 1 (30 to &lt;50 cm) | 89:Thin First Year Ice Stage 2 (50 to &lt;70 cm) | 90:Code not currently assigned | 91:Medium First Year Ice (70 to 120 cm) | 92:Code not currently assigned | 93:Thick First Year Ice (&gt;120 cm) | 94:Residual Ice | 95:Old Ice | 96:Second Year Ice | 97:Multi-Year Ice | 98:Glacier Ice (Icebergs) | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceStageofDevelopment"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_c369415d-7961-b488-08a7-0dd159dc176f"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_f5de92b5-e096-f5f2-fb05-2a0a4063b2e5" type="arabic"><li><p id="_fd4928cf-346c-d5cd-fd25-eee85720ee71">01<br/> <underline><strong>IHO Definition</strong></underline> :Ice Free</p>
-</li>
-<li><p id="_5bc4282f-d297-de29-077f-2ee6914601bd">70<br/> <underline><strong>IHO Definition</strong></underline> :Brash Ice</p>
-</li>
-<li><p id="_31003be3-3f9c-93f1-bc0c-a871749b4e20">80<br/> <underline><strong>IHO Definition</strong></underline> :No stage of development</p>
-</li>
-<li><p id="_7d85c3cb-5bb7-09a6-f8ac-8fb47643c2a2">81<br/> <underline><strong>IHO Definition</strong></underline> :New Ice (&lt;10 cm)</p>
-</li>
-<li><p id="_691d9687-af69-08da-0176-dba9f2065fc1">82<br/> <underline><strong>IHO Definition</strong></underline> :Nilas Ice Rind (&lt;10 cm)</p>
-</li>
-<li><p id="_fb767875-0d7e-a1cf-cc32-a1b5d782f664">83<br/> <underline><strong>IHO Definition</strong></underline> :Young Ice (10 to &lt;30 cm)</p>
-</li>
-<li><p id="_e71b46b8-141f-efbe-62bb-ddf628a1d60e">84<br/> <underline><strong>IHO Definition</strong></underline> :Grey Ice (10 to &lt;15 cm)</p>
-</li>
-<li><p id="_7a693bdc-121c-58dc-94e8-27e632b2fa5d">85<br/> <underline><strong>IHO Definition</strong></underline> :Grey – White Ice (15 to &lt;30 cm)</p>
-</li>
-<li><p id="_dd2216a8-9471-eb83-c33a-4f714904e5bd">86<br/> <underline><strong>IHO Definition</strong></underline> :First Year Ice (30 to 200 cm)</p>
-</li>
-<li><p id="_7269e496-43ae-cc5f-1204-73e5665fa450">87<br/> <underline><strong>IHO Definition</strong></underline> :Thin First Year Ice (30 to &lt;70 cm)</p>
-</li>
-<li><p id="_530bb5e8-20ea-8f21-bc92-7034a81e8fda">88<br/> <underline><strong>IHO Definition</strong></underline> :Thin First Year Ice Stage 1 (30 to &lt;50 cm)</p>
-</li>
-<li><p id="_14b70af5-44fb-e2dc-4cd9-7d303eba33d8">89<br/> <underline><strong>IHO Definition</strong></underline> :Thin First Year Ice Stage 2 (50 to &lt;70 cm)</p>
-</li>
-<li><p id="_3ea79692-6704-4f86-0d7b-b76f72c8e803">90<br/> <underline><strong>IHO Definition</strong></underline> :Code not currently assigned</p>
-</li>
-<li><p id="_9f676865-39bd-118d-36a7-b9e60edfdac5">91<br/> <underline><strong>IHO Definition</strong></underline> :Medium First Year Ice (70 to 120 cm)</p>
-</li>
-<li><p id="_c81e926b-26b7-9319-a898-d08e3a52ec65">92<br/> <underline><strong>IHO Definition</strong></underline> :Code not currently assigned</p>
-</li>
-<li><p id="_b69497af-c596-15f7-d8a2-51ac2d9e726b">93<br/> <underline><strong>IHO Definition</strong></underline> :Thick First Year Ice (&gt;120 cm)</p>
-</li>
-<li><p id="_484117f1-c49a-06a5-075b-122c6605f1ef">94<br/> <underline><strong>IHO Definition</strong></underline> :Residual Ice</p>
-</li>
-<li><p id="_210c8f50-6f42-fdea-0487-340d3f6b1f87">95<br/> <underline><strong>IHO Definition</strong></underline> :Old Ice</p>
-</li>
-<li><p id="_bde5c244-0ccc-e54e-05ac-d53774c46371">96<br/> <underline><strong>IHO Definition</strong></underline> :Second Year Ice</p>
-</li>
-<li><p id="_2d5b6be0-6e51-0b9c-c0ab-d337f861698f">97<br/> <underline><strong>IHO Definition</strong></underline> :Multi-Year Ice</p>
-</li>
-<li><p id="_9316f6f0-7c64-180d-b2aa-4685b101adc8">98<br/> <underline><strong>IHO Definition</strong></underline> :Glacier Ice (Icebergs)</p>
-</li>
-<li><p id="_7b520b64-9e53-97f9-75ea-180bfb40fdcc">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_3736d319-3dbb-52a9-440b-e9db82f2faee"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_995c9d9a-ae03-fd8a-912d-e0e2de2f6a1e" anchor="sec-iceThicknessType" obligation="normative">
+<clause id="_290d6096-6e7f-2e4b-61a2-6f39a81ea9c4" anchor="sec-iceThicknessType" obligation="normative">
 <title id="_881263fa-a4ba-5735-17fe-3b0208f4d0a3">Ice Thickness Type</title>
-<table id="_526ae75d-b01e-33f4-aa1a-2c2ebffae6d2" unnumbered="true"><tbody><tr id="_628df896-421a-e1a5-6803-9007159067a7"><td id="_16bb1464-f27d-92d5-31dd-61a7f4eb2fc6" valign="top" align="left"><p id="_2ea0cb74-8417-65ff-d1ed-89d9905cfccb"><underline><strong>IHO Definition</strong> :</underline> ICETTY indicated whether the thickness of the ice was measured or estimated.</p>
+<sourcecode id="_5d0ba8ea-4470-ac9c-7a1b-9331b2e65e8c"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICETTY indicated whether the thickness of the ice was measured or estimated."%}
+{%assign g_vals = "01:Measured | 02:Estimated | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceThicknessType"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_ca646ef2-7178-9de3-474f-eb5aa1105002"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_5828e465-54c3-310e-e296-df20e5f6218f" type="arabic"><li><p id="_c0cf9173-a34a-d6a7-47a1-41babc862938">01<br/> <underline><strong>IHO Definition</strong></underline> :Measured</p>
-</li>
-<li><p id="_76fafb44-0587-40f7-4b4c-45928a1e42b1">02<br/> <underline><strong>IHO Definition</strong></underline> :Estimated</p>
-</li>
-<li><p id="_2e18d38f-c696-962a-6c63-4a613b3af9d7">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_cf973a60-6ef5-f6fa-b398-071db7d9cc97"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_42bd3c93-3131-43a7-9664-ad37eccf21fb" anchor="sec-lakeIceStageofDevelopment" obligation="normative">
+<clause id="_9611167f-25b7-d0e7-7a95-a62cb9cacb03" anchor="sec-lakeIceStageofDevelopment" obligation="normative">
 <title id="_d53f95a4-4ca2-9864-f331-996a1e6e191a">Lake Ice Stage of Development</title>
-<table id="_e026ad80-9ba5-3be5-e057-50611300c61d" unnumbered="true"><tbody><tr id="_cc80dd42-4558-aae0-42fb-20b63622b6b8"><td id="_51d23cc6-7633-a5bb-6790-d18d9a633a3c" valign="top" align="left"><p id="_c15ff219-19a2-bb22-b2fa-09e5edda5b49"><underline><strong>IHO Definition</strong> :</underline> Lake Ice Stages of Development describe the ages and thicknesses of lake ice. (’So, Sa, Sb, Sc and Sd’)</p>
+<sourcecode id="_646fcde3-c706-c02d-c494-00273a5f065b"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "Lake Ice Stages of Development describe the ages and thicknesses of lake ice. ('So, Sa, Sb, Sc and Sd')"%}
+{%assign g_vals = "01:New Lake Ice (&lt;5cms) | 02:Thin Lake Ice (5-&lt;15cms) | 03:Medium Lake Ice (15-&lt;30cms) | 04:Thick Lake Ice (30-70cms) | 05:Very Thick Lake Ice (&gt;70cms) | 70:Brash Ice | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "lakeIceStageofDevelopment"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_837fc5a3-d83a-3e24-0395-2c8525a5cdb7"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_41c1f02c-a71e-ecb5-bcc5-b074688f62d1" type="arabic"><li><p id="_500e7ae5-c180-1bff-6e6a-827392dbf1ca">01<br/> <underline><strong>IHO Definition</strong></underline> :New Lake Ice (&lt;5cms)</p>
-</li>
-<li><p id="_fa9175a8-73b2-f920-323e-e182d9ae4bdc">02<br/> <underline><strong>IHO Definition</strong></underline> :Thin Lake Ice (5-&lt;15cms)</p>
-</li>
-<li><p id="_531e6c10-75f7-12f6-9dd5-02834dc9ffc5">03<br/> <underline><strong>IHO Definition</strong></underline> :Medium Lake Ice (15-&lt;30cms)</p>
-</li>
-<li><p id="_94e6aa73-5392-9abf-5dcb-c925ec4ad41f">04<br/> <underline><strong>IHO Definition</strong></underline> :Thick Lake Ice (30-70cms)</p>
-</li>
-<li><p id="_41e80e4e-b6d5-6488-a097-7fdf788e0496">05<br/> <underline><strong>IHO Definition</strong></underline> :Very Thick Lake Ice (&gt;70cms)</p>
-</li>
-<li><p id="_f3446def-7ab5-5ce5-b913-705aa42d3657">70<br/> <underline><strong>IHO Definition</strong></underline> :Brash Ice</p>
-</li>
-<li><p id="_0222397d-0e16-e4cd-f90c-4fa8df7d50db">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_e9a7d73e-8427-916b-6461-428e0621bcbe"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_95b0c9a8-c2a9-2bd8-71ea-9b803f86d926" anchor="sec-levelIce" obligation="normative">
+<clause id="_36a8d603-38fd-b0dd-28af-8ed4f78d1b05" anchor="sec-levelIce" obligation="normative">
 <title id="_77bdfccd-f6cd-796e-542e-3ce97cdaad91">Level Ice</title>
-<table id="_e1cffbb4-beb9-7e6f-b683-f67d59d29d3e" unnumbered="true"><tbody><tr id="_bad46cde-08a9-99cc-0ca9-6faf7f140a45"><td id="_ee9224bf-f8bc-0ae1-1325-ea27d2f089d2" valign="top" align="left"><p id="_0998ba43-8869-6342-4037-0aedbd8b0a41"><underline><strong>IHO Definition</strong> :</underline> ICELVL is an indication as to whether or not the ice has been affected by deformation</p>
+<sourcecode id="_db4e16eb-a44a-bd9c-b218-02e487952a0f"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICELVL is an indication as to whether or not the ice has been affected by deformation"%}
+{%assign g_vals = "01:Level(undeformed) | 02:Deformed | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "levelIce"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_d1ef3bf9-5e33-c3e6-1f05-a6618c610f9e"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_43b26f99-9391-2dd3-9e80-fc9b6338708d" type="arabic"><li><p id="_ab0a4412-2aad-f878-3b5a-8f8f00fdfe35">01<br/> <underline><strong>IHO Definition</strong></underline> :Level(undeformed)</p>
-</li>
-<li><p id="_c0fe756a-8bc4-0327-8b2d-f4ea6769bc03">02<br/> <underline><strong>IHO Definition</strong></underline> :Deformed</p>
-</li>
-<li><p id="_f79ef37a-8ca5-7d18-b996-cca2c20c7d20">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_d4d9ab05-5adf-cf07-c2c7-3438c6008dae"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_2a2975b7-610c-8702-88ab-1900e2f6b14a" anchor="sec-maximumHeightofAboveWaterPart" obligation="normative">
+<clause id="_62ff10f1-3a13-0c29-80c8-7303a4be0af4" anchor="sec-maximumHeightofAboveWaterPart" obligation="normative">
 <title id="_84a19d61-33e1-a2c8-0f02-12f2cc1c05a7">Maximum Height of Above Water Part (iceberg/grounded hummock)</title>
-<table id="_f4edc036-ca3a-cb98-7198-24caf3fda91f" unnumbered="true"><tbody><tr id="_e5eeada5-d9f3-f1f6-3cfa-cae4b63c1bbd"><td id="_1b15d1bb-2099-c5c7-c5c1-a930d2dfef8d" valign="top" align="left"><p id="_2c637b13-adcf-d407-8d09-281266901359"><underline><strong>IHO Definition</strong> :</underline> IA_BUF specifies the maximum height of an iceberg above the waterline in meters.</p>
+<sourcecode id="_1ffed6f4-2816-29fb-70d6-6fcab701cb5b"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "IA_BUF specifies the maximum height of an iceberg above the waterline in meters."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_27c8fa12-cc20-e18f-d5da-0c25e20a86ee"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_db196946-5784-4734-6ca1-04e1958d4f42"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_543f60be-2f6f-c07a-21f7-08a9b9c3c21e" anchor="sec-maximumIceThickness" obligation="normative">
+<clause id="_8127e535-11fa-910f-89be-7c74091f6f53" anchor="sec-maximumIceThickness" obligation="normative">
 <title id="_acc25701-ffee-ff1f-a407-0f744ab58a53">Maximum Ice Thickness</title>
-<table id="_c812069f-e4b0-4af6-eb67-8b6afdb84525" unnumbered="true"><tbody><tr id="_2b0c16e1-e715-5510-910c-a1cba997dffc"><td id="_787ac577-2f22-841c-2891-9c8bc4387d9a" valign="top" align="left"><p id="_3cb8d6ae-7853-cd96-c902-dcd7662bbb7c"><underline><strong>IHO Definition</strong> :</underline> ICEMAX specifies the maximum thickness of the ice.</p>
+<sourcecode id="_85de81ee-e5c7-ef9f-4a74-90c5f24c63e4"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICEMAX specifies the maximum thickness of the ice."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_47bc9505-d9db-76f5-5197-a9a30f379bf6"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_ececae4f-f125-e9c4-f605-70818a8d697c"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_7a74c9c5-c207-31b1-06c0-16e68dea4b77" anchor="sec-maximumWidthofIceLead" obligation="normative">
+<clause id="_3fd52562-29d7-a52f-cc48-6655a359cb48" anchor="sec-maximumWidthofIceLead" obligation="normative">
 <title id="_097a6683-a842-be01-0b25-b4b309b02e45">Maximum Width of Ice Lead (or Fracture or Crack)</title>
-<table id="_e5eb27c1-05e5-b656-de90-3a58eeefd98e" unnumbered="true"><tbody><tr id="_ffe83e26-e2f3-64a3-a471-1ee63aa4cf37"><td id="_81d0b81c-c5bb-ebc6-3449-d4a177725a6b" valign="top" align="left"><p id="_56397b47-9ecf-2d03-ec62-00ac7cf16ed3"><underline><strong>IHO Definition</strong> :</underline> IA_DXW defines the maximum width of the lead or fracture or crack.</p>
+<sourcecode id="_c66dd957-d7ab-da13-f064-170850f3a1ac"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "IA_DXW defines the maximum width of the lead or fracture or crack."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_d1209c9a-4de6-a46d-28fe-de236ba9508c"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_523ed789-7cf3-8e29-7e66-e30dbce07b9e"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_689cf5da-99e9-76a0-ecab-4d644e314d56" anchor="sec-minimumWidthofIceLead" obligation="normative">
+<clause id="_a4f5af5e-9056-6310-fb83-78787257b6ba" anchor="sec-minimumWidthofIceLead" obligation="normative">
 <title id="_32ee2654-93b7-9848-b360-3ae6fcfbb2e6">Minimum Width of Ice Lead (or Fracture or Crack)</title>
-<table id="_4f983968-3394-912c-3e65-bd30868619d3" unnumbered="true"><tbody><tr id="_0335ff4d-cea8-f834-d536-51989124696d"><td id="_e1b2793a-8581-75b9-41f8-d1a9622345d0" valign="top" align="left"><p id="_35d2607e-ff4e-3ded-4f8e-4aa0f2f2b95d"><underline><strong>IHO Definition</strong> :</underline> IA_DMW defines the minimum width of the lead or fracture or crack.</p>
+<sourcecode id="_1be9dca2-28a5-8c4d-ad77-3b3c0c43b733"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "IA_DMW defines the minimum width of the lead or fracture or crack."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_9cd4ecfe-ad3c-6802-9aa3-c02cd859791f"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_55d84037-83a3-30aa-2cfb-e1e54f2fa5d2"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_a12ab993-aefc-79e3-6c17-e928bb727805" anchor="sec-numberofIcebergsinArea" obligation="normative">
+<clause id="_a7303a59-e780-96e3-e7f8-7173f9942632" anchor="sec-numberofIcebergsinArea" obligation="normative">
 <title id="_7e537849-77de-471e-f93c-7b34d76821de">Number of Icebergs in Area</title>
-<table id="_63084fce-47a5-0957-3d76-87392dc0661f" unnumbered="true"><tbody><tr id="_4660bba3-2d25-d0b6-4839-c606bb0e9deb"><td id="_44b95a4e-9abf-f886-8378-fdaa2871efe8" valign="top" align="left"><p id="_77fe600a-de89-20de-bb81-4cded8abecaa"><underline><strong>IHO Definition</strong> :</underline> ICEBNM indicates the number of Icebergs within a specified area.</p>
+<sourcecode id="_0ea831b6-0719-c7ca-b754-0f500481775f"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICEBNM indicates the number of Icebergs within a specified area."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_3907a239-f2c9-5d9e-08cc-6246bdc363d1"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_77f2fc38-17b6-a90b-77ff-7e0b410e6bd8"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_6da812f6-ca56-9811-09e9-9f800e38f095" anchor="sec-numberofIceObjects" obligation="normative">
+<clause id="_a20a12bd-4106-bb76-4992-a8ccf2dcdb40" anchor="sec-numberofIceObjects" obligation="normative">
 <title id="_09b8cc54-a712-b25d-b927-b8f048244228">Number of Ice Objects</title>
-<table id="_91468804-f3c0-9a5c-a3b8-1f717d638977" unnumbered="true"><tbody><tr id="_6266dcf4-aad6-ba5c-54fc-d32685828013"><td id="_236141b0-0181-6a13-a59a-e653fcde9f2b" valign="top" align="left"><p id="_aa77c90c-8a41-8bb4-e872-596da0b32c96"><underline><strong>IHO Definition</strong> :</underline> IA_OBN defines the number of ice objects (cracks, leads, fractures, icebergs).</p>
+<sourcecode id="_c8ffe7ed-0047-0ff3-3d57-62c63de1c548"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "IA_OBN defines the number of ice objects (cracks, leads, fractures, icebergs)."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_97c65456-c8de-afbb-88b1-b27d5abb9f71"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_2e7708da-b937-9426-d0fc-9adee91e8bbc"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_30c6ff9f-8de9-ecb1-473e-57f212b605b3" anchor="sec-partialConcentration" obligation="normative">
+<clause id="_227d1d1b-6fb7-b9e4-7247-abffee1be3ff" anchor="sec-partialConcentration" obligation="normative">
 <title id="_c4c75b82-d71b-2eaf-62b4-5efaf1bf7d12">Partial Concentration</title>
-<table id="_8eeafb4f-11b7-aad8-fe5c-7fd0432726ec" unnumbered="true"><tbody><tr id="_a2035293-6de7-22f4-6067-12673b9f3b6a"><td id="_271afe27-8f7b-4808-afa8-bdb221363897" valign="top" align="left"><p id="_ca198478-82af-d939-9e94-50adb228cdf2"><underline><strong>IHO Definition</strong> :</underline> ICEAPC specifies the partial concentrations of ice in an area. (’Ca, Cband Cc’).</p>
+<sourcecode id="_4aa1ed51-0f81-3ab5-c1f2-46138b17e3a9"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEAPC specifies the partial concentrations of ice in an area. ('Ca, Cband Cc')."%}
+{%assign g_vals = "01:Ice Free | 02:Open Water ( &lt; 1/10 ice) | 03:Bergy Water | 10:1/10 ice | 12:1/10 to 2/10 ice | 13:1/10 to 3/10 ice | 20:2/10 ice | 23:2/10 to 3/10 ice | 24:2/10 to 4/10 ice | 30:3/10 ice | 34:3/10 to 4/10 ice | 35:3/10 to 5/10 ice | 40:4/10 ice | 46:4/10 to 6/10 ice | 50:5/10 ice | 56:5/10 to 6/10 ice | 57:5/10 to 7/10 ice | 60:6/10 ice | 67:6/10 to 7/10 ice | 68:6/10 to 8/10 ice | 70:7/10 ice | 78:7/10 to 8/10 ice | 79:7/10 to 9/10 ice | 80:8/10 ice | 81:8/10 to 10/10 ice | 89:8/10 to 9/10 ice | 90:9/10 ice | 91:9/10 to 10/10 ice | 92:10/10 ice | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "partialConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_fd7a5c7f-c3d0-8f68-1ebf-0faaf2659f05"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_3366746e-3a1e-6968-75c3-91baaa6643e8" type="arabic"><li><p id="_0ea5474e-7343-9459-a2fe-eed49e986ff3">01<br/> <underline><strong>IHO Definition</strong></underline> :Ice Free</p>
-</li>
-<li><p id="_a1a634b3-a09a-e7e5-713a-a6540bdc7b46">02<br/> <underline><strong>IHO Definition</strong></underline> :Open Water ( &lt; 1/10 ice)</p>
-</li>
-<li><p id="_a12ce90b-3d39-802c-83d0-872ec130bf6b">03<br/> <underline><strong>IHO Definition</strong></underline> :Bergy Water</p>
-</li>
-<li><p id="_f4d0499f-70c5-3336-cf25-ebbc3cb7ade7">10<br/> <underline><strong>IHO Definition</strong></underline> :1/10 ice</p>
-</li>
-<li><p id="_59f3f718-d6e8-365c-06d8-fecfb46e987e">12<br/> <underline><strong>IHO Definition</strong></underline> :1/10 to 2/10 ice</p>
-</li>
-<li><p id="_7e3fdc0b-334a-4742-ab6c-656f6175893e">13<br/> <underline><strong>IHO Definition</strong></underline> :1/10 to 3/10 ice</p>
-</li>
-<li><p id="_02abbb19-0786-daa6-7f80-49536d954bd4">20<br/> <underline><strong>IHO Definition</strong></underline> :2/10 ice</p>
-</li>
-<li><p id="_6c819dfb-80ba-7d1f-2810-13e5a89861f0">23<br/> <underline><strong>IHO Definition</strong></underline> :2/10 to 3/10 ice</p>
-</li>
-<li><p id="_a98c75d4-1ac6-3143-59ac-fc49e7cf1ed3">24<br/> <underline><strong>IHO Definition</strong></underline> :2/10 to 4/10 ice</p>
-</li>
-<li><p id="_a2ec3a21-ef46-a7b9-bb6a-048ed227c32b">30<br/> <underline><strong>IHO Definition</strong></underline> :3/10 ice</p>
-</li>
-<li><p id="_173531c4-9a32-c6e5-3cf1-1beaeba59234">34<br/> <underline><strong>IHO Definition</strong></underline> :3/10 to 4/10 ice</p>
-</li>
-<li><p id="_5f9a2bc0-2764-417e-8773-9adbc1799b5f">35<br/> <underline><strong>IHO Definition</strong></underline> :3/10 to 5/10 ice</p>
-</li>
-<li><p id="_544fed67-16c3-e13d-c23e-027b4add0433">40<br/> <underline><strong>IHO Definition</strong></underline> :4/10 ice</p>
-</li>
-<li><p id="_94feb7fa-f37e-27da-eac8-c54e8a921d5a">45<br/> <underline><strong>IHO Definition</strong></underline> :</p>
-</li>
-<li><p id="_0c9ffc94-5d8f-45e1-451f-d2826f100747">46<br/> <underline><strong>IHO Definition</strong></underline> :4/10 to 6/10 ice</p>
-</li>
-<li><p id="_97af871a-f3fc-36cf-3c22-4a46d22c71e5">50<br/> <underline><strong>IHO Definition</strong></underline> :5/10 ice</p>
-</li>
-<li><p id="_7d326bb8-0c31-30fc-9bac-d3875ed7adb4">56<br/> <underline><strong>IHO Definition</strong></underline> :5/10 to 6/10 ice</p>
-</li>
-<li><p id="_dffd969c-9bce-ae2d-c9e5-4d25b617754d">57<br/> <underline><strong>IHO Definition</strong></underline> :5/10 to 7/10 ice</p>
-</li>
-<li><p id="_ae6e49df-86d4-91b9-17a7-e25713e4febe">60<br/> <underline><strong>IHO Definition</strong></underline> :6/10 ice</p>
-</li>
-<li><p id="_2862483c-74c7-b005-404a-fed85b9d3a8b">67<br/> <underline><strong>IHO Definition</strong></underline> :6/10 to 7/10 ice</p>
-</li>
-<li><p id="_ae9cbc98-9238-673b-2519-e80ca5462bae">68<br/> <underline><strong>IHO Definition</strong></underline> :6/10 to 8/10 ice</p>
-</li>
-<li><p id="_fa494144-61ae-48b4-0949-fcb4e3efdf5e">70<br/> <underline><strong>IHO Definition</strong></underline> :7/10 ice</p>
-</li>
-<li><p id="_21a1ca18-1706-a5e8-844c-5375f518972e">78<br/> <underline><strong>IHO Definition</strong></underline> :7/10 to 8/10 ice</p>
-</li>
-<li><p id="_379c2c0c-47ae-081d-7106-504c7b484d12">79<br/> <underline><strong>IHO Definition</strong></underline> :7/10 to 9/10 ice</p>
-</li>
-<li><p id="_68b77b6b-132d-6516-97a6-e970f9c4907e">80<br/> <underline><strong>IHO Definition</strong></underline> :8/10 ice</p>
-</li>
-<li><p id="_38983c7f-5d3e-ddfa-d1f6-b57a89834bb2">81<br/> <underline><strong>IHO Definition</strong></underline> :8/10 to 10/10 ice</p>
-</li>
-<li><p id="_f52dc273-cda8-b075-c186-60b5d4472951">89<br/> <underline><strong>IHO Definition</strong></underline> :8/10 to 9/10 ice</p>
-</li>
-<li><p id="_9557dfc5-9820-023f-5800-09e260a00d49">90<br/> <underline><strong>IHO Definition</strong></underline> :9/10 ice</p>
-</li>
-<li><p id="_6dcaaed1-ca32-0afc-267c-4808061ab97e">91<br/> <underline><strong>IHO Definition</strong></underline> :9/10 to 10/10 ice</p>
-</li>
-<li><p id="_62319ba4-807d-aabf-4b8b-5681565c14e2">92<br/> <underline><strong>IHO Definition</strong></underline> :10/10 ice</p>
-</li>
-<li><p id="_745d0d17-f82d-1a4e-61c8-b0fca96b6cf9">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_b132a34e-e8bf-618e-c6d1-ce421daf8062"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_43c7711a-41c4-9079-822e-ab26185b9a83" anchor="sec-prevailingIcebergForm" obligation="normative">
+<clause id="_c5bfd465-3402-d789-927f-f6c4423db1eb" anchor="sec-prevailingIcebergForm" obligation="normative">
 <title id="_5ec03f33-431b-8ddc-37ba-60da5becaec3">Prevailing Iceberg Form</title>
-<table id="_e957dc45-4cfe-4fe6-a9ed-8cc53144ce8a" unnumbered="true"><tbody><tr id="_c881a5f7-9450-7b9e-2ac1-79aebcc535d1"><td id="_d2090a24-1eec-84d7-468e-ddcd7af938aa" valign="top" align="left"><p id="_9bcf4884-db16-159f-bb9e-6d9579e02553"><underline><strong>IHO Definition</strong> :</underline> IA_BFM specifies the prevailing form of icebergs in an area.</p>
+<sourcecode id="_ab323faf-2592-63f2-725e-20dbbba3eb47"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "IA_BFM specifies the prevailing form of icebergs in an area."%}
+{%assign g_vals = "01:Domed | 02:Tabular | 03:Sloping | 04:Pinnacled | 05:Dry-dock | 06:Glacier (irregular) | 07:Blocky | 08:Weathered | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "prevailingIcebergForm"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_9ecc482d-5344-b4e6-d77e-6811c7a14765"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_a06103fe-8022-04d9-f4ac-225ab3cd02a0" type="arabic"><li><p id="_b7ec1265-d9a3-55ab-a562-e2ca0ffcbfbe">01<br/> <underline><strong>IHO Definition</strong></underline> :Domed</p>
-</li>
-<li><p id="_71321ac1-8d90-4bf4-ac87-577faea074cc">02<br/> <underline><strong>IHO Definition</strong></underline> :Tabular</p>
-</li>
-<li><p id="_fea4d965-966f-c85a-e414-5a642c2d366b">03<br/> <underline><strong>IHO Definition</strong></underline> :Sloping</p>
-</li>
-<li><p id="_bdf133c3-1e21-d7a2-f4a4-c3a09c5102b2">04<br/> <underline><strong>IHO Definition</strong></underline> :Pinnacled</p>
-</li>
-<li><p id="_feb6dd24-a55f-419a-e5c8-fd56c6cd58a6">05<br/> <underline><strong>IHO Definition</strong></underline> :Dry-dock</p>
-</li>
-<li><p id="_a151bf01-000a-2f02-2934-b882552e545b">06<br/> <underline><strong>IHO Definition</strong></underline> :Glacier (irregular)</p>
-</li>
-<li><p id="_f2932486-9925-d94e-712f-06e2260ec624">07<br/> <underline><strong>IHO Definition</strong></underline> :Blocky</p>
-</li>
-<li><p id="_1c367d9e-3072-5325-6de5-f9613a606f5e">08<br/> <underline><strong>IHO Definition</strong></underline> :Weathered</p>
-</li>
-<li><p id="_1501bf89-1f16-4c7e-26b6-b160090ab601">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_581ff97e-51aa-3d9c-be32-dadb2d14f25f"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_7c937b58-8802-f315-5300-923920760291" anchor="sec-snowCoverConcentration" obligation="normative">
+<clause id="_d5aa1fd3-126c-1742-f6d6-8b37bff0f1a8" anchor="sec-snowCoverConcentration" obligation="normative">
 <title id="_78a63283-6b37-8411-1b4d-be3789a3c46f">Snow Cover Concentration</title>
-<table id="_a659c82e-c610-dd05-f451-b0d1b1c148db" unnumbered="true"><tbody><tr id="_888f1ae6-dd17-2883-6a53-49af68ba00ac"><td id="_fadec2da-4d1e-8872-ba4f-4e9fb0509ed0" valign="top" align="left"><p id="_09089b32-419c-1f61-f4da-bdd8bf40a8dc"><underline><strong>IHO Definition</strong> :</underline> ICESCN indicates the concentration (aerial coverage) of snow in tenths.</p>
+<sourcecode id="_a227a3d3-0903-323c-dd40-50673a656959"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICESCN indicates the concentration (aerial coverage) of snow in tenths."%}
+{%assign g_vals = "01:1/10 | 02:2/10 | 03:3/10 | 04:4/10 | 05:5/10 | 06:6/10 | 07:7/10 | 08:8/10 | 09:9/10 | 10:10/10 | 11:&lt;1/10 | 12:No Snow Cover | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "snowCoverConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_4c843203-c184-8bde-2205-73515eed88a4"><underline><strong> Attribute Type :</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_cc20c622-1702-e4ad-b594-8f31ffab83f9" type="arabic"><li><p id="_98c66e78-bafc-fcb9-4957-d6ad79f61a02">01<br/> <underline><strong>IHO Definition</strong></underline> :1/10</p>
-</li>
-<li><p id="_4795b72d-ed54-f614-3e5c-a1590df5d653">02<br/> <underline><strong>IHO Definition</strong></underline> :2/10</p>
-</li>
-<li><p id="_0ebf782c-4331-8582-e6ef-d6ad5199a657">03<br/> <underline><strong>IHO Definition</strong></underline> :3/10</p>
-</li>
-<li><p id="_cd2742a9-b577-aa03-511f-be1ec45cadba">04<br/> <underline><strong>IHO Definition</strong></underline> :4/10</p>
-</li>
-<li><p id="_a897eafe-4ab3-0c77-87ba-10fb7a99e244">05<br/> <underline><strong>IHO Definition</strong></underline> :5/10</p>
-</li>
-<li><p id="_1f0471be-d842-70cf-f569-d0c9c6776afd">06<br/> <underline><strong>IHO Definition</strong></underline> :6/10</p>
-</li>
-<li><p id="_a1051808-3704-8778-b16e-a7ae8e69178d">07<br/> <underline><strong>IHO Definition</strong></underline> :7/10</p>
-</li>
-<li><p id="_736b3d4c-0915-23d1-c7dc-4b22fa5b9989">08<br/> <underline><strong>IHO Definition</strong></underline> :8/10</p>
-</li>
-<li><p id="_dfea1fba-fe13-479f-cd41-a8d8cb98188d">09<br/> <underline><strong>IHO Definition</strong></underline> :9/10</p>
-</li>
-<li><p id="_822e46ee-b315-67c2-83db-c0308e76fdc9">10<br/> <underline><strong>IHO Definition</strong></underline> :10/10</p>
-</li>
-<li><p id="_76984ae3-05e4-dcb5-b26f-e1437aa9a408">11<br/> <underline><strong>IHO Definition</strong></underline> :&lt;1/10</p>
-</li>
-<li><p id="_43e5d2e2-a62a-4137-f527-cb0e3030e348">12<br/> <underline><strong>IHO Definition</strong></underline> :No Snow Cover</p>
-</li>
-<li><p id="_6c69ed91-9aed-a864-9606-869b82750219">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_56b7889b-1de3-9403-7b65-5443a15d3ab5"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 
-<clause id="_d5a81a5a-5ee0-1a68-ac51-125685085c32" anchor="sec-snowDepth2" obligation="normative">
+<clause id="_ad42acfe-62d9-82d4-992d-1b949d87a6a9" anchor="sec-snowDepth2" obligation="normative">
 <title id="_269c3a32-6eff-578f-6a72-9d3ab2469459">Snow Depth</title>
-<table id="_acee1986-61df-b4bb-412f-78f1bbc14974" unnumbered="true"><tbody><tr id="_f731cc33-09d5-1d5c-45fa-df718239441f"><td id="_77e2b146-5b20-a379-2203-07f5c345c319" valign="top" align="left"><p id="_4e45f15c-e162-df57-8c30-aef5339ef2a2"><underline><strong>IHO Definition</strong> :</underline> ICESCT specifies the depth of snow cover on the ice.</p>
+<sourcecode id="_528e9c87-1c75-110c-e7a7-da9bb446d69e"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICESCT specifies the depth of snow cover on the ice."%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
+|===</body></sourcecode>
 
-<p id="_6a969315-d07c-f014-11a9-b544166ac576"><underline><strong> Attribute Type :</strong></underline> integer</p>
-
-<p id="_0d0ce996-2585-3720-434c-dce2c0ef87c5"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
 </clause>
 
-<clause id="_e3f59f42-ce98-d3c0-99f0-ed1bf8cf2c74" anchor="sec-totalConcentration" obligation="normative">
+<clause id="_6043e554-03b0-5d2e-92bd-553efa9adc0e" anchor="sec-totalConcentration" obligation="normative">
 <title id="_0cc8d70d-18e8-0ce4-ce0c-a5ea684050a8">Total Concentration</title>
-<table id="_54f3d716-c68d-98ad-2a78-a46f84c2e4e0" unnumbered="true"><tbody><tr id="_86917d30-4ef2-33f5-3441-01549b27f8af"><td id="_a5fd712b-c983-b7da-a628-acccd229bec4" valign="top" align="left"><p id="_6ca9ffb0-e6e0-9059-8329-e6ba340cc6f8"><underline><strong>IHO Definition</strong> :</underline> ICEACT specifies the total concentration of ice in an area.  It represents the ratio expressed in tenths describing the total area of the water surface covered by ice as a fraction of the whole area.</p>
+<sourcecode id="_98fd639c-181c-f3aa-d88f-143a85ae3dae"><body>{%assign g_type = "enumeration"%}
+{%assign g_def = "ICEACT specifies the total concentration of ice in an area.  It represents the ratio expressed in tenths describing the total area of the water surface covered by ice as a fraction of the whole area."%}
+{%assign g_vals = "01:Ice Free | 02:Open Water ( &lt; 1/10 ice) | 03:Bergy Water | 10:1/10 ice | 12:1/10 to 2/10 ice | 13:1/10 to 3/10 ice | 20:2/10 ice | 23:2/10 to 3/10 ice | 24:2/10 to 4/10 ice | 30:3/10 ice | 34:3/10 to 4/10 ice | 35:3/10 to 5/10 ice | 40:4/10 ice | 46:4/10 to 6/10 ice | 50:5/10 ice | 56:5/10 to 6/10 ice | 57:5/10 to 7/10 ice | 60:6/10 ice | 67:6/10 to 7/10 ice | 68:6/10 to 8/10 ice | 70:7/10 ice | 78:7/10 to 8/10 ice | 79:7/10 to 9/10 ice | 80:8/10 ice | 81:8/10 to 10/10 ice | 89:8/10 to 9/10 ice | 90:9/10 ice | 91:9/10 to 10/10 ice | 92:10/10 ice | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "totalConcentration"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+[cols="a",options="headers,unnumbered"]
+|===
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-<p id="_37fe3e90-271e-f5ed-fb48-deca4db01750"><underline><strong>Attribute Type:</strong></underline> enumeration</p>
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-<ol id="_34d828cb-f270-3732-6be1-1d06a95229b6" type="arabic"><li><p id="_f41aa72d-4999-6dbb-d33e-ac7c69f03f42">01<br/> <underline><strong>IHO Definition</strong></underline> :Ice Free</p>
-</li>
-<li><p id="_9771e271-2b57-e2ed-c313-68bccd29b5d1">02<br/> <underline><strong>IHO Definition</strong></underline> :Open Water ( &lt; 1/10 ice)</p>
-</li>
-<li><p id="_a633c589-f688-ddaf-3ed7-eeb1783f5cef">03<br/> <underline><strong>IHO Definition</strong></underline> :Bergy Water</p>
-</li>
-<li><p id="_cab274cf-592e-6970-a5f4-5c8cf47346bd">10<br/> <underline><strong>IHO Definition</strong></underline> :1/10 ice</p>
-</li>
-<li><p id="_87649f5c-9bbb-eea2-3bd6-6877a1a4d48d">12<br/> <underline><strong>IHO Definition</strong></underline> :1/10 to 2/10 ice</p>
-</li>
-<li><p id="_43255328-8b85-35bc-436d-6427bfc5f131">13<br/> <underline><strong>IHO Definition</strong></underline> :1/10 to 3/10 ice</p>
-</li>
-<li><p id="_491bb797-baea-90aa-cf0f-f6422e7388ce">20<br/> <underline><strong>IHO Definition</strong></underline> :2/10 ice</p>
-</li>
-<li><p id="_c48f67b5-4bbd-82f3-e23d-5fa11cfdce18">23<br/> <underline><strong>IHO Definition</strong></underline> :2/10 to 3/10 ice</p>
-</li>
-<li><p id="_462fbc2e-a46f-1fe9-eac8-db48fdf46f20">24<br/> <underline><strong>IHO Definition</strong></underline> :2/10 to 4/10 ice</p>
-</li>
-<li><p id="_efa2ce16-b88d-1acc-445e-47c818feabaa">30<br/> <underline><strong>IHO Definition</strong></underline> :3/10 ice</p>
-</li>
-<li><p id="_ee498bef-c186-180d-014e-c466963f46eb">34<br/> <underline><strong>IHO Definition</strong></underline> :3/10 to 4/10 ice</p>
-</li>
-<li><p id="_1eddc82f-4851-0e59-47a0-52f14a45a765">35<br/> <underline><strong>IHO Definition</strong></underline> :3/10 to 5/10 ice</p>
-</li>
-<li><p id="_21cf86ab-5f7b-f3c6-0797-8774c742ff1b">40<br/> <underline><strong>IHO Definition</strong></underline> :4/10 ice</p>
-</li>
-<li><p id="_2c1b710e-84c8-9e31-311e-3983e95a7164">45<br/> <underline><strong>IHO Definition</strong></underline> :</p>
-</li>
-<li><p id="_93ac87a1-c32a-48e1-da37-ba784aea4149">46<br/> <underline><strong>IHO Definition</strong></underline> :4/10 to 6/10 ice</p>
-</li>
-<li><p id="_5bcd643a-c2a0-031c-9976-78eb5419a5ce">50<br/> <underline><strong>IHO Definition</strong></underline> :5/10 ice</p>
-</li>
-<li><p id="_22789c3f-4769-136f-9fe1-3096c671c7c4">56<br/> <underline><strong>IHO Definition</strong></underline> :5/10 to 6/10 ice</p>
-</li>
-<li><p id="_1e82f56e-1050-2fa2-c5dd-29183c09b20c">57<br/> <underline><strong>IHO Definition</strong></underline> :5/10 to 7/10 ice</p>
-</li>
-<li><p id="_83596b35-7b75-9435-82ed-3a4126b60b43">60<br/> <underline><strong>IHO Definition</strong></underline> :6/10 ice</p>
-</li>
-<li><p id="_b1d3dfd0-74f1-f74e-f5d4-353360fd5d6b">67<br/> <underline><strong>IHO Definition</strong></underline> :6/10 to 7/10 ice</p>
-</li>
-<li><p id="_81a5b8e7-0af2-691a-6b63-c2612faad467">68<br/> <underline><strong>IHO Definition</strong></underline> :6/10 to 8/10 ice</p>
-</li>
-<li><p id="_56c15aa8-6a33-47bc-0005-cf7cff64dc32">70<br/> <underline><strong>IHO Definition</strong></underline> :7/10 ice</p>
-</li>
-<li><p id="_e2e4825a-7079-0665-0ad3-85e7c1592e7a">78<br/> <underline><strong>IHO Definition</strong></underline> :7/10 to 8/10 ice</p>
-</li>
-<li><p id="_03e4037f-a735-89c0-f39c-dd5f3da39012">79<br/> <underline><strong>IHO Definition</strong></underline> :7/10 to 9/10 ice</p>
-</li>
-<li><p id="_9a290bd2-5738-1cc8-9279-a4b4cdc997e4">80<br/> <underline><strong>IHO Definition</strong></underline> :8/10 ice</p>
-</li>
-<li><p id="_0a03f71a-0de5-5d7c-54a8-faa2e104770f">81<br/> <underline><strong>IHO Definition</strong></underline> :8/10 to 10/10 ice</p>
-</li>
-<li><p id="_f124de27-b652-c62f-4b9e-75c8fe91992e">89<br/> <underline><strong>IHO Definition</strong></underline> :8/10 to 9/10 ice</p>
-</li>
-<li><p id="_7e1bfd5f-3055-52d4-ec56-df1b9dddb16c">90<br/> <underline><strong>IHO Definition</strong></underline> :9/10 ice</p>
-</li>
-<li><p id="_7b9415f1-2c45-17b7-6209-3add10859265">91<br/> <underline><strong>IHO Definition</strong></underline> :9/10 to 10/10 ice</p>
-</li>
-<li><p id="_97997827-7aad-dc2e-6134-ab73a75b8415">92<br/> <underline><strong>IHO Definition</strong></underline> :10/10 ice</p>
-</li>
-<li><p id="_1672c460-c2fa-4b80-3667-26e8b552c950">99<br/> <underline><strong>IHO Definition</strong></underline> :Undetermined/Unknown</p>
-</li>
-</ol>
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-<p id="_b15ea6a4-a1ca-7f87-bcbf-fa0678037d75"><underline><strong> Remarks :</strong></underline></p>
-</td>
-</tr></tbody>
-</table>
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+
 </clause>
 </clause>
 </sections>
