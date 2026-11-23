@@ -1,38 +1,25 @@
 [[sec-prevailingIcebergForm]]
 === Prevailing Iceberg Form
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%assign g_type = "enumeration"%}
+{%assign g_def = "IA_BFM specifies the prevailing form of icebergs in an area."%}
+{%assign g_vals = "01:Domed | 02:Tabular | 03:Sloping | 04:Pinnacled | 05:Dry-dock | 06:Glacier (irregular) | 07:Blocky | 08:Weathered | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "prevailingIcebergForm"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# IA_BFM specifies the prevailing form of icebergs in an area.
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-[underline]#** Attribute Type :**# enumeration
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-. 01 +
-[underline]#**IHO Definition**# :Domed
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-. 02 +
-[underline]#**IHO Definition**# :Tabular
-
-. 03 +
-[underline]#**IHO Definition**# :Sloping
-
-. 04 +
-[underline]#**IHO Definition**# :Pinnacled
-
-. 05 +
-[underline]#**IHO Definition**# :Dry-dock
-
-. 06 +
-[underline]#**IHO Definition**# :Glacier (irregular)
-
-. 07 +
-[underline]#**IHO Definition**# :Blocky
-
-. 08 +
-[underline]#**IHO Definition**# :Weathered
-
-. 99 +
-[underline]#**IHO Definition**# :Undetermined/Unknown
-
-[underline]#** Remarks :**#
-|===
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}
+----

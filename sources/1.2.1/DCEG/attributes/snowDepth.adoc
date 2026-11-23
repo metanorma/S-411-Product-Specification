@@ -1,12 +1,12 @@
 [[sec-snowDepth2]]
-
 === Snow Depth
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "ICESCT specifies the depth of snow cover on the ice."%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# ICESCT specifies the depth of snow cover on the ice.
-
-[underline]#** Attribute Type :**# integer
-
-[underline]#** Remarks :**#
+a| [underline]#**IHO Definition** :# {{g_def}}
 |===
+----

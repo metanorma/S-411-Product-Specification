@@ -1,0 +1,980 @@
+---
+averageWidthofIceLead:
+  definition: ICEDVW defines the average width of the lead or fracture or crack
+brashIce:
+  definition: ICEBRS specifies the concentrations of very thick brash ("AV"), thick
+    brash ("AK"), medium brash ("AM") and thin brash ice ("AT").
+  values:
+  - code: '01'
+    meaning: 0/10 – 1/10
+  - code: '10'
+    meaning: 1/10
+  - code: '12'
+    meaning: 1/10 – 2/10
+  - code: '20'
+    meaning: 2/10
+  - code: '23'
+    meaning: 2/10 – 3/10
+  - code: '30'
+    meaning: 3/10
+  - code: '34'
+    meaning: 3/10 – 4/10
+  - code: '40'
+    meaning: 4/10
+  - code: '45'
+    meaning: 4/10 – 5/10
+  - code: '50'
+    meaning: 5/10
+  - code: '56'
+    meaning: 5/10 – 6/10
+  - code: '60'
+    meaning: 6/10
+  - code: '67'
+    meaning: 6/10 – 7/10
+  - code: '70'
+    meaning: 7/10
+  - code: '78'
+    meaning: 7/10 – 8/10
+  - code: '80'
+    meaning: 8/10
+  - code: '89'
+    meaning: 8/10 – 9/10
+  - code: '90'
+    meaning: 9/10
+  - code: '91'
+    meaning: 9/10 – 10/10
+  - code: '92'
+    meaning: 10/10
+  - code: '98'
+    meaning: No Brash ice
+  - code: '99'
+    meaning: Undetermined/Unknown
+compactingStrength:
+  definition: ICECST is an indication of strength of the compacting of the ice.
+  values:
+  - code: '01'
+    meaning: Little compacting
+  - code: '10'
+    meaning: Slight compacting
+  - code: '12'
+    meaning: Slight to moderate compacting
+  - code: '20'
+    meaning: Moderate compacting
+  - code: '23'
+    meaning: Moderate to strong compacting
+  - code: '30'
+    meaning: Strong compacting
+  - code: '98'
+    meaning: Ice divergence
+  - code: '99'
+    meaning: Undetermined/Unknown
+concentrationofStripsandPatches:
+  definition: A strip is a long narrow area of floating ice, about 1 kilometre or
+    less in width, usually composed of small fragments detached from the main mass
+    of ice, and run together under the influence of wind, swell or current. If the
+    area of ice becomes more rounded in shape, it is referred to as a patch. ICESPC
+    indicates the concentration in tenths within the area of Strips and Patches.
+  values:
+  - code: '11'
+    meaning: Strips and Patches (concentrations 1/10)
+  - code: '12'
+    meaning: Strips and Patches (concentrations 2/10)
+  - code: '13'
+    meaning: Strips and Patches (concentrations 3/10)
+  - code: '14'
+    meaning: Strips and Patches (concentrations 4/10)
+  - code: '15'
+    meaning: Strips and Patches (concentrations 5/10)
+  - code: '16'
+    meaning: Strips and Patches (concentrations 6/10)
+  - code: '17'
+    meaning: Strips and Patches (concentrations 7/10)
+  - code: '18'
+    meaning: Strips and Patches (concentrations 8/10)
+  - code: '19'
+    meaning: Strips and Patches (concentrations 9/10)
+  - code: '20'
+    meaning: Strips and Patches (concentrations 10/10)
+  - code: '99'
+    meaning: Undetermined/Unknown
+contamination:
+  definition: IA_PLG describes the degree of contamination (aerial coverage) in thirds
+    based on the Russian national 3-point scale.
+  values:
+  - code: '01'
+    meaning: No or insignificant Contamination
+  - code: '10'
+    meaning: "<1/3 of area"
+  - code: '12'
+    meaning: "<2/3 of area"
+  - code: '20'
+    meaning: 1/3 – 2/3 of area
+  - code: '23'
+    meaning: ">1/3 area"
+  - code: '30'
+    meaning: ">2/3 area"
+  - code: '98'
+    meaning: No Contamination
+  - code: '99'
+    meaning: Undetermined/Unknown
+directionofSastrugi:
+  definition: ICEDOS indicates the bearing of a sastrugi.  Sastrugi are sharp, irregular
+    ridges formed on a snow surface by wind erosion and deposition. On mobile floating
+    ice the ridges are parallel to the direction of the wind at the time they were
+    formed.
+  values:
+  - code: '01'
+    meaning: No Sastrugi
+  - code: '02'
+    meaning: NE
+  - code: '03'
+    meaning: E
+  - code: '04'
+    meaning: SE
+  - code: '05'
+    meaning: S
+  - code: '06'
+    meaning: SW
+  - code: '07'
+    meaning: W
+  - code: '08'
+    meaning: NW
+  - code: '09'
+    meaning: "N"
+  - code: '10'
+    meaning: Variable
+  - code: '99'
+    meaning: Undetermined/Unknown
+floeSizeFF:
+  definition: Size of ice floes (ff) for ia_sfa, ia_sfb, ia_sfc, ia_ffa, ia_ffb, ia_ffc
+    complex attributes
+  values:
+  - code: '01'
+    meaning: Pancake Ice (30 cm – 3 m)
+  - code: '02'
+    meaning: Shuga/Small Ice Cake; Brash Ice (<2 m)
+  - code: '03'
+    meaning: Ice Cake (<20 m)
+  - code: '04'
+    meaning: Small Floe (20 – 100 m)
+  - code: '05'
+    meaning: Medium Floe (100-500 m)
+  - code: '06'
+    meaning: Big Floe (500 – 2000 m)
+  - code: '07'
+    meaning: Vast Floe (2 – 10 km)
+  - code: '08'
+    meaning: Giant Floe (>10 km)
+  - code: '09'
+    meaning: Fast Ice
+floeSizes:
+  definition: Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb
+    and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively.
+  values:
+  - code: '01'
+    meaning: Pancake Ice (30 cm to 3m across)
+  - code: '02'
+    meaning: Shuga/Small Ice Cake; Brash Ice (<2m across)
+  - code: '03'
+    meaning: Ice Cake (<20m across)
+  - code: '04'
+    meaning: Small Floe (20 to <100m across)
+  - code: '05'
+    meaning: Medium Floe (100 to 500m)
+  - code: '06'
+    meaning: Big Floe (500 to <2000m across)
+  - code: '07'
+    meaning: Vast Floe (2000 to10000m across)
+  - code: '08'
+    meaning: Giant Floe (>10000m across)
+  - code: '09'
+    meaning: Fast Ice
+  - code: '10'
+    meaning: Growlers, Floebergs or Floebits
+  - code: '11'
+    meaning: Icebergs
+  - code: '99'
+    meaning: Undetermined/Unknown
+fracturesConcentration:
+  definition: IA_DUG describes the degree of disunity in an ice area.
+  values:
+  - code: '10'
+    meaning: Frequency of Cracks and Leads seldom in 10 km on Route
+  - code: '20'
+    meaning: Frequency of Cracks and Leads in 5 – 10 km on Route
+  - code: '30'
+    meaning: Frequency of Cracks and Leads in 3 – 5 km on Route
+  - code: '40'
+    meaning: Frequency of Cracks and Leads in 2 – 3 km on Route
+  - code: '50'
+    meaning: Frequency of Cracks and Leads often in 2 km on Route
+  - code: '60'
+    meaning: Small and Medium Floes – 1/10-3/10; Big Floes – 7/10-10/10 Conc.
+  - code: '70'
+    meaning: Small and Medium Floes – 4/10-6/10; Big Floes – 4/10-6/10 Conc.
+  - code: '80'
+    meaning: Small and Medium Floes – 7/10-10/10; Big Floes – 1/10-3/10 Conc.
+  - code: '90'
+    meaning: Small and Medium Floes Only
+  - code: '92'
+    meaning: Small Floes Only
+  - code: '98'
+    meaning: No Fractures
+  - code: '99'
+    meaning: Undetermined/Unknown
+frequencyofLeadsorFractures:
+  definition: ICERFQ indicates the frequency of leads or fractures in number per nautical
+    mile.
+hillsConcentration:
+  definition: IA_HLG describes the degree of hilling in an ice area (usually multi-year
+    ice).
+  values:
+  - code: '01'
+    meaning: Few hills
+  - code: '10'
+    meaning: Slight concentration of hills
+  - code: '12'
+    meaning: Slight to moderate concentration of hills
+  - code: '20'
+    meaning: Moderate concentration of hills
+  - code: '23'
+    meaning: Moderate to heavy concentration of hills
+  - code: '30'
+    meaning: Heavy concentration of hills
+  - code: '98'
+    meaning: No hills
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceAverageThickness2:
+  definition: Ice Average Thickness defines the average thickness of the ice.
+iceDriftDirection:
+  definition: ICEDDR indicates the direction in which an ice mass is drifting.
+  values:
+  - code: '01'
+    meaning: No Ice Motion
+  - code: '02'
+    meaning: Ice Drift to NE
+  - code: '03'
+    meaning: Ice Drift to E
+  - code: '04'
+    meaning: Ice Drift to SE
+  - code: '05'
+    meaning: Ice Drift to S
+  - code: '06'
+    meaning: Ice Drift to SW
+  - code: '07'
+    meaning: Ice Drift to W
+  - code: '08'
+    meaning: Ice Drift to NW
+  - code: '09'
+    meaning: Ice Drift to N
+  - code: '10'
+    meaning: Variable
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceDriftSpeed:
+  definition: ICEDSP describes the speed in knots at which an ice mass is traveling.
+iceFractureType:
+  definition: ICEFTY indicates the type of fracture, based upon width.
+  values:
+  - code: '01'
+    meaning: Crack (0 to 1m wide)
+  - code: '02'
+    meaning: Very Small Fracture (>1m to 50m wide)
+  - code: '03'
+    meaning: Small Fracture (>50m to 200m wide)
+  - code: '04'
+    meaning: Medium Fracture (>200m to 500m wide)
+  - code: '05'
+    meaning: Large Fracture (>500m wide)
+iceKeelConcentration:
+  definition: ICEKCN describes the concentration of ice keels beneath an ice area.
+  values:
+  - code: '01'
+    meaning: 0/10 – 1/10
+  - code: '10'
+    meaning: 1/10
+  - code: '12'
+    meaning: 1/10 – 2/10
+  - code: '20'
+    meaning: 2/10
+  - code: '23'
+    meaning: 2/10 – 3/10
+  - code: '30'
+    meaning: 3/10
+  - code: '34'
+    meaning: 3/10 – 4/10
+  - code: '40'
+    meaning: 4/10
+  - code: '45'
+    meaning: 4/10 – 5/10
+  - code: '50'
+    meaning: 5/10
+  - code: '56'
+    meaning: 5/10 – 6/10
+  - code: '60'
+    meaning: 6/10
+  - code: '67'
+    meaning: 6/10 – 7/10
+  - code: '70'
+    meaning: 7/10
+  - code: '78'
+    meaning: 7/10 – 8/10
+  - code: '80'
+    meaning: 8/10
+  - code: '89'
+    meaning: 8/10 – 9/10
+  - code: '90'
+    meaning: 9/10
+  - code: '91'
+    meaning: 9/10 – 10/10
+  - code: '92'
+    meaning: 10/10
+  - code: '98'
+    meaning: No Keels
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceKeelFrequency:
+  definition: ICERFQ indicates the frequency of ice keels in number per nautical mile
+iceKeelMaximumDepth:
+  definition: ICERMT indicates the maximum depth of ice keels in decimetres.
+iceKeelMeanDepth:
+  definition: Indicates the mean depth of ice keels in decimetres.
+iceLeadStatus:
+  definition: The Ice Lead Status indicates the surface nature of the lead.
+  values:
+  - code: '01'
+    meaning: Open Lead
+  - code: '02'
+    meaning: Frozen Lead
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceLeadWidth:
+  definition: ICELWD indicates the width of a lead or fracture or crack in metres.
+iceLocationInformation:
+  definition: ICELOC indicates whether the break is at a specific location, or whether
+    there is a presence in the area.
+  values:
+  - code: '01'
+    meaning: Specific Location
+  - code: '02'
+    meaning: Presence in Area
+iceRaftingConcentration:
+  definition: ICEFCN describes the concentration of ice rafting in an ice area.
+  values:
+  - code: '01'
+    meaning: 0/10 – 1/10
+  - code: '10'
+    meaning: 1/10
+  - code: '12'
+    meaning: 1/10 – 2/10
+  - code: '20'
+    meaning: 2/10
+  - code: '23'
+    meaning: 2/10 – 3/10
+  - code: '30'
+    meaning: 3/10
+  - code: '34'
+    meaning: 3/10 – 4/10
+  - code: '40'
+    meaning: 4/10
+  - code: '45'
+    meaning: 4/10 – 5/10
+  - code: '50'
+    meaning: 5/10
+  - code: '56'
+    meaning: 5/10 – 6/10
+  - code: '60'
+    meaning: 6/10
+  - code: '67'
+    meaning: 6/10 – 7/10
+  - code: '70'
+    meaning: 7/10
+  - code: '78'
+    meaning: 7/10 – 8/10
+  - code: '80'
+    meaning: 8/10
+  - code: '89'
+    meaning: 8/10 – 9/10
+  - code: '90'
+    meaning: 9/10
+  - code: '91'
+    meaning: 9/10 – 10/10
+  - code: '92'
+    meaning: 10/10
+  - code: '98'
+    meaning: No Rafting
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceRidgeClassification:
+  definition: ICERDV describes the predominant type of ice ridge(s) present.
+  values:
+  - code: '01'
+    meaning: New Ridge
+  - code: '02'
+    meaning: Weathered Ridge
+  - code: '03'
+    meaning: Very Weathered Ridge
+  - code: '04'
+    meaning: Aged Ridge
+  - code: '05'
+    meaning: Consolidated Ridge
+  - code: '06'
+    meaning: Ridge
+  - code: '07'
+    meaning: Ridged Ice Zone
+  - code: '08'
+    meaning: Ridge Barrier
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceRidgeConcentration:
+  definition: ICERCN describes the concentration of hummocked ice in an ice area.  Up
+    to three values may be given in the list to correspond to the partial concentrations
+    in ICEAPC.
+  values:
+  - code: '01'
+    meaning: 0/10 – 1/10
+  - code: '10'
+    meaning: 1/10
+  - code: '12'
+    meaning: 1/10 – 2/10
+  - code: '20'
+    meaning: 2/10
+  - code: '23'
+    meaning: 2/10 – 3/10
+  - code: '30'
+    meaning: 3/10
+  - code: '34'
+    meaning: 3/10 – 4/10
+  - code: '40'
+    meaning: 4/10
+  - code: '45'
+    meaning: 4/10 – 5/10
+  - code: '50'
+    meaning: 5/10
+  - code: '56'
+    meaning: 5/10 – 6/10
+  - code: '60'
+    meaning: 6/10
+  - code: '67'
+    meaning: 6/10 – 7/10
+  - code: '70'
+    meaning: 7/10
+  - code: '78'
+    meaning: 7/10 – 8/10
+  - code: '80'
+    meaning: 8/10
+  - code: '89'
+    meaning: 8/10 – 9/10
+  - code: '90'
+    meaning: 9/10
+  - code: '91'
+    meaning: 9/10 – 10/10
+  - code: '92'
+    meaning: 10/10
+  - code: '98'
+    meaning: No Ridging
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceRidgeFrequency:
+  definition: ICERFQ indicates the frequency of ice ridges in number per nautical
+    mile
+iceRidgeMaximumHeight:
+  definition: ICERMT indicates the maximum height of ice ridge(s) in decimetres.
+iceRidgeMeanHeight:
+  definition: ICERMH indicates the mean height of ice ridge(s) in decimetres.
+iceStageofDevelopment:
+  definition: Ice Stage of Development describes the ages and thicknesses of the ice
+    ('So, Sa, Sb, Sc and Sd').
+  values:
+  - code: '01'
+    meaning: Ice Free
+  - code: '70'
+    meaning: Brash Ice
+  - code: '80'
+    meaning: No stage of development
+  - code: '81'
+    meaning: New Ice (<10 cm)
+  - code: '82'
+    meaning: Nilas Ice Rind (<10 cm)
+  - code: '83'
+    meaning: Young Ice (10 to <30 cm)
+  - code: '84'
+    meaning: Grey Ice (10 to <15 cm)
+  - code: '85'
+    meaning: Grey – White Ice (15 to <30 cm)
+  - code: '86'
+    meaning: First Year Ice (30 to 200 cm)
+  - code: '87'
+    meaning: Thin First Year Ice (30 to <70 cm)
+  - code: '88'
+    meaning: Thin First Year Ice Stage 1 (30 to <50 cm)
+  - code: '89'
+    meaning: Thin First Year Ice Stage 2 (50 to <70 cm)
+  - code: '90'
+    meaning: Code not currently assigned
+  - code: '91'
+    meaning: Medium First Year Ice (70 to 120 cm)
+  - code: '92'
+    meaning: Code not currently assigned
+  - code: '93'
+    meaning: Thick First Year Ice (>120 cm)
+  - code: '94'
+    meaning: Residual Ice
+  - code: '95'
+    meaning: Old Ice
+  - code: '96'
+    meaning: Second Year Ice
+  - code: '97'
+    meaning: Multi-Year Ice
+  - code: '98'
+    meaning: Glacier Ice (Icebergs)
+  - code: '99'
+    meaning: Undetermined/Unknown
+iceThicknessType:
+  definition: ICETTY indicated whether the thickness of the ice was measured or estimated.
+  values:
+  - code: '01'
+    meaning: Measured
+  - code: '02'
+    meaning: Estimated
+  - code: '99'
+    meaning: Undetermined/Unknown
+icebergConcentration:
+  definition: IA_BCN specifies the total concentration of icebergs in an area.
+  values:
+  - code: '10'
+    meaning: ">45 nm between bergs"
+  - code: '12'
+    meaning: ">15 nm between bergs"
+  - code: '20'
+    meaning: 15 - 44 nm between bergs
+  - code: '23'
+    meaning: 10 - 44 nm between bergs
+  - code: '30'
+    meaning: 10 - 14 nm between bergs
+  - code: '34'
+    meaning: 7 - 14 nm between bergs
+  - code: '40'
+    meaning: 7 - 10 nm between bergs
+  - code: '45'
+    meaning: 5 - 10 nm between bergs
+  - code: '50'
+    meaning: 5 - 6 nm between bergs
+  - code: '56'
+    meaning: 3 - 6 nm between bergs
+  - code: '60'
+    meaning: 3 - 4 nm between bergs
+  - code: '67'
+    meaning: 1 - 4 nm between bergs
+  - code: '70'
+    meaning: 1 - 2 nm between bergs
+  - code: '78'
+    meaning: 0.5 - 2.0 nm between bergs
+  - code: '80'
+    meaning: 0.5 - 1.0 nm between bergs
+  - code: '89'
+    meaning: "<1.0 nm between bergs"
+  - code: '90'
+    meaning: "<0.5 nm between bergs"
+  - code: '98'
+    meaning: No Icebergs
+  - code: '99'
+    meaning: Undetermined/Unknown
+icebergSize:
+  definition: The "Iceberg Size" categorizes the size of an iceberg.
+  values:
+  - code: '01'
+    meaning: Growler (<1m asl)
+  - code: '02'
+    meaning: Bergy Bit (1-<5m asl; 5-<15m length)
+  - code: '03'
+    meaning: Small Iceberg (5-15m asl; 15-60m length)
+  - code: '04'
+    meaning: Medium Iceberg (16-45m asl; 61-120m length)
+  - code: '05'
+    meaning: Large Iceberg (46-75m asl; 121-200m length)
+  - code: '06'
+    meaning: Very Large Iceberg (>75m asl; >200m length)
+  - code: '07'
+    meaning: Ice Island Fragment
+  - code: '08'
+    meaning: Ice Island (in the Northern Hemisphere) or Very Large Tabular Berg (in
+      the Southern Ocean)
+  - code: '09'
+    meaning: Radar Target
+  - code: '99'
+    meaning: Undetermined/Unknown
+lakeIceStageofDevelopment:
+  definition: Lake Ice Stages of Development describe the ages and thicknesses of
+    lake ice. ('So, Sa, Sb, Sc and Sd')
+  values:
+  - code: '01'
+    meaning: New Lake Ice (<5cms)
+  - code: '02'
+    meaning: Thin Lake Ice (5-<15cms)
+  - code: '03'
+    meaning: Medium Lake Ice (15-<30cms)
+  - code: '04'
+    meaning: Thick Lake Ice (30-70cms)
+  - code: '05'
+    meaning: Very Thick Lake Ice (>70cms)
+  - code: '70'
+    meaning: Brash Ice
+  - code: '99'
+    meaning: Undetermined/Unknown
+levelIce:
+  definition: ICELVL is an indication as to whether or not the ice has been affected
+    by deformation
+  values:
+  - code: '01'
+    meaning: Level(undeformed)
+  - code: '02'
+    meaning: Deformed
+  - code: '99'
+    meaning: Undetermined/Unknown
+maximumHeightofAboveWaterPart:
+  definition: IA_BUF specifies the maximum height of an iceberg above the waterline
+    in meters.
+maximumIceThickness:
+  definition: ICEMAX specifies the maximum thickness of the ice.
+maximumWidthofIceLead:
+  definition: IA_DXW defines the maximum width of the lead or fracture or crack.
+meltStage:
+  definition: 'The Stage of Melt describes the stages of the melting ice. Puddle:
+    An accumulation of water on ice, mainly due to the melting of snow, but in some
+    more advanced stages also the melting of ice. Thaw Hole: Vertical holes formed
+    in ice when surface puddles melt through to the underlying water. Dried Ice: Ice
+    surface from which water has disappeared after the formation of cracks and thaw
+    holes. During the process of drying the surface whitens. Rotten Ice: Ice which
+    has become honey-combed and is in an advanced state of disintegration. Flooded
+    Ice: Ice which has been flooded and is heavily loaded by water or water and wet
+    snow. Frozen Puddle: A puddle which has frozen over.'
+  values:
+  - code: '01'
+    meaning: Few Puddles
+  - code: '02'
+    meaning: Many Puddles
+  - code: '03'
+    meaning: Flooded Ice
+  - code: '04'
+    meaning: Few Thaw Holes
+  - code: '05'
+    meaning: Many Thaw Holes
+  - code: '06'
+    meaning: Dried Ice
+  - code: '07'
+    meaning: Rotten Ice
+  - code: '08'
+    meaning: Few Frozen Puddles
+  - code: '09'
+    meaning: All Puddles Frozen
+  - code: '10'
+    meaning: No Melt
+  - code: '99'
+    meaning: Undetermined/Unknown
+mimimumIceThickness:
+  definition: ICEMIN specifies the minimum thickness of the ice.
+minimumWidthofIceLead:
+  definition: IA_DMW defines the minimum width of the lead or fracture or crack.
+numberofIceObjects:
+  definition: IA_OBN defines the number of ice objects (cracks, leads, fractures,
+    icebergs).
+numberofIcebergsinArea:
+  definition: ICEBNM indicates the number of Icebergs within a specified area.
+orientationofLeadsorFractures:
+  definition: ICELOR indicates the predominant orientation of leads and fractures.
+  values:
+  - code: '01'
+    meaning: No Leads or Fractures
+  - code: '02'
+    meaning: NE
+  - code: '03'
+    meaning: E
+  - code: '04'
+    meaning: SE
+  - code: '05'
+    meaning: S
+  - code: '06'
+    meaning: SW
+  - code: '07'
+    meaning: W
+  - code: '08'
+    meaning: NW
+  - code: '09'
+    meaning: "N"
+  - code: '10'
+    meaning: Variable
+  - code: '99'
+    meaning: Undetermined/Unknown
+partialConcentration:
+  definition: ICEAPC specifies the partial concentrations of ice in an area. ('Ca,
+    Cband Cc').
+  values:
+  - code: '01'
+    meaning: Ice Free
+  - code: '02'
+    meaning: Open Water ( < 1/10 ice)
+  - code: '03'
+    meaning: Bergy Water
+  - code: '10'
+    meaning: 1/10 ice
+  - code: '12'
+    meaning: 1/10 to 2/10 ice
+  - code: '13'
+    meaning: 1/10 to 3/10 ice
+  - code: '20'
+    meaning: 2/10 ice
+  - code: '23'
+    meaning: 2/10 to 3/10 ice
+  - code: '24'
+    meaning: 2/10 to 4/10 ice
+  - code: '30'
+    meaning: 3/10 ice
+  - code: '34'
+    meaning: 3/10 to 4/10 ice
+  - code: '35'
+    meaning: 3/10 to 5/10 ice
+  - code: '40'
+    meaning: 4/10 ice
+  - code: '46'
+    meaning: 4/10 to 6/10 ice
+  - code: '50'
+    meaning: 5/10 ice
+  - code: '56'
+    meaning: 5/10 to 6/10 ice
+  - code: '57'
+    meaning: 5/10 to 7/10 ice
+  - code: '60'
+    meaning: 6/10 ice
+  - code: '67'
+    meaning: 6/10 to 7/10 ice
+  - code: '68'
+    meaning: 6/10 to 8/10 ice
+  - code: '70'
+    meaning: 7/10 ice
+  - code: '78'
+    meaning: 7/10 to 8/10 ice
+  - code: '79'
+    meaning: 7/10 to 9/10 ice
+  - code: '80'
+    meaning: 8/10 ice
+  - code: '81'
+    meaning: 8/10 to 10/10 ice
+  - code: '89'
+    meaning: 8/10 to 9/10 ice
+  - code: '90'
+    meaning: 9/10 ice
+  - code: '91'
+    meaning: 9/10 to 10/10 ice
+  - code: '92'
+    meaning: 10/10 ice
+  - code: '99'
+    meaning: Undetermined/Unknown
+prevailingIcebergForm:
+  definition: IA_BFM specifies the prevailing form of icebergs in an area.
+  values:
+  - code: '01'
+    meaning: Domed
+  - code: '02'
+    meaning: Tabular
+  - code: '03'
+    meaning: Sloping
+  - code: '04'
+    meaning: Pinnacled
+  - code: '05'
+    meaning: Dry-dock
+  - code: '06'
+    meaning: Glacier (irregular)
+  - code: '07'
+    meaning: Blocky
+  - code: '08'
+    meaning: Weathered
+  - code: '99'
+    meaning: Undetermined/Unknown
+snowCoverConcentration:
+  definition: ICESCN indicates the concentration (aerial coverage) of snow in tenths.
+  values:
+  - code: '01'
+    meaning: 1/10
+  - code: '02'
+    meaning: 2/10
+  - code: '03'
+    meaning: 3/10
+  - code: '04'
+    meaning: 4/10
+  - code: '05'
+    meaning: 5/10
+  - code: '06'
+    meaning: 6/10
+  - code: '07'
+    meaning: 7/10
+  - code: '08'
+    meaning: 8/10
+  - code: '09'
+    meaning: 9/10
+  - code: '10'
+    meaning: 10/10
+  - code: '11'
+    meaning: "<1/10"
+  - code: '12'
+    meaning: No Snow Cover
+  - code: '99'
+    meaning: Undetermined/Unknown
+snowDepth2:
+  definition: ICESCT specifies the depth of snow cover on the ice.
+snowcover:
+  definition: Snow cover describes the degree of snow cover in an ice area.
+  values:
+  - code: '01'
+    meaning: Little snow cover
+  - code: '10'
+    meaning: Thin snow cover (<5 cm)
+  - code: '12'
+    meaning: "< 20 cm"
+  - code: '20'
+    meaning: Medium snow cover (5-20 cm)
+  - code: '23'
+    meaning: "> 5 cm"
+  - code: '30'
+    meaning: Thick snow cover (> 20 cm)
+  - code: '98'
+    meaning: No snow cover
+  - code: '99'
+    meaning: Undetermined/Unknown
+stageOfDevelopmentSS:
+  definition: Stage of develpment (ss) for ia_sfa, ia_sfb, ia_sfc, ia_ffa, ia_ffb,
+    ia_ffc complex attributes
+  values:
+  - code: '80'
+    meaning: No stage of development
+  - code: '81'
+    meaning: New Ice  (<5 cm)
+  - code: '82'
+    meaning: Nilas Ice  (<10 cm)
+  - code: '83'
+    meaning: Young Ice  (10 to <30 cm)
+  - code: '84'
+    meaning: Grey Ice (10 to <15 cm)
+  - code: '85'
+    meaning: Grey – White Ice  (15 to <30 cm)
+  - code: '86'
+    meaning: First Year Ice  (30 to 200 cm)
+  - code: '87'
+    meaning: Thin First Year Ice (30 to <70 cm)
+  - code: '88'
+    meaning: Thin First Year Ice Stage 1 (30 to <50 cm)
+  - code: '89'
+    meaning: Thin First Year Ice Stage 2 (50 to <70 cm)
+  - code: '90'
+    meaning: Code not currently assigned
+  - code: '91'
+    meaning: Medium First Year Ice  (70 to 120 cm)
+  - code: '92'
+    meaning: Code not currently assigned
+  - code: '93'
+    meaning: Thick First Year Ice (>120 cm)
+  - code: '94'
+    meaning: Residual Ice
+  - code: '95'
+    meaning: Old Ice
+  - code: '96'
+    meaning: Second Year Ice
+  - code: '97'
+    meaning: Multi-Year Ice
+  - code: '99'
+    meaning: Undetermined/Unknown
+stageofMelting:
+  definition: IA_MLT describes the stage of melting according to the 5-point Russian
+    national scale
+  values:
+  - code: '01'
+    meaning: 0/5 - 1/5 or 0/3 - 1/3
+  - code: '10'
+    meaning: 1/5 or 1/3
+  - code: '12'
+    meaning: 1/5 - 2/5 or 1/3 - 2/3
+  - code: '20'
+    meaning: 2/5 or 2/3
+  - code: '23'
+    meaning: 2/5 – 3/5 or 2/3 – 3/3
+  - code: '30'
+    meaning: 3/5 or 3/3
+  - code: '34'
+    meaning: 3/5 – 4/5
+  - code: '40'
+    meaning: 4/5
+  - code: '45'
+    meaning: 4/5 – 5/5
+  - code: '50'
+    meaning: 5/5
+  - code: '98'
+    meaning: No Melting
+  - code: '99'
+    meaning: Undetermined/Unknown
+totalConcentration:
+  definition: ICEACT specifies the total concentration of ice in an area.  It represents
+    the ratio expressed in tenths describing the total area of the water surface covered
+    by ice as a fraction of the whole area.
+  type: enumeration
+  values:
+  - code: '01'
+    meaning: Ice Free
+  - code: '02'
+    meaning: Open Water ( < 1/10 ice)
+  - code: '03'
+    meaning: Bergy Water
+  - code: '10'
+    meaning: 1/10 ice
+  - code: '12'
+    meaning: 1/10 to 2/10 ice
+  - code: '13'
+    meaning: 1/10 to 3/10 ice
+  - code: '20'
+    meaning: 2/10 ice
+  - code: '23'
+    meaning: 2/10 to 3/10 ice
+  - code: '24'
+    meaning: 2/10 to 4/10 ice
+  - code: '30'
+    meaning: 3/10 ice
+  - code: '34'
+    meaning: 3/10 to 4/10 ice
+  - code: '35'
+    meaning: 3/10 to 5/10 ice
+  - code: '40'
+    meaning: 4/10 ice
+  - code: '46'
+    meaning: 4/10 to 6/10 ice
+  - code: '50'
+    meaning: 5/10 ice
+  - code: '56'
+    meaning: 5/10 to 6/10 ice
+  - code: '57'
+    meaning: 5/10 to 7/10 ice
+  - code: '60'
+    meaning: 6/10 ice
+  - code: '67'
+    meaning: 6/10 to 7/10 ice
+  - code: '68'
+    meaning: 6/10 to 8/10 ice
+  - code: '70'
+    meaning: 7/10 ice
+  - code: '78'
+    meaning: 7/10 to 8/10 ice
+  - code: '79'
+    meaning: 7/10 to 9/10 ice
+  - code: '80'
+    meaning: 8/10 ice
+  - code: '81'
+    meaning: 8/10 to 10/10 ice
+  - code: '89'
+    meaning: 8/10 to 9/10 ice
+  - code: '90'
+    meaning: 9/10 ice
+  - code: '91'
+    meaning: 9/10 to 10/10 ice
+  - code: '92'
+    meaning: 10/10 ice
+  - code: '99'
+    meaning: Undetermined/Unknown

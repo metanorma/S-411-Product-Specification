@@ -1,20 +1,25 @@
 [[sec-iceThicknessType]]
 === Ice Thickness Type
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%assign g_type = "enumeration"%}
+{%assign g_def = "ICETTY indicated whether the thickness of the ice was measured or estimated."%}
+{%assign g_vals = "01:Measured | 02:Estimated | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceThicknessType"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# ICETTY indicated whether the thickness of the ice was measured or estimated.
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-[underline]#** Attribute Type :**# enumeration
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-. 01 +
-[underline]#**IHO Definition**# :Measured
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-. 02 +
-[underline]#**IHO Definition**# :Estimated
-
-. 99 +
-[underline]#**IHO Definition**# :Undetermined/Unknown
-
-[underline]#** Remarks :**#
-|===
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}
+----

@@ -1,47 +1,25 @@
 [[sec-floeSizes]]
 === Floe Sizes
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%assign g_type = "enumeration"%}
+{%assign g_def = "Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively."%}
+{%assign g_vals = "01:Pancake Ice (30 cm to 3m across) | 02:Shuga/Small Ice Cake; Brash Ice (<2m across) | 03:Ice Cake (<20m across) | 04:Small Floe (20 to <100m across) | 05:Medium Floe (100 to 500m) | 06:Big Floe (500 to <2000m across) | 07:Vast Floe (2000 to10000m across) | 08:Giant Floe (>10000m across) | 09:Fast Ice | 10:Growlers, Floebergs or Floebits | 11:Icebergs | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "floeSizes"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively.
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-[underline]#** Attribute Type :**# enumeration
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-. 01 +
-[underline]#**IHO Definition**# :Pancake Ice (30 cm to 3m across)
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-. 02 +
-[underline]#**IHO Definition**# :Shuga/Small Ice Cake; Brash Ice (<2m across)
-
-. 03 +
-[underline]#**IHO Definition**# :Ice Cake (<20m across)
-
-. 04 +
-[underline]#**IHO Definition**# :Small Floe (20 to <100m across)
-
-. 05 +
-[underline]#**IHO Definition**# :Medium Floe (100 to 500m)
-
-. 06 +
-[underline]#**IHO Definition**# :Big Floe (500 to <2000m across)
-
-. 07 +
-[underline]#**IHO Definition**# :Vast Floe (2000 to10000m across)
-
-. 08 +
-[underline]#**IHO Definition**# :Giant Floe (>10000m across)
-
-. 09 +
-[underline]#**IHO Definition**# :Fast Ice
-
-. 10 +
-[underline]#**IHO Definition**# :Growlers, Floebergs or Floebits
-
-. 11 +
-[underline]#**IHO Definition**# :Icebergs
-
-. 99 +
-[underline]#**IHO Definition**# :Undetermined/Unknown
-
-[underline]#** Remarks :**#
-|===
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}
+----

@@ -1,11 +1,12 @@
 [[sec-maximumWidthofIceLead]]
 === Maximum Width of Ice Lead (or Fracture or Crack)
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "IA_DXW defines the maximum width of the lead or fracture or crack."%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# IA_DXW defines the maximum width of the lead or fracture or crack.
-
-[underline]#** Attribute Type :**# integer
-
-[underline]#** Remarks :**#
+a| [underline]#**IHO Definition** :# {{g_def}}
 |===
+----

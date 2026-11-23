@@ -1,44 +1,25 @@
 [[sec-meltStage]]
 === Melt Stage
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%assign g_type = "enumeration"%}
+{%assign g_def = "The Stage of Melt describes the stages of the melting ice. Puddle: An accumulation of water on ice, mainly due to the melting of snow, but in some more advanced stages also the melting of ice. Thaw Hole: Vertical holes formed in ice when surface puddles melt through to the underlying water. Dried Ice: Ice surface from which water has disappeared after the formation of cracks and thaw holes. During the process of drying the surface whitens. Rotten Ice: Ice which has become honey-combed and is in an advanced state of disintegration. Flooded Ice: Ice which has been flooded and is heavily loaded by water or water and wet snow. Frozen Puddle: A puddle which has frozen over."%}
+{%assign g_vals = "01:Few Puddles | 02:Many Puddles | 03:Flooded Ice | 04:Few Thaw Holes | 05:Many Thaw Holes | 06:Dried Ice | 07:Rotten Ice | 08:Few Frozen Puddles | 09:All Puddles Frozen | 10:No Melt | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "meltStage"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# The Stage of Melt describes the stages of the melting ice. Puddle: An accumulation of water on ice, mainly due to the melting of snow, but in some more advanced stages also the melting of ice. Thaw Hole: Vertical holes formed in ice when surface puddles melt through to the underlying water. Dried Ice: Ice surface from which water has disappeared after the formation of cracks and thaw holes. During the process of drying the surface whitens. Rotten Ice: Ice which has become honey-combed and is in an advanced state of disintegration. Flooded Ice: Ice which has been flooded and is heavily loaded by water or water and wet snow. Frozen Puddle: A puddle which has frozen over.
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-[underline]#** Attribute Type :**# enumeration
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-. 01 +
-[underline]#**IHO Definition**# :Few Puddles
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-. 02 +
-[underline]#**IHO Definition**# :Many Puddles
-
-. 03 +
-[underline]#**IHO Definition**# :Flooded Ice
-
-. 04 +
-[underline]#**IHO Definition**# :Few Thaw Holes
-
-. 05 +
-[underline]#**IHO Definition**# :Many Thaw Holes
-
-. 06 +
-[underline]#**IHO Definition**# :Dried Ice
-
-. 07 +
-[underline]#**IHO Definition**# :Rotten Ice
-
-. 08 +
-[underline]#**IHO Definition**# :Few Frozen Puddles
-
-. 09 +
-[underline]#**IHO Definition**# :All Puddles Frozen
-
-. 10 +
-[underline]#**IHO Definition**# :No Melt
-
-. 99 +
-[underline]#**IHO Definition**# :Undetermined/Unknown
-
-[underline]#** Remarks :**#
-|===
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}
+----
