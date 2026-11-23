@@ -18,7 +18,9 @@ gem "metanorma-release", github: "metanorma/metanorma-release", branch: "main"
 
 gem "metanorma-mirror", "~> 1.0"
 gem "lutaml-model", "~> 0.8.63"
-gem "leptris", "~> 1.9.239"
+# 1.9.434+ breaks RelaxNG combine semantics across included grammars,
+# rejecting valid documents (leptris#2133); unpin once the fix ships.
+gem "leptris", "1.9.433.0"
 gem "moxml", "~> 0.6.0"
 gem "pubid", ">= 2.0.0.pre.alpha.9"
 # isodoc-i18n resolves from main; metanorma-standoc and isodoc are

@@ -34,25 +34,23 @@ jobs:
           unset BUNDLE_GEMFILE RUBYOPT
           apt-get update -qq && apt-get install -y --no-install-recommends build-essential
           bundle install
-          for doc in sources/1.2.1/PS sources/1.2.1/DCEG; do
+          # site generate strips the leading `sources` segment when laying
+          # out compiled documents under _site/documents
+          for doc in 1.2.1/PS 1.2.1/DCEG; do
             bundle exec metanorma-document to-html "_site/documents/$doc/document.presentation.xml" \
               --flavor iho -o "_site/documents/$doc/document.mnd.html"
           done
 
+      # Package the compiled documents into release zips served by the site.
+      # The aggregate/render-index steps are build-time no-ops: aggregate
+      # only reads <slug>.meta.json manifests written by the
+      # `metanorma-release release` publishing flow, and render-index does
+      # not exist in metanorma-release; site generate already emits
+      # _site/index.html.
       - name: Package document registry
         run: |
           unset BUNDLE_GEMFILE RUBYOPT
-          bundle exec metanorma-release package --output-dir _site/documents --dest releases
-
-      - name: Aggregate document registry
-        run: |
-          unset BUNDLE_GEMFILE RUBYOPT
-          bundle exec metanorma-release aggregate --source local:releases --output-dir _site/docs --data-dir _data --include-drafts
-
-      - name: Render registry index
-        run: |
-          unset BUNDLE_GEMFILE RUBYOPT
-          bundle exec metanorma-release render-index --data _data/documents.json --out _site/index.html --flavor iho --manifest metanorma.yml
+          bundle exec metanorma-release package --output-dir _site/documents
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
