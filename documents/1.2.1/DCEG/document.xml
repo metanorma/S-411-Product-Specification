@@ -2143,15 +2143,16 @@
 </clause>
 </clause>
 
-<clause id="_61d022e2-9b75-fb7a-7f4c-d0f6876be851" obligation="normative">
+<clause id="_22146eba-e4db-c23f-c643-64badf646e9c" obligation="normative">
 <title id="_e97be66d-ad03-8715-04a5-be0353094ce2">Attributes and Enumerates Descriptions</title>
-<clause id="_bd9e209f-cefe-39bc-792c-7f718b823245" anchor="sec-brashIce" obligation="normative">
+<clause id="_714a1642-f0a2-4ea0-9acc-308759751008" anchor="sec-brashIce" obligation="normative">
 <title id="_6d8dfe40-1b45-81de-0adb-47c01a128c5e">Brash Ice</title>
-<sourcecode id="_42faff55-dae7-efef-2479-091a7bab465f"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_db3c9c30-b339-6055-50a5-7bc6d73373b6"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEBRS specifies the concentrations of very thick brash (&amp;quot;AV&amp;quot;), thick brash (&amp;quot;AK&amp;quot;), medium brash (&amp;quot;AM&amp;quot;) and thin brash ice (&amp;quot;AT&amp;quot;)."%}
 {%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Brash ice | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "brashIce"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2165,17 +2166,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: brashIce not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_7f67b195-8f53-09dd-1d92-2043e4ce4188" anchor="sec-compactingStrength" obligation="normative">
+<clause id="_54fab2b3-ca79-4b09-c9fc-b88e54609ee9" anchor="sec-compactingStrength" obligation="normative">
 <title id="_1d04cf2d-df14-26f6-463e-4e891bc3aadb">Compacting Strength</title>
-<sourcecode id="_53d3a41a-526e-19ab-128c-06144594ed80"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_fabe8e98-5f3b-4a51-c454-008d2db70f39"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICECST is an indication of strength of the compacting of the ice."%}
 {%assign g_vals = "01:Little compacting | 10:Slight compacting | 12:Slight to moderate compacting | 20:Moderate compacting | 23:Moderate to strong compacting | 30:Strong compacting | 98:Ice divergence | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "compactingStrength"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2189,17 +2192,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: compactingStrength not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_2c4f1cd0-f440-e281-bfcc-0a6ecdd9aeb1" anchor="sec-contamination" obligation="normative">
+<clause id="_40905a33-3ccc-5856-42a1-8c2b77193755" anchor="sec-contamination" obligation="normative">
 <title id="_9d6b5b34-33c0-d4cd-c860-cf63a1fba09f">Contamination</title>
-<sourcecode id="_ffc5bfad-ed91-e7a1-9ff7-112a034b7190"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_3c40f54f-dbe3-b7b2-3033-35c40ee667c0"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "IA_PLG describes the degree of contamination (aerial coverage) in thirds based on the Russian national 3-point scale."%}
 {%assign g_vals = "01:No or insignificant Contamination | 10:&lt;1/3 of area | 12:&lt;2/3 of area | 20:1/3 – 2/3 of area | 23:&gt;1/3 area | 30:&gt;2/3 area | 98:No Contamination | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "contamination"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2213,17 +2218,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: contamination not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_85798b44-79c7-ba8d-f9c7-344d79a1b39b" anchor="sec-directionofSastrugi" obligation="normative">
+<clause id="_5190da96-d12a-d124-420d-abe53dfa596b" anchor="sec-directionofSastrugi" obligation="normative">
 <title id="_c8e2bb0a-1faa-2a10-71a7-7e768746d7b9">Direction of Sastrugi</title>
-<sourcecode id="_326d9a91-916d-2d2a-fc1a-05091983b1db"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_11b43b24-e640-1260-f7ab-1fae6ad2a7f1"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEDOS indicates the bearing of a sastrugi.  Sastrugi are sharp, irregular ridges formed on a snow surface by wind erosion and deposition. On mobile floating ice the ridges are parallel to the direction of the wind at the time they were formed."%}
 {%assign g_vals = "01:No Sastrugi | 02:NE | 03:E | 04:SE | 05:S | 06:SW | 07:W | 08:NW | 09:N | 10:Variable | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
-{%if e.name == "directionofSastrugi"%}
+{%if e.name == "directionOfSastrugi"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2237,17 +2244,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: directionofSastrugi not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_a29d51d5-4173-e38f-e655-e89965caa94c" anchor="sec-floeSizes" obligation="normative">
+<clause id="_ff9bc1b0-232c-5579-59fc-cec29863843c" anchor="sec-floeSizes" obligation="normative">
 <title id="_2343727c-93e6-6e9a-98ad-acdf02eaaee3">Floe Sizes</title>
-<sourcecode id="_00874839-b10d-e745-fc8a-77748cfdb074"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_7f93efd1-e6c5-4926-f969-418c9faaacc1"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively."%}
 {%assign g_vals = "01:Pancake Ice (30 cm to 3m across) | 02:Shuga/Small Ice Cake; Brash Ice (&lt;2m across) | 03:Ice Cake (&lt;20m across) | 04:Small Floe (20 to &lt;100m across) | 05:Medium Floe (100 to 500m) | 06:Big Floe (500 to &lt;2000m across) | 07:Vast Floe (2000 to10000m across) | 08:Giant Floe (&gt;10000m across) | 09:Fast Ice | 10:Growlers, Floebergs or Floebits | 11:Icebergs | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "floeSizes"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2261,17 +2270,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: floeSizes not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_c4220335-6a0f-7f1c-855a-27ce0b719704" anchor="sec-floeSizeFF" obligation="normative">
+<clause id="_fecef5cf-ec00-0033-5213-25e8d6f5350d" anchor="sec-floeSizeFF" obligation="normative">
 <title id="_95c77b65-26e4-a4f3-ff7b-69e1d7cad0b9">Floe Size FF</title>
-<sourcecode id="_cdcffbd7-8ad4-c1d3-7c7e-d17b3c578a10"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_ce2a85d0-f4c8-a891-86fe-7e1fe1c61286"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "Size of ice floes (ff) for ia_sfa, ia_sfb, ia_sfc, ia_ffa, ia_ffb, ia_ffc complex attributes"%}
 {%assign g_vals = "01:Pancake Ice (30 cm – 3 m) | 02:Shuga/Small Ice Cake; Brash Ice (&lt;2 m) | 03:Ice Cake (&lt;20 m) | 04:Small Floe (20 – 100 m) | 05:Medium Floe (100-500 m) | 06:Big Floe (500 – 2000 m) | 07:Vast Floe (2 – 10 km) | 08:Giant Floe (&gt;10 km) | 09:Fast Ice" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
-{%if e.name == "floeSizeFF"%}
+{%if e.name == "floeSize(FF)"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2285,17 +2296,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: floeSizeFF not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_c89d30d6-460a-d826-a700-49eeae6473b3" anchor="sec-fracturesConcentration" obligation="normative">
+<clause id="_0a3ce6ba-d72c-07fb-0a5b-55f29fa92f17" anchor="sec-fracturesConcentration" obligation="normative">
 <title id="_f8d1db8e-4ecf-bca3-3d7e-3b10d6c6bc81">Fractures Concentration</title>
-<sourcecode id="_0e566add-a4d0-859c-647c-9e20452de780"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_029de862-b695-45a5-f149-439b1f9af130"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "IA_DUG describes the degree of disunity in an ice area."%}
 {%assign g_vals = "10:Frequency of Cracks and Leads seldom in 10 km on Route | 20:Frequency of Cracks and Leads in 5 – 10 km on Route | 30:Frequency of Cracks and Leads in 3 – 5 km on Route | 40:Frequency of Cracks and Leads in 2 – 3 km on Route | 50:Frequency of Cracks and Leads often in 2 km on Route | 60:Small and Medium Floes – 1/10-3/10; Big Floes – 7/10-10/10 Conc. | 70:Small and Medium Floes – 4/10-6/10; Big Floes – 4/10-6/10 Conc. | 80:Small and Medium Floes – 7/10-10/10; Big Floes – 1/10-3/10 Conc. | 90:Small and Medium Floes Only | 92:Small Floes Only | 98:No Fractures | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
-{%if e.name == "fracturesConcentration"%}
+{%if e.name == "fracturesConcentratation"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2309,28 +2322,32 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: fracturesConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_20b2a016-29d9-e426-48bf-bc1aba79e654" anchor="sec-frequencyofLeadsorFractures" obligation="normative">
+<clause id="_1ceaee62-7030-8a31-0dfd-ea62e27e5bea" anchor="sec-frequencyofLeadsorFractures" obligation="normative">
 <title id="_a571f38d-2bbe-c3e0-b2e6-b88eb2b6afbf">Frequency of Leads or Fractures</title>
-<sourcecode id="_cfd093cf-11dc-5d36-8fcd-693da3cfe629"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_103ac051-f7ec-f891-4217-cd5c8af193c4"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICERFQ indicates the frequency of leads or fractures in number per nautical mile."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_d3c93d8d-9f29-416d-1bc1-3500237ccdaa" anchor="sec-hillsConcentration" obligation="normative">
+<clause id="_4d7f31cb-3101-94be-aae1-3e61725fd70e" anchor="sec-hillsConcentration" obligation="normative">
 <title id="_825cbb72-3121-5ed9-db66-0bba2515baab">Hills Concentration</title>
-<sourcecode id="_177195c3-a515-4f7e-ee58-32aa2a47061a"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_44b81f48-45f7-d0d4-9529-c06d3207c8db"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "IA_HLG describes the degree of hilling in an ice area (usually multi-year ice)."%}
 {%assign g_vals = "01:Few hills | 10:Slight concentration of hills | 12:Slight to moderate concentration of hills | 20:Moderate concentration of hills | 23:Moderate to heavy concentration of hills | 30:Heavy concentration of hills | 98:No hills | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "hillsConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2344,28 +2361,32 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: hillsConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_331cfd06-944a-c8c5-f983-3f7c762f80f5" anchor="sec-iceAverageThickness2" obligation="normative">
+<clause id="_96e275cf-ca93-2c5e-1901-521e9e2bf505" anchor="sec-iceAverageThickness2" obligation="normative">
 <title id="_90c67514-d450-1460-0b34-1d30df673283">Ice Average Thickness</title>
-<sourcecode id="_eccdcc4a-c011-cd20-1d1e-cac0e5743ec2"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_47cf643d-7481-1c9f-9cfa-39b86673a624"><body>{%assign g_type = "integer"%}
 {%assign g_def = "Ice Average Thickness defines the average thickness of the ice."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_3e971b6d-fae6-425e-7310-8c51b939967d" anchor="sec-icebergSize" obligation="normative">
+<clause id="_3d46a92a-971c-d5bc-c6f7-c3d4446df334" anchor="sec-icebergSize" obligation="normative">
 <title id="_14e53093-85cb-6367-0629-304f5d01a829">Iceberg Size</title>
-<sourcecode id="_9d394e9b-ddef-b5d0-2eca-4521dd16f328"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_00e0b9d5-1a67-948d-242c-ca98c26716ed"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "The &amp;quot;Iceberg Size&amp;quot; categorizes the size of an iceberg."%}
 {%assign g_vals = "01:Growler (&lt;1m asl) | 02:Bergy Bit (1-&lt;5m asl; 5-&lt;15m length) | 03:Small Iceberg (5-15m asl; 15-60m length) | 04:Medium Iceberg (16-45m asl; 61-120m length) | 05:Large Iceberg (46-75m asl; 121-200m length) | 06:Very Large Iceberg (&gt;75m asl; &gt;200m length) | 07:Ice Island Fragment | 08:Ice Island (in the Northern Hemisphere) or Very Large Tabular Berg (in the Southern Ocean) | 09:Radar Target | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "icebergSize"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2379,17 +2400,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: icebergSize not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_926c2e50-6f19-ffcd-74d1-7f9cfda9f95b" anchor="sec-iceDriftDirection" obligation="normative">
+<clause id="_0d45f7e4-0e9c-5eb4-23c2-c742fed10a7c" anchor="sec-iceDriftDirection" obligation="normative">
 <title id="_b5729a50-e472-c27e-c9ed-9f08dc6050b8">Ice Drift Direction</title>
-<sourcecode id="_7f1e9218-c4c9-1809-80a4-16601fdaa989"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_660ca06e-30cd-7c96-ff9e-49eee20ff9b5"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEDDR indicates the direction in which an ice mass is drifting."%}
 {%assign g_vals = "01:No Ice Motion | 02:Ice Drift to NE | 03:Ice Drift to E | 04:Ice Drift to SE | 05:Ice Drift to S | 06:Ice Drift to SW | 07:Ice Drift to W | 08:Ice Drift to NW | 09:Ice Drift to N | 10:Variable | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceDriftDirection"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2403,28 +2426,32 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceDriftDirection not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_dab9e626-0fcb-e1ed-ac07-b5841018ea35" anchor="sec-iceDriftSpeed" obligation="normative">
+<clause id="_6eae2e75-f599-c2ca-23ee-043191f5fea4" anchor="sec-iceDriftSpeed" obligation="normative">
 <title id="_212c65a7-331a-6377-f325-9774548dd90f">Ice Drift Speed</title>
-<sourcecode id="_5cbcdbe2-d161-2435-7f86-9cfae8454063"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_3c4d7643-ad46-18c0-1706-68c4e65a1faf"><body>{%assign g_type = "real"%}
 {%assign g_def = "ICEDSP describes the speed in knots at which an ice mass is traveling."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_02c8179f-52b5-fa5d-e5ca-2d37efc601da" anchor="sec-iceFractureType" obligation="normative">
+<clause id="_fa17aabf-a1ba-b20f-4eb8-7bdfba3a6f15" anchor="sec-iceFractureType" obligation="normative">
 <title id="_88ecad5f-fb2c-8412-27b1-9099f541bf74">Ice Fracture Type</title>
-<sourcecode id="_56e79939-df71-6d10-f2f2-e60d8abec21d"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_474cbc1a-55b5-0a6e-3113-557c65ce594f"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEFTY indicates the type of fracture, based upon width."%}
 {%assign g_vals = "01:Crack (0 to 1m wide) | 02:Very Small Fracture (&gt;1m to 50m wide) | 03:Small Fracture (&gt;50m to 200m wide) | 04:Medium Fracture (&gt;200m to 500m wide) | 05:Large Fracture (&gt;500m wide)" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceFractureType"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2438,17 +2465,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceFractureType not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_66a34c69-e08b-c8a2-35f9-6fb8cea3ddc5" anchor="sec-iceKeelConcentration" obligation="normative">
+<clause id="_7a488609-9ff2-82a0-8ebf-e6a500d540b8" anchor="sec-iceKeelConcentration" obligation="normative">
 <title id="_a089f90e-ace6-cbfb-15ed-72a6cdcb8ca0">Ice Keel Concentration</title>
-<sourcecode id="_ad0172c4-b1c7-b1fb-3636-2d9bf2872485"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_733b1e31-57d4-5eb9-8d55-3017d71e5ab0"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEKCN describes the concentration of ice keels beneath an ice area."%}
 {%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Keels | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceKeelConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2462,50 +2491,58 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceKeelConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_ad02552a-048f-b1e4-7c18-d0f498574ea8" anchor="sec-iceKeelFrequency" obligation="normative">
+<clause id="_56d0abad-c2b8-38fa-64f8-b3c04afd8de2" anchor="sec-iceKeelFrequency" obligation="normative">
 <title id="_5752cb9a-4103-25b8-843b-9d80012db0b0">Ice Keel Frequency</title>
-<sourcecode id="_1d162164-a394-f18b-c58c-f4b3c7de458d"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_60012b7f-ce96-8c27-f861-90ccf63605c8"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICERFQ indicates the frequency of ice keels in number per nautical mile"%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_e92be403-f1fb-05a8-8a63-db5b771c1211" anchor="sec-iceKeelMaximumDepth" obligation="normative">
+<clause id="_c45134c3-6d8d-1c6c-809b-072d542de5c2" anchor="sec-iceKeelMaximumDepth" obligation="normative">
 <title id="_5f113876-cb97-52dc-f2fa-835f38d4c935">Ice Keel Maximum Depth</title>
-<sourcecode id="_66653271-b9f7-4ca8-2df2-098b4bbe4daf"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_5938eafc-e6ca-c3a1-47b4-cbcbcd2d255c"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICERMT indicates the maximum depth of ice keels in decimetres."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_4ce773af-056f-7ae3-4cf7-ccd02d35f239" anchor="sec-iceKeelMeanDepth" obligation="normative">
+<clause id="_d934cde6-c55f-ef81-49a3-9bee6e888c54" anchor="sec-iceKeelMeanDepth" obligation="normative">
 <title id="_f213a02f-e3df-4364-d4cb-f814e7719b7b">Ice Keel Mean Depth</title>
-<sourcecode id="_5c9c4c16-5d7b-e2fd-c009-c5b749fb905e"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_4049c23a-abd2-6505-c904-7b219b1f92eb"><body>{%assign g_type = "integer"%}
 {%assign g_def = "Indicates the mean depth of ice keels in decimetres."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_b103f0c9-80f0-3e3c-0963-1eaa243398d9" anchor="sec-iceLeadStatus" obligation="normative">
+<clause id="_f4c0256a-f6f0-17fa-b8f3-3accddab99f4" anchor="sec-iceLeadStatus" obligation="normative">
 <title id="_f1ef7dcc-9f77-6319-a494-e0b5680e22ed">Ice Lead Status</title>
-<sourcecode id="_2261fc41-f59f-3aff-6629-f2b461589880"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_8be76257-3a23-ccd5-0610-39662a49504c"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "The Ice Lead Status indicates the surface nature of the lead."%}
 {%assign g_vals = "01:Open Lead | 02:Frozen Lead | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceLeadStatus"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2519,28 +2556,32 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceLeadStatus not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_dcb7f5bb-e252-32db-94da-e8a108ba4125" anchor="sec-iceLeadWidth" obligation="normative">
+<clause id="_8eea4287-6dcc-1ab0-7934-b6ccb37d5fa3" anchor="sec-iceLeadWidth" obligation="normative">
 <title id="_db87c5dd-3a3b-955b-b9ab-4c2fc7144c89">Ice Lead (or Fracture or Crack) Width</title>
-<sourcecode id="_08156454-9e1b-3677-ead2-bfd308e49491"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_01736515-9e84-4c49-017f-96bba09cd2a9"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICELWD indicates the width of a lead or fracture or crack in metres."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_2844ced4-daaa-8979-ed01-d6af963e3f15" anchor="sec-iceLocationInformation" obligation="normative">
+<clause id="_6d092cc2-8d56-9ba0-ece1-953eada56b55" anchor="sec-iceLocationInformation" obligation="normative">
 <title id="_894937d8-e023-15e6-f547-5594a5e52fe8">Ice Location Information</title>
-<sourcecode id="_a966c88e-e166-7df7-3d6d-db07883fbeaf"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_32abcfdd-cf8b-79f3-95e5-51f57a9a02d2"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICELOC indicates whether the break is at a specific location, or whether there is a presence in the area."%}
 {%assign g_vals = "01:Specific Location | 02:Presence in Area" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceLocationInformation"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2554,17 +2595,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceLocationInformation not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_b8403e51-ec58-b1b2-d0dc-856ca6d7007f" anchor="sec-iceRaftingConcentration" obligation="normative">
+<clause id="_1682854f-1c25-edcd-75c0-dfe51bfc36a7" anchor="sec-iceRaftingConcentration" obligation="normative">
 <title id="_4b07e284-a861-89a6-17ad-385afea67f8c">Ice Rafting Concentration</title>
-<sourcecode id="_71517092-08fc-c0de-6047-e0ebf89ea548"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_335a4d62-5fad-55ee-37db-c505b24c1b5d"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEFCN describes the concentration of ice rafting in an ice area."%}
 {%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Rafting | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceRaftingConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2578,17 +2621,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceRaftingConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_720f35da-9685-aa0a-25dd-4848686d6631" anchor="sec-iceRidgeClassification" obligation="normative">
+<clause id="_5fd3bec4-4e28-c7b5-8b8d-eb0d7fc5c7e6" anchor="sec-iceRidgeClassification" obligation="normative">
 <title id="_a1ec85f6-3491-ed7c-9ded-7e26d41416c9">Ice Ridge Classification</title>
-<sourcecode id="_e058a47a-ff25-1bab-f1be-2c143d630ab6"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_698422af-c036-46c0-06a8-4ba2d1312033"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICERDV describes the predominant type of ice ridge(s) present."%}
 {%assign g_vals = "01:New Ridge | 02:Weathered Ridge | 03:Very Weathered Ridge | 04:Aged Ridge | 05:Consolidated Ridge | 06:Ridge | 07:Ridged Ice Zone | 08:Ridge Barrier | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceRidgeClassification"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2602,17 +2647,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceRidgeClassification not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_ed816b5a-8739-1f2b-3127-92b6600294a6" anchor="sec-iceRidgeConcentration" obligation="normative">
+<clause id="_873e2217-138f-607e-ce42-53e2730a1156" anchor="sec-iceRidgeConcentration" obligation="normative">
 <title id="_ea284509-803f-5b15-ef20-f9aecd7de0d9">Ice Ridge Concentration</title>
-<sourcecode id="_cb79f456-4908-6f98-2bff-cb3f9b101352"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_261f06c3-f388-b75a-f31a-874507b0378d"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICERCN describes the concentration of hummocked ice in an ice area.  Up to three values may be given in the list to correspond to the partial concentrations in ICEAPC."%}
 {%assign g_vals = "01:0/10 – 1/10 | 10:1/10 | 12:1/10 – 2/10 | 20:2/10 | 23:2/10 – 3/10 | 30:3/10 | 34:3/10 – 4/10 | 40:4/10 | 45:4/10 – 5/10 | 50:5/10 | 56:5/10 – 6/10 | 60:6/10 | 67:6/10 – 7/10 | 70:7/10 | 78:7/10 – 8/10 | 80:8/10 | 89:8/10 – 9/10 | 90:9/10 | 91:9/10 – 10/10 | 92:10/10 | 98:No Ridging | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceRidgeConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2626,39 +2673,45 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceRidgeConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_c33fc629-e6e0-aab8-21a3-129b92aa1332" anchor="sec-iceRidgeFrequency" obligation="normative">
+<clause id="_6ef1e819-b836-d564-c30b-b9c1bbe3baf3" anchor="sec-iceRidgeFrequency" obligation="normative">
 <title id="_e915675b-1531-26d5-be51-f5e4864d8653">Ice Ridge Frequency</title>
-<sourcecode id="_18d636f4-e4dd-df92-e4c5-4bcb823b044f"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_69748350-98ab-7273-3a81-4dbd096e2afc"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICERFQ indicates the frequency of ice ridges in number per nautical mile"%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_02a4f9a4-66e6-e1c6-892b-837bec00c94e" anchor="sec-iceRidgeMaximumHeight" obligation="normative">
+<clause id="_5280c479-7617-464f-170d-c10eb75b8b46" anchor="sec-iceRidgeMaximumHeight" obligation="normative">
 <title id="_d54cad4d-d22f-eb4d-8552-5f8ca8780bfe">Ice Ridge Maximum Height</title>
-<sourcecode id="_b2e89b9f-770d-7cd0-8391-8de45518ad7c"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_e55ebc5d-029b-57a5-0928-cda492ed21c1"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICERMT indicates the maximum height of ice ridge(s) in decimetres."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_687ffd75-abf9-fe47-991d-7c23a02b7ece" anchor="sec-iceStageofDevelopment" obligation="normative">
+<clause id="_e458e8a9-a516-a4fb-303c-9c87d90c104d" anchor="sec-iceStageofDevelopment" obligation="normative">
 <title id="_28a02485-ea83-1e15-bc14-30763f7fa0fa">Ice Stage of Development</title>
-<sourcecode id="_4378b65c-ce74-4ca9-7793-400f8c7d1d31"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_a6dd4cb0-7a66-90cd-0d36-3857de04e434"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "Ice Stage of Development describes the ages and thicknesses of the ice ('So, Sa, Sb, Sc and Sd')."%}
 {%assign g_vals = "01:Ice Free | 70:Brash Ice | 80:No stage of development | 81:New Ice (&lt;10 cm) | 82:Nilas Ice Rind (&lt;10 cm) | 83:Young Ice (10 to &lt;30 cm) | 84:Grey Ice (10 to &lt;15 cm) | 85:Grey – White Ice (15 to &lt;30 cm) | 86:First Year Ice (30 to 200 cm) | 87:Thin First Year Ice (30 to &lt;70 cm) | 88:Thin First Year Ice Stage 1 (30 to &lt;50 cm) | 89:Thin First Year Ice Stage 2 (50 to &lt;70 cm) | 90:Code not currently assigned | 91:Medium First Year Ice (70 to 120 cm) | 92:Code not currently assigned | 93:Thick First Year Ice (&gt;120 cm) | 94:Residual Ice | 95:Old Ice | 96:Second Year Ice | 97:Multi-Year Ice | 98:Glacier Ice (Icebergs) | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
-{%if e.name == "iceStageofDevelopment"%}
+{%if e.name == "iceStageOfDevelopment"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2672,17 +2725,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceStageofDevelopment not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_290d6096-6e7f-2e4b-61a2-6f39a81ea9c4" anchor="sec-iceThicknessType" obligation="normative">
+<clause id="_869334f5-09f9-ed59-fc33-37bf199aeb2e" anchor="sec-iceThicknessType" obligation="normative">
 <title id="_881263fa-a4ba-5735-17fe-3b0208f4d0a3">Ice Thickness Type</title>
-<sourcecode id="_5d0ba8ea-4470-ac9c-7a1b-9331b2e65e8c"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_6bbb96c2-2340-3c7f-56e3-9d18147b7b2b"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICETTY indicated whether the thickness of the ice was measured or estimated."%}
 {%assign g_vals = "01:Measured | 02:Estimated | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "iceThicknessType"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2696,17 +2751,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: iceThicknessType not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_9611167f-25b7-d0e7-7a95-a62cb9cacb03" anchor="sec-lakeIceStageofDevelopment" obligation="normative">
+<clause id="_8e7326a4-9d51-7bf2-331b-ea600e2ccc05" anchor="sec-lakeIceStageofDevelopment" obligation="normative">
 <title id="_d53f95a4-4ca2-9864-f331-996a1e6e191a">Lake Ice Stage of Development</title>
-<sourcecode id="_646fcde3-c706-c02d-c494-00273a5f065b"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_22d46d36-d349-adcb-3fb9-aeb9c189140d"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "Lake Ice Stages of Development describe the ages and thicknesses of lake ice. ('So, Sa, Sb, Sc and Sd')"%}
 {%assign g_vals = "01:New Lake Ice (&lt;5cms) | 02:Thin Lake Ice (5-&lt;15cms) | 03:Medium Lake Ice (15-&lt;30cms) | 04:Thick Lake Ice (30-70cms) | 05:Very Thick Lake Ice (&gt;70cms) | 70:Brash Ice | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
-{%if e.name == "lakeIceStageofDevelopment"%}
+{%if e.name == "lakeIceStageOfDevelopment"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2720,17 +2777,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: lakeIceStageofDevelopment not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_36a8d603-38fd-b0dd-28af-8ed4f78d1b05" anchor="sec-levelIce" obligation="normative">
+<clause id="_abca2400-3160-9608-cdd3-44b5bcfb8225" anchor="sec-levelIce" obligation="normative">
 <title id="_77bdfccd-f6cd-796e-542e-3ce97cdaad91">Level Ice</title>
-<sourcecode id="_db4e16eb-a44a-bd9c-b218-02e487952a0f"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_a388afe4-0bf0-4901-3e2f-c67390966141"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICELVL is an indication as to whether or not the ice has been affected by deformation"%}
 {%assign g_vals = "01:Level(undeformed) | 02:Deformed | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "levelIce"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2744,83 +2803,97 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: levelIce not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_62ff10f1-3a13-0c29-80c8-7303a4be0af4" anchor="sec-maximumHeightofAboveWaterPart" obligation="normative">
+<clause id="_c1211255-15e7-6e7e-393f-96a5fc18ddca" anchor="sec-maximumHeightofAboveWaterPart" obligation="normative">
 <title id="_84a19d61-33e1-a2c8-0f02-12f2cc1c05a7">Maximum Height of Above Water Part (iceberg/grounded hummock)</title>
-<sourcecode id="_1ffed6f4-2816-29fb-70d6-6fcab701cb5b"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_caf06574-1213-48fb-7f7d-46854de654ec"><body>{%assign g_type = "integer"%}
 {%assign g_def = "IA_BUF specifies the maximum height of an iceberg above the waterline in meters."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_8127e535-11fa-910f-89be-7c74091f6f53" anchor="sec-maximumIceThickness" obligation="normative">
+<clause id="_fdf6e8d5-ca9f-d4bc-fa70-62765c869011" anchor="sec-maximumIceThickness" obligation="normative">
 <title id="_acc25701-ffee-ff1f-a407-0f744ab58a53">Maximum Ice Thickness</title>
-<sourcecode id="_85de81ee-e5c7-ef9f-4a74-90c5f24c63e4"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_cf57cd94-b9e9-d7e3-f615-f93276f7113f"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICEMAX specifies the maximum thickness of the ice."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_3fd52562-29d7-a52f-cc48-6655a359cb48" anchor="sec-maximumWidthofIceLead" obligation="normative">
+<clause id="_699f2b16-8b61-a04e-fcd7-fd18366bcf67" anchor="sec-maximumWidthofIceLead" obligation="normative">
 <title id="_097a6683-a842-be01-0b25-b4b309b02e45">Maximum Width of Ice Lead (or Fracture or Crack)</title>
-<sourcecode id="_c66dd957-d7ab-da13-f064-170850f3a1ac"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_52a18afd-4070-c9fd-2ccb-c497ab2e9b8a"><body>{%assign g_type = "integer"%}
 {%assign g_def = "IA_DXW defines the maximum width of the lead or fracture or crack."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_a4f5af5e-9056-6310-fb83-78787257b6ba" anchor="sec-minimumWidthofIceLead" obligation="normative">
+<clause id="_7cb5f33f-3f90-70e7-8420-f73980d286cb" anchor="sec-minimumWidthofIceLead" obligation="normative">
 <title id="_32ee2654-93b7-9848-b360-3ae6fcfbb2e6">Minimum Width of Ice Lead (or Fracture or Crack)</title>
-<sourcecode id="_1be9dca2-28a5-8c4d-ad77-3b3c0c43b733"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_1d8cdd67-87d6-dd8b-ea77-957dbc28a438"><body>{%assign g_type = "integer"%}
 {%assign g_def = "IA_DMW defines the minimum width of the lead or fracture or crack."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_a7303a59-e780-96e3-e7f8-7173f9942632" anchor="sec-numberofIcebergsinArea" obligation="normative">
+<clause id="_24eeddba-046e-0c39-63ed-9fc0fc80b270" anchor="sec-numberofIcebergsinArea" obligation="normative">
 <title id="_7e537849-77de-471e-f93c-7b34d76821de">Number of Icebergs in Area</title>
-<sourcecode id="_0ea831b6-0719-c7ca-b754-0f500481775f"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_c88476ae-50e2-f00e-f876-8606e39bc2c8"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICEBNM indicates the number of Icebergs within a specified area."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_a20a12bd-4106-bb76-4992-a8ccf2dcdb40" anchor="sec-numberofIceObjects" obligation="normative">
+<clause id="_5a92027b-3d65-7ac7-d5b8-fc68965c5080" anchor="sec-numberofIceObjects" obligation="normative">
 <title id="_09b8cc54-a712-b25d-b927-b8f048244228">Number of Ice Objects</title>
-<sourcecode id="_c8ffe7ed-0047-0ff3-3d57-62c63de1c548"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_246b4d7e-8758-54f4-a0f1-a4960f60e045"><body>{%assign g_type = "integer"%}
 {%assign g_def = "IA_OBN defines the number of ice objects (cracks, leads, fractures, icebergs)."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_227d1d1b-6fb7-b9e4-7247-abffee1be3ff" anchor="sec-partialConcentration" obligation="normative">
+<clause id="_b6d4f202-da27-4cd3-be09-383d9e922398" anchor="sec-partialConcentration" obligation="normative">
 <title id="_c4c75b82-d71b-2eaf-62b4-5efaf1bf7d12">Partial Concentration</title>
-<sourcecode id="_4aa1ed51-0f81-3ab5-c1f2-46138b17e3a9"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_7998c988-44f5-9e60-35a8-9060d6f8f354"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEAPC specifies the partial concentrations of ice in an area. ('Ca, Cband Cc')."%}
 {%assign g_vals = "01:Ice Free | 02:Open Water ( &lt; 1/10 ice) | 03:Bergy Water | 10:1/10 ice | 12:1/10 to 2/10 ice | 13:1/10 to 3/10 ice | 20:2/10 ice | 23:2/10 to 3/10 ice | 24:2/10 to 4/10 ice | 30:3/10 ice | 34:3/10 to 4/10 ice | 35:3/10 to 5/10 ice | 40:4/10 ice | 46:4/10 to 6/10 ice | 50:5/10 ice | 56:5/10 to 6/10 ice | 57:5/10 to 7/10 ice | 60:6/10 ice | 67:6/10 to 7/10 ice | 68:6/10 to 8/10 ice | 70:7/10 ice | 78:7/10 to 8/10 ice | 79:7/10 to 9/10 ice | 80:8/10 ice | 81:8/10 to 10/10 ice | 89:8/10 to 9/10 ice | 90:9/10 ice | 91:9/10 to 10/10 ice | 92:10/10 ice | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "partialConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2834,17 +2907,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: partialConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_c5bfd465-3402-d789-927f-f6c4423db1eb" anchor="sec-prevailingIcebergForm" obligation="normative">
+<clause id="_0696baa4-d134-539a-64f6-505ca3238b04" anchor="sec-prevailingIcebergForm" obligation="normative">
 <title id="_5ec03f33-431b-8ddc-37ba-60da5becaec3">Prevailing Iceberg Form</title>
-<sourcecode id="_ab323faf-2592-63f2-725e-20dbbba3eb47"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_0b0bab98-7d53-2da8-775d-dc6e048da757"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "IA_BFM specifies the prevailing form of icebergs in an area."%}
 {%assign g_vals = "01:Domed | 02:Tabular | 03:Sloping | 04:Pinnacled | 05:Dry-dock | 06:Glacier (irregular) | 07:Blocky | 08:Weathered | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "prevailingIcebergForm"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2858,17 +2933,19 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: prevailingIcebergForm not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_d5aa1fd3-126c-1742-f6d6-8b37bff0f1a8" anchor="sec-snowCoverConcentration" obligation="normative">
+<clause id="_9a5ada41-5c8d-4800-9183-fd9e993354de" anchor="sec-snowCoverConcentration" obligation="normative">
 <title id="_78a63283-6b37-8411-1b4d-be3789a3c46f">Snow Cover Concentration</title>
-<sourcecode id="_a227a3d3-0903-323c-dd40-50673a656959"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_48e0cea1-6390-aa2d-cf60-68f6e8f6f3b6"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICESCN indicates the concentration (aerial coverage) of snow in tenths."%}
 {%assign g_vals = "01:1/10 | 02:2/10 | 03:3/10 | 04:4/10 | 05:5/10 | 06:6/10 | 07:7/10 | 08:8/10 | 09:9/10 | 10:10/10 | 11:&lt;1/10 | 12:No Snow Cover | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "snowCoverConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2882,28 +2959,32 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: snowCoverConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 
-<clause id="_ad42acfe-62d9-82d4-992d-1b949d87a6a9" anchor="sec-snowDepth2" obligation="normative">
+<clause id="_64d2b1b9-4020-9194-e125-9f70c3ba9373" anchor="sec-snowDepth2" obligation="normative">
 <title id="_269c3a32-6eff-578f-6a72-9d3ab2469459">Snow Depth</title>
-<sourcecode id="_528e9c87-1c75-110c-e7a7-da9bb446d69e"><body>{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+<sourcecode id="_70e6ef1f-db35-8751-b7e3-9ffd20a9072b"><body>{%assign g_type = "integer"%}
 {%assign g_def = "ICESCT specifies the depth of snow cover on the ice."%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
+
+a| [underline]#**Attribute Type :**# {{g_type}}
 |===</body></sourcecode>
 
 </clause>
 
-<clause id="_6043e554-03b0-5d2e-92bd-553efa9adc0e" anchor="sec-totalConcentration" obligation="normative">
+<clause id="_97846564-0ce4-6b76-cb04-bcfe0275ae6c" anchor="sec-totalConcentration" obligation="normative">
 <title id="_0cc8d70d-18e8-0ce4-ce0c-a5ea684050a8">Total Concentration</title>
-<sourcecode id="_98fd639c-181c-f3aa-d88f-143a85ae3dae"><body>{%assign g_type = "enumeration"%}
+<sourcecode id="_70c230e5-3847-2cb2-4391-9c4af9a89dd4"><body>{%assign g_type = "enumeration"%}
 {%assign g_def = "ICEACT specifies the total concentration of ice in an area.  It represents the ratio expressed in tenths describing the total area of the water surface covered by ice as a fraction of the whole area."%}
 {%assign g_vals = "01:Ice Free | 02:Open Water ( &lt; 1/10 ice) | 03:Bergy Water | 10:1/10 ice | 12:1/10 to 2/10 ice | 13:1/10 to 3/10 ice | 20:2/10 ice | 23:2/10 to 3/10 ice | 24:2/10 to 4/10 ice | 30:3/10 ice | 34:3/10 to 4/10 ice | 35:3/10 to 5/10 ice | 40:4/10 ice | 46:4/10 to 6/10 ice | 50:5/10 ice | 56:5/10 to 6/10 ice | 57:5/10 to 7/10 ice | 60:6/10 ice | 67:6/10 to 7/10 ice | 68:6/10 to 8/10 ice | 70:7/10 ice | 78:7/10 to 8/10 ice | 79:7/10 to 9/10 ice | 80:8/10 ice | 81:8/10 to 10/10 ice | 89:8/10 to 9/10 ice | 90:9/10 ice | 91:9/10 to 10/10 ice | 92:10/10 ice | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "totalConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -2917,7 +2998,8 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 
 {%endfor%}|===
 {%endif%}
-{%endfor%}{%endfor%}{%endfor%}</body></sourcecode>
+{%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: totalConcentration not found in the EA model{%endif%}</body></sourcecode>
 
 </clause>
 </clause>
