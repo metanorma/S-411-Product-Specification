@@ -8,6 +8,7 @@
 {%assign g_vals = "01:Little snow cover | 10:Thin snow cover (<5 cm) | 12:< 20 cm | 20:Medium snow cover (5-20 cm) | 23:> 5 cm | 30:Thick snow cover (> 20 cm) | 98:No snow cover | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "snowcover"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -22,4 +23,5 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 {%endfor%}|===
 {%endif%}
 {%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: snowcover not found in the EA model{%endif%}
 ----

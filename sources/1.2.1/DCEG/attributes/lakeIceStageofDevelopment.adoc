@@ -7,7 +7,8 @@
 {%assign g_def = "Lake Ice Stages of Development describe the ages and thicknesses of lake ice. ('So, Sa, Sb, Sc and Sd')"%}
 {%assign g_vals = "01:New Lake Ice (<5cms) | 02:Thin Lake Ice (5-<15cms) | 03:Medium Lake Ice (15-<30cms) | 04:Thick Lake Ice (30-70cms) | 05:Very Thick Lake Ice (>70cms) | 70:Brash Ice | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
-{%if e.name == "lakeIceStageofDevelopment"%}
+{%if e.name == "lakeIceStageOfDevelopment"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -22,4 +23,5 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 {%endfor%}|===
 {%endif%}
 {%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: lakeIceStageofDevelopment not found in the EA model{%endif%}
 ----

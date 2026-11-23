@@ -8,6 +8,7 @@
 {%assign g_vals = "10:>45 nm between bergs | 12:>15 nm between bergs | 20:15 - 44 nm between bergs | 23:10 - 44 nm between bergs | 30:10 - 14 nm between bergs | 34:7 - 14 nm between bergs | 40:7 - 10 nm between bergs | 45:5 - 10 nm between bergs | 50:5 - 6 nm between bergs | 56:3 - 6 nm between bergs | 60:3 - 4 nm between bergs | 67:1 - 4 nm between bergs | 70:1 - 2 nm between bergs | 78:0.5 - 2.0 nm between bergs | 80:0.5 - 1.0 nm between bergs | 89:<1.0 nm between bergs | 90:<0.5 nm between bergs | 98:No Icebergs | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "icebergConcentration"%}
+{%assign g_found = true%}
 {%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
@@ -22,4 +23,5 @@ a| [underline]#**Attribute Type :**# {{g_type}}
 {%endfor%}|===
 {%endif%}
 {%endfor%}{%endfor%}{%endfor%}
+{%if g_found == false%}MODEL MISMATCH: icebergConcentration not found in the EA model{%endif%}
 ----
