@@ -217,7 +217,7 @@ GEM
       addressable (~> 2.8)
       base64 (~> 0.3)
     drb (2.2.3)
-    ea (0.6.148)
+    ea (0.6.149)
       benchmark
       liquid (~> 5)
       lutaml-model (~> 0.8.159)
@@ -1346,7 +1346,7 @@ CHECKSUMS
   domain_name (0.7.20261117) sha256=13f6a6cc6190892a75041b606d90bfb358ecbd869c1099fdd57b83b11d79269e
   down (5.6.3) sha256=f8b348cbc4842bb4eec15c9a74188e2640672bd4520da45738ddf384a23aaf3c
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
-  ea (0.6.148) sha256=10c4f762b585f9099cb83b4f17136a0d85d4f70ceee3bf1e16d0d71f6b6c14e6
+  ea (0.6.149) sha256=254408a9415fefb00c67170eae4b556398b5b7a393fc6d81287b460b9c81b982
   ebnf (2.6.0) sha256=e746a316caa885cc45e243dc33efc194943956760bc9bc13948de1732fbcf63e
   emf (0.2.0) sha256=6b3add05605260d646ec1d732da139eb972016c6fe4547aa60846a2ac2f542fa
   emf (0.2.0-aarch64-linux-gnu) sha256=c94e82c3ded5bc37817ec4cfbbd7237de5a92f47f8e265383b22943dd0f31a47
