@@ -1,77 +1,25 @@
 [[sec-iceStageofDevelopment]]
 === Ice Stage of Development
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%assign g_type = "enumeration"%}
+{%assign g_def = "Ice Stage of Development describes the ages and thicknesses of the ice ('So, Sa, Sb, Sc and Sd')."%}
+{%assign g_vals = "01:Ice Free | 70:Brash Ice | 80:No stage of development | 81:New Ice (<10 cm) | 82:Nilas Ice Rind (<10 cm) | 83:Young Ice (10 to <30 cm) | 84:Grey Ice (10 to <15 cm) | 85:Grey – White Ice (15 to <30 cm) | 86:First Year Ice (30 to 200 cm) | 87:Thin First Year Ice (30 to <70 cm) | 88:Thin First Year Ice Stage 1 (30 to <50 cm) | 89:Thin First Year Ice Stage 2 (50 to <70 cm) | 90:Code not currently assigned | 91:Medium First Year Ice (70 to 120 cm) | 92:Code not currently assigned | 93:Thick First Year Ice (>120 cm) | 94:Residual Ice | 95:Old Ice | 96:Second Year Ice | 97:Multi-Year Ice | 98:Glacier Ice (Icebergs) | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceStageofDevelopment"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# Ice Stage of Development describes the ages and thicknesses of the ice ('So, Sa, Sb, Sc and Sd').
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-[underline]#** Attribute Type :**# enumeration
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-. 01 +
-[underline]#**IHO Definition**# :Ice Free
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-. 70 +
-[underline]#**IHO Definition**# :Brash Ice
-
-. 80 +
-[underline]#**IHO Definition**# :No stage of development
-
-. 81 +
-[underline]#**IHO Definition**# :New Ice (<10 cm)
-
-. 82 +
-[underline]#**IHO Definition**# :Nilas Ice Rind (<10 cm)
-
-. 83 +
-[underline]#**IHO Definition**# :Young Ice (10 to <30 cm)
-
-. 84 +
-[underline]#**IHO Definition**# :Grey Ice (10 to <15 cm)
-
-. 85 +
-[underline]#**IHO Definition**# :Grey – White Ice (15 to <30 cm)
-
-. 86 +
-[underline]#**IHO Definition**# :First Year Ice (30 to 200 cm)
-
-. 87 +
-[underline]#**IHO Definition**# :Thin First Year Ice (30 to <70 cm)
-
-. 88 +
-[underline]#**IHO Definition**# :Thin First Year Ice Stage 1 (30 to <50 cm)
-
-. 89 +
-[underline]#**IHO Definition**# :Thin First Year Ice Stage 2 (50 to <70 cm)
-
-. 90 +
-[underline]#**IHO Definition**# :Code not currently assigned
-
-. 91 +
-[underline]#**IHO Definition**# :Medium First Year Ice (70 to 120 cm)
-
-. 92 +
-[underline]#**IHO Definition**# :Code not currently assigned
-
-. 93 +
-[underline]#**IHO Definition**# :Thick First Year Ice (>120 cm)
-
-. 94 +
-[underline]#**IHO Definition**# :Residual Ice
-
-. 95 +
-[underline]#**IHO Definition**# :Old Ice
-
-. 96 +
-[underline]#**IHO Definition**# :Second Year Ice
-
-. 97 +
-[underline]#**IHO Definition**# :Multi-Year Ice
-
-. 98 +
-[underline]#**IHO Definition**# :Glacier Ice (Icebergs)
-
-. 99 +
-[underline]#**IHO Definition**# :Undetermined/Unknown
-
-[underline]#** Remarks :**#
-|===
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}
+----

@@ -1,20 +1,25 @@
 [[sec-iceLeadStatus]]
 === Ice Lead Status
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%assign g_type = "enumeration"%}
+{%assign g_def = "The Ice Lead Status indicates the surface nature of the lead."%}
+{%assign g_vals = "01:Open Lead | 02:Frozen Lead | 99:Undetermined/Unknown" | split: " | "%}
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
+{%if e.name == "iceLeadStatus"%}
+{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# The Ice Lead Status indicates the surface nature of the lead.
+a| [underline]#**IHO Definition** :# {{g_def}}
 
-[underline]#** Attribute Type :**# enumeration
+a| [underline]#**Attribute Type :**# {{g_type}}
 
-. 01 +
-[underline]#**IHO Definition**# :Open Lead
+{%for v in g_vals%}{%assign pair = v | split: ":"%}
+. {{pair.first}} +
+[underline]#**IHO Definition**# :{{pair.last}}
 
-. 02 +
-[underline]#**IHO Definition**# :Frozen Lead
-
-. 99 +
-[underline]#**IHO Definition**# :Undetermined/Unknown
-
-[underline]#** Remarks :**#
-|===
+{%endfor%}|===
+{%endif%}
+{%endfor%}{%endfor%}{%endfor%}
+----

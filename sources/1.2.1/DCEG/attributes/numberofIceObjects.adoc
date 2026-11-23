@@ -1,11 +1,12 @@
 [[sec-numberofIceObjects]]
 === Number of Ice Objects
 
+[lutaml_ea_uml,../model/S-411_v001.qea]
+----
+{%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}{%endfor%}{%endfor%}{%endfor%}
+{%assign g_def = "IA_OBN defines the number of ice objects (cracks, leads, fractures, icebergs)."%}
 [cols="a",options="headers,unnumbered"]
 |===
-a| [underline]#**IHO Definition** :# IA_OBN defines the number of ice objects (cracks, leads, fractures, icebergs).
-
-[underline]#** Attribute Type :**# integer
-
-[underline]#** Remarks :**#
+a| [underline]#**IHO Definition** :# {{g_def}}
 |===
+----
