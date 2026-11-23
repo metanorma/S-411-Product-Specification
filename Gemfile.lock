@@ -620,21 +620,21 @@ GEM
       lutaml-model (~> 0.8, >= 0.8.162)
       parsanol (~> 1.3, >= 1.3.134)
     lens_core (0.1.0)
-    leptris (1.9.433.0-aarch64-linux)
+    leptris (1.9.440.0-aarch64-linux)
       ffi (~> 1.15)
-    leptris (1.9.433.0-aarch64-linux-musl)
+    leptris (1.9.440.0-aarch64-linux-musl)
       ffi (~> 1.15)
-    leptris (1.9.433.0-arm-linux)
+    leptris (1.9.440.0-arm-linux)
       ffi (~> 1.15)
-    leptris (1.9.433.0-arm-linux-musl)
+    leptris (1.9.440.0-arm-linux-musl)
       ffi (~> 1.15)
-    leptris (1.9.433.0-arm64-darwin)
+    leptris (1.9.440.0-arm64-darwin)
       ffi (~> 1.15)
-    leptris (1.9.433.0-x86_64-darwin)
+    leptris (1.9.440.0-x86_64-darwin)
       ffi (~> 1.15)
-    leptris (1.9.433.0-x86_64-linux)
+    leptris (1.9.440.0-x86_64-linux)
       ffi (~> 1.15)
-    leptris (1.9.433.0-x86_64-linux-musl)
+    leptris (1.9.440.0-x86_64-linux-musl)
       ffi (~> 1.15)
     libpng (1.6.58.6)
       ffi (~> 1.0)
@@ -1300,7 +1300,7 @@ PLATFORMS
 
 DEPENDENCIES
   isodoc-i18n!
-  leptris (= 1.9.433.0)
+  leptris (~> 1.9)
   lutaml-model (~> 0.8.63)
   metanorma!
   metanorma-cli!
@@ -1426,14 +1426,14 @@ CHECKSUMS
   latex-decode (0.5.0) sha256=1c16650dd05afc9ce69ef625a0505cf8a9a0331720eea637aae7b6f770191d53
   latexmath (1.0.1) sha256=77c2a861354f786529ebfaeafdcdca098611b81b4b24406a6ca4c25e2e583e8d
   lens_core (0.1.0) sha256=9481ce7721be1b9ddb08e0edde349775849614d40a78ff05ec5887de2aa9e2b6
-  leptris (1.9.433.0-aarch64-linux) sha256=5ab32a628391174cd806358f7e7ad983a5a80c010e6ec2bd440fa9af888eaec9
-  leptris (1.9.433.0-aarch64-linux-musl) sha256=968b6f35898f127b8f3cdb70ee2454a2521ddcc4761b4aeb0e46e14bf058c243
-  leptris (1.9.433.0-arm-linux) sha256=eea8d90f25585e663f40469c78bf9419315fa7baf10e77c4af727a7cc291ab83
-  leptris (1.9.433.0-arm-linux-musl) sha256=781f3ae2d1fef7aa9e68d741fbb40ff0f1026910972bc4e0236f7007cc11fbfd
-  leptris (1.9.433.0-arm64-darwin) sha256=c6ac8c66a73207be1e94cead1ce3b92efce28b9894918d1553513121ba6c03b1
-  leptris (1.9.433.0-x86_64-darwin) sha256=3561ad0838ba92794bd0246bf0b1c8e01c003338a21fd26a934af6f824ac5c8e
-  leptris (1.9.433.0-x86_64-linux) sha256=6aacd6f648a25a3e8e897351ae96ae9302e6f38cdc50463ff4908cabc2810c62
-  leptris (1.9.433.0-x86_64-linux-musl) sha256=d330773342726c7305dce08b63450a2f43fc7df82d1903a477e832c4fc7106a2
+  leptris (1.9.440.0-aarch64-linux) sha256=5420feae4270f130dc5ee3484224f52f47c1a4034bd4f13ce271d5885cddc6e3
+  leptris (1.9.440.0-aarch64-linux-musl) sha256=eb27c574ec15437e51197516d1b4d890d58d25187883309533cd76507c3f8e32
+  leptris (1.9.440.0-arm-linux) sha256=f2c9686db79967d5943187459c119511de4decd881b3b6c48a0964b103ab066a
+  leptris (1.9.440.0-arm-linux-musl) sha256=f89936bc162358965024f62717c17068d107cbfda5c437fc4051968a82ff0dfc
+  leptris (1.9.440.0-arm64-darwin) sha256=691e268e7eaa97815d9f5b4b596632ce0d30e87bceb0eac3df66fbe6599b9a54
+  leptris (1.9.440.0-x86_64-darwin) sha256=3410c3b7ae88b2c7329ef04a09d0b4433eb83bbb38cd9001a8b3340517e825b8
+  leptris (1.9.440.0-x86_64-linux) sha256=c536a0df38982da95025b359b8cc63e5b83690ee0ee9f32eafaa52e3d5cbdda5
+  leptris (1.9.440.0-x86_64-linux-musl) sha256=5444114cb422de7d3aeeba69244ee980be8416e8ac2eb41e7ee5f075bae54df0
   libpng (1.6.58.6) sha256=6cc9164de9934d91f56f7e106db17ce1965343538f7a725e22d8ba0019616425
   libpng (1.6.58.6-aarch64-linux) sha256=57d4a32abae936cd3b0bafdf4a7ce701973a638e07ca9d80e044d4da9465b4da
   libpng (1.6.58.6-aarch64-linux-musl) sha256=d9153b68aaa0e47126aade3a617ba6663fbcfbcf584c4fc7d6e86707b13e5664
