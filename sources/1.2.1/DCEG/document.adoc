@@ -1,6 +1,7 @@
 = Ice Information Data Classification and Encoding Guide
 :series: S
 :docnumber: 411
+:urn: urn:mrn:wmo:pub:s-411:annex-a:ed1.2.0
 :docidentifier: S-411 Annex A
 :doctype: standard
 :edition: 1.2.0
