@@ -1,5 +1,6 @@
 = Ice Information Product Specification
 :series: S
+:urn: urn:mrn:wmo:pub:s-411:ed1.2.1
 :docnumber: 411
 :doctype: standard
 :edition: 1.2.1
