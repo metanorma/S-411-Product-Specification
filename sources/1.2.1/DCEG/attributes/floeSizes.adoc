@@ -5,20 +5,19 @@
 ----
 {%assign g_type = "enumeration"%}
 {%assign g_def = "Floe Sizes describe the predominate forms of ice floe sizes (Fa, Fb and Fc) corresponding to the ice Stages of Development Sa, Sb and Screspectively."%}
-{%assign g_vals = "01:Pancake Ice (30 cm to 3m across) | 02:Shuga/Small Ice Cake; Brash Ice (<2m across) | 03:Ice Cake (<20m across) | 04:Small Floe (20 to <100m across) | 05:Medium Floe (100 to 500m) | 06:Big Floe (500 to <2000m across) | 07:Vast Floe (2000 to10000m across) | 08:Giant Floe (>10000m across) | 09:Fast Ice | 10:Growlers, Floebergs or Floebits | 11:Icebergs | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "floeSizes"%}
 {%assign g_found = true%}
-{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+{%if e.values.size != 12%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs published 12{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
 
 a| [underline]#**Attribute Type :**# {{g_type}}
 
-{%for v in g_vals%}{%assign pair = v | split: ":"%}
-. {{pair.first}} +
-[underline]#**IHO Definition**# :{{pair.last}}
+{%for v in e.values%}
+. {%if v.initial.size == 1%}0{%endif%}{{v.initial}} +
+[underline]#**IHO Definition**# :{{v.name}}
 
 {%endfor%}|===
 {%endif%}

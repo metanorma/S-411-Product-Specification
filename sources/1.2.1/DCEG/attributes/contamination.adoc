@@ -5,20 +5,19 @@
 ----
 {%assign g_type = "enumeration"%}
 {%assign g_def = "IA_PLG describes the degree of contamination (aerial coverage) in thirds based on the Russian national 3-point scale."%}
-{%assign g_vals = "01:No or insignificant Contamination | 10:<1/3 of area | 12:<2/3 of area | 20:1/3 – 2/3 of area | 23:>1/3 area | 30:>2/3 area | 98:No Contamination | 99:Undetermined/Unknown" | split: " | "%}
 {%for p1 in context.packages%}{%for p2 in p1.packages%}{%for e in p2.enums%}
 {%if e.name == "contamination"%}
 {%assign g_found = true%}
-{%if e.values.size != g_vals.size%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs page {{g_vals.size}}{%endif%}
+{%if e.values.size != 8%}MODEL MISMATCH {{e.name}}: model {{e.values.size}} vs published 8{%endif%}
 [cols="a",options="headers,unnumbered"]
 |===
 a| [underline]#**IHO Definition** :# {{g_def}}
 
 a| [underline]#**Attribute Type :**# {{g_type}}
 
-{%for v in g_vals%}{%assign pair = v | split: ":"%}
-. {{pair.first}} +
-[underline]#**IHO Definition**# :{{pair.last}}
+{%for v in e.values%}
+. {%if v.initial.size == 1%}0{%endif%}{{v.initial}} +
+[underline]#**IHO Definition**# :{{v.name}}
 
 {%endfor%}|===
 {%endif%}
