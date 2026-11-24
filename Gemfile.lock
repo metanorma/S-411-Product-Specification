@@ -106,7 +106,7 @@ GIT
 
 GIT
   remote: https://github.com/metanorma/metanorma-taste.git
-  revision: 1a12131d942ed9181af21c948b327b1ad97ab1ec
+  revision: a3f060f48fae6a24c621e92e68c68b84843cf8d9
   branch: main
   specs:
     metanorma-taste (1.1.12)
@@ -620,21 +620,21 @@ GEM
       lutaml-model (~> 0.8, >= 0.8.162)
       parsanol (~> 1.3, >= 1.3.134)
     lens_core (0.1.0)
-    leptris (1.9.440.0-aarch64-linux)
+    leptris (1.9.441.0-aarch64-linux)
       ffi (~> 1.15)
-    leptris (1.9.440.0-aarch64-linux-musl)
+    leptris (1.9.441.0-aarch64-linux-musl)
       ffi (~> 1.15)
-    leptris (1.9.440.0-arm-linux)
+    leptris (1.9.441.0-arm-linux)
       ffi (~> 1.15)
-    leptris (1.9.440.0-arm-linux-musl)
+    leptris (1.9.441.0-arm-linux-musl)
       ffi (~> 1.15)
-    leptris (1.9.440.0-arm64-darwin)
+    leptris (1.9.441.0-arm64-darwin)
       ffi (~> 1.15)
-    leptris (1.9.440.0-x86_64-darwin)
+    leptris (1.9.441.0-x86_64-darwin)
       ffi (~> 1.15)
-    leptris (1.9.440.0-x86_64-linux)
+    leptris (1.9.441.0-x86_64-linux)
       ffi (~> 1.15)
-    leptris (1.9.440.0-x86_64-linux-musl)
+    leptris (1.9.441.0-x86_64-linux-musl)
       ffi (~> 1.15)
     libpng (1.6.58.6)
       ffi (~> 1.0)
@@ -1426,14 +1426,14 @@ CHECKSUMS
   latex-decode (0.5.0) sha256=1c16650dd05afc9ce69ef625a0505cf8a9a0331720eea637aae7b6f770191d53
   latexmath (1.0.1) sha256=77c2a861354f786529ebfaeafdcdca098611b81b4b24406a6ca4c25e2e583e8d
   lens_core (0.1.0) sha256=9481ce7721be1b9ddb08e0edde349775849614d40a78ff05ec5887de2aa9e2b6
-  leptris (1.9.440.0-aarch64-linux) sha256=5420feae4270f130dc5ee3484224f52f47c1a4034bd4f13ce271d5885cddc6e3
-  leptris (1.9.440.0-aarch64-linux-musl) sha256=eb27c574ec15437e51197516d1b4d890d58d25187883309533cd76507c3f8e32
-  leptris (1.9.440.0-arm-linux) sha256=f2c9686db79967d5943187459c119511de4decd881b3b6c48a0964b103ab066a
-  leptris (1.9.440.0-arm-linux-musl) sha256=f89936bc162358965024f62717c17068d107cbfda5c437fc4051968a82ff0dfc
-  leptris (1.9.440.0-arm64-darwin) sha256=691e268e7eaa97815d9f5b4b596632ce0d30e87bceb0eac3df66fbe6599b9a54
-  leptris (1.9.440.0-x86_64-darwin) sha256=3410c3b7ae88b2c7329ef04a09d0b4433eb83bbb38cd9001a8b3340517e825b8
-  leptris (1.9.440.0-x86_64-linux) sha256=c536a0df38982da95025b359b8cc63e5b83690ee0ee9f32eafaa52e3d5cbdda5
-  leptris (1.9.440.0-x86_64-linux-musl) sha256=5444114cb422de7d3aeeba69244ee980be8416e8ac2eb41e7ee5f075bae54df0
+  leptris (1.9.441.0-aarch64-linux) sha256=ee44d2ff0064063cc8360dd92df762542d0fe9af580115d78c60fbbd203d1290
+  leptris (1.9.441.0-aarch64-linux-musl) sha256=6afbf2c6fdc1869e62b196ad0415d5ca4feabfa6eb0a521053c5ae58bdb7cc69
+  leptris (1.9.441.0-arm-linux) sha256=0cf4d95af4cf76b6d465c390624dc1024503d7e5f160eae6a12c4ed8cae3e330
+  leptris (1.9.441.0-arm-linux-musl) sha256=c5a7661c08b4fa43b31164a225797620920ea28e232377c62e51942b98240f11
+  leptris (1.9.441.0-arm64-darwin) sha256=8e64f3bcd163cb50e5386531da2c24ac94c6a8d354b3c3c2fc3ad9a067ebc917
+  leptris (1.9.441.0-x86_64-darwin) sha256=10291c82dbdacd9629b3960615d58b18cf6edf2d735d01e6796be9a23ebacc45
+  leptris (1.9.441.0-x86_64-linux) sha256=6036e4e83158c5c65177afa1cdbd773f0baad8b141b8c8acded936b558f0ce37
+  leptris (1.9.441.0-x86_64-linux-musl) sha256=93dcaa02da17014153dcfb21fcda6d6255dc7cdc8626f783e5d939d1c1a6b025
   libpng (1.6.58.6) sha256=6cc9164de9934d91f56f7e106db17ce1965343538f7a725e22d8ba0019616425
   libpng (1.6.58.6-aarch64-linux) sha256=57d4a32abae936cd3b0bafdf4a7ce701973a638e07ca9d80e044d4da9465b4da
   libpng (1.6.58.6-aarch64-linux-musl) sha256=d9153b68aaa0e47126aade3a617ba6663fbcfbcf584c4fc7d6e86707b13e5664
