@@ -2,7 +2,7 @@
 <metanorma xmlns="https://www.metanorma.org/ns/standoc" type="presentation" version="1.4.8" schema-version="v2.3.0" flavor="iho">
 <bibdata type="standard">
 <title language="en" type="main">Ice Information Data Classification and Encoding Guide</title>
-<docidentifier primary="true" type="WMO">S-411 Annex A</docidentifier><docnumber>411</docnumber><date type="published"><on>2025-01-31</on></date><contributor><role type="author"/><organization>
+<uri type="urn">urn:mrn:wmo:pub:s-411:annex-a:ed1.2.0</uri><docidentifier primary="true" type="WMO">S-411 Annex A</docidentifier><docnumber>411</docnumber><date type="published"><on>2025-01-31</on></date><contributor><role type="author"/><organization>
 <name>World Meteorological Organization</name>
 <abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml" height="" width=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve" semx-id="Layer_1" preserveaspectratio="xMidYMin slice">
 <style type="text/css">

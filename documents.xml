@@ -9,6 +9,7 @@
   <relation type="partOf">
     <bibdata type="standard" schema-version="v1.5.6">
       <title language="en" type="main">Ice Information Data Classification and Encoding Guide</title>
+      <uri type="urn">urn:mrn:wmo:pub:s-411:annex-a:ed1.2.0</uri>
       <uri type="xml">./documents/1.2.1/DCEG/document.xml</uri>
       <uri type="pdf">./documents/1.2.1/DCEG/document.pdf</uri>
       <uri type="doc">./documents/1.2.1/DCEG/document.doc</uri>
@@ -67,6 +68,7 @@
   <relation type="partOf">
     <bibdata type="standard" schema-version="v1.5.6">
       <title language="en" type="main">Ice Information Product Specification</title>
+      <uri type="urn">urn:mrn:wmo:pub:s-411:ed1.2.1</uri>
       <uri type="xml">./documents/1.2.1/PS/document.xml</uri>
       <uri type="pdf">./documents/1.2.1/PS/document.pdf</uri>
       <uri type="doc">./documents/1.2.1/PS/document.doc</uri>
