@@ -34,9 +34,9 @@ jobs:
           unset BUNDLE_GEMFILE RUBYOPT
           apt-get update -qq && apt-get install -y --no-install-recommends build-essential
           bundle install
-          for doc in sources/1.2.1/PS sources/1.2.1/DCEG; do
+          for doc in 1.2.1/PS 1.2.1/DCEG; do
             bundle exec metanorma-document to-html "_site/documents/$doc/document.presentation.xml" \
-              --flavor iho -o "_site/documents/$doc/document.mnd.html"
+              --flavor wmo -o "_site/documents/$doc/document.mnd.html"
           done
 
       - name: Package document registry
@@ -48,11 +48,6 @@ jobs:
         run: |
           unset BUNDLE_GEMFILE RUBYOPT
           bundle exec metanorma-release aggregate --source local:releases --output-dir _site/docs --data-dir _data --include-drafts
-
-      - name: Render registry index
-        run: |
-          unset BUNDLE_GEMFILE RUBYOPT
-          bundle exec metanorma-release render-index --data _data/documents.json --out _site/index.html --flavor iho --manifest metanorma.yml
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
