@@ -1,153 +1,125 @@
-<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>S-411 Ice Information Products</title><contributor><role type='author'/><organization><name>IHO: International Hydrographic Organization</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.5.6">
-  <title language="en" type="main">Ice Information Data Classification and Encoding Guide</title>
-  <uri type="xml">./documents/1.2.1/DCEG/document.xml</uri>
-  <uri type="pdf">./documents/1.2.1/DCEG/document.pdf</uri>
-  <uri type="doc">./documents/1.2.1/DCEG/document.doc</uri>
-  <uri type="html">./documents/1.2.1/DCEG/document.html</uri>
-  <uri type="rxl">./documents/1.2.1/DCEG/document.rxl</uri>
-  <docidentifier primary="true" type="WMO">S-411 Annex A</docidentifier>
-  <docnumber>411</docnumber>
-  <date type="published">
-    <on>2025-01-31</on>
-  </date>
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml">
+  <title>S-411 Ice Information Products</title>
   <contributor>
     <role type="author"/>
     <organization>
-      <name>World Meteorological Organization</name>
-      <abbreviation>WMO</abbreviation>
-      <logo>
-        <image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
-      </logo>
+      <name>IHO: International Hydrographic Organization</name>
     </organization>
   </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      <name>World Meteorological Organization</name>
-      <subdivision type="Committee">
-        <name>WMO-SERCOM</name>
-      </subdivision>
-      <subdivision type="Workgroup">
-        <name>ET-MSSS</name>
-      </subdivision>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      <name>World Meteorological Organization</name>
-      <abbreviation>WMO</abbreviation>
-      <logo>
-        <image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
-      </logo>
-    </organization>
-  </contributor>
-  <edition>1.2.0</edition>
-  <language>en</language>
-  <script>Latn</script>
-  <status>
-    <stage>draft-development</stage>
-  </status>
-  <copyright>
-    <from>2025</from>
-    <owner>
-      <organization>
-        <name>World Meteorological Organization</name>
-        <abbreviation>WMO</abbreviation>
-        <logo>
-          <image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
-        </logo>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    <title>Standards and Specifications</title>
-    <abbreviation>S</abbreviation>
-  </series>
-  <ext>
-    <doctype>standard</doctype>
-    <flavor>iho</flavor>
-    <structuredidentifier>
+  <relation type="partOf">
+    <bibdata type="standard" schema-version="v1.5.6">
+      <title language="en" type="main">Ice Information Data Classification and Encoding Guide</title>
+      <uri type="xml">./documents/1.2.1/DCEG/document.xml</uri>
+      <uri type="pdf">./documents/1.2.1/DCEG/document.pdf</uri>
+      <uri type="doc">./documents/1.2.1/DCEG/document.doc</uri>
+      <uri type="html">./documents/1.2.1/DCEG/document.html</uri>
+      <uri type="rxl">./documents/1.2.1/DCEG/document.rxl</uri>
+      <docidentifier primary="true" type="WMO">S-411 Annex A</docidentifier>
       <docnumber>411</docnumber>
-    </structuredidentifier>
-  </ext>
-</bibdata></relation>
-<relation type='partOf'><bibdata type="standard" schema-version="v1.5.6">
-  <title language="en" type="main">Ice Information Product Specification</title>
-  <uri type="xml">./documents/1.2.1/PS/document.xml</uri>
-  <uri type="pdf">./documents/1.2.1/PS/document.pdf</uri>
-  <uri type="doc">./documents/1.2.1/PS/document.doc</uri>
-  <uri type="html">./documents/1.2.1/PS/document.html</uri>
-  <uri type="rxl">./documents/1.2.1/PS/document.rxl</uri>
-  <docidentifier primary="true" type="WMO">S-411</docidentifier>
-  <docnumber>411</docnumber>
-  <date type="published">
-    <on>2025-03-31</on>
-  </date>
-  <contributor>
-    <role type="author"/>
-    <organization>
-      <name>World Meteorological Organization</name>
-      <abbreviation>WMO</abbreviation>
-      <logo>
-        <image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
-      </logo>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      <name>World Meteorological Organization</name>
-      <subdivision type="Committee">
-        <name>WMO-SERCOM</name>
-      </subdivision>
-      <subdivision type="Workgroup">
-        <name>ET-MSSS</name>
-      </subdivision>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      <name>World Meteorological Organization</name>
-      <abbreviation>WMO</abbreviation>
-      <logo>
-        <image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
-      </logo>
-    </organization>
-  </contributor>
-  <edition>1.2.1</edition>
-  <language>en</language>
-  <script>Latn</script>
-  <status>
-    <stage>draft-development</stage>
-  </status>
-  <copyright>
-    <from>2025</from>
-    <owner>
-      <organization>
-        <name>World Meteorological Organization</name>
-        <abbreviation>WMO</abbreviation>
-        <logo>
-          <image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
-        </logo>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    <title>Standards and Specifications</title>
-    <abbreviation>S</abbreviation>
-  </series>
-  <ext>
-    <doctype>standard</doctype>
-    <flavor>iho</flavor>
-    <structuredidentifier>
+      <date type="published">
+        <on>2025-01-31</on>
+      </date>      <contributor>
+        <role type="author"/>
+        <organization>
+          <name>World Meteorological Organization</name>
+          <abbreviation>WMO</abbreviation>
+          <logo>
+            <image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
+          </logo>        </organization>      </contributor>      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>        <organization>
+          <name>World Meteorological Organization</name>
+          <subdivision type="Committee">
+            <name>WMO-SERCOM</name>
+          </subdivision>          <subdivision type="Workgroup">
+            <name>ET-MSSS</name>
+          </subdivision>        </organization>      </contributor>      <contributor>
+        <role type="publisher"/>
+        <organization>
+          <name>World Meteorological Organization</name>
+          <abbreviation>WMO</abbreviation>
+          <logo>
+            <image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
+          </logo>        </organization>      </contributor>      <edition>1.2.0</edition>
+      <language>en</language>
+      <script>Latn</script>
+      <status>
+        <stage>draft-development</stage>
+      </status>      <copyright>
+        <from>2025</from>
+        <owner>
+          <organization>
+            <name>World Meteorological Organization</name>
+            <abbreviation>WMO</abbreviation>
+            <logo>
+              <image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
+            </logo>          </organization>        </owner>      </copyright>      <series type="main">
+        <title>Standards and Specifications</title>
+        <abbreviation>S</abbreviation>
+      </series>      <ext>
+        <doctype>standard</doctype>
+        <flavor>iho</flavor>
+        <structuredidentifier>
+          <docnumber>411</docnumber>
+        </structuredidentifier>      </ext>    </bibdata>
+  </relation>
+  <relation type="partOf">
+    <bibdata type="standard" schema-version="v1.5.6">
+      <title language="en" type="main">Ice Information Product Specification</title>
+      <uri type="xml">./documents/1.2.1/PS/document.xml</uri>
+      <uri type="pdf">./documents/1.2.1/PS/document.pdf</uri>
+      <uri type="doc">./documents/1.2.1/PS/document.doc</uri>
+      <uri type="html">./documents/1.2.1/PS/document.html</uri>
+      <uri type="rxl">./documents/1.2.1/PS/document.rxl</uri>
+      <docidentifier primary="true" type="WMO">S-411</docidentifier>
       <docnumber>411</docnumber>
-    </structuredidentifier>
-  </ext>
-</bibdata></relation>
+      <date type="published">
+        <on>2025-03-31</on>
+      </date>      <contributor>
+        <role type="author"/>
+        <organization>
+          <name>World Meteorological Organization</name>
+          <abbreviation>WMO</abbreviation>
+          <logo>
+            <image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
+          </logo>        </organization>      </contributor>      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>        <organization>
+          <name>World Meteorological Organization</name>
+          <subdivision type="Committee">
+            <name>WMO-SERCOM</name>
+          </subdivision>          <subdivision type="Workgroup">
+            <name>ET-MSSS</name>
+          </subdivision>        </organization>      </contributor>      <contributor>
+        <role type="publisher"/>
+        <organization>
+          <name>World Meteorological Organization</name>
+          <abbreviation>WMO</abbreviation>
+          <logo>
+            <image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
+          </logo>        </organization>      </contributor>      <edition>1.2.1</edition>
+      <language>en</language>
+      <script>Latn</script>
+      <status>
+        <stage>draft-development</stage>
+      </status>      <copyright>
+        <from>2025</from>
+        <owner>
+          <organization>
+            <name>World Meteorological Organization</name>
+            <abbreviation>WMO</abbreviation>
+            <logo>
+              <image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"/>
+            </logo>          </organization>        </owner>      </copyright>      <series type="main">
+        <title>Standards and Specifications</title>
+        <abbreviation>S</abbreviation>
+      </series>      <ext>
+        <doctype>standard</doctype>
+        <flavor>iho</flavor>
+        <structuredidentifier>
+          <docnumber>411</docnumber>
+        </structuredidentifier>      </ext>    </bibdata>
+  </relation>
 </relaton-collection>

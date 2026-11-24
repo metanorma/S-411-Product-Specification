@@ -2,7 +2,7 @@
 <title language="en" type="main">Ice Information Data Classification and Encoding Guide</title>
 <docidentifier primary="true" type="WMO">S-411 Annex A</docidentifier><docnumber>411</docnumber><date type="published"><on>2025-01-31</on></date><contributor><role type="author"/><organization>
 <name>World Meteorological Organization</name>
-<abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve">
+<abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve">
 <style type="text/css">
 	.st0_inject_0 {fill:#005AAA;}
 	.st1_inject_0 {fill:#FFFFFF;}
@@ -53,7 +53,7 @@
 <name>ET-MSSS</name>
 </subdivision></organization></contributor><contributor><role type="publisher"/><organization>
 <name>World Meteorological Organization</name>
-<abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1_inject_1" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve">
+<abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1_inject_1" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve">
 <style type="text/css">
 	.st0_inject_1 {fill:#005AAA;}
 	.st1_inject_1 {fill:#FFFFFF;}
@@ -98,7 +98,7 @@
 </g>
 </svg></image></logo></organization></contributor><edition>1.2.0</edition><language>en</language><script>Latn</script><status><stage>draft-development</stage></status><copyright><from>2025</from><owner><organization>
 <name>World Meteorological Organization</name>
-<abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.10/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1_inject_2" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve">
+<abbreviation>WMO</abbreviation><logo><image src="/usr/local/bundle/gems/metanorma-taste-1.1.12/data/wmo/logo-wmo.svg" mimetype="image/svg+xml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1_inject_2" x="0px" y="0px" viewBox="0 0 840 290" style="enable-background:new 0 0 840 290;" xml:space="preserve">
 <style type="text/css">
 	.st0_inject_2 {fill:#005AAA;}
 	.st1_inject_2 {fill:#FFFFFF;}
