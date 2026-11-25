@@ -26,14 +26,24 @@ jobs:
         with:
           submodules: true
 
-      - name: Metanorma generate site
-        run: metanorma site generate --agree-to-terms
-
-      - name: Render HTML with metanorma-document
+      # The container image carries its own preinstalled toolchain; the
+      # repo lock must drive every leg (site generate included) or the
+      # container's stale metanorma-taste renders the legacy HTML lane
+      # without the WMO furniture.
+      - name: Prepare bundle
         run: |
           unset BUNDLE_GEMFILE RUBYOPT
           apt-get update -qq && apt-get install -y --no-install-recommends build-essential
           bundle install
+
+      - name: Metanorma generate site
+        run: |
+          unset BUNDLE_GEMFILE RUBYOPT
+          bundle exec metanorma site generate --agree-to-terms
+
+      - name: Render HTML with metanorma-document
+        run: |
+          unset BUNDLE_GEMFILE RUBYOPT
           # site generate strips the leading `sources` segment when laying
           # out compiled documents under _site/documents
           for doc in 1.2.1/PS 1.2.1/DCEG; do
