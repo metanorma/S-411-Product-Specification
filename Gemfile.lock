@@ -68,7 +68,7 @@ GIT
 
 GIT
   remote: https://github.com/metanorma/metanorma-document.git
-  revision: 584caa029696c80652a7d87eca7a1ffca8d34d78
+  revision: 8e7d5b75047b7d0f2a9664e20ecf371fb1bea1c3
   branch: main
   specs:
     metanorma-document (0.5.13)
@@ -106,10 +106,10 @@ GIT
 
 GIT
   remote: https://github.com/metanorma/metanorma-taste.git
-  revision: 076c5930f6af3383ce1a0bb51b62fd5ded0bdded
+  revision: c5c2cab7901f24ef674d7cb83f297234b57d895a
   branch: main
   specs:
-    metanorma-taste (1.1.15)
+    metanorma-taste (1.1.16)
       lutaml-model (~> 0.8.156)
 
 GIT
@@ -885,7 +885,7 @@ GEM
       uri
     mn2pdf (2.74)
     mnconvert (1.89.0)
-    moxml (0.6.16)
+    moxml (0.6.17)
     multi_json (1.21.2)
     net-http (0.10.0)
       net-protocol (>= 0.3.0)
@@ -1487,7 +1487,7 @@ CHECKSUMS
   metanorma-release (0.2.28)
   metanorma-ribose (2.9.2) sha256=da43a51163edfec1850903e5db866f76300c08c4e17ee5579b5c2062980e6b97
   metanorma-standoc (3.5.25) sha256=2b8bef8a5ad9679def7c7cf21d39be4bb0bf246f847c9b1633aeb6e3eae83a32
-  metanorma-taste (1.1.15)
+  metanorma-taste (1.1.16)
   metanorma-un (0.12.21) sha256=347cc6e6d7c5bcc0d5f672544b6ce75c2a5066e491044b28bdb1cfeff53b7cdd
   metanorma-utils (2.0.12) sha256=bdc134f797af5c8a9ab953acbb002a62a523a98788e9d653e299a7e45ebafd86
   mime-types (3.7.0) sha256=dcebf61c246f08e15a4de34e386ebe8233791e868564a470c3fe77c00eed5e56
@@ -1498,7 +1498,7 @@ CHECKSUMS
   mn-requirements (0.5.17) sha256=28e54938a9dfebf824370d8cf5eb9a4dd04e2c777dc40072b6c6219c28458fcd
   mn2pdf (2.74) sha256=09017e4e4acb688709ba0bb7fc7bdcfa6d0152ea9f2d7b417d2b426f6302122a
   mnconvert (1.89.0) sha256=02edfbf41118a8ff767f7c04f44db0c1faaed84e326f417fb24c4ed4e25f4b53
-  moxml (0.6.16) sha256=350513f651916c30f5889f8954e7eb03f3463283800852a15eff8fd76b112c26
+  moxml (0.6.17) sha256=32109fc308d446c5b37835d640a6d98ae5addb8586a581fd4a4dfc1d859b9a8e
   multi_json (1.21.2) sha256=245531eaf54bdba57aba515ff08b4503505c5e09911daa89c5a561e2f85bea8e
   net-http (0.10.0) sha256=1a2ff6e37a05724973c43f2bf7bf105f59c36a4cd0a7e9b1c021a0a566987c27
   net-http-digest_auth (1.4.1) sha256=4b8ad50ed8d180a58db5d6c49449b987dd0466fe01e24037945bc007562a08db
