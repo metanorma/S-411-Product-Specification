@@ -245,7 +245,7 @@ sourcecode .nt {
 </table>
 </clause></preface><sections>
 
-<clause id="sec-overview" anchor="sec-overview" obligation="normative" semx-id="_fc32b87d-2f1c-7c8c-cd8c-e11592824878" displayorder="3">
+<clause id="sec-overview" anchor="sec-overview" obligation="normative" semx-id="_13dfb034-a926-4fd2-192e-6bccf7871e09" displayorder="3">
 <title id="_c6adaea6-a036-2e0d-8793-b30900cc2285" semx-id="_6a13218d-655a-ce5a-a75b-2a8f4a2affc3">Overview</title><fmt-title depth="1" id="_ae9412d6-10af-04cc-f253-5617e451e298"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_c6adaea6-a036-2e0d-8793-b30900cc2285">Overview</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Clause</span> <semx element="autonum" source="sec-overview">1</semx></fmt-xref-label>
 <clause id="_015e5e9b-8b11-b168-4f19-98aebdee8e02" obligation="normative" semx-id="_015e5e9b-8b11-b168-4f19-98aebdee8e02">
 <title id="_cc2ee400-058b-f281-75ed-ccf2e700ae01" semx-id="_658f0ada-6f4d-8746-0aa0-b689939c79f7">Introduction</title><fmt-title depth="2" id="_dbb330a2-935b-19d3-3c3d-d8a7f727a44f"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_015e5e9b-8b11-b168-4f19-98aebdee8e02">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_cc2ee400-058b-f281-75ed-ccf2e700ae01">Introduction</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_015e5e9b-8b11-b168-4f19-98aebdee8e02">1</semx></fmt-xref-label>
@@ -261,10 +261,10 @@ sourcecode .nt {
 <p id="_8c72ae15-1c8d-5fef-1ec8-52c77cda4573" semx-id="_8c72ae15-1c8d-5fef-1ec8-52c77cda4573">This Product Specification includes the content model, the encoding, the Feature Catalogue, Portrayal Catalogue, and metadata.</p>
 </clause>
 
-<clause id="_371a9e77-7f65-7450-a8a0-c04a548974e8" obligation="informative" semx-id="_371a9e77-7f65-7450-a8a0-c04a548974e8">
-<title id="_95eda529-3fe2-e4d7-ac63-b961772d8d11" semx-id="_5a43affb-48f0-faf0-57e7-cea4ff18232a">References</title><fmt-title depth="2" id="_5b1cb0cd-7691-e097-4c21-8852a5225d2c"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_371a9e77-7f65-7450-a8a0-c04a548974e8">3</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_95eda529-3fe2-e4d7-ac63-b961772d8d11">References</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_371a9e77-7f65-7450-a8a0-c04a548974e8">3</semx></fmt-xref-label>
-<references unnumbered="true" normative="true" id="_1073f4fd-e366-f38f-23c1-6557022a784c"><bibitem id="iho-s100" type="standard" schema-version="v1.5.6" anchor="iho-s100" semx-id="_d15c2235-05f3-a1f5-9304-63008ec7e1aa"><biblio-tag>[1]<tab/></biblio-tag><formattedref>S-100 edition 5.2.0: IHO Universal Hydrographic Data Model, International Hydrographic Organization (IHO) (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+<clause id="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9" obligation="informative" semx-id="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">
+<title id="_95eda529-3fe2-e4d7-ac63-b961772d8d11" semx-id="_5a43affb-48f0-faf0-57e7-cea4ff18232a">References</title><fmt-title depth="2" id="_5b1cb0cd-7691-e097-4c21-8852a5225d2c"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">3</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_95eda529-3fe2-e4d7-ac63-b961772d8d11">References</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">3</semx></fmt-xref-label>
+<references unnumbered="true" normative="true" id="_4410bbd9-f265-edae-c7e5-9cc06924cffa"><bibitem id="iho-s100" type="standard" schema-version="v1.5.6" anchor="iho-s100" semx-id="_d6c6f768-4965-1d67-9146-7be6b1568d35"><biblio-tag>[1]<tab/></biblio-tag><formattedref>S-100 edition 5.2.0: IHO Universal Hydrographic Data Model, International Hydrographic Organization (IHO) (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" type="main">IHO Universal Hydrographic Data Model</title>
 
@@ -343,8 +343,8 @@ sourcecode .nt {
   <validity>
     <validityBegins>2024-06-07T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="iho-s44" type="standard" schema-version="v1.5.6" anchor="iho-s44" semx-id="_c2b9e10b-0964-c966-d92f-9afe1e1287b4"><biblio-tag>[2]<tab/></biblio-tag><formattedref>S-44 edition 6.2.0: IHO Standards for Hydrographic Surveys, International Hydrographic Organization (IHO) (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-44/S-44_Edition_6.2.0_adopted.pdf">https://iho.int/uploads/user/pubs/standards/s-44/S-44_Edition_6.2.0_adopted.pdf</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iho-s44" type="standard" schema-version="v1.5.6" anchor="iho-s44" semx-id="_eb0352f4-c524-203a-c733-3f1904e7e5b9"><biblio-tag>[2]<tab/></biblio-tag><formattedref>S-44 edition 6.2.0: IHO Standards for Hydrographic Surveys, International Hydrographic Organization (IHO) (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-44/S-44_Edition_6.2.0_adopted.pdf">https://iho.int/uploads/user/pubs/standards/s-44/S-44_Edition_6.2.0_adopted.pdf</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" type="main">IHO Standards for Hydrographic Surveys</title>
 
@@ -434,8 +434,8 @@ sourcecode .nt {
   <validity>
     <validityBegins>2024-10-01T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="iho-s4" type="standard" schema-version="v1.5.6" anchor="iho-s4" semx-id="_74702a1f-3231-bde3-b47b-0e9b5127fa20"><biblio-tag>[3]<tab/></biblio-tag><formattedref>S-4 edition 4.10.0: Regulations for International (INT) Charts and Chart Specifications of the IHO, International Hydrographic Organization (IHO) (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-4/S-4%20Ed%204.10.0_FINAL.pdf">https://iho.int/uploads/user/pubs/standards/s-4/S-4%20Ed%204.10.0_FINAL.pdf</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iho-s4" type="standard" schema-version="v1.5.6" anchor="iho-s4" semx-id="_9fdd4d04-b263-ab5c-53f3-bffd79f492e8"><biblio-tag>[3]<tab/></biblio-tag><formattedref>S-4 edition 4.10.0: Regulations for International (INT) Charts and Chart Specifications of the IHO, International Hydrographic Organization (IHO) (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-4/S-4%20Ed%204.10.0_FINAL.pdf">https://iho.int/uploads/user/pubs/standards/s-4/S-4%20Ed%204.10.0_FINAL.pdf</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" type="main">Regulations for International (INT) Charts and Chart Specifications of the IHO</title>
 
@@ -592,8 +592,8 @@ sourcecode .nt {
   <validity>
     <validityBegins>2026-03-01T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="iho-s32" type="standard" schema-version="v1.5.6" anchor="iho-s32" semx-id="_cffd01cf-3fd5-581e-0870-bf184de56e45"><biblio-tag>[4]<tab/></biblio-tag><formattedref>S-32 edition 1.0.0: Hydrographic Dictionary — Glossary of ECDIS Related Terms, International Hydrographic Organization (IHO) (<fmt-link target="https://portal.iho.int/iho-ohi/S32/">https://portal.iho.int/iho-ohi/S32/</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iho-s32" type="standard" schema-version="v1.5.6" anchor="iho-s32" semx-id="_e0ea5e3c-64e1-f590-26e1-9b47f5b6cd41"><biblio-tag>[4]<tab/></biblio-tag><formattedref>S-32 edition 1.0.0: Hydrographic Dictionary — Glossary of ECDIS Related Terms, International Hydrographic Organization (IHO) (<fmt-link target="https://portal.iho.int/iho-ohi/S32/">https://portal.iho.int/iho-ohi/S32/</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" type="main">Hydrographic Dictionary — Glossary of ECDIS Related Terms</title>
 
@@ -682,8 +682,8 @@ sourcecode .nt {
   <validity>
     <validityBegins>1994-01-01T00:00:00Z</validityBegins>
   </validity>
-</bibitem><bibitem id="iso-8601" type="standard" schema-version="v1.5.6" anchor="iso-8601" semx-id="_eb317736-b545-8db8-f1f9-03bdb0797307"><biblio-tag>[5]<tab/></biblio-tag><formattedref>ISO 8601:2004: Data elements and interchange formats — Information interchange — Representation of dates and times, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/40874.html">https://www.iso.org/standard/40874.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iso-8601" type="standard" schema-version="v1.5.6" anchor="iso-8601" semx-id="_a8632dd4-9275-7137-6ce0-d6d4ae6177e6"><biblio-tag>[5]<tab/></biblio-tag><formattedref>ISO 8601:2004: Data elements and interchange formats — Information interchange — Representation of dates and times, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/40874.html">https://www.iso.org/standard/40874.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Data elements and interchange formats</title>
 
@@ -797,8 +797,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="iso-19103" type="standard" schema-version="v1.5.6" anchor="iso-19103" semx-id="_9522ec39-21d3-f7f4-aeaa-db6b633fcdf0"><biblio-tag>[6]<tab/></biblio-tag><formattedref>ISO 19103:2015: Geographic information — Conceptual schema language, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/56734.html">https://www.iso.org/standard/56734.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iso-19103" type="standard" schema-version="v1.5.6" anchor="iso-19103" semx-id="_82c12516-2ab1-2a49-df97-703071c444a9"><biblio-tag>[6]<tab/></biblio-tag><formattedref>ISO 19103:2015: Geographic information — Conceptual schema language, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/56734.html">https://www.iso.org/standard/56734.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -896,8 +896,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="iso-19111" type="standard" schema-version="v1.5.6" anchor="iso-19111" semx-id="_685adbc3-603a-0f65-d3c8-0024b2ad65b3"><biblio-tag>[7]<tab/></biblio-tag><formattedref>ISO 19111:2007: Geographic information — Spatial referencing by coordinates, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iso-19111" type="standard" schema-version="v1.5.6" anchor="iso-19111" semx-id="_44d93e5c-45d4-4952-fee9-c49c186a8413"><biblio-tag>[7]<tab/></biblio-tag><formattedref>ISO 19111:2007: Geographic information — Spatial referencing by coordinates, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1003,8 +1003,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="iso-19115-1" type="standard" schema-version="v1.5.6" anchor="iso-19115-1" semx-id="_63084bde-d388-2498-3d5b-6e6f960cd574"><biblio-tag>[8]<tab/></biblio-tag><formattedref>ISO 19115-1:2014/Amd 1:2018: Geographic information — Metadata — Part 1: Fundamentals — Amendment 1, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/73118.html">https://www.iso.org/standard/73118.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iso-19115-1" type="standard" schema-version="v1.5.6" anchor="iso-19115-1" semx-id="_1ca8b0fe-9153-9e24-b1f6-51b86755490b"><biblio-tag>[8]<tab/></biblio-tag><formattedref>ISO 19115-1:2014/Amd 1:2018: Geographic information — Metadata — Part 1: Fundamentals — Amendment 1, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/73118.html">https://www.iso.org/standard/73118.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1105,8 +1105,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="iso-19115-2" type="standard" schema-version="v1.5.6" anchor="iso-19115-2" semx-id="_52eea73e-d4df-efc4-70fb-3f4d08879ece"><biblio-tag>[9]<tab/></biblio-tag><formattedref>ISO 19115-2:2009: Geographic information — Metadata — Part 2: Extensions for imagery and gridded data, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/39229.html">https://www.iso.org/standard/39229.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iso-19115-2" type="standard" schema-version="v1.5.6" anchor="iso-19115-2" semx-id="_cce07eeb-158a-cd44-94de-4ed21cff910b"><biblio-tag>[9]<tab/></biblio-tag><formattedref>ISO 19115-2:2009: Geographic information — Metadata — Part 2: Extensions for imagery and gridded data, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/39229.html">https://www.iso.org/standard/39229.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1201,8 +1201,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="iso-19115-3" type="standard" schema-version="v1.5.6" anchor="iso-19115-3" semx-id="_e02c28f3-f1ab-835b-2daf-dc72d8951145"><biblio-tag>[10]<tab/></biblio-tag><formattedref>ISO/TS 19115-3:2016: Geographic information —  Metadata — Part 3: XML schema implementation for fundamental concepts, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/32579.html">https://www.iso.org/standard/32579.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="iso-19115-3" type="standard" schema-version="v1.5.6" anchor="iso-19115-3" semx-id="_40eedde7-55a2-8f70-114a-734e481449d3"><biblio-tag>[10]<tab/></biblio-tag><formattedref>ISO/TS 19115-3:2016: Geographic information —  Metadata — Part 3: XML schema implementation for fundamental concepts, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/32579.html">https://www.iso.org/standard/32579.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1308,15 +1308,15 @@ sourcecode .nt {
 
 
 <references id="_503b5f16-8206-f5d6-e4e4-875d4be4e44e" normative="true" obligation="informative" semx-id="_503b5f16-8206-f5d6-e4e4-875d4be4e44e">
-<title id="_01bbe66b-d087-cc92-72d4-23b0209f7412" semx-id="_a16fbcba-538c-7a89-a258-34667dd03cbe">Normative</title><fmt-title depth="3" id="_60e174a3-4101-76c2-65f8-62435e5ac25e"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_371a9e77-7f65-7450-a8a0-c04a548974e8">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_503b5f16-8206-f5d6-e4e4-875d4be4e44e">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_01bbe66b-d087-cc92-72d4-23b0209f7412">Normative</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_371a9e77-7f65-7450-a8a0-c04a548974e8">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_503b5f16-8206-f5d6-e4e4-875d4be4e44e">1</semx></fmt-xref-label>
+<title id="_01bbe66b-d087-cc92-72d4-23b0209f7412" semx-id="_a16fbcba-538c-7a89-a258-34667dd03cbe">Normative</title><fmt-title depth="3" id="_60e174a3-4101-76c2-65f8-62435e5ac25e"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_503b5f16-8206-f5d6-e4e4-875d4be4e44e">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_01bbe66b-d087-cc92-72d4-23b0209f7412">Normative</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_503b5f16-8206-f5d6-e4e4-875d4be4e44e">1</semx></fmt-xref-label>
 <bibitem anchor="GML_OpenGIS_3_2_1" id="GML_OpenGIS_3_2_1" semx-id="_2bd59ed0-b75c-2c9b-3694-49cd02b16163"><biblio-tag>[11]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>Geography Markup Language (GML) Encoding Standard</em> (Version 3.2.1)</formattedref><docidentifier>GML OpenGIS®</docidentifier><docidentifier scope="biblio-tag">GML OpenGIS®</docidentifier><language>en</language><script>Latn</script></bibitem>
 <bibitem anchor="S_97" id="S_97" semx-id="_71a46379-901c-454c-1369-aed3c8055401"><biblio-tag>[12]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>IHO Guidelines for Creating S-100 Product Specifications</em>, Edition 1.1.0, June 2020.</formattedref><docidentifier>S-97</docidentifier><docidentifier scope="biblio-tag">S-97</docidentifier><docnumber>97</docnumber><language>en</language><script>Latn</script></bibitem>
 <bibitem anchor="S_100" id="S_100" semx-id="_43cbfca4-8dda-6420-fa8e-b15d9e475efe"><biblio-tag>[13]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>IHO Universal Hydrographic Data Model</em>, Edition 5.2.0, June 2024</formattedref><docidentifier>S-100</docidentifier><docidentifier scope="biblio-tag">S-100</docidentifier><docnumber>100</docnumber><language>en</language><script>Latn</script></bibitem>
 <bibitem anchor="WMO_574_2024" id="WMO_574_2024" semx-id="_87e0275a-9476-f0c7-4447-d7e8e5db1746"><biblio-tag>[14]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>Sea-ice Information and Services</em>, 2024 edition</formattedref><docidentifier>WMO-No. 574</docidentifier><docidentifier scope="biblio-tag">WMO-No. 574</docidentifier><docnumber>574</docnumber><language>en</language><script>Latn</script></bibitem>
 </references>
 
-<references id="_4eebe37d-8241-2a98-14bf-7ccf7fbce400" normative="true" obligation="informative" semx-id="_4eebe37d-8241-2a98-14bf-7ccf7fbce400">
-<title id="_354c3d2b-2a67-f79f-e382-9e8e235d6802" semx-id="_44dcf3cd-1e4f-f8f8-ddd0-f00992a65fb4">Informative</title><fmt-title depth="3" id="_91272733-7c08-f741-e243-30b45f0920f5"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_371a9e77-7f65-7450-a8a0-c04a548974e8">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_4eebe37d-8241-2a98-14bf-7ccf7fbce400">2</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_354c3d2b-2a67-f79f-e382-9e8e235d6802">Informative</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_371a9e77-7f65-7450-a8a0-c04a548974e8">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_4eebe37d-8241-2a98-14bf-7ccf7fbce400">2</semx></fmt-xref-label><bibitem anchor="ISO_19101_2003" id="ISO_19101_2003" type="standard" semx-id="_c99d90a4-80a0-5cee-6307-edba1e3e587e"><biblio-tag>[15]<tab/></biblio-tag><formattedref>ISO 19101:2003: Geographic Information – Reference Model, 2003, ISO.</formattedref>
+<references id="_a1e14937-622e-9339-5e34-ef82abe7561e" normative="true" obligation="informative" semx-id="_a1e14937-622e-9339-5e34-ef82abe7561e">
+<title id="_354c3d2b-2a67-f79f-e382-9e8e235d6802" semx-id="_44dcf3cd-1e4f-f8f8-ddd0-f00992a65fb4">Informative</title><fmt-title depth="3" id="_91272733-7c08-f741-e243-30b45f0920f5"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_a1e14937-622e-9339-5e34-ef82abe7561e">2</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_354c3d2b-2a67-f79f-e382-9e8e235d6802">Informative</semx></fmt-title><fmt-xref-label><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_49949c7c-7d63-88a4-3924-5c5f8b4f63b9">3</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_a1e14937-622e-9339-5e34-ef82abe7561e">2</semx></fmt-xref-label><bibitem anchor="ISO_19101_2003" id="ISO_19101_2003" type="standard" semx-id="_c99d90a4-80a0-5cee-6307-edba1e3e587e"><biblio-tag>[15]<tab/></biblio-tag><formattedref>ISO 19101:2003: Geographic Information – Reference Model, 2003, ISO.</formattedref>
 <title format="text/plain">Geographic Information – Reference Model, 2003</title>
 <docidentifier type="ISO">ISO 19101:2003</docidentifier><docidentifier scope="biblio-tag">ISO 19101:2003</docidentifier><docnumber>19101</docnumber><date type="published"><on>2003</on></date><contributor><role type="publisher"/><organization>
 <name>ISO</name>
@@ -1328,8 +1328,8 @@ sourcecode .nt {
 <title format="text/plain">Geographic Information – Conceptual Schema Language – Part 2, 2005</title>
 <docidentifier type="ISO">ISO 19103-2:2005</docidentifier><docidentifier scope="biblio-tag">ISO 19103-2:2005</docidentifier><docnumber>19103-2</docnumber><date type="published"><on>2005</on></date><contributor><role type="publisher"/><organization>
 <name>ISO</name>
-</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="ISO_19109_2005" type="standard" schema-version="v1.5.6" anchor="ISO_19109_2005" semx-id="_8af53674-9c99-0afd-c0eb-ce7bbc4cef9e"><biblio-tag>[18]<tab/></biblio-tag><formattedref>ISO 19109:2005: Geographic information — Rules for application schema, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/39891.html">https://www.iso.org/standard/39891.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="ISO_19109_2005" type="standard" schema-version="v1.5.6" anchor="ISO_19109_2005" semx-id="_2b596ca8-ad31-5bd2-5784-187448943a01"><biblio-tag>[18]<tab/></biblio-tag><formattedref>ISO 19109:2005: Geographic information — Rules for application schema, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/39891.html">https://www.iso.org/standard/39891.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1417,8 +1417,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="ISO_19110_2005" type="standard" schema-version="v1.5.6" anchor="ISO_19110_2005" semx-id="_b952ec8f-76ce-5763-8862-c952b19d7217"><biblio-tag>[19]<tab/></biblio-tag><formattedref>ISO 19110:2005: Geographic information — Methodology for feature cataloguing, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/39965.html">https://www.iso.org/standard/39965.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="ISO_19110_2005" type="standard" schema-version="v1.5.6" anchor="ISO_19110_2005" semx-id="_84ae041a-2323-70ef-157b-7298e40ec8dc"><biblio-tag>[19]<tab/></biblio-tag><formattedref>ISO 19110:2005: Geographic information — Methodology for feature cataloguing, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/39965.html">https://www.iso.org/standard/39965.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1517,8 +1517,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="ISO_19111_2007" type="standard" schema-version="v1.5.6" anchor="ISO_19111_2007" semx-id="_9f23c4de-3746-4e02-2de1-8771d8862b58"><biblio-tag>[20]<tab/></biblio-tag><formattedref>ISO 19111:2007: Geographic information — Spatial referencing by coordinates, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="ISO_19111_2007" type="standard" schema-version="v1.5.6" anchor="ISO_19111_2007" semx-id="_bd6f8f81-d9dc-549a-027b-72305b277d27"><biblio-tag>[20]<tab/></biblio-tag><formattedref>ISO 19111:2007: Geographic information — Spatial referencing by coordinates, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1624,8 +1624,8 @@ sourcecode .nt {
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="ISO_19115_1_2014" type="standard" schema-version="v1.5.6" anchor="ISO_19115_1_2014" semx-id="_7419eb16-859c-16c7-2efc-37f2ac87772c"><biblio-tag>[21]<tab/></biblio-tag><formattedref>ISO 19115-1:2014/Amd 1:2018: Geographic information — Metadata — Part 1: Fundamentals — Amendment 1, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/73118.html">https://www.iso.org/standard/73118.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</bibitem><bibitem id="ISO_19115_1_2014" type="standard" schema-version="v1.5.6" anchor="ISO_19115_1_2014" semx-id="_994be303-5828-5efb-5e85-e68c6dd2d758"><biblio-tag>[21]<tab/></biblio-tag><formattedref>ISO 19115-1:2014/Amd 1:2018: Geographic information — Metadata — Part 1: Fundamentals — Amendment 1, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/73118.html">https://www.iso.org/standard/73118.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1730,8 +1730,8 @@ sourcecode .nt {
 <title format="text/plain">Geographic information — Metadata — Part 3: XML Schema implementation for fundamental concepts — 2016</title>
 <docidentifier type="ISO">ISO 19115-3:2016</docidentifier><docidentifier scope="biblio-tag">ISO 19115-3:2016</docidentifier><docnumber>19115-3</docnumber><date type="published"><on>2016</on></date><contributor><role type="publisher"/><organization>
 <name>ISO</name>
-</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="ISO_19117_2012" type="standard" schema-version="v1.5.6" anchor="ISO_19117_2012" semx-id="_325961d1-cdfb-ac14-3bc3-b4c63b77d710"><biblio-tag>[23]<tab/></biblio-tag><formattedref>ISO 19117:2012: Geographic information — Portrayal, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/46226.html">https://www.iso.org/standard/46226.html</fmt-link>).</formattedref>
-  <fetched>2026-11-25</fetched>
+</organization></contributor><language>en</language><script>Latn</script></bibitem><bibitem id="ISO_19117_2012" type="standard" schema-version="v1.5.6" anchor="ISO_19117_2012" semx-id="_4acb55c3-115b-bb09-339e-e47d0583967b"><biblio-tag>[23]<tab/></biblio-tag><formattedref>ISO 19117:2012: Geographic information — Portrayal, International Organization for Standardization (ISO) (<fmt-link target="https://www.iso.org/standard/46226.html">https://www.iso.org/standard/46226.html</fmt-link>).</formattedref>
+  <fetched>2026-11-26</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
